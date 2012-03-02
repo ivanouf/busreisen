@@ -29,21 +29,6 @@ public class Kunde {
 	private String telefonnr;
 
 	/**
-	 * Buchungsnummer für diesen Kunden
-	 */
-	private int buchungsnr;
-
-	/**
-	 * Reiseziel des Kunden
-	 */
-	private String reiseZiel;
-
-	/**
-	 * Vom Kunden gewünschte Reisewoche
-	 */
-	private int woche;
-
-	/**
 	 * Der Konstruktor initialisiert die Buchungsnummer und die Wochennummer mit
 	 * 0.
 	 */
@@ -52,8 +37,6 @@ public class Kunde {
 		this.vorname = "";
 		this.adresse = "";
 		this.telefonnr = "";
-		this.buchungsnr = 0;
-		this.woche = 0;
 	}
 
 	/**
@@ -71,8 +54,7 @@ public class Kunde {
 		this.vorname = vorname;
 		this.adresse = adresse;
 		this.telefonnr = telefonnr;
-		this.buchungsnr = 0;
-		this.woche = 0;
+		
 	}
 
 	/**
@@ -149,64 +131,6 @@ public class Kunde {
 	 */
 	public void setTelefonnr(String telefonnr) {
 		this.telefonnr = telefonnr;
-	}
-
-	/**
-	 * Diese Methode gibt die Buchungsnummer des Kunden zurück.
-	 * 
-	 * @return buchungsnr Buchungsnummer als Integer
-	 */
-	public int getBuchungsnr() {
-		return buchungsnr;
-	}
-
-	/**
-	 * Diese Methode ändert die Buchungsnummer des Kunden.
-	 * 
-	 * @param buchungsnr
-	 *            Buchungsnummer als Integer
-	 * 
-	 */
-	public void setBuchungsnr(int buchungsnr) {
-		this.buchungsnr = buchungsnr;
-	}
-
-	/**
-	 * Diese Methode gibt das Reiseziel des Kunden zurück.
-	 * 
-	 * @return reiseZiel Reiseziel als String
-	 */
-	public String getReiseZiel() {
-		return reiseZiel;
-	}
-
-	/**
-	 * Diese Methode ändert das Reiseziel des Kunden.
-	 * 
-	 * @param reiseZiel
-	 *            Reiseziel als String
-	 */
-	public void setReiseZiel(String reiseZiel) {
-		this.reiseZiel = reiseZiel;
-	}
-
-	/**
-	 * Diese Methode gibt die Woche zurück, die der Kunde gebucht hat.
-	 * 
-	 * @return woche Buchungswoche als Integer
-	 */
-	public int getWoche() {
-		return woche;
-	}
-
-	/**
-	 * Diese Methode ändert die Woche, die der Kunde gebucht hat.
-	 * 
-	 * @param woche
-	 *            Buchungswoche als Integer
-	 */
-	public void setWoche(int woche) {
-		this.woche = woche;
 	}
 
 }
