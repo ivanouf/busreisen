@@ -1,5 +1,11 @@
 package model;
-
+/**
+ * Diese Enumeration verwaltet alle Starttage der Reisen.
+ * 
+ * @author Thomas
+ * @version 02.03.2012
+ * 
+ */
 public enum Wochentag {
 
 	MONTAG,
@@ -7,7 +13,13 @@ public enum Wochentag {
 	SAMSTAG,
 	SONNTAG;
 
-	public String test(Wochentag tag){
+	/**
+	 * Diese Methode gibt den übergebenen Wochentag als String zurück.
+	 * @param tag
+	 * 			Item aus der Enumeration Wochentag
+	 * @return String
+	 */
+	public String toString(Wochentag tag){
 		switch(tag){
 		case MONTAG:
 			return "Montag";
