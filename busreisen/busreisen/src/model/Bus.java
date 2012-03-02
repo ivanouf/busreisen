@@ -10,7 +10,7 @@ public class Bus {
 	private int anzahlPlaetze;
 	private int anzahlFreiePlaetze;
 	private int woche;
-	private String reiseZiel;
+	private Reiseziel reiseZiel;
 
 	
 	/**
@@ -20,7 +20,7 @@ public class Bus {
 		this.anzahlPlaetze = 0;
 		this.anzahlFreiePlaetze = 0;
 		this.woche = 0;
-		this.reiseZiel = "NoWhere";
+		this.reiseZiel = null;
 	}
 	/**
 	 * Diese Methode setzt die übergebenen Werte.
@@ -31,7 +31,7 @@ public class Bus {
 	 * @param reiseZiel 
 	 * 					Reiseziel als String
 	 */
-	public Bus(int anzahlPlaetze, int woche, String reiseZiel){
+	public Bus(int anzahlPlaetze, int woche, Reiseziel reiseZiel){
 		this.anzahlPlaetze = anzahlPlaetze;
 		this.woche = woche;
 		this.reiseZiel = reiseZiel;
@@ -90,7 +90,7 @@ public class Bus {
 	 * @return reiseZiel
 	 * 					Reiseziel als String
 	 */
-	public String getReiseZiel() {
+	public Reiseziel getReiseZiel() {
 		return reiseZiel;
 	}
 	/**
@@ -98,7 +98,7 @@ public class Bus {
 	 * @param reiseZiel
 	 * 					Reiseziel als String
 	 */
-	public void setReiseZiel(String reiseZiel) {
+	public void setReiseZiel(Reiseziel reiseZiel) {
 		this.reiseZiel = reiseZiel;
 	}
 	
