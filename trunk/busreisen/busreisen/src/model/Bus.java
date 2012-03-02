@@ -11,6 +11,7 @@ public class Bus {
 	private int anzahlFreiePlaetze;
 	private int woche;
 	private String reiseZiel;
+
 	
 	/**
 	 * Dieser Konstruktor initialisiert die Attribute mit Default-Werten
