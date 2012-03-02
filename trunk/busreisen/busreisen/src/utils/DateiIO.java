@@ -22,19 +22,20 @@ public class DateiIO {
 	/**
 	 * Tabellenüberschriften in der CSV-Datei
 	 */
-	private static String[] csv_headers = { "Name", "Vorname", "Adresse",
+	private static String[] kunden_headers = { "Name", "Vorname", "Adresse",
 			"Telefonnummer" };
 
 	/**
 	 * Tabellenüberschriften in der Log-Datei
 	 */
-	private static String[] log_headers = { "Buchungsnummer", "Name",
-			"Vorname", "Adresse", "Telefonnummer", "Ziel", "Anzahl der Plätze" };
+	private static String[] log_headers = { "Art der Buchung", "Nummer",
+			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel",
+			"Anzahl der Plätze" };
 
 	/**
 	 * Name der Logdatei
 	 */
-	private static final String LOGFILE = "Bussoftware_Log.txt";
+	private static final String LOGFILE = "Bussoftware_Log.csv";
 
 	/**
 	 * Name der .csv-Datei, in der die Kunden gespeichert sind
@@ -50,8 +51,8 @@ public class DateiIO {
 	public static void writeHeadersInCSV() throws IOException {
 		File csv_file = new File(CSVFILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
-		for (int i = 0; i < csv_headers.length; i++) {
-			bw.write(csv_headers[i] + ";");
+		for (int i = 0; i < kunden_headers.length; i++) {
+			bw.write(kunden_headers[i] + ";");
 		}
 		bw.write("\n");
 		bw.close();
@@ -65,7 +66,7 @@ public class DateiIO {
 	public static void writeHeadersInLog() throws IOException {
 		File logfile = new File(LOGFILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(logfile));
-		for (int i = 0; i < csv_headers.length; i++) {
+		for (int i = 0; i < kunden_headers.length; i++) {
 			bw.write(log_headers[i] + ";");
 		}
 		bw.write("\n");
@@ -75,21 +76,18 @@ public class DateiIO {
 	/**
 	 * Diese Methode speichert den Kundenstamm in einer CSV-Datei.
 	 * 
-	 * @param kunden
-	 *            Array von allen Kunden
+	 * @param kunde
+	 *            Instanz der Klasse {@link Kunde}
 	 * @throws IOException
 	 */
-	public static void saveKundenToCSV(Kunde[] kunden) throws IOException {
+	public static void saveKundeToCSV(Kunde kunde) throws IOException {
 		File csv_file = new File(CSVFILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
-		for (int i = 0; i < kunden.length; i++) {
-			Kunde kunde = kunden[i];
-			bw.write(kunde.getName() + ";");
-			bw.write(kunde.getVorname() + ";");
-			bw.write(kunde.getAdresse() + ";");
-			bw.write(kunde.getTelefonnr() + ";");
-			bw.write("\n");
-		}
+		bw.append(kunde.getName() + ";");
+		bw.append(kunde.getVorname() + ";");
+		bw.append(kunde.getAdresse() + ";");
+		bw.append(kunde.getTelefonnr() + ";");
+		bw.append("\n");
 		bw.close();
 	}
 
@@ -97,7 +95,7 @@ public class DateiIO {
 	 * Diese Methode speichert eine übergebene Buchung in einer Log-Datei.
 	 * 
 	 * @param buchung
-	 *            Instanz von {@link Buchung}
+	 *            Instanz der Klasse {@link Buchung}
 	 * @throws IOException
 	 */
 	public static void saveBuchungToLogFile(Buchung buchung) throws IOException {
@@ -123,4 +121,5 @@ public class DateiIO {
 		bw.append("\n");
 		bw.close();
 	}
+
 }
