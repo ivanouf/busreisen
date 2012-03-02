@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Diese Klasse modelliert eine Buchung, die von einem MItarbeiter des
+ * Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des
  * Reisebüros in das Programm eingegeben wird.
  * 
  * @author Philipp
@@ -26,9 +26,9 @@ public class Buchung {
 	private int stornonr;
 
 	/**
-	 * Reiseziel des Kunden
+	 * Reiseziel des Kunden als Item der Enumeration {@link Reiseziel}
 	 */
-	private String reiseZiel;
+	private Reiseziel reiseZiel;
 
 	/**
 	 * Vom Kunden gewünschte Reisewoche
@@ -52,7 +52,7 @@ public class Buchung {
 	 * @param kunde
 	 *            Kunde, der die Reise gebucht hat
 	 */
-	public Buchung(int buchungsnr, String reiseZiel, int woche, Kunde kunde) {
+	public Buchung(int buchungsnr, Reiseziel reiseZiel, int woche, Kunde kunde) {
 		this.buchungsnr = buchungsnr;
 		this.reiseZiel = reiseZiel;
 		this.woche = woche;
@@ -122,7 +122,7 @@ public class Buchung {
 	 * 
 	 * @return Reiseziel als String
 	 */
-	public String getReiseZiel() {
+	public Reiseziel getReiseZiel() {
 		return reiseZiel;
 	}
 
@@ -132,7 +132,7 @@ public class Buchung {
 	 * @param reiseZiel
 	 *            Reiseziel als String
 	 */
-	public void setReiseZiel(String reiseZiel) {
+	public void setReiseZiel(Reiseziel reiseZiel) {
 		this.reiseZiel = reiseZiel;
 	}
 
