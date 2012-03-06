@@ -9,9 +9,21 @@ package model;
  */
 public class Bus {
 
+	/**
+	 * Anzahl der Plätze in einen Bus, die insgesamt zur Verfügung stehen.
+	 */
 	private int anzahlPlaetze;
+	/**
+	 * Anzahl der Plätze in einen Bus, die noch frei sind.
+	 */
 	private int anzahlFreiePlaetze;
+	/**
+	 * Woche, in der der Bus fährt.
+	 */
 	private int woche;
+	/**
+	 * Reiseziel des Busses als Item der Enumeration {@link Reiseziel}
+	 */
 	private Reiseziel reiseZiel;
 
 	/**
