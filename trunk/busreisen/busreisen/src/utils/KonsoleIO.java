@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import model.Kunde;
+import model.Reiseziel;
+
 /**
  * Diese Klasse ist für die Ein- und die Ausgaben auf der Konsole zuständig.
  * 
@@ -134,4 +137,55 @@ public class KonsoleIO {
 			return " ";
 		}
 	}
+
+	/**
+	 * Diese Methode filtert aus einer Auswahl von Kunden einen spezifizierten
+	 * Kunden heraus.
+	 * 
+	 * @param kunden
+	 *            Array von Instanzen vom Typ {@link Kunde}
+	 * @return Position des gewünschten Kunden im Array
+	 */
+	public static int readGewuenschterKunde(Kunde[] kunden) {
+		int menge = kunden.length;
+		System.out.println("Spezifizieren Sie Ihre Auswahl:");
+		for (int i = 0; i < menge; i++) {
+			System.out.println(kunden[i].getVorname() + " "
+					+ kunden[i].getName() + ", " + kunden[i].getAdresse()
+					+ ", " + kunden[i].getTelefonnr() + " [" + (i + 1) + "]");
+		}
+		return readIntegerFromConsole("Geben Sie die entsprechende Nummer hinter dem Datensatz ein: ") - 1;
+	}
+
+	/**
+	 * Diese Methode ermöglicht es dem Benutzer, das Reiseziel über die Konsole
+	 * zu bestimmen.
+	 * 
+	 * @return Wert von {@link Reiseziel}
+	 */
+	public static Reiseziel readGewuenschtesReiseziel() {
+		System.out.println("Wohin möchte der Kunde reisen?");
+		System.out.println("Madrid: [1]");
+		System.out.println("Berlin: [2]");
+		System.out.println("Wien:   [3]");
+		System.out.println("Rom:    [4]");
+		int antwort = 0;
+		do {
+			antwort = readIntegerFromConsole("Geben Sie die entsprechende Nummer an:");
+			switch (antwort) {
+			case 1:
+				return Reiseziel.MADRID;
+			case 2:
+				return Reiseziel.BERLIN;
+			case 3:
+				return Reiseziel.WIEN;
+			case 4:
+				return Reiseziel.ROM;
+			default:
+				printFehlermeldung("Diese Zahl ist ungültig!");
+			}
+		} while ((antwort < 1) || (antwort > 4));
+		return null;
+	}
+
 }

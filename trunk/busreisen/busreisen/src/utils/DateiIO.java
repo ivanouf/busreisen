@@ -105,7 +105,7 @@ public class DateiIO {
 	 * @return Array von Kunden
 	 * @throws IOException
 	 */
-	public static Kunde[] searchKundeFromCSV(String name, String vorname)
+	public static Kunde[] searchKundeInKundenstamm(String name, String vorname)
 			throws IOException {
 		FileReader fr = new FileReader(KUNDEN_FILE);
 		BufferedReader br = new BufferedReader(fr);
@@ -171,4 +171,33 @@ public class DateiIO {
 		bw.close();
 	}
 
+	/**
+	 * Diese Methode sucht eine Buchung zur entsprechenden Buchungsnummer.
+	 * 
+	 * @param buchungsnr
+	 *            Nummer der gesuchten Buchung
+	 * @return Instanz der Klasse {@link Buchung}
+	 * @throws IOException
+	 */
+	public static Buchung searchBuchungInLogFile(int buchungsnr)
+			throws Exception {
+		FileReader fr = new FileReader(LOGFILE);
+		BufferedReader br = new BufferedReader(fr);
+		String line = "";
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			int nummer = Integer.parseInt(items[1]);
+			if (nummer == buchungsnr) {
+				Buchung b = new Buchung();
+				b.setBuchungsnr(buchungsnr);
+				b.setKunde(new Kunde(items[2], items[3], items[4], items[5]));
+				// TODO: Reiseziel muss eingetragen werden.
+				int plaetze = Integer.parseInt(items[7]);
+				b.setPlaetze(plaetze);
+				return b;
+			}
+		}
+		return null;
+	}
 }

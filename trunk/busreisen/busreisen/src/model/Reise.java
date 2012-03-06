@@ -1,8 +1,10 @@
 package model;
+
 /**
  * Diese Klasse verwaltet die Reisedaten.
+ * 
  * @author Thomas
- * @version 02.03.2012
+ * @version 06.03.2012
  */
 public class Reise {
 	/**
@@ -17,7 +19,7 @@ public class Reise {
 	 * Array Busse vom Typ Bus, in dem die Busse verwaltet werden
 	 */
 	private Bus busse[];
-	
+
 	/**
 	 * Diese Methode richtet die Busse ein.
 	 */
@@ -45,93 +47,55 @@ public class Reise {
 			break;
 		}
 	}
-	
+
 	/**
 	 * Der Konstrukter setzt die Startvariablen der Reise
+	 * 
 	 * @param ziel
-	 * 				Ziel der Reise
+	 *            Ziel der Reise
 	 * @param start
-	 * 				Starttag der Reise
+	 *            Starttag der Reise
 	 */
-	public Reise(Reiseziel ziel, Wochentag start){
+	public Reise(Reiseziel ziel, Wochentag start) {
 		busse = new Bus[3];
 		this.ziel = ziel;
 		this.starttag = start;
 		richteBusseEin();
-		
-	}
-	/**
-	 * Diese Methode gibt das Ziel der Reise zurück.
-	 * @return ziel
-	 */
-	public Reiseziel getReiseziel(){
-		return ziel;
-	}
-	/**
-	 * Diese Methode gibt den Starttag zurück.
-	 * @return starttag
-	 */
-	public Wochentag getStarttag(){
-		return starttag;
-	}
-	
-	/**
-	 * Diese Methode überprüft, ob die Buchung in Ordnung ist.
-	 * @param starttag
-	 * 				Tag an dem die Reise startet
-	 * @param buchung
-	 * 				Instanz der Klasse {@link Buchung}
-	 * @return Error-Code: <br>
-	 * 0 --> Bus nicht überbucht und Starttag OK
-	 * 1 --> Bus überbucht und Starttag OK
-	 * 2 --> Bus nicht überbucht und Starttag falsch
-	 * 3 --> Bus überbucht und Starttag falsch
-	 */
-	public int buchungOK(Wochentag starttag, Buchung buchung) {
-		int rueckgabeTag = 100;
-//		switch (starttag) {
-//		case MONTAG:
-//			rueckgabeTag = 0;
-//			break;
-//		case FREITAG:
-//			rueckgabeTag = 0;
-//			break;
-//		case SAMSTAG:
-//			rueckgabeTag = 0;
-//			break;
-//		case SONNTAG:
-//			rueckgabeTag = 0;
-//			break;
-//		default:
-//			rueckgabeTag = 2;
-//			break;
-//		}
-		
-		if (starttag.equals(this.starttag)) {
-			rueckgabeTag = 0;
-		}
-		
-		int rueckgabeUeberbucht = 100;
-		if(rueckgabeTag == 0) {
-			Bus gebuchter_bus = busse[buchung.getWoche()-1];
-			if ( gebuchter_bus.getAnzahlFreiePlaetze() >= buchung.getPlaetze() ) {
-				rueckgabeUeberbucht = 0;
-			}
-		}
-		int rueckgabe = 10;
-		if((rueckgabeTag == 0) && (rueckgabeUeberbucht == 0)){
-			return 0;
-		}
-		else if ((rueckgabeTag > 0) && (rueckgabeUeberbucht == 0)){
-			return 2;
-		}
-		else if (( rueckgabeTag == 0) && (rueckgabeUeberbucht > 0)){
-			return 1;
-		}
-		else {
-			return 3;
-		}	
+
 	}
 
-	
+	/**
+	 * Diese Methode gibt das Ziel der Reise zurï¿½ck.
+	 * 
+	 * @return ziel
+	 */
+	public Reiseziel getReiseziel() {
+		return ziel;
+	}
+
+	/**
+	 * Diese Methode gibt den Starttag zurï¿½ck.
+	 * 
+	 * @return starttag
+	 */
+	public Wochentag getStarttag() {
+		return starttag;
+	}
+
+	/**
+	 * Diese Methode Ã¼berprÃ¼ft, ob die Buchung fÃ¼r diese Reise in Ordnung ist.
+	 * 
+	 * @param buchung
+	 *            Instanz der Klasse {@link Buchung}
+	 * @return true or false
+	 * 
+	 */
+	public boolean buchungOK(Buchung buchung) {
+		Bus gebuchter_bus = busse[buchung.getWoche() - 1];
+		if (gebuchter_bus.getAnzahlFreiePlaetze() >= buchung.getPlaetze()) {
+			return true;
+		} else
+			return false;
+	}
+
 }
