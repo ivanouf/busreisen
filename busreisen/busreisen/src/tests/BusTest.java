@@ -3,7 +3,7 @@
  */
 package tests;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 import model.Bus;
 import model.Reiseziel;
 
@@ -11,13 +11,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author philipp
+ * Dieser TestCase testet die Klasse {@link Bus}.
  * 
+ * @author Philipp
+ * @version 06.03.2012
  */
 public class BusTest {
 
 	private Bus bus1;
 	private Bus bus2;
+	private static final String ERROR = "Werte stimmen nicht überein.";
 
 	/**
 	 * @throws java.lang.Exception
@@ -33,7 +36,7 @@ public class BusTest {
 	 */
 	@Test
 	public void testGetAnzahlPlaetze() {
-		fail("Not yet implemented");
+		assertEquals(ERROR, 40, bus2.getAnzahlPlaetze());
 	}
 
 	/**
@@ -41,7 +44,8 @@ public class BusTest {
 	 */
 	@Test
 	public void testSetAnzahlPlaetze() {
-		fail("Not yet implemented");
+		bus1.setAnzahlPlaetze(50);
+		assertEquals(ERROR, 50, bus1.getAnzahlPlaetze());
 	}
 
 	/**
@@ -49,7 +53,7 @@ public class BusTest {
 	 */
 	@Test
 	public void testGetAnzahlFreiePlaetze() {
-		fail("Not yet implemented");
+		assertEquals(ERROR, 40, bus2.getAnzahlFreiePlaetze());
 	}
 
 	/**
@@ -57,7 +61,8 @@ public class BusTest {
 	 */
 	@Test
 	public void testSetAnzahlFreiePlaetze() {
-		fail("Not yet implemented");
+		bus1.setAnzahlFreiePlaetze(20);
+		assertEquals(ERROR, 20, bus1.getAnzahlFreiePlaetze());
 	}
 
 	/**
@@ -65,7 +70,7 @@ public class BusTest {
 	 */
 	@Test
 	public void testGetWoche() {
-		fail("Not yet implemented");
+		assertEquals(ERROR, 1, bus2.getWoche());
 	}
 
 	/**
@@ -73,7 +78,8 @@ public class BusTest {
 	 */
 	@Test
 	public void testSetWoche() {
-		fail("Not yet implemented");
+		bus1.setWoche(2);
+		assertEquals(ERROR, 2, bus1.getWoche());
 	}
 
 	/**
@@ -81,7 +87,7 @@ public class BusTest {
 	 */
 	@Test
 	public void testGetReiseZiel() {
-		fail("Not yet implemented");
+		assertEquals(ERROR, Reiseziel.BERLIN, bus2.getReiseZiel());
 	}
 
 	/**
@@ -89,7 +95,8 @@ public class BusTest {
 	 */
 	@Test
 	public void testSetReiseZiel() {
-		fail("Not yet implemented");
+		bus1.setReiseZiel(Reiseziel.MADRID);
+		assertEquals(ERROR, Reiseziel.MADRID, bus1.getReiseZiel());
 	}
 
 }

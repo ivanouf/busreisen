@@ -2,10 +2,10 @@ package model;
 
 /**
  * Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des
- * Reisebüros in das Programm eingegeben wird.
+ * ReisebÃ¼ros in das Programm eingegeben wird.
  * 
  * @author Philipp
- * @version 02.03.2012
+ * @version 06.03.2012
  */
 public class Buchung {
 
@@ -15,7 +15,7 @@ public class Buchung {
 	private Kunde kunde;
 
 	/**
-	 * Buchungsnummer für diesen Kunden
+	 * Buchungsnummer fÃ¼r diesen Kunden
 	 */
 	private int buchungsnr;
 
@@ -31,22 +31,33 @@ public class Buchung {
 	private Reiseziel reiseZiel;
 
 	/**
-	 * Vom Kunden gewünschte Reisewoche
+	 * Vom Kunden gewÃ¼nschte Reisewoche
 	 */
 	private int woche;
 
 	/**
-	 * Vom Kunden gebuchte Anzahl der Plätze
+	 * Vom Kunden gebuchte Anzahl der PlÃ¤tze
 	 */
 	private int plaetze;
 
 	/**
-	 * Im Konstruktor wird die Buchung über folgende Parameter definiert.
+	 * Dieser Konstruktor erstellt eine leere Buchung.
+	 */
+	public Buchung() {
+		this.buchungsnr = 0;
+		this.reiseZiel = null;
+		this.woche = 0;
+		this.kunde = null;
+		this.stornonr = 0;
+	}
+
+	/**
+	 * Im Konstruktor wird die Buchung Ã¼ber folgende Parameter definiert.
 	 * 
 	 * @param buchungsnr
 	 *            vom System zugewiesene Buchungsnummer
 	 * @param reiseZiel
-	 *            gewünschtes Reiseziel des Kunden
+	 *            gewÃ¼nschtes Reiseziel des Kunden
 	 * @param woche
 	 *            gebuchte Reisewoche
 	 * @param kunde
@@ -61,7 +72,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode git den Kunden zurück, zu dem die Buchnung gehört hat.
+	 * Diese Methode git den Kunden zurÃ¼ck, zu dem die Buchnung gehÃ¶rt hat.
 	 * 
 	 * @return Instanz vom Typ {@link Kunde}
 	 */
@@ -70,7 +81,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert den Kunden, zu dem die Buchnung gehört.
+	 * Diese Methode definiert den Kunden, zu dem die Buchnung gehÃ¶rt.
 	 * 
 	 * @param kunde
 	 *            Instanz vom Typ {@link Kunde}
@@ -80,7 +91,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Buchungsnummer zurück.
+	 * Diese Methode gibt die Buchungsnummer zurÃ¼ck.
 	 * 
 	 * @return Buchungsnummer als ganze Zahl
 	 */
@@ -99,7 +110,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Stornonummer zurück.
+	 * Diese Methode gibt die Stornonummer zurÃ¼ck.
 	 * 
 	 * @return Stornonummer als ganze Zahl
 	 */
@@ -112,13 +123,16 @@ public class Buchung {
 	 * 
 	 * @param stornonr
 	 *            Stornonummer als ganze Zahl
+	 * @param stornierte_plaetze
+	 *            Anzahl der PlÃ¤tze, die storniert werden sollen
 	 */
-	public void setStornonr(int stornonr) {
+	public void storniere(int stornonr, int stornierte_plaetze) {
 		this.stornonr = stornonr;
+		this.plaetze = this.plaetze - stornierte_plaetze;
 	}
 
 	/**
-	 * Diese Methode gibt das Reiseziel zurück.
+	 * Diese Methode gibt das Reiseziel zurÃ¼ck.
 	 * 
 	 * @return Reiseziel als String
 	 */
@@ -137,7 +151,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Woche zurück.
+	 * Diese Methode gibt die Woche zurÃ¼ck.
 	 * 
 	 * @return Woche als ganze Zahl
 	 */
@@ -156,19 +170,19 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Anzahl der gebuchten Plätze zurück.
+	 * Diese Methode gibt die Anzahl der gebuchten PlÃ¤tze zurÃ¼ck.
 	 * 
-	 * @return Anzahl der Plätze als ganze Zahl
+	 * @return Anzahl der PlÃ¤tze als ganze Zahl
 	 */
 	public int getPlaetze() {
 		return plaetze;
 	}
 
 	/**
-	 * Diese Methode definiert die Anzahl der gebuchten Plätze.
+	 * Diese Methode definiert die Anzahl der gebuchten PlÃ¤tze.
 	 * 
 	 * @param plaetze
-	 *            Anzahl der Plätze als ganze Zahl
+	 *            Anzahl der PlÃ¤tze als ganze Zahl
 	 */
 	public void setPlaetze(int plaetze) {
 		this.plaetze = plaetze;
