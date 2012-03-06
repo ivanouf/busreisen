@@ -1,7 +1,9 @@
 package utils;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,28 +11,28 @@ import model.Buchung;
 import model.Kunde;
 
 /**
- * Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm
+ * Diese Klasse lÃ¤dt und speichert die Daten der Bussoftware. Der Kundenstamm
  * wird in einer .csv-Datei abgelegt. Die Buchungen und Stornierungen werden in
  * einer Textdatei mitgeschrieben.
  * 
  * @author Philipp
- * @version 02.03.2012
+ * @version 06.03.2012
  * 
  */
 public class DateiIO {
 
 	/**
-	 * Tabellenüberschriften in der CSV-Datei
+	 * Tabellenï¿½berschriften in der CSV-Datei
 	 */
 	private static String[] kunden_headers = { "Name", "Vorname", "Adresse",
 			"Telefonnummer" };
 
 	/**
-	 * Tabellenüberschriften in der Log-Datei
+	 * Tabellenï¿½berschriften in der Log-Datei
 	 */
 	private static String[] log_headers = { "Art der Buchung", "Nummer",
 			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel",
-			"Anzahl der Plätze" };
+			"Anzahl der Plï¿½tze" };
 
 	/**
 	 * Name der Logdatei
@@ -40,16 +42,16 @@ public class DateiIO {
 	/**
 	 * Name der .csv-Datei, in der die Kunden gespeichert sind
 	 */
-	private static final String CSVFILE = "Bussoftware_Kunden.csv";
+	private static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
 
 	/**
-	 * Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der
+	 * Diese Methode schreibt die Tabellenï¿½berschriften in die CSV-Datei, in der
 	 * die Kunden gespeichert werden.
 	 * 
 	 * @throws IOException
 	 */
 	public static void writeHeadersInCSV() throws IOException {
-		File csv_file = new File(CSVFILE);
+		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 		for (int i = 0; i < kunden_headers.length; i++) {
 			bw.write(kunden_headers[i] + ";");
@@ -59,7 +61,7 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode schreibt die tabellenüberschriften in die Logdatei.
+	 * Diese Methode schreibt die tabellenï¿½berschriften in die Logdatei.
 	 * 
 	 * @throws IOException
 	 */
@@ -81,7 +83,7 @@ public class DateiIO {
 	 * @throws IOException
 	 */
 	public static void saveKundeToCSV(Kunde kunde) throws IOException {
-		File csv_file = new File(CSVFILE);
+		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 		bw.append(kunde.getName() + ";");
 		bw.append(kunde.getVorname() + ";");
@@ -92,7 +94,54 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode speichert eine übergebene Buchung in einer Log-Datei.
+	 * Diese Methode sucht einen Kunden aus der CSV-Datei mithilfe seines Vor-
+	 * und Nachnamens. Da MehrfacheintrÃ¤ge mÃ¶glich sind, wird ein Array von
+	 * Kunden zurÃ¼ckgegeben.
+	 * 
+	 * @param name
+	 *            Nachname des gesuchten Kunden
+	 * @param vorname
+	 *            Vorname des gesuchten Kunden
+	 * @return Array von Kunden
+	 * @throws IOException
+	 */
+	public static Kunde[] searchKundeFromCSV(String name, String vorname)
+			throws IOException {
+		FileReader fr = new FileReader(KUNDEN_FILE);
+		BufferedReader br = new BufferedReader(fr);
+		String line = "";
+		// Der erste Durchlauf dient dazu, herauszufinden, wie viele Kunden es
+		// zu dem Ã¼bergebenem Namen gibt.
+		int menge = 0;
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if ((items[0].equals(name)) && (items[1].equals(vorname))) {
+				menge++;
+			}
+		}
+
+		// Der zweite Durchlauf dient dazu, das zurÃ¼ckgegebene Array zu fÃ¼llen.
+		Kunde[] results = new Kunde[menge];
+
+		br = new BufferedReader(fr);
+		line = "";
+		int counter = 0;
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if ((items[0].equals(name)) && (items[1].equals(vorname))) {
+				results[counter] = new Kunde(items[0], items[1], items[2],
+						items[3]);
+				counter++;
+			}
+		}
+
+		return results;
+	}
+
+	/**
+	 * Diese Methode speichert eine ï¿½bergebene Buchung in einer Log-Datei.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
