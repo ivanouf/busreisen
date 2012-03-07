@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Diese Enumeration verwaltet die Reiseziele des Reisebüros.
+ * Diese Enumeration verwaltet die Reiseziele des ReisebÃ¼ros.
  * 
  * @author Thomas
  * @version 02.03.2012
@@ -11,7 +11,7 @@ public enum Reiseziel {
 	MADRID, WIEN, ROM, BERLIN;
 
 	/**
-	 * Diese Methode gibt das übergebene Reiseziel als String aus.
+	 * Diese Methode gibt das Ã¼bergebene Reiseziel als String aus.
 	 * 
 	 * @param ziel
 	 *            Item aus der Enumeration Reiseziel
