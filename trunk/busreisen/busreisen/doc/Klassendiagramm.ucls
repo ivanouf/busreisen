@@ -18,7 +18,7 @@
   </class>  
   <class id="3" corner="BOTTOM_RIGHT" language="java" name="model.Kunde" project="busreisen" 
     file="/busreisen/src/model/Kunde.java" binary="false">    
-    <position height="-1" width="-1" x="395" y="171"/>    
+    <position height="-1" width="-1" x="445" y="171"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -26,7 +26,7 @@
   </class>  
   <enumeration id="4" corner="BOTTOM_RIGHT" language="java" name="model.Reiseziel" project="busreisen" 
     file="/busreisen/src/model/Reiseziel.java" binary="false">    
-    <position height="-1" width="-1" x="1004" y="171"/>    
+    <position height="-1" width="-1" x="720" y="456"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -34,26 +34,58 @@
   </enumeration>  
   <enumeration id="5" corner="BOTTOM_RIGHT" language="java" name="model.Wochentag" project="busreisen" 
     file="/busreisen/src/model/Wochentag.java" binary="false">    
-    <position height="-1" width="-1" x="159" y="443"/>    
+    <position height="-1" width="-1" x="157" y="457"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </enumeration>  
-  <association id="6">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="7" name="reiseZiel"/>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="model.Reise" project="busreisen" 
+    file="/busreisen/src/model/Reise.java" binary="false">    
+    <position height="-1" width="-1" x="483" y="457"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association id="7">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="8" name="starttag"/>      
+      <multiplicity id="9" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="10">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="11" name="busse"/>      
+      <multiplicity id="12" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="14" name="ziel"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="9">    
+  <association id="16">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="10" name="kunde"/>      
-      <multiplicity id="11" minimum="0" maximum="1"/>    
+      <attribute id="17" name="kunde"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="20" name="reiseZiel"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    

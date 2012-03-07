@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import model.Buchung;
 import model.Kunde;
+import model.Reiseziel;
 
 /**
  * Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm
@@ -22,13 +23,13 @@ import model.Kunde;
 public class DateiIO {
 
 	/**
-	 * Tabellen�berschriften in der CSV-Datei
+	 * Tabellenüberschriften in der CSV-Datei
 	 */
 	private static String[] kunden_headers = { "Name", "Vorname", "Adresse",
 			"Telefonnummer" };
 
 	/**
-	 * Tabellen�berschriften in der Log-Datei
+	 * Tabellenüberschriften in der Log-Datei
 	 */
 	private static String[] log_headers = { "Art der Buchung", "Nummer",
 			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel",
@@ -45,7 +46,7 @@ public class DateiIO {
 	private static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
 
 	/**
-	 * Diese Methode schreibt die Tabellen�berschriften in die CSV-Datei, in der
+	 * Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der
 	 * die Kunden gespeichert werden.
 	 * 
 	 * @throws IOException
@@ -61,7 +62,7 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode schreibt die tabellen�berschriften in die Logdatei.
+	 * Diese Methode schreibt die Tabellenüberschriften in die Logdatei.
 	 * 
 	 * @throws IOException
 	 */
@@ -82,7 +83,7 @@ public class DateiIO {
 	 *            Instanz der Klasse {@link Kunde}
 	 * @throws IOException
 	 */
-	public static void saveKundeToCSV(Kunde kunde) throws IOException {
+	public static void saveKundeToKundentamm(Kunde kunde) throws IOException {
 		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 		bw.append(kunde.getName() + ";");
@@ -106,7 +107,7 @@ public class DateiIO {
 	 * @throws IOException
 	 */
 	public static Kunde[] searchKundeInKundenstamm(String name, String vorname)
-			throws IOException {
+			throws Exception {
 		FileReader fr = new FileReader(KUNDEN_FILE);
 		BufferedReader br = new BufferedReader(fr);
 		String line = "";
@@ -141,7 +142,7 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode speichert eine �bergebene Buchung in einer Log-Datei.
+	 * Diese Methode speichert eine übergebene Buchung in einer Log-Datei.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
@@ -192,7 +193,7 @@ public class DateiIO {
 				Buchung b = new Buchung();
 				b.setBuchungsnr(buchungsnr);
 				b.setKunde(new Kunde(items[2], items[3], items[4], items[5]));
-				// TODO: Reiseziel muss eingetragen werden.
+				b.setReiseZiel(Reiseziel.valueOf(items[6]));
 				int plaetze = Integer.parseInt(items[7]);
 				b.setPlaetze(plaetze);
 				return b;
