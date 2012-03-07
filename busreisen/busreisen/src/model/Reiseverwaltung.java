@@ -12,7 +12,7 @@ import utils.KonsoleIO;
  * @version 06.03.2012
  *
  */
-public class Busverwaltung {
+public class Reiseverwaltung {
 
 	private static final String OUTPUT_FEHLERMELDUNG = "Fehler beim Speichern!";
 	
@@ -50,7 +50,7 @@ public class Busverwaltung {
 	/**
 	 * Der Konstruktor initialisiert die Attribute mit festgelegten Werten.
 	 */
-	public Busverwaltung(){
+	public Reiseverwaltung(){
 		this.aktuelleBuchungsNr = 100;
 		this.aktuelleStornoNr = 1000;
 		this.gesuchteBuchungsNr = 0;
@@ -168,14 +168,27 @@ public class Busverwaltung {
 	 * 				false für fehlgeschlagen
 	 */
 	public void stornieren(){
+		Buchung stornierung;
+		int plaetze = -1;
 		int antwort = KonsoleIO.readIntegerFromConsole("Geben Sie die Nummer zu der Buchung ein, die Sie stornieren wollen!");
 		try {
-			Buchung stornierung = DateiIO.searchBuchungInLogFile(aktuelleStornoNr);
+			stornierung = DateiIO.searchBuchungInLogFile(antwort);
+			while((plaetze < 0) || (plaetze>stornierung.getPlaetze()) ){ 
+				
+				plaetze = KonsoleIO.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die storniert werden sollen!");
+				if ((plaetze < 0) || (plaetze>stornierung.getPlaetze())){
+					KonsoleIO.printFehlermeldung("Fehlerhafte Eingabe! Wiederhohlen Sie die Eingabe!");
+				}
+			}
+			stornierung.storniere(aktuelleStornoNr, plaetze);
+			aktuelleStornoNr++;
+			DateiIO.saveBuchungToLogFile(stornierung);
+			
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
 		
-		aktuelleStornoNr++;
+		
 	}
 	
 	/**
