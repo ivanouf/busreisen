@@ -143,7 +143,7 @@ public class Reiseverwaltung {
 				int antwort = KonsoleIO.readGewuenschterKunde(kunde);
 				return kunde[antwort];
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
 		return null;
@@ -232,8 +232,8 @@ public class Reiseverwaltung {
 				break;
 //			}
 			}
-			DateiIO.saveKundeToCSV(reisender);
-		} catch (IOException e) {
+			DateiIO.saveKundeToKundenstamm(reisender);
+		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
 	}
@@ -306,8 +306,17 @@ public class Reiseverwaltung {
 	 * @param gesuchteBuchungsNr
 	 * @return
 	 */
-	public int suchen(int gesuchteBuchungsNr){
-		return 0;
+	public void sucheBuchung(){
+		Kunde kunden[];
+		Buchung buchung;
+		try {
+			buchung = DateiIO.searchBuchungInLogFile(aktuelleBuchungsNr);
+			kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde().getName(),buchung.getKunde().getVorname());
+		} catch (Exception e) {
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
+			
+		}
+		
 	}
 	
 	/**
@@ -325,7 +334,7 @@ public class Reiseverwaltung {
 		String adresse = KonsoleIO.readStringFromConsole("Geben Sie die Adresse des Kunden ein!");
 		reisender.setAdresse(adresse);
 		try {
-			DateiIO.saveKundeToCSV(reisender);
+			DateiIO.saveKundeToKundenstamm(reisender);
 		} catch (IOException e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
