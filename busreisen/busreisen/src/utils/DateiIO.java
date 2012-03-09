@@ -38,12 +38,12 @@ public class DateiIO {
 	/**
 	 * Name der Logdatei
 	 */
-	private static final String LOGFILE = "Bussoftware_Log.csv";
+	public static final String LOGFILE = "Bussoftware_Log.csv";
 
 	/**
 	 * Name der .csv-Datei, in der die Kunden gespeichert sind
 	 */
-	private static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
+	public static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
 
 	/**
 	 * Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der
@@ -51,7 +51,7 @@ public class DateiIO {
 	 * 
 	 * @throws IOException
 	 */
-	public static void writeHeadersInCSV() throws IOException {
+	public static void writeHeadersInKundenFile() throws IOException {
 		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 		for (int i = 0; i < kunden_headers.length; i++) {
