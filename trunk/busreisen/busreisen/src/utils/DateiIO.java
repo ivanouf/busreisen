@@ -17,7 +17,7 @@ import model.Reiseziel;
  * einer Textdatei mitgeschrieben.
  * 
  * @author Philipp
- * @version 06.03.2012
+ * @version 09.03.2012
  * 
  */
 public class DateiIO {
@@ -32,8 +32,8 @@ public class DateiIO {
 	 * Tabellenüberschriften in der Log-Datei
 	 */
 	private static String[] log_headers = { "Art der Buchung", "Nummer",
-			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel",
-			"Anzahl der Pl�tze" };
+			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel", "Woche",
+			"Anzahl der Plaetze", "Geaendert" };
 
 	/**
 	 * Name der Logdatei
@@ -83,7 +83,7 @@ public class DateiIO {
 	 *            Instanz der Klasse {@link Kunde}
 	 * @throws IOException
 	 */
-	public static void saveKundeToKundentamm(Kunde kunde) throws IOException {
+	public static void saveKundeToKundenstamm(Kunde kunde) throws IOException {
 		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 		bw.append(kunde.getName() + ";");
@@ -137,7 +137,7 @@ public class DateiIO {
 				counter++;
 			}
 		}
-
+		br.close();
 		return results;
 	}
 
@@ -167,6 +167,7 @@ public class DateiIO {
 		bw.append(buchung.getKunde().getAdresse() + ";");
 		bw.append(buchung.getKunde().getTelefonnr() + ";");
 		bw.append(buchung.getReiseZiel().toString() + ";");
+		bw.append(buchung.getWoche() + ";");
 		bw.append(String.valueOf(buchung.getPlaetze()));
 		bw.append("\n");
 		bw.close();
@@ -194,11 +195,63 @@ public class DateiIO {
 				b.setBuchungsnr(buchungsnr);
 				b.setKunde(new Kunde(items[2], items[3], items[4], items[5]));
 				b.setReiseZiel(Reiseziel.valueOf(items[6]));
-				int plaetze = Integer.parseInt(items[7]);
+				int woche = Integer.parseInt(items[7]);
+				b.setWoche(woche);
+				int plaetze = Integer.parseInt(items[8]);
 				b.setPlaetze(plaetze);
 				return b;
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurueck.
+	 * 
+	 * @param ziel
+	 *            Reiseziel als String
+	 * @param woche
+	 *            Woche, in der die Reise stattfindet als Integer
+	 * @return Array von Kunden, in dem sie ihren Namen nach lexikographisch
+	 *         sortiert sind
+	 * @throws Exception
+	 */
+	public static Kunde[] getTeilnehmerZuReise(String ziel, int woche)
+			throws Exception {
+		int menge = 0;
+		FileReader fr = new FileReader(LOGFILE);
+		BufferedReader br = new BufferedReader(fr);
+		String line = "";
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if ((ziel.equals(items[6]))
+					&& (woche == Integer.parseInt(items[7]))) {
+				if (!(items[9].equals("ja"))) {
+					menge++;
+				}
+			}
+		}
+
+		Kunde[] teilnehmer = new Kunde[menge];
+		br = new BufferedReader(fr);
+		line = "";
+		int counter = 0;
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if ((ziel.equals(items[6]))
+					&& (woche == Integer.parseInt(items[7]))) {
+				if (!(items[9].equals("ja"))) {
+					teilnehmer[counter] = new Kunde(items[2], items[3],
+							items[4], items[5]);
+					counter++;
+				}
+			}
+		}
+		br.close();
+
+		Sortierverfahren.bubbleSort(teilnehmer);
+		return teilnehmer;
 	}
 }
