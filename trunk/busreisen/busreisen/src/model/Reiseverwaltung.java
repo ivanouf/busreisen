@@ -203,10 +203,10 @@ public class Reiseverwaltung {
 			KonsoleIO.readGewuenschterKunde(kunden);
 			int pos = KonsoleIO.readGewuenschterKunde(kunden);
 			reisender = kunden[pos];
-			System.out.println("Nachnamen := 1");
-			System.out.println("Vornamen := 2");
-			System.out.println("Adresse := 3");
-			System.out.println("Telefonnummer := 4");
+			System.out.println("Nachnamen \t\t:= \t1");
+			System.out.println("Vornamen \t\t:= \t2");
+			System.out.println("Adresse \t\t:= \t3");
+			System.out.println("Telefonnummer \t:= \t4");
 			int eingabe = KonsoleIO.readIntegerFromConsole("Was möchten Sie verändern? (1-4; 0 = Abbruch)");
 //			while(eingabe != 0){
 			switch (eingabe){
@@ -249,13 +249,13 @@ public class Reiseverwaltung {
 			kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde().getName(),buchung.getKunde().getVorname());
 			int pos = KonsoleIO.readGewuenschterKunde(kunden);
 			reisender = kunden[pos];
-			System.out.println("Nachnamen := 1");
-			System.out.println("Vornamen := 2");
-			System.out.println("Adresse := 3");
-			System.out.println("Telefonnummer := 4");
-			System.out.println("Ziel := 5");
-			System.out.println("Woche := 6");
-			System.out.println("Anzahl der Plaetze := 7");
+			System.out.println("Nachnamen \t:= \t1");
+			System.out.println("Vornamen \t:= \t2");
+			System.out.println("Adresse \t\t:= \t3");
+			System.out.println("Telefonnummer \t:= \t4");
+			System.out.println("Ziel \t\t:= \t5");
+			System.out.println("Woche \t\t:= \t6");
+			System.out.println("Anzahl der Plaetze \t:= \t7");
 			int eingabe = KonsoleIO.readIntegerFromConsole("Was möchten Sie ändern?(1-7; 0 = Abbruch)");
 //			while ( eingabe != 0 ){
 			switch (eingabe){
@@ -307,11 +307,20 @@ public class Reiseverwaltung {
 	 * @return
 	 */
 	public void sucheBuchung(){
-		Kunde kunden[];
+		
 		Buchung buchung;
 		try {
+			int aktuelleBuchungsNr = KonsoleIO.readIntegerFromConsole("Geben Sie die Buchungsnummer ein.");
 			buchung = DateiIO.searchBuchungInLogFile(aktuelleBuchungsNr);
-			kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde().getName(),buchung.getKunde().getVorname());
+			System.out.println("Buchungsnummer:\t\t"+buchung.getBuchungsnr());
+			System.out.println("Name:\t\t\t"+buchung.getKunde().getName());
+			System.out.println("Vorname:\t\t\t"+buchung.getKunde().getVorname());
+			System.out.println("Adresse:\t\t\t"+buchung.getKunde().getAdresse());
+			System.out.println("Telefonnummer:\t\t"+buchung.getKunde().getTelefonnr());
+			System.out.println("Reiseziel:\t\t\t"+buchung.getReiseZiel().toString() );
+			System.out.println("Woche:\t\t\t"+buchung.getWoche());
+			System.out.println("Plaetze:\t\t\t"+String.valueOf(buchung.getPlaetze()));
+			
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 			
