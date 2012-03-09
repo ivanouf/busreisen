@@ -192,7 +192,7 @@ public class Reiseverwaltung {
 	}
 	
 	/**
-	 * 
+	 * Diese Methode verändert Daten in einen Kunden und speichert diese.
 	 */
 	public void kundenDatenKorrektur(){
 		String name = KonsoleIO.readStringFromConsole("Geben Sie den Nachnamen des Kunden ein.");
@@ -239,12 +239,12 @@ public class Reiseverwaltung {
 	}
 	
 	/**
-	 * 
-	 * @param gesuchteBuchungsNr
+	 * Diese Methode verändert Daten in einer Buchung und speichert diese ab.
 	 */
-	public void buchungsDatenKorrektur(int gesuchteBuchungsNr){
+	public void buchungsDatenKorrektur(){
 		Kunde kunden[];
 		try {
+			int gesuchteBuchungsNr = KonsoleIO.readIntegerFromConsole("Geben Sie die Buchungsnummer ein.");
 			Buchung buchung = DateiIO.searchBuchungInLogFile(gesuchteBuchungsNr);
 			kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde().getName(),buchung.getKunde().getVorname());
 			int pos = KonsoleIO.readGewuenschterKunde(kunden);
@@ -302,9 +302,7 @@ public class Reiseverwaltung {
 	}
 	
 	/**
-	 * 
-	 * @param gesuchteBuchungsNr
-	 * @return
+	 * Diese Methode sucht eine Buchung und gibt diese auf der Konsole aus.
 	 */
 	public void sucheBuchung(){
 		
