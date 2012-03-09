@@ -29,7 +29,7 @@ public class Reiseverwaltung {
 	private int aktuelleStornoNr;
 	
 	/**
-	 * 
+	 * Instanz von {@link Kunde}.
 	 */
 	private Kunde reisender;
 	
@@ -194,15 +194,110 @@ public class Reiseverwaltung {
 	/**
 	 * 
 	 */
-	public void datenKorrektur(){
-		
+	public void kundenDatenKorrektur(){
+		String name = KonsoleIO.readStringFromConsole("Geben Sie den Nachnamen des Kunden ein.");
+		String vorname = KonsoleIO.readStringFromConsole("Geben Sie den Vornamen des Kunden ein.");
+		Kunde kunden[];
+		try {
+			kunden = DateiIO.searchKundeInKundenstamm(name,vorname);
+			KonsoleIO.readGewuenschterKunde(kunden);
+			int pos = KonsoleIO.readGewuenschterKunde(kunden);
+			reisender = kunden[pos];
+			System.out.println("Nachnamen := 1");
+			System.out.println("Vornamen := 2");
+			System.out.println("Adresse := 3");
+			System.out.println("Telefonnummer := 4");
+			int eingabe = KonsoleIO.readIntegerFromConsole("Was möchten Sie verändern? (1-4; 0 = Abbruch)");
+//			while(eingabe != 0){
+			switch (eingabe){
+			case 1:
+				name = KonsoleIO.readStringFromConsole("Geben Sie den Namen des Kunden ein!");
+				reisender.setName(name);
+				break;
+			case 2:
+				vorname = KonsoleIO.readStringFromConsole("Geben Sie den Vornamen des Kunden ein!");
+				reisender.setVorname(vorname);
+				break;
+			case 3:
+				String adresse = KonsoleIO.readStringFromConsole("Geben Sie die Adresse des Kunden ein!");
+				reisender.setAdresse(adresse);
+				break;
+			case 4:
+				String telefonnummer = KonsoleIO.readStringFromConsole("Geben Sie die Telefonnummer des Kunden ein!");
+				reisender.setTelefonnr(telefonnummer);
+				break;
+			case 0:
+				break;
+			default:
+				break;
+//			}
+			}
+			DateiIO.saveKundeToCSV(reisender);
+		} catch (IOException e) {
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
+		}
 	}
 	
 	/**
 	 * 
 	 * @param gesuchteBuchungsNr
 	 */
-	public void datenKorrektur(int gesuchteBuchungsNr){
+	public void buchungsDatenKorrektur(int gesuchteBuchungsNr){
+		Kunde kunden[];
+		try {
+			Buchung buchung = DateiIO.searchBuchungInLogFile(gesuchteBuchungsNr);
+			kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde().getName(),buchung.getKunde().getVorname());
+			int pos = KonsoleIO.readGewuenschterKunde(kunden);
+			reisender = kunden[pos];
+			System.out.println("Nachnamen := 1");
+			System.out.println("Vornamen := 2");
+			System.out.println("Adresse := 3");
+			System.out.println("Telefonnummer := 4");
+			System.out.println("Ziel := 5");
+			System.out.println("Woche := 6");
+			System.out.println("Anzahl der Plaetze := 7");
+			int eingabe = KonsoleIO.readIntegerFromConsole("Was möchten Sie ändern?(1-7; 0 = Abbruch)");
+//			while ( eingabe != 0 ){
+			switch (eingabe){
+			case 1:
+				String name = KonsoleIO.readStringFromConsole("Geben Sie den Namen des Kunden ein!");
+				reisender.setName(name);
+				break;
+			case 2:
+				String vorname = KonsoleIO.readStringFromConsole("Geben Sie den Vornamen des Kunden ein!");
+				reisender.setVorname(vorname);
+				break;
+			case 3:
+				String adresse = KonsoleIO.readStringFromConsole("Geben Sie die Adresse des Kunden ein!");
+				reisender.setAdresse(adresse);
+				break;
+			case 4:
+				String telefonnummer = KonsoleIO.readStringFromConsole("Geben Sie die Telefonnummer des Kunden ein!");
+				reisender.setTelefonnr(telefonnummer);
+				break;
+			case 5:
+				String ziel = KonsoleIO.readStringFromConsole("Geben Sie das Ziel des Kunden ein!");
+				buchung.setReiseZiel(Reiseziel.valueOf(ziel));
+				break;
+			case 6:
+				int woche = KonsoleIO.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren moechte!");
+				buchung.setWoche(woche);
+				break;
+			case 7:
+				int anzahlPlaetze = KonsoleIO.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die der Kunde buchen möchte!");
+				buchung.setPlaetze(anzahlPlaetze);
+				break;
+			default:
+				break;
+//			case 0:
+//				break;
+//			}
+			}
+			
+			DateiIO.saveBuchungToLogFile(buchung);
+		} catch (Exception e) {
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
+		}
 		
 	}
 	
