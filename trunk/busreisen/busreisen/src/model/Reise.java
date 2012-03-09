@@ -4,7 +4,7 @@ package model;
  * Diese Klasse verwaltet die Reisedaten.
  * 
  * @author Thomas
- * @version 06.03.2012
+ * @version 09.03.2012
  */
 public class Reise {
 	/**
@@ -49,7 +49,7 @@ public class Reise {
 	}
 
 	/**
-	 * Der Konstrukter setzt die Startvariablen der Reise
+	 * Der Konstrukter setzt die Startvariablen der Reise.
 	 * 
 	 * @param ziel
 	 *            Ziel der Reise
@@ -65,7 +65,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode gibt das Ziel der Reise zur�ck.
+	 * Diese Methode gibt das Ziel der Reise zurueck.
 	 * 
 	 * @return ziel
 	 */
@@ -74,7 +74,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode gibt den Starttag zur�ck.
+	 * Diese Methode gibt den Starttag zurueck.
 	 * 
 	 * @return starttag
 	 */
@@ -83,7 +83,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode überprüft, ob die Buchung für diese Reise in Ordnung ist.
+	 * Diese Methode ueberprueft, ob die Buchung für diese Reise in Ordnung ist.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
@@ -98,4 +98,17 @@ public class Reise {
 			return false;
 	}
 
+	/**
+	 * Diese Methode liefert den Bus, der in der spezifizierten Woche fährt.
+	 * 
+	 * @param woche
+	 *            Gesuchte Woche als Integer
+	 * @return Instanz der Klasse {@link Bus}
+	 */
+	public Bus getBusZurReisewoche(int woche) {
+		if ((woche >= 1) && (woche <= 3))
+			return busse[woche - 1];
+		else
+			return null;
+	}
 }
