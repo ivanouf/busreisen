@@ -5,7 +5,7 @@ package model;
  * Reisebüros in das Programm eingegeben wird.
  * 
  * @author Philipp
- * @version 06.03.2012
+ * @version 10.03.2012
  */
 public class Buchung {
 
@@ -41,6 +41,12 @@ public class Buchung {
 	private int plaetze;
 
 	/**
+	 * Falls die Buchung korrigiert wird, enthaelt dieser String den Wert "ja",
+	 * ansonsten "nein".
+	 */
+	private String korrigiert;
+
+	/**
 	 * Dieser Konstruktor erstellt eine leere Buchung.
 	 */
 	public Buchung() {
@@ -49,6 +55,7 @@ public class Buchung {
 		this.woche = 0;
 		this.kunde = null;
 		this.stornonr = 0;
+		this.korrigiert = "nein";
 	}
 
 	/**
@@ -69,6 +76,7 @@ public class Buchung {
 		this.woche = woche;
 		this.kunde = kunde;
 		this.stornonr = 0;
+		this.korrigiert = "nein";
 	}
 
 	/**
@@ -119,7 +127,8 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Stornonummer.
+	 * Diese Methode definiert die Stornonummer. Außerdem wird die Anzahl der
+	 * gebuchten Plaetze reduziert.
 	 * 
 	 * @param stornonr
 	 *            Stornonummer als ganze Zahl
@@ -186,6 +195,27 @@ public class Buchung {
 	 */
 	public void setPlaetze(int plaetze) {
 		this.plaetze = plaetze;
+	}
+
+	/**
+	 * Diese Methode gibt den Aenderungsstatus der Buchung zureck.
+	 * 
+	 * @return "ja", wenn Buchung korrigiert wurde <br>
+	 *         "nein", wenn keine Korrektur druchgefuehrt wurde
+	 */
+	public String getKorrigiert() {
+		return korrigiert;
+	}
+
+	/**
+	 * Diese Methode setzt den internen String {@link korrigiert} auf den Wert
+	 * "ja".
+	 * 
+	 * @param value
+	 *            "ja" oder "nein"
+	 */
+	public void setKorrigiert(String value) {
+		this.korrigiert = value;
 	}
 
 }
