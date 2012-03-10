@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.
+ * Diese Klasse beschreibt einen Kunden, der bei dem Reisebï¿½ro eine Reise bucht.
  * 
  * @author Philipp
  * @version 28.02.2012
@@ -40,8 +40,8 @@ public class Kunde {
 	}
 
 	/**
-	 * Der Konstruktor setzt Initalwerte für Name, Vorname, Adresse,
-	 * Telefonnummer. Außerdem werden die Buchungsnummer und die Wochennummer
+	 * Der Konstruktor setzt Initalwerte fuer Name, Vorname, Adresse,
+	 * Telefonnummer. Ausserdem werden die Buchungsnummer und die Wochennummer
 	 * mit 0 initialisiert.
 	 * 
 	 * @param name
@@ -54,11 +54,11 @@ public class Kunde {
 		this.vorname = vorname;
 		this.adresse = adresse;
 		this.telefonnr = telefonnr;
-		
+
 	}
 
 	/**
-	 * Diese Methode gibt den Namen des Kunden zurück.
+	 * Diese Methode gibt den Namen des Kunden zurueck.
 	 * 
 	 * @return Name als String
 	 */
@@ -67,7 +67,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode ändert den Namen des Kunden.
+	 * Diese Methode aendert den Namen des Kunden.
 	 * 
 	 * @param name
 	 *            Name als String
@@ -77,7 +77,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt den Vornamen des Kunden zurück.
+	 * Diese Methode gibt den Vornamen des Kunden zurueck.
 	 * 
 	 * @return Vorname als String
 	 */
@@ -86,7 +86,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode ändert den Vornamen des Kunden.
+	 * Diese Methode aendert den Vornamen des Kunden.
 	 * 
 	 * @param vorname
 	 *            Vorname als String
@@ -96,7 +96,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt die Adresse des Kunden zurück.
+	 * Diese Methode gibt die Adresse des Kunden zurueck.
 	 * 
 	 * @return adresse Adresse als String
 	 */
@@ -105,7 +105,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode ändert die Adresse des Kunden.
+	 * Diese Methode aendert die Adresse des Kunden.
 	 * 
 	 * @param adresse
 	 *            Adresse als String
@@ -115,7 +115,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt die Telefonnummer des Kunden zurück.
+	 * Diese Methode gibt die Telefonnummer des Kunden zurueck.
 	 * 
 	 * @return telefonnr Telefonnummer des Kunden
 	 */
@@ -124,7 +124,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode ändert die Telefonnummer des Kunden.
+	 * Diese Methode aendert die Telefonnummer des Kunden.
 	 * 
 	 * @param telefonnr
 	 *            Telefonnummer als String
@@ -133,4 +133,16 @@ public class Kunde {
 		this.telefonnr = telefonnr;
 	}
 
+	/**
+	 * Diese Methode wird, abgeleitet von {@link Object} und hier
+	 * ueberschrieben, verwendet, um zwei Kunden-Objekte miteinander vergleichen
+	 * zu koennen.
+	 */
+	public boolean equals(Object object) {
+		Kunde kunde = (Kunde) object;
+		return ((kunde.name.equals(this.name))
+				&& (kunde.vorname.equals(this.vorname))
+				&& (kunde.adresse.equals(this.adresse)) && (kunde.telefonnr
+					.equals(this.telefonnr)));
+	}
 }

@@ -84,6 +84,8 @@ public class Reise {
 
 	/**
 	 * Diese Methode ueberprueft, ob die Buchung für diese Reise in Ordnung ist.
+	 * Dazu wird die Anzahl der freien Plaetze im jeweiligen Bus mit der Anzahl
+	 * der gebuchten Plaetze verglichen.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}

@@ -5,6 +5,7 @@ import model.Buchung;
 import model.Kunde;
 import model.Reiseziel;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class BuchungTest {
@@ -12,17 +13,22 @@ public class BuchungTest {
 	private static final int PLAETZE = 10;
 	private Buchung buchung1;
 	private Buchung buchung2;
-	private Kunde kunde = new Kunde("Mueller", "Heinz", "Adresse", "1234");
+	private Kunde kunde;
+
+	@Before
+	public void setUp() {
+		kunde = new Kunde("Mueller", "Heinz", "Adresse", "1234");
+		buchung2 = new Buchung(101, Reiseziel.WIEN, 1, kunde);
+		buchung1 = new Buchung();
+	}
 
 	@Test
 	public void testBuchung() {
-		buchung1 = new Buchung();
 		assertEquals(0, buchung1.getBuchungsnr());
 	}
 
 	@Test
 	public void testBuchungIntReisezielIntKunde() {
-		buchung2 = new Buchung(101, Reiseziel.WIEN, 1, kunde);
 		assertEquals(101, buchung2.getBuchungsnr());
 	}
 
@@ -51,13 +57,13 @@ public class BuchungTest {
 	@Test
 	public void testGetStornonr() {
 		buchung1.storniere(409, PLAETZE);
-		assertEquals(309, buchung1.getStornonr());
+		assertEquals(409, buchung1.getStornonr());
 	}
 
 	@Test
 	public void testStorniere() {
 		buchung2.storniere(202, PLAETZE);
-		assertEquals(302, buchung2.getStornonr());
+		assertEquals(202, buchung2.getStornonr());
 	}
 
 	@Test
@@ -88,7 +94,8 @@ public class BuchungTest {
 
 	@Test
 	public void testGetPlaetze() {
-		assertEquals(PLAETZE, buchung2.getPlaetze());
+		// buchung2 muss nach dem Stornieren 0 Plaetze haben.
+		assertEquals(0, buchung2.getPlaetze());
 	}
 
 	@Test
