@@ -68,17 +68,13 @@ public class BuchungTest {
 
 	@Test
 	public void testGetReiseZiel() {
-		String expected = "Wien";
-		String actual = Reiseziel.WIEN.toString(buchung2.getReiseZiel());
-		assertEquals(expected, actual);
+		assertEquals("Wien", buchung2.getReiseZiel().toString());
 	}
 
 	@Test
 	public void testSetReiseZiel() {
 		buchung1.setReiseZiel(Reiseziel.MADRID);
-		String expected = "Madrid";
-		String actual = Reiseziel.MADRID.toString(buchung1.getReiseZiel());
-		assertEquals(expected, actual);
+		assertEquals("Madrid", buchung1.getReiseZiel().toString());
 	}
 
 	@Test

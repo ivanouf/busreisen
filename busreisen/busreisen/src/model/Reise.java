@@ -61,7 +61,6 @@ public class Reise {
 		this.ziel = ziel;
 		this.starttag = start;
 		richteBusseEin();
-
 	}
 
 	/**
@@ -98,6 +97,29 @@ public class Reise {
 			return true;
 		} else
 			return false;
+	}
+
+	/**
+	 * Diese Methode wird aufgerufen, um bei einer Buchung oder Stornierung die
+	 * Busbelegung zu aktualisieren. Bei einer Buchung wird die Anzahl der
+	 * freien Plaetze im entsprechenden Bus vermindert. Bei einer Stornierung
+	 * werden die belegten Plaetze im entsprechenden Bus freigegeben.
+	 * 
+	 * @param buchung
+	 *            Instanz von {@link Buchung}
+	 */
+	public void aktualisiereNachBuchung(Buchung buchung) {
+		int plaetze;
+		Bus bus = busse[buchung.getWoche() - 1];
+
+		// Wenn eine Stornierung vorliegt, ist die Stornonummer > 0.
+		if (buchung.getStornonr() > 0) {
+			plaetze = bus.getAnzahlFreiePlaetze() + buchung.getPlaetze();
+		} else {
+			plaetze = bus.getAnzahlFreiePlaetze() - buchung.getPlaetze();
+		}
+
+		bus.setAnzahlFreiePlaetze(plaetze);
 	}
 
 	/**
