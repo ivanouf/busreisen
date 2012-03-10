@@ -14,9 +14,7 @@ public class ReiseTest {
 
 	@Test
 	public void testGetReiseziel() {
-		String expected = "Wien";
-		String actual = Reiseziel.WIEN.toString(reise.getReiseziel());
-		assertEquals(expected, actual);
+		assertEquals("Wien", reise.getReiseziel().toString());
 	}
 
 	@Test
