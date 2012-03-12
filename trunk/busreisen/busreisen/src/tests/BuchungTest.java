@@ -17,7 +17,7 @@ public class BuchungTest {
 
 	@Before
 	public void setUp() {
-		kunde = new Kunde("Mueller", "Heinz", "Adresse", "1234");
+		kunde = new Kunde(1234, "Mueller", "Heinz", "Adresse", "12345");
 		buchung2 = new Buchung(101, Reiseziel.WIEN, 1, kunde);
 		buchung1 = new Buchung();
 	}
@@ -73,8 +73,8 @@ public class BuchungTest {
 
 	@Test
 	public void testSetReiseZiel() {
-		buchung1.setReiseZiel(Reiseziel.MADRID);
-		assertEquals("Madrid", buchung1.getReiseZiel().toString());
+		buchung1.setReiseZiel(Reiseziel.WIEN);
+		assertEquals("Wien", buchung1.getReiseZiel().toString());
 	}
 
 	@Test
@@ -84,8 +84,8 @@ public class BuchungTest {
 
 	@Test
 	public void testSetWoche() {
-		buchung1.setWoche(3);
-		assertEquals(3, buchung1.getWoche());
+		buchung1.setWoche(1);
+		assertEquals(1, buchung1.getWoche());
 	}
 
 	@Test
@@ -100,4 +100,10 @@ public class BuchungTest {
 		assertEquals(PLAETZE, buchung1.getPlaetze());
 	}
 
+	@Test
+	public void testEquals() {
+		buchung1 = new Buchung(PLAETZE, Reiseziel.ROM, 2, kunde);
+		buchung2 = new Buchung(PLAETZE, Reiseziel.ROM, 2, kunde);
+		assertEquals(true, buchung1.equals(buchung2));
+	}
 }

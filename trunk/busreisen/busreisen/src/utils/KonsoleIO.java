@@ -8,10 +8,10 @@ import model.Kunde;
 import model.Reiseziel;
 
 /**
- * Diese Klasse ist fÃ¼r die Ein- und die Ausgaben auf der Konsole zustÃ¤ndig.
+ * Diese Klasse ist für die Ein- und die Ausgaben auf der Konsole zuständig.
  * 
  * @author Philipp
- * @version 06.03.2012
+ * @version 12.03.2012
  * 
  */
 public class KonsoleIO {
@@ -35,7 +35,7 @@ public class KonsoleIO {
 	 * Diese Methode gibt eine einfache Meldung auf der Konsole aus.
 	 * 
 	 * @param msg
-	 *            Nachricht, die den Benutzer ï¿½ber den Erfolg einer Operation
+	 *            Nachricht, die den Benutzer über den Erfolg einer Operation
 	 *            informiert
 	 */
 	public static void printErfolgsmeldung(String msg) {
@@ -46,7 +46,7 @@ public class KonsoleIO {
 	 * Diese Methode gibt eine Fehlermeldung auf der Konsole aus.
 	 * 
 	 * @param msg
-	 *            Nachricht, die den Benutzer ï¿½ber die Art des Fehlers
+	 *            Nachricht, die den Benutzer über die Art des Fehlers
 	 *            informiert
 	 */
 	public static void printFehlermeldung(String msg) {
@@ -144,7 +144,7 @@ public class KonsoleIO {
 	 * 
 	 * @param kunden
 	 *            Array von Instanzen vom Typ {@link Kunde}
-	 * @return Position des gewÃ¼nschten Kunden im Array
+	 * @return Position des gewünschten Kunden im Array
 	 */
 	public static int readGewuenschterKunde(Kunde[] kunden) {
 		int menge = kunden.length;
@@ -158,13 +158,15 @@ public class KonsoleIO {
 	}
 
 	/**
-	 * Diese Methode ermÃ¶glicht es dem Benutzer, das Reiseziel Ã¼ber die Konsole
+	 * Diese Methode ermöglicht es dem Benutzer, das Reiseziel über die Konsole
 	 * zu bestimmen.
 	 * 
+	 * @param msg
+	 *            Nachricht, die den Eingabedialog einleitet
 	 * @return Wert von {@link Reiseziel}
 	 */
-	public static Reiseziel readGewuenschtesReiseziel() {
-		System.out.println("Wohin mÃ¶chte der Kunde reisen?");
+	public static Reiseziel readGewuenschtesReiseziel(String msg) {
+		System.out.println(msg);
 		System.out.println("Madrid: [1]");
 		System.out.println("Berlin: [2]");
 		System.out.println("Wien:   [3]");
@@ -182,7 +184,7 @@ public class KonsoleIO {
 			case 4:
 				return Reiseziel.ROM;
 			default:
-				printFehlermeldung("Diese Zahl ist ungÃ¼ltig!");
+				printFehlermeldung("Diese Zahl ist ungültig!");
 			}
 		} while ((antwort < 1) || (antwort > 4));
 		return null;

@@ -1,10 +1,13 @@
 package model;
 
+import utils.DateiIO;
+import utils.KonsoleIO;
+
 /**
  * Diese Klasse verwaltet die Reisedaten.
  * 
  * @author Thomas
- * @version 09.03.2012
+ * @version 12.03.2012
  */
 public class Reise {
 	/**
@@ -64,7 +67,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode gibt das Ziel der Reise zurueck.
+	 * Diese Methode gibt das Ziel der Reise zurück.
 	 * 
 	 * @return ziel
 	 */
@@ -73,7 +76,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode gibt den Starttag zurueck.
+	 * Diese Methode gibt den Starttag zurück.
 	 * 
 	 * @return starttag
 	 */
@@ -82,7 +85,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode ueberprueft, ob die Buchung fÃ¼r diese Reise in Ordnung ist.
+	 * Diese Methode ueberprueft, ob die Buchung für diese Reise in Ordnung ist.
 	 * Dazu wird die Anzahl der freien Plaetze im jeweiligen Bus mit der Anzahl
 	 * der gebuchten Plaetze verglichen.
 	 * 
@@ -123,7 +126,7 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode liefert den Bus, der in der spezifizierten Woche fÃ¤hrt.
+	 * Diese Methode liefert den Bus, der in der spezifizierten Woche fährt.
 	 * 
 	 * @param woche
 	 *            Gesuchte Woche als Integer
@@ -134,5 +137,45 @@ public class Reise {
 			return busse[woche - 1];
 		else
 			return null;
+	}
+
+	/**
+	 * Diese Methode lädt die Busbelegung, die beim Beenden der letzten Sitzung
+	 * vorlag.
+	 */
+	public void ladeBusbelegung() {
+		try {
+			// Zuerst werden alle Buchungen, die mit dieser Reise zu tun haben,
+			// in einen String geladen.
+			String buchungsKette = DateiIO
+					.searchAlleBuchungenZurReise(this.ziel.toString());
+
+			// Dieser wird den Buchungen gemaess aufgetrennt.
+			String buchungen[] = buchungsKette.split(";");
+
+			for (int i = 0; i < buchungen.length; i++) {
+				// Fuer jeden Buchungsstring wird nun ein Buchungsobjekt
+				// erstellt und mit den gefundenen Informationen belegt.
+				String items[] = buchungen[i].split(" ");
+
+				Buchung b = new Buchung();
+				b.setWoche(Integer.parseInt(items[1]));
+				b.setPlaetze(Integer.parseInt(items[2]));
+
+				int nummer = Integer.parseInt(items[0]);
+				if (nummer > 1000) {
+					b.setStornonr(nummer); // Stornonummern sind vierstellig!
+				} else {
+					b.setBuchungsnr(nummer);
+				}
+
+				// Wenn die Buchung also geladen wurde, kann die Busbelegung
+				// aktualisiert werden.
+				aktualisiereNachBuchung(b);
+			}
+		} catch (Exception e) {
+			KonsoleIO.printFehlermeldung("Fehler beim Laden der Busbelegung: "
+					+ e.getMessage());
+		}
 	}
 }

@@ -1,12 +1,17 @@
 package model;
 
 /**
- * Diese Klasse beschreibt einen Kunden, der bei dem Reisebï¿½ro eine Reise bucht.
+ * Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.
  * 
  * @author Philipp
- * @version 28.02.2012
+ * @version 11.03.2012
  */
 public class Kunde {
+
+	/**
+	 * Nummer, die den Kunden eindeutig identifiziert
+	 */
+	private int kdNummer;
 
 	/**
 	 * Name des Kunden
@@ -33,6 +38,7 @@ public class Kunde {
 	 * 0.
 	 */
 	public Kunde() {
+		this.kdNummer = 0;
 		this.name = "";
 		this.vorname = "";
 		this.adresse = "";
@@ -40,16 +46,24 @@ public class Kunde {
 	}
 
 	/**
-	 * Der Konstruktor setzt Initalwerte fuer Name, Vorname, Adresse,
-	 * Telefonnummer. Ausserdem werden die Buchungsnummer und die Wochennummer
+	 * Der Konstruktor setzt Initalwerte für Name, Vorname, Adresse,
+	 * Telefonnummer. Außerdem werden die Buchungsnummer und die Wochennummer
 	 * mit 0 initialisiert.
 	 * 
+	 * @param nummer
+	 *            Kundennummer als ganze Zahl
 	 * @param name
+	 *            Name des Kunden als String
 	 * @param vorname
+	 *            Vorname des Kunden als String
 	 * @param adresse
+	 *            Adresse des Kunden als String
 	 * @param telefonnr
+	 *            Telefonnummer des Kunden als String
 	 */
-	public Kunde(String name, String vorname, String adresse, String telefonnr) {
+	public Kunde(int nummer, String name, String vorname, String adresse,
+			String telefonnr) {
+		this.kdNummer = nummer;
 		this.name = name;
 		this.vorname = vorname;
 		this.adresse = adresse;
@@ -58,7 +72,26 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt den Namen des Kunden zurueck.
+	 * Diese Methode gibt die Kundennummer zurück.
+	 * 
+	 * @return Kundennummer als Integer
+	 */
+	public int getNummer() {
+		return kdNummer;
+	}
+
+	/**
+	 * Diese Methode setzt die Kundennummer für diesen Kunden.
+	 * 
+	 * @param kdNummer
+	 *            Kundennummer als Integer.
+	 */
+	public void setNummer(int kdNummer) {
+		this.kdNummer = kdNummer;
+	}
+
+	/**
+	 * Diese Methode gibt den Namen des Kunden zurück.
 	 * 
 	 * @return Name als String
 	 */
@@ -67,7 +100,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode aendert den Namen des Kunden.
+	 * Diese Methode ändert den Namen des Kunden.
 	 * 
 	 * @param name
 	 *            Name als String
@@ -77,7 +110,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt den Vornamen des Kunden zurueck.
+	 * Diese Methode gibt den Vornamen des Kunden zurück.
 	 * 
 	 * @return Vorname als String
 	 */
@@ -86,7 +119,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode aendert den Vornamen des Kunden.
+	 * Diese Methode ändert den Vornamen des Kunden.
 	 * 
 	 * @param vorname
 	 *            Vorname als String
@@ -96,7 +129,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt die Adresse des Kunden zurueck.
+	 * Diese Methode gibt die Adresse des Kunden zurück.
 	 * 
 	 * @return adresse Adresse als String
 	 */
@@ -105,7 +138,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode aendert die Adresse des Kunden.
+	 * Diese Methode ändert die Adresse des Kunden.
 	 * 
 	 * @param adresse
 	 *            Adresse als String
@@ -115,7 +148,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode gibt die Telefonnummer des Kunden zurueck.
+	 * Diese Methode gibt die Telefonnummer des Kunden zurück.
 	 * 
 	 * @return telefonnr Telefonnummer des Kunden
 	 */
@@ -124,7 +157,7 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode aendert die Telefonnummer des Kunden.
+	 * Diese Methode ändert die Telefonnummer des Kunden.
 	 * 
 	 * @param telefonnr
 	 *            Telefonnummer als String
@@ -134,15 +167,20 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode wird, abgeleitet von {@link Object} und hier
-	 * ueberschrieben, verwendet, um zwei Kunden-Objekte miteinander vergleichen
-	 * zu koennen.
+	 * Diese Methode gibt das Kunden-Objekt mit seinen Attributen als String
+	 * aus.
+	 */
+	public String toString() {
+		return (this.kdNummer + " " + this.name + " " + this.vorname + " "
+				+ this.adresse + " " + this.telefonnr);
+	}
+
+	/**
+	 * Diese Methode wird verwendet, um zwei Kunden-Objekte miteinander
+	 * vergleichen zu können. Dazu wird die toString()-Methode verwendet.
 	 */
 	public boolean equals(Object object) {
 		Kunde kunde = (Kunde) object;
-		return ((kunde.name.equals(this.name))
-				&& (kunde.vorname.equals(this.vorname))
-				&& (kunde.adresse.equals(this.adresse)) && (kunde.telefonnr
-					.equals(this.telefonnr)));
+		return (this.toString().equals(kunde.toString()));
 	}
 }
