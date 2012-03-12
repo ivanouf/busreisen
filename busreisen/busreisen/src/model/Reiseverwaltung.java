@@ -10,18 +10,22 @@ import utils.KonsoleIO;
  * Diese Klasse ist fuer die Verwaltung der Busse zustaendig.
  * 
  * @author Thomas + Philipp
- * @version 09.03.2012
+ * @version 12.03.2012
  * 
  */
 public class Reiseverwaltung {
 
 	/**
-	 * Standardisierte Fehlermeldung f√ºr das Speichern der Dateien
+	 * Standardisierte Fehlermeldung fuer das Speichern der Dateien
+	 * 
+	 * @value "Fehler beim Speichern!"
 	 */
 	private static final String OUTPUT_FEHLERMELDUNG = "Fehler beim Speichern!";
 
 	/**
-	 * Standardisierte Fehlermeldung f√ºr das Laden der Dateien
+	 * Standardisierte Fehlermeldung fuer das Laden der Dateien
+	 * 
+	 * @value "Fehler beim Laden!"
 	 */
 	private static final String INPUT_FEHLERMELDUNG = "Fehler beim Laden!";
 
@@ -35,6 +39,11 @@ public class Reiseverwaltung {
 	 * wird.
 	 */
 	private int aktuelleStornoNr;
+
+	/**
+	 * Aktuelle Kundennummer (mit 1 beginnend), die vom System zugewiesen wird.
+	 */
+	private int aktuelleKundenNr;
 
 	/**
 	 * Instanz von {@link Kunde}.
@@ -53,16 +62,17 @@ public class Reiseverwaltung {
 	 * Programmstart die CSV-Dateien fuer die interne Verwaltung angelegt.
 	 */
 	public Reiseverwaltung() {
+		this.aktuelleKundenNr = 1;
 		this.aktuelleBuchungsNr = 100;
 		this.aktuelleStornoNr = 1000;
 		this.reisender = null;
 		reisenAnlegen();
 
-		// Anlegen der CSV Dateien
+		// Bei der ersten Sitzung m¸ssen die CSV-Dateien angelegt werden.
 		try {
 			File file = new File(DateiIO.LOGFILE);
 			if (!(file.exists())) {
-				DateiIO.writeHeadersInLog();
+				DateiIO.writeHeadersInLogFile();
 			}
 			file = new File(DateiIO.KUNDEN_FILE);
 			if (!(file.exists())) {
@@ -94,7 +104,8 @@ public class Reiseverwaltung {
 		}
 
 		// Reiseziel und gewuenschte Woche einlesen
-		Reiseziel ziel = KonsoleIO.readGewuenschtesReiseziel();
+		Reiseziel ziel = KonsoleIO
+				.readGewuenschtesReiseziel("Wohin moechte der Kunde reisen?");
 		int woche = 0;
 		while ((woche <= 0) || (woche > 3)) {
 			woche = KonsoleIO
@@ -176,7 +187,9 @@ public class Reiseverwaltung {
 	}
 
 	/**
-	 * Diese Methode legt die Reisen fest.
+	 * Diese Methode legt die Reisen fest. Wenn dies nicht die erste Sitzung
+	 * ist, wird die Busbelegung von der letzten Sitzung mithilfe der Logdatei
+	 * geladen.
 	 */
 	private void reisenAnlegen() {
 		reise = new Reise[4];
@@ -184,7 +197,14 @@ public class Reiseverwaltung {
 		reise[1] = new Reise(Reiseziel.MADRID, Wochentag.MONTAG);
 		reise[2] = new Reise(Reiseziel.ROM, Wochentag.SAMSTAG);
 		reise[3] = new Reise(Reiseziel.WIEN, Wochentag.SONNTAG);
-		// TODO: Busbelegung von der letzten Sitzung muss geladen werden.
+
+		File file = new File(DateiIO.LOGFILE);
+		if (file.exists()) {
+			reise[0].ladeBusbelegung();
+			reise[1].ladeBusbelegung();
+			reise[2].ladeBusbelegung();
+			reise[3].ladeBusbelegung();
+		}
 	}
 
 	/**
@@ -277,8 +297,7 @@ public class Reiseverwaltung {
 			// }
 			}
 			// Zum Schluss werden die Aenderungen im Kundenstamm gespeichert.
-			// TODO: Der alte Datensatz muss ueberschrieben werden.
-			DateiIO.saveKundeToKundenstamm(reisender);
+			DateiIO.changeKundeInKundenstamm(reisender);
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
@@ -287,29 +306,67 @@ public class Reiseverwaltung {
 	/**
 	 * Diese Methode veraendert Daten in einer Buchung und speichert diese ab.
 	 */
+	// TODO: Kundendaten d¸rfen hier nicht ge‰ndert werden!
 	public void buchungsDatenKorrektur() {
 		Kunde kunden[];
 		try {
 			int gesuchteBuchungsNr = KonsoleIO
 					.readIntegerFromConsole("Geben Sie die Buchungsnummer ein.");
-			Buchung buchung = DateiIO
+			Buchung alteBuchung = DateiIO
 					.searchBuchungInLogFile(gesuchteBuchungsNr);
 
-			if (buchung != null) {
-				// Die alte Buchung muss erst einmal storniert werden.
-				buchung.storniere(8000, buchung.getPlaetze());
-				Reise reise = getReiseZuZiel(buchung.getReiseZiel());
-				reise.aktualisiereNachBuchung(buchung);
+			// Wenn eine Buchung mit der gesuchten Buchungsnummer existiert
+			if (alteBuchung != null) {
 
-				// Wenn die Buchung vorhanden ist, wird der zugehoerige Kunde
-				// gesucht.
-				kunden = DateiIO.searchKundeInKundenstamm(buchung.getKunde()
-						.getName(), buchung.getKunde().getVorname());
+				// Pruefe, ob es zu dieser Buchung bereits eine Stornierung gibt
+				Buchung stornierungVonAlterBuchung = DateiIO
+						.searchStornierungZurBuchung(alteBuchung);
+
+				if (stornierungVonAlterBuchung != null) {
+					// Wenn es eine Stornierung gibt, pruefe, wie viele Plaetze
+					// noch tatsaechlich gebucht sind.
+					int restliche_plaetze = alteBuchung.getPlaetze()
+							- stornierungVonAlterBuchung.getPlaetze();
+
+					if (restliche_plaetze > 0) {
+						// Wenn noch Plaetze gebucht sind, storniere diese
+						// zusaetzlich.
+						alteBuchung.storniere(aktuelleStornoNr,
+								restliche_plaetze);
+						aktuelleStornoNr++;
+
+						Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());
+						reise.aktualisiereNachBuchung(alteBuchung);
+					}
+				}
+
+				else {
+					// Wenn es noch keine Stornierung gibt, storniere die
+					// Buchung vollstaendig.
+					alteBuchung.storniere(aktuelleStornoNr,
+							alteBuchung.getPlaetze());
+					aktuelleStornoNr++;
+
+					Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());
+					reise.aktualisiereNachBuchung(alteBuchung);
+				}
+
+				// Nachdem die alte Buchung komplett storniert wurde, kann nun
+				// eine neue Buchung auf Bais der Daten der alten Buchung
+				// angelegt werden.
+				Buchung neueBuchung = new Buchung(aktuelleBuchungsNr,
+						alteBuchung.getReiseZiel(), alteBuchung.getWoche(),
+						alteBuchung.getKunde());
+
+				// Fuer die Anzeige muss der Kunde gesucht werden.
+				// TODO: Unnoetig ueber "reisender" zu gehen?
+				kunden = DateiIO.searchKundeInKundenstamm(neueBuchung
+						.getKunde().getName(), neueBuchung.getKunde()
+						.getVorname());
 				int pos = KonsoleIO.readGewuenschterKunde(kunden);
 				reisender = kunden[pos];
 
-				// Zuerst wird die Buchung detailliert ausgegeben.
-				// TODO: Ausgabe oder Nummerncode-Abfrage nach Veraenderung?
+				// TODO: Zuerst wird die Buchung detailliert ausgegeben.
 				System.out.println("Nachnamen \t:= \t1");
 				System.out.println("Vornamen \t:= \t2");
 				System.out.println("Adresse \t\t:= \t3");
@@ -347,17 +404,17 @@ public class Reiseverwaltung {
 				case 5:
 					String ziel = KonsoleIO
 							.readStringFromConsole("Geben Sie das Ziel des Kunden ein!");
-					buchung.setReiseZiel(Reiseziel.valueOf(ziel));
+					neueBuchung.setReiseZiel(Reiseziel.valueOf(ziel));
 					break;
 				case 6:
 					int woche = KonsoleIO
 							.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren moechte!");
-					buchung.setWoche(woche);
+					neueBuchung.setWoche(woche);
 					break;
 				case 7:
 					int anzahlPlaetze = KonsoleIO
 							.readIntegerFromConsole("Geben Sie die Anzahl der Plaetze ein, die der Kunde buchen moechte!");
-					buchung.setPlaetze(anzahlPlaetze);
+					neueBuchung.setPlaetze(anzahlPlaetze);
 					break;
 				default:
 					break;
@@ -366,13 +423,11 @@ public class Reiseverwaltung {
 				// }
 				}
 
-				// Die Busbelegung wird aktualisiert. Anschlie√üend wird die
+				// Die Busbelegung wird aktualisiert. Anschliessend wird die
 				// Buchung in der Logdatei gespeichert.
-				buchung.setKorrigiert("ja");
-				buchung.setBuchungsnr(aktuelleBuchungsNr);
-				reise = getReiseZuZiel(buchung.getReiseZiel());
-				reise.aktualisiereNachBuchung(buchung);
-				DateiIO.saveBuchungToLogFile(buchung);
+				Reise reise = getReiseZuZiel(neueBuchung.getReiseZiel());
+				reise.aktualisiereNachBuchung(neueBuchung);
+				DateiIO.saveBuchungToLogFile(neueBuchung);
 			} else {
 				KonsoleIO
 						.printFehlermeldung("Die gesuchte Buchung ist nicht vorhanden!");
@@ -390,9 +445,9 @@ public class Reiseverwaltung {
 		Buchung buchung;
 		try {
 			// Die gesuchte Buchungsnummer wird von der Konsole eingelesen.
-			int aktuelleBuchungsNr = KonsoleIO
+			int gesuchteBuchungsNr = KonsoleIO
 					.readIntegerFromConsole("Geben Sie die Buchungsnummer ein.");
-			buchung = DateiIO.searchBuchungInLogFile(aktuelleBuchungsNr);
+			buchung = DateiIO.searchBuchungInLogFile(gesuchteBuchungsNr);
 
 			// Wenn die Buchung vorhanden ist, werden ihre Attribute auf der
 			// Konsole ausgegeben.
@@ -429,19 +484,21 @@ public class Reiseverwaltung {
 	public void kundeAnlegen() {
 		// Nacheinander werden die Attribute, die fuer einen Kunden wichtig
 		// sind, nacheinander von der Konsole eingelesen.
-		reisender = new Kunde();
 		String name = KonsoleIO
 				.readStringFromConsole("Geben Sie einen Namen fuer den Kunden ein!");
-		reisender.setName(name);
+
 		String vorname = KonsoleIO
 				.readStringFromConsole("Geben Sie einen Vornamen fuer den Kunden ein!");
-		reisender.setVorname(vorname);
+
 		String telefonnr = KonsoleIO
 				.readStringFromConsole("Geben Sie die Telefonnummer des Kunden ein!");
-		reisender.setTelefonnr(telefonnr);
+
 		String adresse = KonsoleIO
 				.readStringFromConsole("Geben Sie die Adresse des Kunden ein!");
-		reisender.setAdresse(adresse);
+
+		reisender = new Kunde(aktuelleKundenNr, name, vorname, adresse,
+				telefonnr);
+		aktuelleKundenNr++;
 
 		// Zum Schluss wird der Kunde im Kundenstamm abgelegt.
 		try {
@@ -450,5 +507,25 @@ public class Reiseverwaltung {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
 
+	}
+
+	/**
+	 * Diese Methode ermoeglicht es dem Benutzer, zu einem Bus die Anzahl der
+	 * freien Plaetze angezeigt zu bekommen.
+	 */
+	public void zeigeFreiePlaetzeEinesBusses() {
+		Reiseziel ziel = KonsoleIO
+				.readGewuenschtesReiseziel("Fue welche Reise moechten Sie den Bus anzeigen lassen?");
+		int woche = KonsoleIO
+				.readIntegerFromConsole("In welcher Woche faehrt der gesuchte Bus? [1], [2] oder [3]");
+
+		Reise gesuchteReise = getReiseZuZiel(ziel);
+		Bus gesuchterBus = gesuchteReise.getBusZurReisewoche(woche);
+
+		KonsoleIO
+				.printErfolgsmeldung("In dem Bus nach " + ziel.toString()
+						+ ", der in der " + woche + ". Woche faehrt, sind "
+						+ gesuchterBus.getAnzahlFreiePlaetze()
+						+ " freie Plaetze frei.");
 	}
 }

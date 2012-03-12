@@ -10,13 +10,13 @@ import org.junit.Test;
  * Dieser TestCase testet die Klasse {@link Kunde}.
  * 
  * @author Philipp
- * @version 06.03.2012
+ * @version 12.03.2012
  */
 public class KundenTest {
 
 	private Kunde kunde1;
 	private Kunde kunde2;
-	private static final String ERROR = "Werte stimmen nicht überein.";
+	private static final String ERROR = "Werte stimmen nicht ueberein.";
 
 	/**
 	 * @throws java.lang.Exception
@@ -24,7 +24,13 @@ public class KundenTest {
 	@Before
 	public void setUp() throws Exception {
 		kunde1 = new Kunde();
-		kunde2 = new Kunde("Mueller", "Heinz", "Hauptstraße 2", "022454202");
+		kunde2 = new Kunde(1234, "Mueller", "Heinz", "Hauptstrasse 2",
+				"022454202");
+	}
+
+	@Test
+	public void testGetNummer() {
+		assertEquals(1234, kunde2.getNummer());
 	}
 
 	/**
@@ -66,7 +72,7 @@ public class KundenTest {
 	 */
 	@Test
 	public void testGetAdresse() {
-		assertEquals(ERROR, "Hauptstraße 2", kunde2.getAdresse());
+		assertEquals(ERROR, "Hauptstrasse 2", kunde2.getAdresse());
 	}
 
 	/**

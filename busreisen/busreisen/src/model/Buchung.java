@@ -5,7 +5,7 @@ package model;
  * ReisebÃ¼ros in das Programm eingegeben wird.
  * 
  * @author Philipp
- * @version 10.03.2012
+ * @version 12.03.2012
  */
 public class Buchung {
 
@@ -15,7 +15,7 @@ public class Buchung {
 	private Kunde kunde;
 
 	/**
-	 * Buchungsnummer fÃ¼r diesen Kunden
+	 * Buchungsnummer fuer diesen Kunden
 	 */
 	private int buchungsnr;
 
@@ -31,20 +31,14 @@ public class Buchung {
 	private Reiseziel reiseZiel;
 
 	/**
-	 * Vom Kunden gewÃ¼nschte Reisewoche
+	 * Vom Kunden gewünschte Reisewoche
 	 */
 	private int woche;
 
 	/**
-	 * Vom Kunden gebuchte Anzahl der PlÃ¤tze
+	 * Vom Kunden gebuchte Anzahl der Plätze
 	 */
 	private int plaetze;
-
-	/**
-	 * Falls die Buchung korrigiert wird, enthaelt dieser String den Wert "ja",
-	 * ansonsten "nein".
-	 */
-	private String korrigiert;
 
 	/**
 	 * Dieser Konstruktor erstellt eine leere Buchung.
@@ -55,16 +49,15 @@ public class Buchung {
 		this.woche = 0;
 		this.kunde = null;
 		this.stornonr = 0;
-		this.korrigiert = "nein";
 	}
 
 	/**
-	 * Im Konstruktor wird die Buchung Ã¼ber folgende Parameter definiert.
+	 * Im Konstruktor wird die Buchung über folgende Parameter definiert.
 	 * 
 	 * @param buchungsnr
 	 *            vom System zugewiesene Buchungsnummer
 	 * @param reiseZiel
-	 *            gewÃ¼nschtes Reiseziel des Kunden
+	 *            gewünschtes Reiseziel des Kunden
 	 * @param woche
 	 *            gebuchte Reisewoche
 	 * @param kunde
@@ -76,11 +69,10 @@ public class Buchung {
 		this.woche = woche;
 		this.kunde = kunde;
 		this.stornonr = 0;
-		this.korrigiert = "nein";
 	}
 
 	/**
-	 * Diese Methode git den Kunden zurÃ¼ck, zu dem die Buchnung gehÃ¶rt hat.
+	 * Diese Methode git den Kunden zurück, zu dem die Buchnung gehört hat.
 	 * 
 	 * @return Instanz vom Typ {@link Kunde}
 	 */
@@ -89,7 +81,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert den Kunden, zu dem die Buchnung gehÃ¶rt.
+	 * Diese Methode definiert den Kunden, zu dem die Buchnung gehört.
 	 * 
 	 * @param kunde
 	 *            Instanz vom Typ {@link Kunde}
@@ -99,7 +91,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Buchungsnummer zurÃ¼ck.
+	 * Diese Methode gibt die Buchungsnummer zurück.
 	 * 
 	 * @return Buchungsnummer als ganze Zahl
 	 */
@@ -118,7 +110,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Stornonummer zurÃ¼ck.
+	 * Diese Methode gibt die Stornonummer zurück.
 	 * 
 	 * @return Stornonummer als ganze Zahl
 	 */
@@ -127,13 +119,23 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Stornonummer. AuÃŸerdem wird die Anzahl der
+	 * Diese Methode setzt die Stornierungsnummer zu dieser Buchung.
+	 * 
+	 * @param stornonr
+	 *            Stornonummer als ganze Zahl
+	 */
+	public void setStornonr(int stornonr) {
+		this.stornonr = stornonr;
+	}
+
+	/**
+	 * Diese Methode definiert die Stornonummer. Außerdem wird die Anzahl der
 	 * gebuchten Plaetze reduziert.
 	 * 
 	 * @param stornonr
 	 *            Stornonummer als ganze Zahl
 	 * @param stornierte_plaetze
-	 *            Anzahl der PlÃ¤tze, die storniert werden sollen
+	 *            Anzahl der Plätze, die storniert werden sollen
 	 */
 	public void storniere(int stornonr, int stornierte_plaetze) {
 		this.stornonr = stornonr;
@@ -141,7 +143,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt das Reiseziel zurÃ¼ck.
+	 * Diese Methode gibt das Reiseziel zurück.
 	 * 
 	 * @return Reiseziel als String
 	 */
@@ -160,7 +162,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Woche zurÃ¼ck.
+	 * Diese Methode gibt die Woche zurück.
 	 * 
 	 * @return Woche als ganze Zahl
 	 */
@@ -179,43 +181,41 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode gibt die Anzahl der gebuchten PlÃ¤tze zurÃ¼ck.
+	 * Diese Methode gibt die Anzahl der gebuchten Plätze zurück.
 	 * 
-	 * @return Anzahl der PlÃ¤tze als ganze Zahl
+	 * @return Anzahl der Plätze als ganze Zahl
 	 */
 	public int getPlaetze() {
 		return plaetze;
 	}
 
 	/**
-	 * Diese Methode definiert die Anzahl der gebuchten PlÃ¤tze.
+	 * Diese Methode definiert die Anzahl der gebuchten Plätze.
 	 * 
 	 * @param plaetze
-	 *            Anzahl der PlÃ¤tze als ganze Zahl
+	 *            Anzahl der Plätze als ganze Zahl
 	 */
 	public void setPlaetze(int plaetze) {
 		this.plaetze = plaetze;
 	}
 
 	/**
-	 * Diese Methode gibt den Aenderungsstatus der Buchung zureck.
+	 * Diese Methode prueft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel,
+	 * Woche und gebuchten Plaetze uebereinstimmen.
 	 * 
-	 * @return "ja", wenn Buchung korrigiert wurde <br>
-	 *         "nein", wenn keine Korrektur druchgefuehrt wurde
+	 * @param object
+	 *            Buchung, mit der verglichen werden soll
+	 * @return true oder false
 	 */
-	public String getKorrigiert() {
-		return korrigiert;
+	public boolean equals(Object object) {
+		Buchung b = (Buchung) object;
+		if ((this.kunde.equals(b.getKunde()))
+				&& (this.plaetze == b.getPlaetze())
+				&& (this.woche == b.getWoche())
+				&& (this.reiseZiel.equals(b.getReiseZiel()))) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
-	/**
-	 * Diese Methode setzt den internen String {@link korrigiert} auf den Wert
-	 * "ja".
-	 * 
-	 * @param value
-	 *            "ja" oder "nein"
-	 */
-	public void setKorrigiert(String value) {
-		this.korrigiert = value;
-	}
-
 }

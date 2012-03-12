@@ -6,47 +6,52 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import model.Buchung;
 import model.Kunde;
 import model.Reiseziel;
 
 /**
- * Diese Klasse lÃ¤dt und speichert die Daten der Bussoftware. Der Kundenstamm
+ * Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm
  * wird in einer .csv-Datei abgelegt. Die Buchungen und Stornierungen werden in
  * einer Log-Datei mitgeschrieben, die ebenfalls im CSV-Format vorliegt.
  * 
  * @author Philipp
- * @version 10.03.2012
+ * @version 12.03.2012
  * 
  */
 public class DateiIO {
 
 	/**
-	 * TabellenÃ¼berschriften der Kundenstamm-Datei
+	 * Tabellenüberschriften der Kundenstamm-Datei
 	 */
-	private static String[] kunden_headers = { "Name", "Vorname", "Adresse",
-			"Telefonnummer" };
+	private static String[] kunden_headers = { "Nummer", "Name", "Vorname",
+			"Adresse", "Telefonnummer" };
 
 	/**
-	 * TabellenÃ¼berschriften der Log-Datei
+	 * Tabellenüberschriften der Log-Datei
 	 */
 	private static String[] log_headers = { "Art der Buchung", "Nummer",
-			"Name", "Vorname", "Adresse", "Telefonnummer", "Ziel", "Woche",
-			"Anzahl der Plaetze", "Korrigiert" };
+			"Kundennummer", "Name", "Vorname", "Adresse", "Telefonnummer",
+			"Ziel", "Woche", "Anzahl der Plaetze" };
 
 	/**
 	 * Name der Log-Datei
+	 * 
+	 * @value "Bussoftware_Log.csv"
 	 */
 	public static final String LOGFILE = "Bussoftware_Log.csv";
 
 	/**
 	 * Name der der Kundenstamm-Datei
+	 * 
+	 * @value "Bussoftware_Kunden.csv"
 	 */
 	public static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
 
 	/**
-	 * Diese Methode schreibt die TabellenÃ¼berschriften in die CSV-Datei, in der
+	 * Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der
 	 * die Kunden gespeichert werden.
 	 * 
 	 * @throws IOException
@@ -64,11 +69,11 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode schreibt die TabellenÃ¼berschriften in die Logdatei.
+	 * Diese Methode schreibt die Tabellenüberschriften in die Logdatei.
 	 * 
 	 * @throws IOException
 	 */
-	public static void writeHeadersInLog() throws IOException {
+	public static void writeHeadersInLogFile() throws IOException {
 		// Datei oeffnen und zum Schreiben vorbereiten
 		File logfile = new File(LOGFILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(logfile));
@@ -88,24 +93,25 @@ public class DateiIO {
 	 * @throws IOException
 	 */
 	public static void saveKundeToKundenstamm(Kunde kunde) throws IOException {
-		// Datei oeffnen und zum Schreiben vorbereiten
+		// Datei öffnen und zum Schreiben vorbereiten
 		File csv_file = new File(KUNDEN_FILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
 
 		// Die Attribute des Kunden werden einzeln in den FileWriter
 		// geschrieben.
+		bw.append(kunde.getNummer() + ";");
 		bw.append(kunde.getName() + ";");
 		bw.append(kunde.getVorname() + ";");
 		bw.append(kunde.getAdresse() + ";");
 		bw.append(kunde.getTelefonnr() + ";");
-		bw.append("\n");
+		bw.newLine();
 		bw.close();
 	}
 
 	/**
 	 * Diese Methode sucht einen Kunden in der Kundenstamm-Datei mithilfe seines
-	 * Vor- und Nachnamens. Da MehrfacheintrÃ¤ge mÃ¶glich sind, wird ein Array von
-	 * Kunden zurÃ¼ckgegeben.
+	 * Vor- und Nachnamens. Da Mehrfacheinträge möglich sind, wird ein Array von
+	 * Kunden zurueckgegeben.
 	 * 
 	 * @param name
 	 *            Nachname des gesuchten Kunden
@@ -116,22 +122,23 @@ public class DateiIO {
 	 */
 	public static Kunde[] searchKundeInKundenstamm(String name, String vorname)
 			throws Exception {
-		// Datei oeffnen und zum Lesen vorbereiten
+		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(KUNDEN_FILE);
 		BufferedReader br = new BufferedReader(fr);
 		String line = "";
 		// Der erste Durchlauf dient dazu, herauszufinden, wie viele Kunden es
-		// zu dem Ã¼bergebenem Namen gibt.
+		// zu dem übergebenen Namen gibt.
 		int menge = 0;
 		while (line != null) {
 			line = br.readLine();
 			String[] items = line.split(";");
-			if ((items[0].equals(name)) && (items[1].equals(vorname))) {
+			if ((items[1].equals(name)) && (items[2].equals(vorname))) {
 				menge++;
 			}
 		}
 
-		// Der zweite Durchlauf dient dazu, das zurÃ¼ckgegebene Array zu fÃ¼llen.
+		// Der zweite Durchlauf dient dazu, das zurückgegebene Array zu
+		// füllen.
 		Kunde[] results = new Kunde[menge];
 
 		br = new BufferedReader(fr);
@@ -142,8 +149,9 @@ public class DateiIO {
 			String[] items = line.split(";");
 			if ((items[0].equals(name)) && (items[1].equals(vorname))) {
 				// Kunde wird mit den gefundenen Daten erzeugt.
-				results[counter] = new Kunde(items[0], items[1], items[2],
-						items[3]);
+				int nummer = Integer.parseInt(items[0]);
+				results[counter] = new Kunde(nummer, items[1], items[2],
+						items[3], items[4]);
 				counter++;
 			}
 		}
@@ -152,7 +160,59 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode speichert eine Ã¼bergebene Buchung in einer Log-Datei.
+	 * Diese Methode schreibt einen geaenderten Kundendatensatz in den
+	 * Kundenstamm. Als Identifikationskriterium gilt dabei die Kundennummer.
+	 * 
+	 * @param kunde
+	 *            Instanz von [@Kunde}, die die neuen Werte für den Kunden
+	 *            besitzt.
+	 * @throws Exception
+	 */
+	public static void changeKundeInKundenstamm(Kunde kunde) throws Exception {
+		File inFile = new File(KUNDEN_FILE);
+
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird
+		File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+		BufferedReader br = new BufferedReader(new FileReader(KUNDEN_FILE));
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+		String line = null;
+
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.
+		while ((line = br.readLine()) != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+
+			// Wenn der zu ändernde Kunde gefunden wurde, eine Zeile mit den
+			// neuen Daten schreiben.
+			int nummer = Integer.parseInt(items[0]);
+			if (nummer == kunde.getNummer()) {
+				pw.append(kunde.getNummer() + ";");
+				pw.append(kunde.getName() + ";");
+				pw.append(kunde.getVorname() + ";");
+				pw.append(kunde.getAdresse() + ";");
+				pw.append(kunde.getTelefonnr() + ";");
+				pw.append("\n");
+			} else {
+				// Ansonsten schreibe den Inhalt der alten Zeile
+				pw.println(line);
+			}
+		}
+		pw.close();
+		br.close();
+
+		// Die Originaldatei löschen
+		inFile.delete();
+
+		// Die *.tmp Datei in den Originalnamen umbenennen
+		if (!tempFile.renameTo(inFile))
+			throw new Exception("Datei konnte nicht umbenannt werden");
+	}
+
+	/**
+	 * Diese Methode speichert eine uebergebene Buchung in einer Log-Datei.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
@@ -165,15 +225,16 @@ public class DateiIO {
 		// Wenn die Buchung storniert ist, wird "Stornierung" + Stornonummer
 		// ausgegeben. Ansonsten wird "Buchung" + Buchungsnummer ausgegeben.
 		if (buchung.getStornonr() > 0) {
-			bw.append("Stornierung: ");
+			bw.append("Stornierung" + ";");
 			bw.append(buchung.getStornonr() + ";");
 		} else {
-			bw.append("Buchung: ");
+			bw.append("Buchung" + ";");
 			bw.append(buchung.getBuchungsnr() + ";");
 		}
 
 		// Die Attribute der Buchung werden einzeln in den FileWriter
 		// geschrieben.
+		bw.append(buchung.getKunde().getNummer() + ";");
 		bw.append(buchung.getKunde().getName() + ";");
 		bw.append(buchung.getKunde().getVorname() + ";");
 		bw.append(buchung.getKunde().getAdresse() + ";");
@@ -181,8 +242,42 @@ public class DateiIO {
 		bw.append(buchung.getReiseZiel().toString() + ";");
 		bw.append(buchung.getWoche() + ";");
 		bw.append(String.valueOf(buchung.getPlaetze()));
-		bw.append("\n");
+		bw.newLine();
 		bw.close();
+	}
+
+	/**
+	 * Diese Methode erstellt eine Instanz der Klasse {@link Buchung} auf Basis
+	 * der Daten aus einer Zeile im Logfile.
+	 * 
+	 * @param nummer
+	 *            Nummer der Buchung
+	 * @param details
+	 *            Elemente der Zeile (Semikolon als Trennungszeichen)
+	 * @return Instanz der Klasse {@link Buchung}
+	 */
+	private static Buchung erstelleBuchungAusLogEintrag(int nummer,
+			String[] details) {
+		Buchung b = new Buchung();
+		b.setBuchungsnr(nummer);
+
+		Kunde kunde = new Kunde();
+		kunde.setNummer(Integer.parseInt(details[2]));
+		kunde.setName(details[3]);
+		kunde.setVorname(details[4]);
+		kunde.setAdresse(details[5]);
+		kunde.setTelefonnr(details[6]);
+		b.setKunde(kunde);
+
+		b.setReiseZiel(Reiseziel.valueOf(details[7]));
+
+		int woche = Integer.parseInt(details[8]);
+		b.setWoche(woche);
+
+		int plaetze = Integer.parseInt(details[9]);
+		b.setPlaetze(plaetze);
+
+		return b;
 	}
 
 	/**
@@ -197,32 +292,22 @@ public class DateiIO {
 	 */
 	public static Buchung searchBuchungInLogFile(int buchungsnr)
 			throws Exception {
-		// Datei oeffnen und zum Lesen vorbereiten
+		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
 		String line = "";
-		// Mithilfer einer linearen Suche werden alle Eintraege mit der
-		// gesuchten Buchungsnummer abgeglichen werden.
+		// Mithilfer einer linearen Suche werden alle Einträge mit der
+		// gesuchten Buchungsnummer abgeglichen.
 		while (line != null) {
 			line = br.readLine();
 			String[] items = line.split(";");
 			int nummer = Integer.parseInt(items[1]);
 			// Wenn die Nummer des Eintrags mit der gesuchten Nummer
-			// uebereinstimmmt, wird
+			// übereinstimmmt, wird
 			// auf Basis der gefundenen Daten ein Buchungsobjekt erstellt.
 			if (nummer == buchungsnr) {
-				Buchung b = new Buchung();
-				b.setBuchungsnr(buchungsnr);
-				b.setKunde(new Kunde(items[2], items[3], items[4], items[5]));
-				b.setReiseZiel(Reiseziel.valueOf(items[6]));
-				int woche = Integer.parseInt(items[7]);
-				b.setWoche(woche);
-				int plaetze = Integer.parseInt(items[8]);
-				b.setPlaetze(plaetze);
-				b.setKorrigiert(items[9]);
-
 				br.close();
-				return b;
+				return erstelleBuchungAusLogEintrag(buchungsnr, items);
 			}
 		}
 		br.close();
@@ -230,11 +315,44 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurueck.
+	 * Diese Methode sucht zu einer Buchung eine passende Stornierung.
+	 * 
+	 * @param buchung
+	 *            Instanz der Klasse {@link Buchung}
+	 * @return Buchung mit Stornonummer oder null, wenn keine gefunden wurde
+	 * @throws Exception
+	 */
+	public static Buchung searchStornierungZurBuchung(Buchung buchung)
+			throws Exception {
+		// Datei öffnen und zum Lesen vorbereiten
+		FileReader fr = new FileReader(LOGFILE);
+		BufferedReader br = new BufferedReader(fr);
+		String line = "";
+		// Mithilfer einer linearen Suche wird nach Stornierungen gesucht. Diese
+		// werden dann inhaltlich (siehe Javadoc für equals()) mit der Buchung
+		// abgeglichen.
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if (items[0].contains("Stornierung")) {
+				Buchung stornierung = erstelleBuchungAusLogEintrag(0, items);
+				stornierung.setStornonr(Integer.parseInt(items[1]));
+				if (stornierung.equals(buchung)) {
+					br.close();
+					return stornierung;
+				}
+			}
+		}
+		br.close();
+		return null;
+	}
+
+	/**
+	 * Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurück.
 	 * Dabei wird die Logdatei zweimal linear durchsucht. Beim ersten Durchlauf
-	 * werden die Eintraege, die zur gesuchten Reise passen, gezaehlt. Im
-	 * zweiten Durchlauf werden diese Eintraege in einem Array abgelegt, welches
-	 * dann sortiert zurueckgegeben wird.
+	 * werden die Einträge, die zur gesuchten Reise passen, gezählt. Im zweiten
+	 * Durchlauf werden diese Einträge in einem Array abgelegt, welches dann
+	 * sortiert zurückgegeben wird.
 	 * 
 	 * @param ziel
 	 *            Reiseziel als String
@@ -244,6 +362,7 @@ public class DateiIO {
 	 *         sortiert sind
 	 * @throws Exception
 	 */
+	// TODO
 	public static Kunde[] getTeilnehmerZuReise(String ziel, int woche)
 			throws Exception {
 		// Menge der Teilnehmer
@@ -280,8 +399,13 @@ public class DateiIO {
 					&& (woche == Integer.parseInt(items[7]))) {
 				if (!(items[9].equals("ja"))) {
 					// Teilnehmer wird mit den gefundenen Daten erzeugt.
-					teilnehmer[counter] = new Kunde(items[2], items[3],
-							items[4], items[5]);
+					Kunde kunde = new Kunde();
+					kunde.setName(items[2]);
+					kunde.setVorname(items[3]);
+					kunde.setAdresse(items[4]);
+					kunde.setTelefonnr(items[5]);
+
+					teilnehmer[counter] = kunde;
 					counter++;
 				}
 			}
@@ -290,5 +414,99 @@ public class DateiIO {
 
 		Sortierverfahren.bubbleSort(teilnehmer);
 		return teilnehmer;
+	}
+
+	/**
+	 * Diese Methode sucht alle Buchungen zu einem gegebenen Reiseziel. Als
+	 * Ergebnis werden die relevanten Informationen der Buchung (Nummer, Woche,
+	 * Plaetze) als String mit Leerzeichen verkettet. Fuer Buchungen dient das
+	 * Semilkolon als Trennzeichen.
+	 * 
+	 * @param reiseziel
+	 *            Reiseziel als String
+	 * @return String der Form "Nummer Woche Plätze;Nummer Woche Plätze;..."
+	 * @throws Exception
+	 */
+	public static String searchAlleBuchungenZurReise(String reiseziel)
+			throws Exception {
+		// Datei öffnen und zum Lesen vorbereiten
+		FileReader fr = new FileReader(LOGFILE);
+		BufferedReader br = new BufferedReader(fr);
+		String line = "";
+		String result = "";
+		// Mithilfer einer linearen Suche werden alle Einträge zu dem
+		// übergebenen Reiseziel gesucht.
+		while (line != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+			if (items[6].equals(reiseziel)) {
+				// Es wird ein String der Form "Nummer Woche Plätze:" erzeugt
+				// und mit dem Ergebnisstring verkettet.
+				String eintrag = items[1] + " " + items[7] + " " + items[8]
+						+ ";";
+				result += eintrag;
+			}
+		}
+		br.close();
+		return result;
+	}
+
+	/**
+	 * Diese Methode wird aufgerufen, um nach einer Änderung von Kundendaten im
+	 * Kundenstamm alle Buchungen dieses Kunden auf den aktuellen Stand zu
+	 * bringen.
+	 * 
+	 * @param kunde
+	 *            Instanz der Klasse {@link Kunde}
+	 * @throws Exception
+	 */
+	public static void updateBuchungenZuKunde(Kunde kunde) throws Exception {
+		File inFile = new File(LOGFILE);
+
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird
+		File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+		BufferedReader br = new BufferedReader(new FileReader(LOGFILE));
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+		String line = null;
+
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
+		// wieder einfügen. Die zu ändernde Zeile wird neu geschrieben.
+		while ((line = br.readLine()) != null) {
+			line = br.readLine();
+			String[] items = line.split(";");
+
+			int aktuelleKundennummer = Integer.parseInt(items[2]);
+			// Pruefe, ob die vorliegende Buchung zum geänderten Kunden gehört
+			if (aktuelleKundennummer == kunde.getNummer()) {
+				// Wenn ja, schreibe die Zeile neu
+				pw.append(items[0]); // Buchungsart bleibt gleich
+				pw.append(items[1]); // Nummer der Buchung/Stornierung bleibt
+										// gleich
+				pw.append(items[2]); // Kundennummer bleibt gleich
+				pw.append(kunde.getName());
+				pw.append(kunde.getVorname());
+				pw.append(kunde.getAdresse());
+				pw.append(kunde.getTelefonnr());
+				pw.append(items[7]); // Reiseziel bleibt gleich
+				pw.append(items[8]); // Gebuchte Woche bleibt gleich
+				pw.append(items[9]); // Gebuchte Plätze bleiben gleich
+				pw.append("\n");
+
+			} else {
+				// Ansonsten übernehme die alte Zeile.
+				pw.println(line);
+			}
+		}
+		pw.close();
+		br.close();
+
+		// Die Originaldatei löschen
+		inFile.delete();
+
+		// Die *.tmp Datei in den Originalnamen umbenennen
+		if (!tempFile.renameTo(inFile))
+			throw new Exception("Datei konnte nicht umbenannt werden");
 	}
 }
