@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import model.Buchung;
 import model.Kunde;
 import model.Reiseziel;
+import model.TeilnehmerListe;
 
 /**
  * Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm
@@ -362,58 +363,66 @@ public class DateiIO {
 	 *         sortiert sind
 	 * @throws Exception
 	 */
-	// TODO
 	public static Kunde[] getTeilnehmerZuReise(String ziel, int woche)
 			throws Exception {
-		// Menge der Teilnehmer
-		int menge = 0;
+		// Teilnehmerliste erstellen
+		TeilnehmerListe teilnehmerListe = new TeilnehmerListe();
 		// Datei oeffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
 		String line = "";
-		// Im ersten linearen Durchlauf werden die passenden Eintraege gezaehlt.
+
 		while (line != null) {
 			line = br.readLine();
 			String[] items = line.split(";");
+			// Wenn die aktuelle Buchung / Stornierung zur gesuchten Reise
+			// gehört
 			if ((ziel.equals(items[6]))
 					&& (woche == Integer.parseInt(items[7]))) {
-				// Es kann sein, dass die Buchung schon geaendert wurde.
-				// Dann soll sie nicht doppelt gezaehlt werden.
-				if (!(items[9].equals("ja"))) {
-					menge++;
+				// Erstelle eine Kundeninstanz aus den Daten in der Buchung
+				Kunde aktKunde = new Kunde();
+				aktKunde.setNummer(Integer.parseInt(items[2]));
+				aktKunde.setName(items[3]);
+				aktKunde.setVorname(items[4]);
+				aktKunde.setAdresse(items[5]);
+				aktKunde.setTelefonnr(items[6]);
+
+				// Wenn eine Buchung vorliegt
+				if (items[0].contains("Buchung")) {
+					// Wenn der aktuelle Kunde nocht nicht als Teilnehmer
+					// vermerkt worden ist, füge ihn der Liste hinzu.
+					if (!(teilnehmerListe.containsTeilnehmer(aktKunde))) {
+						int aktPlaetze = Integer.parseInt(items[9]);
+						teilnehmerListe.appendTeilnehmer(aktKunde, aktPlaetze);
+					}
+				}
+
+				// Wenn eine Stornierung vorliegt
+				else {
+					int storniertePlaetze = Integer.parseInt(items[9]);
+					int gebuchtePlaetze = teilnehmerListe
+							.getPlaetzeZumKunden(aktKunde);
+					int differenz = gebuchtePlaetze - storniertePlaetze;
+					// Wenn alle Plätze, die aktuell gebucht waren, storniert
+					// wurden, entferne den Teilnehmer aus der Liste
+					if (differenz == 0) {
+						teilnehmerListe.removeTeilnehmer(aktKunde,
+								gebuchtePlaetze);
+					} else {
+						// Ansonsten reduziere die gebuchten Plätze in der
+						// Liste.
+						teilnehmerListe.reduziereGebuchtePlaetze(aktKunde,
+								differenz);
+					}
 				}
 			}
 		}
 		br.close();
 
-		// Auf Basis der nun bekannten Menge kann ein Array erstellt werden.
-		Kunde[] teilnehmer = new Kunde[menge];
-		br = new BufferedReader(fr);
-		line = "";
-		int counter = 0;
-		// Zweiter linearer Durchlauf
-		while ((line != null) && (counter < menge)) {
-			line = br.readLine();
-			String[] items = line.split(";");
-			if ((ziel.equals(items[6]))
-					&& (woche == Integer.parseInt(items[7]))) {
-				if (!(items[9].equals("ja"))) {
-					// Teilnehmer wird mit den gefundenen Daten erzeugt.
-					Kunde kunde = new Kunde();
-					kunde.setName(items[2]);
-					kunde.setVorname(items[3]);
-					kunde.setAdresse(items[4]);
-					kunde.setTelefonnr(items[5]);
-
-					teilnehmer[counter] = kunde;
-					counter++;
-				}
-			}
-		}
-		br.close();
-
-		Sortierverfahren.bubbleSort(teilnehmer);
-		return teilnehmer;
+		// Erzeuge ein Kundenarray aus der Teilnahmeliste und sortiere es.
+		Kunde[] alleTeilnehmer = teilnehmerListe.toArray();
+		Sortierverfahren.bubbleSort(alleTeilnehmer);
+		return alleTeilnehmer;
 	}
 
 	/**

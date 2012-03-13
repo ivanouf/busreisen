@@ -18,7 +18,7 @@ public class BuchungTest {
 	@Before
 	public void setUp() {
 		kunde = new Kunde(1234, "Mueller", "Heinz", "Adresse", "12345");
-		buchung2 = new Buchung(101, Reiseziel.WIEN, 1, kunde);
+		buchung2 = new Buchung(101, Reiseziel.WIEN, 1, kunde, 20);
 		buchung1 = new Buchung();
 	}
 
@@ -55,18 +55,6 @@ public class BuchungTest {
 	}
 
 	@Test
-	public void testGetStornonr() {
-		buchung1.storniere(409, PLAETZE);
-		assertEquals(409, buchung1.getStornonr());
-	}
-
-	@Test
-	public void testStorniere() {
-		buchung2.storniere(202, PLAETZE);
-		assertEquals(202, buchung2.getStornonr());
-	}
-
-	@Test
 	public void testGetReiseZiel() {
 		assertEquals("Wien", buchung2.getReiseZiel().toString());
 	}
@@ -75,6 +63,17 @@ public class BuchungTest {
 	public void testSetReiseZiel() {
 		buchung1.setReiseZiel(Reiseziel.WIEN);
 		assertEquals("Wien", buchung1.getReiseZiel().toString());
+	}
+
+	@Test
+	public void testGetPlaetze() {
+		assertEquals(20, buchung2.getPlaetze());
+	}
+
+	@Test
+	public void testSetPlaetze() {
+		buchung1.setPlaetze(PLAETZE);
+		assertEquals(PLAETZE, buchung1.getPlaetze());
 	}
 
 	@Test
@@ -89,21 +88,22 @@ public class BuchungTest {
 	}
 
 	@Test
-	public void testGetPlaetze() {
-		// buchung2 muss nach dem Stornieren 0 Plaetze haben.
-		assertEquals(0, buchung2.getPlaetze());
+	public void testGetStornonr() {
+		buchung1.storniere(409, PLAETZE);
+		assertEquals(409, buchung1.getStornonr());
 	}
 
 	@Test
-	public void testSetPlaetze() {
-		buchung1.setPlaetze(PLAETZE);
-		assertEquals(PLAETZE, buchung1.getPlaetze());
+	public void testStorniere() {
+		buchung2.storniere(202, PLAETZE);
+		assertEquals(202, buchung2.getStornonr());
 	}
 
 	@Test
 	public void testEquals() {
-		buchung1 = new Buchung(PLAETZE, Reiseziel.ROM, 2, kunde);
-		buchung2 = new Buchung(PLAETZE, Reiseziel.ROM, 2, kunde);
+		buchung1 = new Buchung(101, Reiseziel.ROM, 2, kunde, PLAETZE);
+		buchung2 = new Buchung(101, Reiseziel.ROM, 2, kunde, PLAETZE);
+		buchung2.storniere(102, 1);
 		assertEquals(true, buchung1.equals(buchung2));
 	}
 }

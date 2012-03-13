@@ -63,11 +63,13 @@ public class Buchung {
 	 * @param kunde
 	 *            Kunde, der die Reise gebucht hat
 	 */
-	public Buchung(int buchungsnr, Reiseziel reiseZiel, int woche, Kunde kunde) {
+	public Buchung(int buchungsnr, Reiseziel reiseZiel, int woche, Kunde kunde,
+			int plaetze) {
 		this.buchungsnr = buchungsnr;
 		this.reiseZiel = reiseZiel;
 		this.woche = woche;
 		this.kunde = kunde;
+		this.plaetze = plaetze;
 		this.stornonr = 0;
 	}
 
@@ -139,7 +141,7 @@ public class Buchung {
 	 */
 	public void storniere(int stornonr, int stornierte_plaetze) {
 		this.stornonr = stornonr;
-		this.plaetze = this.plaetze - stornierte_plaetze;
+		this.plaetze = stornierte_plaetze;
 	}
 
 	/**
@@ -200,8 +202,8 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode prueft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel,
-	 * Woche und gebuchten Plaetze uebereinstimmen.
+	 * Diese Methode prueft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel und
+	 * Woche uebereinstimmen.
 	 * 
 	 * @param object
 	 *            Buchung, mit der verglichen werden soll
@@ -209,9 +211,7 @@ public class Buchung {
 	 */
 	public boolean equals(Object object) {
 		Buchung b = (Buchung) object;
-		if ((this.kunde.equals(b.getKunde()))
-				&& (this.plaetze == b.getPlaetze())
-				&& (this.woche == b.getWoche())
+		if ((this.kunde.equals(b.getKunde())) && (this.woche == b.getWoche())
 				&& (this.reiseZiel.equals(b.getReiseZiel()))) {
 			return true;
 		} else {
