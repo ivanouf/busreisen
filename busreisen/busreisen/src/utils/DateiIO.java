@@ -19,7 +19,7 @@ import model.TeilnehmerListe;
  * einer Log-Datei mitgeschrieben, die ebenfalls im CSV-Format vorliegt.
  * 
  * @author Philipp
- * @version 12.03.2012
+ * @version 13.03.2012
  * 
  */
 public class DateiIO {
@@ -79,7 +79,7 @@ public class DateiIO {
 		File logfile = new File(LOGFILE);
 		BufferedWriter bw = new BufferedWriter(new FileWriter(logfile));
 
-		for (int i = 0; i < kunden_headers.length; i++) {
+		for (int i = 0; i < log_headers.length; i++) {
 			bw.write(log_headers[i] + ";");
 		}
 		bw.write("\n");
@@ -93,20 +93,43 @@ public class DateiIO {
 	 *            Instanz der Klasse {@link Kunde}
 	 * @throws IOException
 	 */
-	public static void saveKundeToKundenstamm(Kunde kunde) throws IOException {
-		// Datei öffnen und zum Schreiben vorbereiten
-		File csv_file = new File(KUNDEN_FILE);
-		BufferedWriter bw = new BufferedWriter(new FileWriter(csv_file));
+	public static void saveKundeToKundenstamm(Kunde kunde) throws Exception {
+		File inFile = new File(KUNDEN_FILE);
 
-		// Die Attribute des Kunden werden einzeln in den FileWriter
-		// geschrieben.
-		bw.append(kunde.getNummer() + ";");
-		bw.append(kunde.getName() + ";");
-		bw.append(kunde.getVorname() + ";");
-		bw.append(kunde.getAdresse() + ";");
-		bw.append(kunde.getTelefonnr() + ";");
-		bw.newLine();
-		bw.close();
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird
+		File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+		// Datei öffnen und zum Schreiben vorbereiten
+		BufferedReader br = new BufferedReader(new FileReader(KUNDEN_FILE));
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+		String line = null;
+
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.
+		do {
+			line = br.readLine();
+			if (line != null) {
+				pw.println(line);
+			}
+		} while (line != null);
+		br.close();
+
+		// Die Kundendaten werden angehängt.
+		pw.append(kunde.getNummer() + ";");
+		pw.append(kunde.getName() + ";");
+		pw.append(kunde.getVorname() + ";");
+		pw.append(kunde.getAdresse() + ";");
+		pw.append(kunde.getTelefonnr() + ";");
+		pw.print("\n");
+		pw.close();
+
+		// Die Originaldatei löschen
+		inFile.delete();
+
+		// Die *.tmp Datei in den Originalnamen umbenennen
+		if (!tempFile.renameTo(inFile))
+			throw new Exception("Datei konnte nicht umbenannt werden");
 	}
 
 	/**
@@ -126,34 +149,41 @@ public class DateiIO {
 		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(KUNDEN_FILE);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
+		String line = br.readLine();
 		// Der erste Durchlauf dient dazu, herauszufinden, wie viele Kunden es
 		// zu dem übergebenen Namen gibt.
 		int menge = 0;
-		while (line != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
-			if ((items[1].equals(name)) && (items[2].equals(vorname))) {
-				menge++;
+			if (line != null) {
+				String[] items = line.split(";");
+				if ((items[1].equals(name)) && (items[2].equals(vorname))) {
+					menge++;
+				}
 			}
-		}
+		} while (line != null);
+		br.close();
+		fr.close();
 
 		// Der zweite Durchlauf dient dazu, das zurückgegebene Array zu
 		// füllen.
 		Kunde[] results = new Kunde[menge];
 
+		fr = new FileReader(KUNDEN_FILE);
 		br = new BufferedReader(fr);
-		line = "";
+		line = br.readLine();
 		int counter = 0;
-		while ((line != null) && (counter < menge)) {
+		while (counter < menge) {
 			line = br.readLine();
-			String[] items = line.split(";");
-			if ((items[0].equals(name)) && (items[1].equals(vorname))) {
-				// Kunde wird mit den gefundenen Daten erzeugt.
-				int nummer = Integer.parseInt(items[0]);
-				results[counter] = new Kunde(nummer, items[1], items[2],
-						items[3], items[4]);
-				counter++;
+			if (line != null) {
+				String[] items = line.split(";");
+				if ((items[1].equals(name)) && (items[2].equals(vorname))) {
+					// Kunde wird mit den gefundenen Daten erzeugt.
+					int nummer = Integer.parseInt(items[0]);
+					results[counter] = new Kunde(nummer, items[1], items[2],
+							items[3], items[4]);
+					counter++;
+				}
 			}
 		}
 		br.close();
@@ -178,29 +208,33 @@ public class DateiIO {
 		BufferedReader br = new BufferedReader(new FileReader(KUNDEN_FILE));
 		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
-		String line = null;
+		String line = br.readLine();
+		pw.println(line);
 
 		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
 		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.
-		while ((line = br.readLine()) != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
+			if (line != null) {
+				String[] items = line.split(";");
 
-			// Wenn der zu ändernde Kunde gefunden wurde, eine Zeile mit den
-			// neuen Daten schreiben.
-			int nummer = Integer.parseInt(items[0]);
-			if (nummer == kunde.getNummer()) {
-				pw.append(kunde.getNummer() + ";");
-				pw.append(kunde.getName() + ";");
-				pw.append(kunde.getVorname() + ";");
-				pw.append(kunde.getAdresse() + ";");
-				pw.append(kunde.getTelefonnr() + ";");
-				pw.append("\n");
-			} else {
-				// Ansonsten schreibe den Inhalt der alten Zeile
-				pw.println(line);
+				// Wenn der zu ändernde Kunde gefunden wurde, eine Zeile mit den
+				// neuen Daten schreiben.
+				int nummer = Integer.parseInt(items[0]);
+				if (nummer == kunde.getNummer()) {
+					pw.append(kunde.getNummer() + ";");
+					pw.append(kunde.getName() + ";");
+					pw.append(kunde.getVorname() + ";");
+					pw.append(kunde.getAdresse() + ";");
+					pw.append(kunde.getTelefonnr() + ";");
+					pw.append("\n");
+				} else {
+					// Ansonsten schreibe den Inhalt der alten Zeile
+					pw.println(line);
+				}
 			}
-		}
+		} while (line != null);
+
 		pw.close();
 		br.close();
 
@@ -219,32 +253,57 @@ public class DateiIO {
 	 *            Instanz der Klasse {@link Buchung}
 	 * @throws IOException
 	 */
-	public static void saveBuchungToLogFile(Buchung buchung) throws IOException {
-		File logfile = new File(LOGFILE);
-		BufferedWriter bw = new BufferedWriter(new FileWriter(logfile));
+	public static void saveBuchungToLogFile(Buchung buchung) throws Exception {
+		File inFile = new File(LOGFILE);
+
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird
+		File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+		// Datei öffnen und zum Schreiben vorbereiten
+		BufferedReader br = new BufferedReader(new FileReader(LOGFILE));
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+		String line = null;
+
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.
+		do {
+			line = br.readLine();
+			if (line != null) {
+				pw.println(line);
+			}
+		} while (line != null);
+		br.close();
 
 		// Wenn die Buchung storniert ist, wird "Stornierung" + Stornonummer
 		// ausgegeben. Ansonsten wird "Buchung" + Buchungsnummer ausgegeben.
 		if (buchung.getStornonr() > 0) {
-			bw.append("Stornierung" + ";");
-			bw.append(buchung.getStornonr() + ";");
+			pw.append("Stornierung" + ";");
+			pw.append(buchung.getStornonr() + ";");
 		} else {
-			bw.append("Buchung" + ";");
-			bw.append(buchung.getBuchungsnr() + ";");
+			pw.append("Buchung" + ";");
+			pw.append(buchung.getBuchungsnr() + ";");
 		}
 
 		// Die Attribute der Buchung werden einzeln in den FileWriter
 		// geschrieben.
-		bw.append(buchung.getKunde().getNummer() + ";");
-		bw.append(buchung.getKunde().getName() + ";");
-		bw.append(buchung.getKunde().getVorname() + ";");
-		bw.append(buchung.getKunde().getAdresse() + ";");
-		bw.append(buchung.getKunde().getTelefonnr() + ";");
-		bw.append(buchung.getReiseZiel().toString() + ";");
-		bw.append(buchung.getWoche() + ";");
-		bw.append(String.valueOf(buchung.getPlaetze()));
-		bw.newLine();
-		bw.close();
+		pw.append(buchung.getKunde().getNummer() + ";");
+		pw.append(buchung.getKunde().getName() + ";");
+		pw.append(buchung.getKunde().getVorname() + ";");
+		pw.append(buchung.getKunde().getAdresse() + ";");
+		pw.append(buchung.getKunde().getTelefonnr() + ";");
+		pw.append(buchung.getReiseZiel().toString() + ";");
+		pw.append(buchung.getWoche() + ";");
+		pw.append(String.valueOf(buchung.getPlaetze()));
+		pw.print("\n");
+		pw.close();
+
+		// Die Originaldatei löschen
+		inFile.delete();
+
+		// Die *.tmp Datei in den Originalnamen umbenennen
+		if (!tempFile.renameTo(inFile))
+			throw new Exception("Datei konnte nicht umbenannt werden");
 	}
 
 	/**
@@ -270,7 +329,8 @@ public class DateiIO {
 		kunde.setTelefonnr(details[6]);
 		b.setKunde(kunde);
 
-		b.setReiseZiel(Reiseziel.valueOf(details[7]));
+		String ziel = details[7].toUpperCase();
+		b.setReiseZiel(Reiseziel.valueOf(ziel));
 
 		int woche = Integer.parseInt(details[8]);
 		b.setWoche(woche);
@@ -296,21 +356,24 @@ public class DateiIO {
 		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
+		String line = br.readLine();
 		// Mithilfer einer linearen Suche werden alle Einträge mit der
 		// gesuchten Buchungsnummer abgeglichen.
-		while (line != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
-			int nummer = Integer.parseInt(items[1]);
-			// Wenn die Nummer des Eintrags mit der gesuchten Nummer
-			// übereinstimmmt, wird
-			// auf Basis der gefundenen Daten ein Buchungsobjekt erstellt.
-			if (nummer == buchungsnr) {
-				br.close();
-				return erstelleBuchungAusLogEintrag(buchungsnr, items);
+			if (line != null) {
+				String[] items = line.split(";");
+				int nummer = Integer.parseInt(items[1]);
+				// Wenn die Nummer des Eintrags mit der gesuchten Nummer
+				// übereinstimmmt, wird
+				// auf Basis der gefundenen Daten ein Buchungsobjekt erstellt.
+				if (nummer == buchungsnr) {
+					br.close();
+					return erstelleBuchungAusLogEintrag(buchungsnr, items);
+				}
 			}
-		}
+		} while (line != null);
+
 		br.close();
 		return null;
 	}
@@ -328,22 +391,25 @@ public class DateiIO {
 		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
+		String line = br.readLine();
 		// Mithilfer einer linearen Suche wird nach Stornierungen gesucht. Diese
 		// werden dann inhaltlich (siehe Javadoc für equals()) mit der Buchung
 		// abgeglichen.
-		while (line != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
-			if (items[0].contains("Stornierung")) {
-				Buchung stornierung = erstelleBuchungAusLogEintrag(0, items);
-				stornierung.setStornonr(Integer.parseInt(items[1]));
-				if (stornierung.equals(buchung)) {
-					br.close();
-					return stornierung;
+			if (line != null) {
+				String[] items = line.split(";");
+				if (items[0].contains("Stornierung")) {
+					Buchung stornierung = erstelleBuchungAusLogEintrag(0, items);
+					stornierung.setStornonr(Integer.parseInt(items[1]));
+					if (stornierung.equals(buchung)) {
+						br.close();
+						return stornierung;
+					}
 				}
 			}
-		}
+		} while (line != null);
+
 		br.close();
 		return null;
 	}
@@ -370,53 +436,57 @@ public class DateiIO {
 		// Datei oeffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
+		String line = br.readLine();
 
-		while (line != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
-			// Wenn die aktuelle Buchung / Stornierung zur gesuchten Reise
-			// gehört
-			if ((ziel.equals(items[6]))
-					&& (woche == Integer.parseInt(items[7]))) {
-				// Erstelle eine Kundeninstanz aus den Daten in der Buchung
-				Kunde aktKunde = new Kunde();
-				aktKunde.setNummer(Integer.parseInt(items[2]));
-				aktKunde.setName(items[3]);
-				aktKunde.setVorname(items[4]);
-				aktKunde.setAdresse(items[5]);
-				aktKunde.setTelefonnr(items[6]);
+			if (line != null) {
+				String[] items = line.split(";");
+				// Wenn die aktuelle Buchung / Stornierung zur gesuchten Reise
+				// gehört
+				if ((ziel.equals(items[6]))
+						&& (woche == Integer.parseInt(items[7]))) {
+					// Erstelle eine Kundeninstanz aus den Daten in der Buchung
+					Kunde aktKunde = new Kunde();
+					aktKunde.setNummer(Integer.parseInt(items[2]));
+					aktKunde.setName(items[3]);
+					aktKunde.setVorname(items[4]);
+					aktKunde.setAdresse(items[5]);
+					aktKunde.setTelefonnr(items[6]);
 
-				// Wenn eine Buchung vorliegt
-				if (items[0].contains("Buchung")) {
-					// Wenn der aktuelle Kunde nocht nicht als Teilnehmer
-					// vermerkt worden ist, füge ihn der Liste hinzu.
-					if (!(teilnehmerListe.containsTeilnehmer(aktKunde))) {
-						int aktPlaetze = Integer.parseInt(items[9]);
-						teilnehmerListe.appendTeilnehmer(aktKunde, aktPlaetze);
+					// Wenn eine Buchung vorliegt
+					if (items[0].contains("Buchung")) {
+						// Wenn der aktuelle Kunde nocht nicht als Teilnehmer
+						// vermerkt worden ist, füge ihn der Liste hinzu.
+						if (!(teilnehmerListe.containsTeilnehmer(aktKunde))) {
+							int aktPlaetze = Integer.parseInt(items[9]);
+							teilnehmerListe.appendTeilnehmer(aktKunde,
+									aktPlaetze);
+						}
 					}
-				}
 
-				// Wenn eine Stornierung vorliegt
-				else {
-					int storniertePlaetze = Integer.parseInt(items[9]);
-					int gebuchtePlaetze = teilnehmerListe
-							.getPlaetzeZumKunden(aktKunde);
-					int differenz = gebuchtePlaetze - storniertePlaetze;
-					// Wenn alle Plätze, die aktuell gebucht waren, storniert
-					// wurden, entferne den Teilnehmer aus der Liste
-					if (differenz == 0) {
-						teilnehmerListe.removeTeilnehmer(aktKunde,
-								gebuchtePlaetze);
-					} else {
-						// Ansonsten reduziere die gebuchten Plätze in der
-						// Liste.
-						teilnehmerListe.reduziereGebuchtePlaetze(aktKunde,
-								differenz);
+					// Wenn eine Stornierung vorliegt
+					else {
+						int storniertePlaetze = Integer.parseInt(items[9]);
+						int gebuchtePlaetze = teilnehmerListe
+								.getPlaetzeZumKunden(aktKunde);
+						int differenz = gebuchtePlaetze - storniertePlaetze;
+						// Wenn alle Plätze, die aktuell gebucht waren,
+						// storniert
+						// wurden, entferne den Teilnehmer aus der Liste
+						if (differenz == 0) {
+							teilnehmerListe.removeTeilnehmer(aktKunde,
+									gebuchtePlaetze);
+						} else {
+							// Ansonsten reduziere die gebuchten Plätze in der
+							// Liste.
+							teilnehmerListe.reduziereGebuchtePlaetze(aktKunde,
+									differenz);
+						}
 					}
 				}
 			}
-		}
+		} while (line != null);
 		br.close();
 
 		// Erzeuge ein Kundenarray aus der Teilnahmeliste und sortiere es.
@@ -441,21 +511,24 @@ public class DateiIO {
 		// Datei öffnen und zum Lesen vorbereiten
 		FileReader fr = new FileReader(LOGFILE);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
+		String line = br.readLine();
 		String result = "";
 		// Mithilfer einer linearen Suche werden alle Einträge zu dem
 		// übergebenen Reiseziel gesucht.
-		while (line != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
-			if (items[6].equals(reiseziel)) {
-				// Es wird ein String der Form "Nummer Woche Plätze:" erzeugt
-				// und mit dem Ergebnisstring verkettet.
-				String eintrag = items[1] + " " + items[7] + " " + items[8]
-						+ ";";
-				result += eintrag;
+			if (line != null) {
+				String[] items = line.split(";");
+				if (items[7].equals(reiseziel)) {
+					// Es wird ein String der Form "Nummer Woche Plätze:"
+					// erzeugt
+					// und mit dem Ergebnisstring verkettet.
+					String eintrag = items[1] + " " + items[8] + " " + items[9]
+							+ ";";
+					result += eintrag;
+				}
 			}
-		}
+		} while (line != null);
 		br.close();
 		return result;
 	}
@@ -478,36 +551,41 @@ public class DateiIO {
 		BufferedReader br = new BufferedReader(new FileReader(LOGFILE));
 		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
-		String line = null;
+		String line = br.readLine();
+		pw.println(line);
 
 		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei
 		// wieder einfügen. Die zu ändernde Zeile wird neu geschrieben.
-		while ((line = br.readLine()) != null) {
+		do {
 			line = br.readLine();
-			String[] items = line.split(";");
+			if (line != null) {
+				String[] items = line.split(";");
 
-			int aktuelleKundennummer = Integer.parseInt(items[2]);
-			// Pruefe, ob die vorliegende Buchung zum geänderten Kunden gehört
-			if (aktuelleKundennummer == kunde.getNummer()) {
-				// Wenn ja, schreibe die Zeile neu
-				pw.append(items[0]); // Buchungsart bleibt gleich
-				pw.append(items[1]); // Nummer der Buchung/Stornierung bleibt
-										// gleich
-				pw.append(items[2]); // Kundennummer bleibt gleich
-				pw.append(kunde.getName());
-				pw.append(kunde.getVorname());
-				pw.append(kunde.getAdresse());
-				pw.append(kunde.getTelefonnr());
-				pw.append(items[7]); // Reiseziel bleibt gleich
-				pw.append(items[8]); // Gebuchte Woche bleibt gleich
-				pw.append(items[9]); // Gebuchte Plätze bleiben gleich
-				pw.append("\n");
+				int aktuelleKundennummer = Integer.parseInt(items[2]);
+				// Pruefe, ob die vorliegende Buchung zum geänderten Kunden
+				// gehört
+				if (aktuelleKundennummer == kunde.getNummer()) {
+					// Wenn ja, schreibe die Zeile neu
+					pw.append(items[0] + ";"); // Buchungsart bleibt gleich
+					pw.append(items[1] + ";"); // Nummer der Buchung/Stornierung
+												// bleibt
+												// gleich
+					pw.append(items[2] + ";"); // Kundennummer bleibt gleich
+					pw.append(kunde.getName() + ";");
+					pw.append(kunde.getVorname() + ";");
+					pw.append(kunde.getAdresse() + ";");
+					pw.append(kunde.getTelefonnr() + ";");
+					pw.append(items[7] + ";"); // Reiseziel bleibt gleich
+					pw.append(items[8] + ";"); // Gebuchte Woche bleibt gleich
+					pw.append(items[9] + ";"); // Gebuchte Plätze bleiben gleich
+					pw.append("\n");
+				}
 
 			} else {
 				// Ansonsten übernehme die alte Zeile.
 				pw.println(line);
 			}
-		}
+		} while (line != null);
 		pw.close();
 		br.close();
 
