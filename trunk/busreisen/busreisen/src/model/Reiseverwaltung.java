@@ -10,7 +10,7 @@ import utils.KonsoleIO;
  * Diese Klasse ist fuer die Verwaltung der Busse zustaendig.
  * 
  * @author Thomas + Philipp
- * @version 12.03.2012
+ * @version 13.03.2012
  * 
  */
 public class Reiseverwaltung {
@@ -93,7 +93,7 @@ public class Reiseverwaltung {
 	public void buchen() {
 		// Kunden anlegen oder suchen
 		reisender = null;
-		while (reisender != null) {
+		while (reisender == null) {
 			int antwort = KonsoleIO
 					.readIntegerFromConsole("Wollen Sie zu einem bestehenden Kunden eine Reise buchen? (1 = Ja ; 2 = Nein)");
 			if (antwort == 2) {
@@ -128,11 +128,12 @@ public class Reiseverwaltung {
 			if (reise.buchungOK(buchung)) {
 				reise.aktualisiereNachBuchung(buchung);
 				DateiIO.saveBuchungToLogFile(buchung);
+				KonsoleIO.printErfolgsmeldung("Buchung erfolgreich angelegt.");
 			} else {
 				KonsoleIO
 						.printFehlermeldung("Die Reise kann nicht ueberbucht werden!");
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
 	}
@@ -165,7 +166,7 @@ public class Reiseverwaltung {
 		String name = KonsoleIO
 				.readStringFromConsole("Geben Sie den Namen des Kunden ein!");
 		String vorname = KonsoleIO
-				.readStringFromConsole("Geben Sie den Nachnamen des Kunden ein!");
+				.readStringFromConsole("Geben Sie den Vornamen des Kunden ein!");
 
 		// Es wird eine Suchanfrage an den Kundenstamm gesendet.
 		try {
@@ -255,7 +256,6 @@ public class Reiseverwaltung {
 		Kunde kunden[];
 		try {
 			kunden = DateiIO.searchKundeInKundenstamm(name, vorname);
-			KonsoleIO.readGewuenschterKunde(kunden);
 			int pos = KonsoleIO.readGewuenschterKunde(kunden);
 			reisender = kunden[pos];
 
@@ -299,6 +299,7 @@ public class Reiseverwaltung {
 			DateiIO.changeKundeInKundenstamm(reisender);
 			// Alle Buchungen zu diesem Kunden werden geupdated.
 			DateiIO.updateBuchungenZuKunde(reisender);
+			KonsoleIO.printErfolgsmeldung("Kundendaten erfolgreich geändert!");
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
@@ -467,7 +468,8 @@ public class Reiseverwaltung {
 		// Zum Schluss wird der Kunde im Kundenstamm abgelegt.
 		try {
 			DateiIO.saveKundeToKundenstamm(reisender);
-		} catch (IOException e) {
+			KonsoleIO.printErfolgsmeldung("Kunde erfolgreich angelegt!");
+		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
 
@@ -486,11 +488,9 @@ public class Reiseverwaltung {
 		Reise gesuchteReise = getReiseZuZiel(ziel);
 		Bus gesuchterBus = gesuchteReise.getBusZurReisewoche(woche);
 
-		KonsoleIO
-				.printErfolgsmeldung("In dem Bus nach " + ziel.toString()
-						+ ", der in der " + woche + ". Woche faehrt, sind "
-						+ gesuchterBus.getAnzahlFreiePlaetze()
-						+ " freie Plaetze frei.");
+		KonsoleIO.printErfolgsmeldung("In dem Bus nach " + ziel.toString()
+				+ ", der in der " + woche + ". Woche faehrt, sind "
+				+ gesuchterBus.getAnzahlFreiePlaetze() + " Plaetze frei.");
 	}
 }
 

@@ -1,5 +1,6 @@
 package model;
 
+
 /**
  * Diese Klasse wird benutzt, um die Teilnehmer einer nach Woche und Ziel
  * spezifizierten Reise zu verwalten.

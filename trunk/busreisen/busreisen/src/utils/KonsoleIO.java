@@ -39,7 +39,7 @@ public class KonsoleIO {
 	 *            informiert
 	 */
 	public static void printErfolgsmeldung(String msg) {
-		System.out.println(msg);
+		System.out.println("[System] " + msg);
 	}
 
 	/**

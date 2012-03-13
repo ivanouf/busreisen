@@ -150,28 +150,31 @@ public class Reise {
 			String buchungsKette = DateiIO
 					.searchAlleBuchungenZurReise(this.ziel.toString());
 
-			// Dieser wird den Buchungen gemaess aufgetrennt.
-			String buchungen[] = buchungsKette.split(";");
+			if (buchungsKette != "") {
+				// Dieser wird den Buchungen gemaess aufgetrennt.
+				String buchungen[] = buchungsKette.split(";");
 
-			for (int i = 0; i < buchungen.length; i++) {
-				// Fuer jeden Buchungsstring wird nun ein Buchungsobjekt
-				// erstellt und mit den gefundenen Informationen belegt.
-				String items[] = buchungen[i].split(" ");
+				for (int i = 0; i < buchungen.length; i++) {
+					// Fuer jeden Buchungsstring wird nun ein Buchungsobjekt
+					// erstellt und mit den gefundenen Informationen belegt.
+					String items[] = buchungen[i].split(" ");
 
-				Buchung b = new Buchung();
-				b.setWoche(Integer.parseInt(items[1]));
-				b.setPlaetze(Integer.parseInt(items[2]));
+					Buchung b = new Buchung();
+					b.setWoche(Integer.parseInt(items[1]));
+					b.setPlaetze(Integer.parseInt(items[2]));
 
-				int nummer = Integer.parseInt(items[0]);
-				if (nummer > 1000) {
-					b.setStornonr(nummer); // Stornonummern sind vierstellig!
-				} else {
-					b.setBuchungsnr(nummer);
+					int nummer = Integer.parseInt(items[0]);
+					if (nummer >= 1000) {
+						b.setStornonr(nummer); // Stornonummern sind
+												// vierstellig!
+					} else {
+						b.setBuchungsnr(nummer);
+					}
+
+					// Wenn die Buchung also geladen wurde, kann die Busbelegung
+					// aktualisiert werden.
+					aktualisiereNachBuchung(b);
 				}
-
-				// Wenn die Buchung also geladen wurde, kann die Busbelegung
-				// aktualisiert werden.
-				aktualisiereNachBuchung(b);
 			}
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung("Fehler beim Laden der Busbelegung: "
