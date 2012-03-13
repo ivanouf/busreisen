@@ -112,14 +112,13 @@ public class Reiseverwaltung {
 					.readIntegerFromConsole("In welcher Woche moechte der Kunde fahren? [1-3]");
 		}
 
-		// Buchung mit aktueller Nummer erstellen
-		Buchung buchung = new Buchung(aktuelleBuchungsNr, ziel, woche,
-				reisender);
-		aktuelleBuchungsNr++;
 		// Gebuchte Plaetze bestimmen
 		int plaetze = KonsoleIO
 				.readIntegerFromConsole("Wie viele Plaetze moechte der Kunde buchen?");
-		buchung.setPlaetze(plaetze);
+		// Buchung mit aktueller Nummer erstellen
+		Buchung buchung = new Buchung(aktuelleBuchungsNr, ziel, woche,
+				reisender, plaetze);
+		aktuelleBuchungsNr++;
 
 		// Ueberpruefen, ob die Buchung durchgefuehrt werden kann.
 		// Wenn ja, wird sie durchgefuehrt und in der Logdatei gespeichert.
@@ -298,6 +297,8 @@ public class Reiseverwaltung {
 			}
 			// Zum Schluss werden die Aenderungen im Kundenstamm gespeichert.
 			DateiIO.changeKundeInKundenstamm(reisender);
+			// Alle Buchungen zu diesem Kunden werden geupdated.
+			DateiIO.updateBuchungenZuKunde(reisender);
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
 		}
@@ -306,9 +307,7 @@ public class Reiseverwaltung {
 	/**
 	 * Diese Methode veraendert Daten in einer Buchung und speichert diese ab.
 	 */
-	// TODO: Kundendaten dürfen hier nicht geändert werden!
 	public void buchungsDatenKorrektur() {
-		Kunde kunden[];
 		try {
 			int gesuchteBuchungsNr = KonsoleIO
 					.readIntegerFromConsole("Geben Sie die Buchungsnummer ein.");
@@ -356,71 +355,36 @@ public class Reiseverwaltung {
 				// angelegt werden.
 				Buchung neueBuchung = new Buchung(aktuelleBuchungsNr,
 						alteBuchung.getReiseZiel(), alteBuchung.getWoche(),
-						alteBuchung.getKunde());
+						alteBuchung.getKunde(), alteBuchung.getPlaetze());
 
-				// Fuer die Anzeige muss der Kunde gesucht werden.
-				// TODO: Unnoetig ueber "reisender" zu gehen?
-				kunden = DateiIO.searchKundeInKundenstamm(neueBuchung
-						.getKunde().getName(), neueBuchung.getKunde()
-						.getVorname());
-				int pos = KonsoleIO.readGewuenschterKunde(kunden);
-				reisender = kunden[pos];
-
-				// TODO: Zuerst wird die Buchung detailliert ausgegeben.
-				System.out.println("Nachnamen \t:= \t1");
-				System.out.println("Vornamen \t:= \t2");
-				System.out.println("Adresse \t\t:= \t3");
-				System.out.println("Telefonnummer \t:= \t4");
-				System.out.println("Ziel \t\t:= \t5");
-				System.out.println("Woche \t\t:= \t6");
-				System.out.println("Anzahl der Plaetze \t:= \t7");
+				// Eine Nummercode-Abfrage, was geändert werden soll.
+				System.out.println("Ziel \t\t:= \t1");
+				System.out.println("Woche \t\t:= \t2");
+				System.out.println("Anzahl der Plaetze \t:= \t3");
 
 				// Danach startet ein Eingabedialog, mit dessen Hilfe der Nutzer
 				// Angaben aendern kann.
 				int eingabe = KonsoleIO
-						.readIntegerFromConsole("Was moechten Sie aendern?(1-7; 0 = Abbruch)");
+						.readIntegerFromConsole("Was moechten Sie aendern?(1-3; 0 = Abbruch)");
 				// while ( eingabe != 0 ){
 				switch (eingabe) {
 				case 1:
-					String name = KonsoleIO
-							.readStringFromConsole("Geben Sie den Namen des Kunden ein!");
-					reisender.setName(name);
-					break;
-				case 2:
-					String vorname = KonsoleIO
-							.readStringFromConsole("Geben Sie den Vornamen des Kunden ein!");
-					reisender.setVorname(vorname);
-					break;
-				case 3:
-					String adresse = KonsoleIO
-							.readStringFromConsole("Geben Sie die Adresse des Kunden ein!");
-					reisender.setAdresse(adresse);
-					break;
-				case 4:
-					String telefonnummer = KonsoleIO
-							.readStringFromConsole("Geben Sie die Telefonnummer des Kunden ein!");
-					reisender.setTelefonnr(telefonnummer);
-					break;
-				case 5:
 					String ziel = KonsoleIO
 							.readStringFromConsole("Geben Sie das Ziel des Kunden ein!");
 					neueBuchung.setReiseZiel(Reiseziel.valueOf(ziel));
 					break;
-				case 6:
+				case 2:
 					int woche = KonsoleIO
 							.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren moechte!");
 					neueBuchung.setWoche(woche);
 					break;
-				case 7:
+				case 3:
 					int anzahlPlaetze = KonsoleIO
 							.readIntegerFromConsole("Geben Sie die Anzahl der Plaetze ein, die der Kunde buchen moechte!");
 					neueBuchung.setPlaetze(anzahlPlaetze);
 					break;
 				default:
 					break;
-				// case 0:
-				// break;
-				// }
 				}
 
 				// Die Busbelegung wird aktualisiert. Anschliessend wird die
@@ -529,3 +493,6 @@ public class Reiseverwaltung {
 						+ " freie Plaetze frei.");
 	}
 }
+
+// TODO: Beim Beenden der Sitzung aktuelle Buchungsnummer, aktuelle Kundennummer
+// und aktuelle Stornonummer abspeichern.
