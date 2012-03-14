@@ -1,9 +1,9 @@
 Art der Buchung;Nummer;Kundennummer;Name;Vorname;Adresse;Telefonnummer;Ziel;Woche;Anzahl der Plaetze
-Buchung;100;1;Willms;Philipp;Vereinsstrasse 2;123456;Berlin;3;4
+Buchung;100;1;Willms;Philipp;Teststrasse 5;123456;Berlin;3;4
 Buchung;101;2;Trinklein;Thomas;Herrmann-Str. 2;4321;Wien;1;2
-Buchung;102;1;Willms;Philipp;Vereinsstrasse 2;123456;Wien;1;6
-Stornierung;1000;1;Willms;Philipp;Vereinsstrasse 2;123456;Berlin;3;3
-Stornierung;1001;1;Willms;Philipp;Vereinsstrasse 2;123456;Berlin;3;1
+Buchung;102;1;Willms;Philipp;Teststrasse 5;123456;Wien;1;6
+Stornierung;1000;1;Willms;Philipp;Teststrasse 5;123456;Berlin;3;3
+Stornierung;1001;1;Willms;Philipp;Teststrasse 5;123456;Berlin;3;1
 Stornierung;1002;2;Trinklein;Thomas;Herrmann-Str. 2;4321;Wien;1;2
-Stornierung;1004;1;Willms;Philipp;Vereinsstrasse 2;123456;Wien;1;6
-Buchung;103;1;Willms;Philipp;Vereinsstrasse 2;123456;Wien;1;4
+Stornierung;1004;1;Willms;Philipp;Teststrasse 5;123456;Wien;1;6
+Buchung;103;1;Willms;Philipp;Teststrasse 5;123456;Wien;1;4
