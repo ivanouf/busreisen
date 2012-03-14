@@ -85,9 +85,9 @@ public class Reise {
 	}
 
 	/**
-	 * Diese Methode ueberprueft, ob die Buchung für diese Reise in Ordnung ist.
-	 * Dazu wird die Anzahl der freien Plaetze im jeweiligen Bus mit der Anzahl
-	 * der gebuchten Plaetze verglichen.
+	 * Diese Methode überprüft, ob die Buchung für diese Reise in Ordnung ist.
+	 * Dazu wird die Anzahl der freien Plätze im jeweiligen Bus mit der Anzahl
+	 * der gebuchten Plätze verglichen.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
@@ -105,8 +105,8 @@ public class Reise {
 	/**
 	 * Diese Methode wird aufgerufen, um bei einer Buchung oder Stornierung die
 	 * Busbelegung zu aktualisieren. Bei einer Buchung wird die Anzahl der
-	 * freien Plaetze im entsprechenden Bus vermindert. Bei einer Stornierung
-	 * werden die belegten Plaetze im entsprechenden Bus freigegeben.
+	 * freien Plätze im entsprechenden Bus vermindert. Bei einer Stornierung
+	 * werden die belegten Plätze im entsprechenden Bus freigegeben.
 	 * 
 	 * @param buchung
 	 *            Instanz von {@link Buchung}
@@ -151,7 +151,7 @@ public class Reise {
 					.searchAlleBuchungenZurReise(this.ziel.toString());
 
 			if (buchungsKette != "") {
-				// Dieser wird den Buchungen gemaess aufgetrennt.
+				// Dieser wird den Buchungen gemäss aufgetrennt.
 				String buchungen[] = buchungsKette.split(";");
 
 				for (int i = 0; i < buchungen.length; i++) {

@@ -1,10 +1,10 @@
 package model;
 
 /**
- * Diese Klasse beschreibt einen Bus des Reisebï¿½ros.
+ * Diese Klasse beschreibt einen Bus des Reisebüros.
  * 
  * @author Thomas
- * @version 06.03.2012
+ * @version 14.03.2012
  * 
  */
 public class Bus {
@@ -37,11 +37,11 @@ public class Bus {
 	}
 
 	/**
-	 * Diese Methode setzt die Ã¼bergebenen Werte. Der Bus ist unbesetzt, das
-	 * heiÃŸt alle verfÃ¼gbaren PlÃ¤tze sind frei.
+	 * Diese Methode setzt die übergebenen Werte. Der Bus ist unbesetzt, das
+	 * heißt alle verfügbaren Plätze sind frei.
 	 * 
 	 * @param anzahlPlaetze
-	 *            Anzahl der PlÃ¤tze als Integer
+	 *            Anzahl der Plätze als Integer
 	 * @param woche
 	 *            Woche als Integer
 	 * @param reiseZiel
@@ -55,45 +55,45 @@ public class Bus {
 	}
 
 	/**
-	 * Diese Methode gibt die Anzahl der PlÃ¤tze als Integer zurï¿½ck
+	 * Diese Methode gibt die Anzahl der Plätze als Integer zurück
 	 * 
-	 * @return anzahlPlaetze Anzahl der PlÃ¤tze als Integer
+	 * @return anzahlPlaetze Anzahl der Plätze als Integer
 	 */
 	public int getAnzahlPlaetze() {
 		return anzahlPlaetze;
 	}
 
 	/**
-	 * Diese Methode setzt die Anzahl der Plï¿½tze
+	 * Diese Methode setzt die Anzahl der Plätze
 	 * 
 	 * @param anzahlPlaetze
-	 *            Anzahl der Plï¿½tze als Integer
+	 *            Anzahl der Plätze als Integer
 	 */
 	public void setAnzahlPlaetze(int anzahlPlaetze) {
 		this.anzahlPlaetze = anzahlPlaetze;
 	}
 
 	/**
-	 * Diese Methode gibt die Anzahl der freien Plï¿½tze als Integer zurï¿½ck
+	 * Diese Methode gibt die Anzahl der freien Plätze als Integer zurück
 	 * 
-	 * @return anzahlFreiePlaetze Anzahl freier Plï¿½tze als Integer
+	 * @return anzahlFreiePlaetze Anzahl freier Plätze als Integer
 	 */
 	public int getAnzahlFreiePlaetze() {
 		return anzahlFreiePlaetze;
 	}
 
 	/**
-	 * Diese Methode setzt die Anzahl der freien Plï¿½tze
+	 * Diese Methode setzt die Anzahl der freien Plätze
 	 * 
 	 * @param anzahlFreiePlaetze
-	 *            Anzahl freier Plï¿½tze als Integer
+	 *            Anzahl freier Plätze als Integer
 	 */
 	public void setAnzahlFreiePlaetze(int anzahlFreiePlaetze) {
 		this.anzahlFreiePlaetze = anzahlFreiePlaetze;
 	}
 
 	/**
-	 * Diese Methode gibt die Woche als Integer zurï¿½ck
+	 * Diese Methode gibt die Woche als Integer zurück
 	 * 
 	 * @return woche Woche als Integer
 	 */
@@ -112,7 +112,7 @@ public class Bus {
 	}
 
 	/**
-	 * Diese Methode gibt das Reiseziel als String zurï¿½ck
+	 * Diese Methode gibt das Reiseziel als String zurück
 	 * 
 	 * @return reiseZiel Reiseziel als String
 	 */

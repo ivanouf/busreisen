@@ -6,7 +6,7 @@ package model;
  * spezifizierten Reise zu verwalten.
  * 
  * @author Philipp
- * @version 13.03.2012
+ * @version 14.03.2012
  */
 public class TeilnehmerListe {
 
@@ -75,7 +75,7 @@ public class TeilnehmerListe {
 	 *            Instanz von {@link Kunde}, die die Daten des zu löschenden
 	 *            Teilnehmer enthält.
 	 * @param plaetze
-	 *            Anzahl der Plaetze, die der Teilnehmer gebucht hatte
+	 *            Anzahl der Plätze, die der Teilnehmer gebucht hatte
 	 */
 	public void removeTeilnehmer(Kunde kunde, int plaetze) {
 		String aktTeilnehmer = kunde.toString() + " " + String.valueOf(plaetze)
