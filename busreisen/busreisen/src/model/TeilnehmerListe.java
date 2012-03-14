@@ -1,6 +1,5 @@
 package model;
 
-
 /**
  * Diese Klasse wird benutzt, um die Teilnehmer einer nach Woche und Ziel
  * spezifizierten Reise zu verwalten.
@@ -57,12 +56,14 @@ public class TeilnehmerListe {
 	 */
 	public int getPlaetzeZumKunden(Kunde kunde) {
 		String teilnehmerListe = teilnehmer.toString();
-		String[] entries = teilnehmerListe.split(";");
-		for (int i = 0; i < entries.length; i++) {
-			String[] aktKunde = entries[i].split(" ");
-			int kdNummer = Integer.parseInt(aktKunde[0]);
-			if (kdNummer == kunde.getNummer()) {
-				return Integer.parseInt(aktKunde[5]);
+		if (!(teilnehmerListe.equals(""))) {
+			String[] entries = teilnehmerListe.split(";");
+			for (int i = 0; i < entries.length; i++) {
+				String[] aktKunde = entries[i].split(" ");
+				int kdNummer = Integer.parseInt(aktKunde[0]);
+				if (kdNummer == kunde.getNummer()) {
+					return Integer.parseInt(aktKunde[5]);
+				}
 			}
 		}
 		return -1;
@@ -97,7 +98,7 @@ public class TeilnehmerListe {
 	 * @return true or false
 	 */
 	public boolean containsTeilnehmer(Kunde kunde) {
-		return (getPlaetzeZumKunden(kunde) == -1);
+		return (getPlaetzeZumKunden(kunde) != -1);
 	}
 
 	/**

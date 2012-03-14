@@ -17,9 +17,12 @@ import model.TeilnehmerListe;
  * Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm
  * wird in einer .csv-Datei abgelegt. Die Buchungen und Stornierungen werden in
  * einer Log-Datei mitgeschrieben, die ebenfalls im CSV-Format vorliegt.
+ * Außerdem werden die Daten der letzten Sitzung (Kundennummer, Buchungsnummer,
+ * Stornonummer) gespeichert, damit sie bei der nächsten Sitzung zur Verfügung
+ * stehen.
  * 
  * @author Philipp
- * @version 13.03.2012
+ * @version 14.03.2012
  * 
  */
 public class DateiIO {
@@ -50,6 +53,14 @@ public class DateiIO {
 	 * @value "Bussoftware_Kunden.csv"
 	 */
 	public static final String KUNDEN_FILE = "Bussoftware_Kunden.csv";
+
+	/**
+	 * Name der Datei, in der Buchungs-, Storno- und Kundennummer der letzten
+	 * Sitzung gespeichert werden.
+	 * 
+	 * @value "Bussoftware_LetzteSitzung.csv
+	 */
+	public static final String LAST_SESSION_FILE = "Bussoftware_LetzteSitzung.csv";
 
 	/**
 	 * Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der
@@ -87,11 +98,62 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode speichert den Kundenstamm in einer CSV-Datei.
+	 * Diese Methode liest die Nummern von der letzten Sitzung ein.
+	 * 
+	 * @return Array von Integer-Werten mit den Nummern
+	 * @throws IOException
+	 */
+	public static int[] readNummernVonLetzterSitzung() throws IOException {
+		// Speicher für das Ergebnis-Array reservieren
+		int[] nummern = new int[3];
+
+		// Datei öffnen und zum Lesen vorbereiten
+		File file = new File(LAST_SESSION_FILE);
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line = null;
+
+		int counter = 0;
+		do {
+			line = br.readLine();
+			nummern[counter] = Integer.parseInt(line);
+			counter++;
+		} while (counter < 3);
+		br.close();
+
+		return nummern;
+	}
+
+	/**
+	 * Diese Methode speichert die aktuellen Nummern der letzten Sitzung ab.
+	 * 
+	 * @param kundenNr
+	 *            aktuelle Kundennummer der letzten Sitzung
+	 * @param buchungsNr
+	 *            aktuelle Kundennummer der letzten Sitzung
+	 * @param stornoNr
+	 *            aktuelle Kundennummer der letzten Sitzung
+	 * @throws IOException
+	 */
+	public static void saveNummernVonLetzterSitzung(int kundenNr,
+			int buchungsNr, int stornoNr) throws IOException {
+		// Datei öffnen und zum Schreiben vorbereiten
+		File file = new File(LAST_SESSION_FILE);
+		PrintWriter pw = new PrintWriter(file);
+
+		pw.println(kundenNr);
+		pw.println(buchungsNr);
+		pw.println(stornoNr);
+
+		pw.close();
+	}
+
+	/**
+	 * Diese Methode speichert einen übergebenen Kunden in der
+	 * Kundenstamm-Datei.
 	 * 
 	 * @param kunde
 	 *            Instanz der Klasse {@link Kunde}
-	 * @throws IOException
+	 * @throws Exception
 	 */
 	public static void saveKundeToKundenstamm(Kunde kunde) throws Exception {
 		File inFile = new File(KUNDEN_FILE);
@@ -251,7 +313,7 @@ public class DateiIO {
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}
-	 * @throws IOException
+	 * @throws Exception
 	 */
 	public static void saveBuchungToLogFile(Buchung buchung) throws Exception {
 		File inFile = new File(LOGFILE);
@@ -416,10 +478,11 @@ public class DateiIO {
 
 	/**
 	 * Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurück.
-	 * Dabei wird die Logdatei zweimal linear durchsucht. Beim ersten Durchlauf
-	 * werden die Einträge, die zur gesuchten Reise passen, gezählt. Im zweiten
-	 * Durchlauf werden diese Einträge in einem Array abgelegt, welches dann
-	 * sortiert zurückgegeben wird.
+	 * Dabei wird die Logdatei linear durchsucht. Dabei wird der Kunde, der zur
+	 * Reise gehört, zu einer {@link TeilnehmerListe} hinzugeügt. Sollte eine
+	 * Buchung später wieder storniert werden, wird die Teilnehmerliste
+	 * aktualisiert. Zum Schluss wird die Liste von Teilnehmern in ein Array vom
+	 * Typ {@link Kunde} umgewandelt und dann alphabetisch aufsteigend sortiert.
 	 * 
 	 * @param ziel
 	 *            Reiseziel als String
@@ -444,8 +507,8 @@ public class DateiIO {
 				String[] items = line.split(";");
 				// Wenn die aktuelle Buchung / Stornierung zur gesuchten Reise
 				// gehört
-				if ((ziel.equals(items[6]))
-						&& (woche == Integer.parseInt(items[7]))) {
+				if ((ziel.equals(items[7]))
+						&& (woche == Integer.parseInt(items[8]))) {
 					// Erstelle eine Kundeninstanz aus den Daten in der Buchung
 					Kunde aktKunde = new Kunde();
 					aktKunde.setNummer(Integer.parseInt(items[2]));
@@ -498,12 +561,13 @@ public class DateiIO {
 	/**
 	 * Diese Methode sucht alle Buchungen zu einem gegebenen Reiseziel. Als
 	 * Ergebnis werden die relevanten Informationen der Buchung (Nummer, Woche,
-	 * Plaetze) als String mit Leerzeichen verkettet. Fuer Buchungen dient das
+	 * Plaetze) als String mit Leerzeichen verkettet. Für Buchungen dient das
 	 * Semilkolon als Trennzeichen.
 	 * 
 	 * @param reiseziel
 	 *            Reiseziel als String
-	 * @return String der Form "Nummer Woche Plätze;Nummer Woche Plätze;..."
+	 * @return String der Form "Nummer Woche Plätze;Nummer Woche Plätze;..." <br>
+	 *         leerer String, wenn es keine Buchungen zum Reiseziel gibt
 	 * @throws Exception
 	 */
 	public static String searchAlleBuchungenZurReise(String reiseziel)
@@ -579,11 +643,10 @@ public class DateiIO {
 					pw.append(items[8] + ";"); // Gebuchte Woche bleibt gleich
 					pw.append(items[9] + ";"); // Gebuchte Plätze bleiben gleich
 					pw.append("\n");
+				} else {
+					// Ansonsten übernehme die alte Zeile.
+					pw.println(line);
 				}
-
-			} else {
-				// Ansonsten übernehme die alte Zeile.
-				pw.println(line);
 			}
 		} while (line != null);
 		pw.close();

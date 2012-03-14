@@ -74,6 +74,12 @@ public class Reiseverwaltung {
 			if (!(file.exists())) {
 				DateiIO.writeHeadersInLogFile();
 			}
+
+			int aktuelleNummern[] = DateiIO.readNummernVonLetzterSitzung();
+			aktuelleKundenNr = aktuelleNummern[0];
+			aktuelleBuchungsNr = aktuelleNummern[1];
+			aktuelleStornoNr = aktuelleNummern[2];
+
 			file = new File(DateiIO.KUNDEN_FILE);
 			if (!(file.exists())) {
 				DateiIO.writeHeadersInKundenFile();
@@ -211,31 +217,45 @@ public class Reiseverwaltung {
 	 * Diese Methode fuehrt eine Stornierung durch.
 	 */
 	public void stornieren() {
-		Buchung buchung;
-		int plaetze = -1;
+		Buchung buchung, stornierung;
+		int storniertePlaetze = -1;
+		int aktuellePlaetze = 0;
 
 		// Die Buchung, die storniert werden soll, muss gefunden werden.
 		int antwort = KonsoleIO
 				.readIntegerFromConsole("Geben Sie die Nummer zu der Buchung ein, die Sie stornieren wollen!");
 		try {
 			buchung = DateiIO.searchBuchungInLogFile(antwort);
-			while ((plaetze < 0) || (plaetze > buchung.getPlaetze())) {
-				plaetze = KonsoleIO
+			stornierung = DateiIO.searchStornierungZurBuchung(buchung);
+
+			// Wenn die Buchung schon einmal storniert wurde, müssen die
+			// aktuellen Plätze, die gebucht sind, ermittelt werden.
+			if (stornierung != null) {
+				aktuellePlaetze = buchung.getPlaetze()
+						- stornierung.getPlaetze();
+			} else {
+				aktuellePlaetze = buchung.getPlaetze();
+			}
+
+			while ((storniertePlaetze < 0)
+					|| (storniertePlaetze > aktuellePlaetze)) {
+				storniertePlaetze = KonsoleIO
 						.readIntegerFromConsole("Geben Sie die Anzahl der Plaetze ein, die storniert werden sollen!");
 				// Abfangen der Fehlereignisse "negative Anzahl von Plätzen"
 				// und "Unterdeckung"
-				if ((plaetze < 0) || (plaetze > buchung.getPlaetze())) {
+				if ((storniertePlaetze < 0)
+						|| (storniertePlaetze > aktuellePlaetze)) {
 					KonsoleIO
 							.printFehlermeldung("Fehlerhafte Eingabe! Wiederhohlen Sie die Eingabe!");
 				}
 			}
 			// Wenn alles in Ordnung ist, kann storniert werden.
-			buchung.storniere(aktuelleStornoNr, plaetze);
+			buchung.storniere(aktuelleStornoNr, storniertePlaetze);
 			aktuelleStornoNr++;
+
 			// Synchronisierung mit der entsprechenden Reise
 			Reise reise = getReiseZuZiel(buchung.getReiseZiel());
 			reise.aktualisiereNachBuchung(buchung);
-
 			DateiIO.saveBuchungToLogFile(buchung);
 
 		} catch (Exception e) {
@@ -261,6 +281,7 @@ public class Reiseverwaltung {
 
 			// Der User soll mithilfe von Zahlen angegeben, was er aendern
 			// moechte.
+			// TODO: Tabulatoren raus
 			System.out.println("Nachnamen \t\t:= \t1");
 			System.out.println("Vornamen \t\t:= \t2");
 			System.out.println("Adresse \t\t:= \t3");
@@ -349,6 +370,8 @@ public class Reiseverwaltung {
 
 					Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());
 					reise.aktualisiereNachBuchung(alteBuchung);
+
+					DateiIO.saveBuchungToLogFile(alteBuchung);
 				}
 
 				// Nachdem die alte Buchung komplett storniert wurde, kann nun
@@ -359,14 +382,14 @@ public class Reiseverwaltung {
 						alteBuchung.getKunde(), alteBuchung.getPlaetze());
 
 				// Eine Nummercode-Abfrage, was geändert werden soll.
-				System.out.println("Ziel \t\t:= \t1");
-				System.out.println("Woche \t\t:= \t2");
-				System.out.println("Anzahl der Plaetze \t:= \t3");
+				System.out.println("Ziel [1]");
+				System.out.println("Woche [2}");
+				System.out.println("Anzahl der Plaetze [3]");
 
 				// Danach startet ein Eingabedialog, mit dessen Hilfe der Nutzer
 				// Angaben ändern kann.
 				int eingabe = KonsoleIO
-						.readIntegerFromConsole("Was moechten Sie aendern?(1-3; 0 = Abbruch)");
+						.readIntegerFromConsole("Was möchten Sie ändern?(1-3; 0 = Abbruch)");
 				// while ( eingabe != 0 ){
 				switch (eingabe) {
 				case 1:
@@ -376,13 +399,14 @@ public class Reiseverwaltung {
 					break;
 				case 2:
 					int woche = KonsoleIO
-							.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren moechte!");
+							.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren möchte!");
 					neueBuchung.setWoche(woche);
 					break;
 				case 3:
 					int anzahlPlaetze = KonsoleIO
-							.readIntegerFromConsole("Geben Sie die Anzahl der Plaetze ein, die der Kunde buchen moechte!");
+							.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die der Kunde buchen möchte!");
 					neueBuchung.setPlaetze(anzahlPlaetze);
+					// TODO: Überbuchung prüfen
 					break;
 				default:
 					break;
@@ -481,7 +505,7 @@ public class Reiseverwaltung {
 	 */
 	public void zeigeFreiePlaetzeEinesBusses() {
 		Reiseziel ziel = KonsoleIO
-				.readGewuenschtesReiseziel("Fue welche Reise moechten Sie den Bus anzeigen lassen?");
+				.readGewuenschtesReiseziel("Für welche Reise moechten Sie den Bus anzeigen lassen?");
 		int woche = KonsoleIO
 				.readIntegerFromConsole("In welcher Woche faehrt der gesuchte Bus? [1], [2] oder [3]");
 
@@ -492,7 +516,41 @@ public class Reiseverwaltung {
 				+ ", der in der " + woche + ". Woche faehrt, sind "
 				+ gesuchterBus.getAnzahlFreiePlaetze() + " Plaetze frei.");
 	}
-}
 
-// TODO: Beim Beenden der Sitzung aktuelle Buchungsnummer, aktuelle Kundennummer
-// und aktuelle Stornonummer abspeichern.
+	/**
+	 * Diese Methode ermöglicht es dem Benutzer, die Teilnehmer einer Reise in
+	 * alphabetischer Reihenfolge ausgeben zu lassen.
+	 */
+	public void zeigeTeilnehmerEinerReise() {
+		Reiseziel ziel = KonsoleIO
+				.readGewuenschtesReiseziel("Für welche Reise moechten Sie sich die Teilnehmer anzeigen lassen?");
+		int woche = KonsoleIO
+				.readIntegerFromConsole("In welcher Woche findet die gesuchte Reise statt? [1], [2] oder [3]");
+
+		try {
+			Kunde[] teilnehmer = DateiIO.getTeilnehmerZuReise(ziel.toString(),
+					woche);
+			for (int i = 0; i < teilnehmer.length; i++) {
+				String s = teilnehmer[i].getNummer() + " \t "
+						+ teilnehmer[i].getName() + " \t "
+						+ teilnehmer[i].getVorname();
+				KonsoleIO.printErfolgsmeldung(s);
+			}
+		} catch (Exception e) {
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);
+		}
+	}
+
+	/**
+	 * Diese Methode speichert aktuelle Kunden-, Buchungs- und Stornonummer in
+	 * einer CSV-Datei.
+	 */
+	public void speichereDatenDerSitzung() {
+		try {
+			DateiIO.saveNummernVonLetzterSitzung(aktuelleKundenNr,
+					aktuelleBuchungsNr, aktuelleStornoNr);
+		} catch (IOException e) {
+			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
+		}
+	}
+}
