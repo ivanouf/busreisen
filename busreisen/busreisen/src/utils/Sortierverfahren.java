@@ -3,7 +3,7 @@ package utils;
 import model.Kunde;
 
 /**
- * Diese Klasse ist fuer die Sortierung der Daten zustaendig.
+ * Diese Klasse ist für die Sortierung der Daten zuständig.
  * 
  * @author Thomas
  * @version 09.03.2012
@@ -11,7 +11,7 @@ import model.Kunde;
  */
 public class Sortierverfahren {
 	/**
-	 * Disese Methode Sortiert die Daten in aufsteigender Reihenfolge. Es wird
+	 * Disese Methode sortiert die Daten in aufsteigender Reihenfolge. Es wird
 	 * das Verfahren "SelectionSort" genutzt.
 	 * 
 	 * @param daten
@@ -39,7 +39,7 @@ public class Sortierverfahren {
 	}
 
 	/**
-	 * Disese Methode Sortiert die Daten in aufsteigender Reihenfolge. Es wird
+	 * Disese Methode sortiert die Daten in aufsteigender Reihenfolge. Es wird
 	 * das Verfahren "BubbleSort" genutzt.
 	 * 
 	 * @param daten
@@ -59,7 +59,7 @@ public class Sortierverfahren {
 	}
 
 	/**
-	 * Disese Methode Sortiert die Daten in aufsteigender Reihenfolge. Es wird
+	 * Disese Methode sortiert die Daten in aufsteigender Reihenfolge. Es wird
 	 * das Verfahren "InsertSort" genutzt.
 	 * 
 	 * @param daten
@@ -98,15 +98,20 @@ public class Sortierverfahren {
 	 *            Array mit Objekten vom Typ {@link Kunde}
 	 */
 	public static void bubbleSort(Kunde[] kunden) {
-		for (int j = 0; j < kunden.length - 1; j++) {
-			for (int i = 0; i < kunden.length - 1; i++) {
-				if (kunden[i].getName().compareToIgnoreCase(
-						kunden[i + 1].getName()) > 0) {
-					Kunde hilfsVar = kunden[i];
-					kunden[i] = kunden[i + 1];
-					kunden[i + 1] = hilfsVar;
+		boolean tausch = false;
+		do {
+			tausch = false;
+			for (int j = 0; j < kunden.length - 1; j++) {
+				for (int i = 0; i < kunden.length - 1; i++) {
+					if (kunden[i].getName().compareToIgnoreCase(
+							kunden[i + 1].getName()) > 0) {
+						Kunde hilfsVar = kunden[i];
+						kunden[i] = kunden[i + 1];
+						kunden[i + 1] = hilfsVar;
+						tausch = true;
+					}
 				}
 			}
-		}
+		} while (tausch);
 	}
 }

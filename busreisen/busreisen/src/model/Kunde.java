@@ -169,6 +169,9 @@ public class Kunde {
 	/**
 	 * Diese Methode gibt das Kunden-Objekt mit seinen Attributen als String
 	 * aus.
+	 * 
+	 * @return Kundennummer + " " + Kundenname + " " + Kundenvorname + " " +
+	 *         Kundenadresse + " " + Telefonnummer
 	 */
 	public String toString() {
 		return (this.kdNummer + " " + this.name + " " + this.vorname + " "
@@ -176,8 +179,11 @@ public class Kunde {
 	}
 
 	/**
-	 * Diese Methode wird verwendet, um zwei Kunden-Objekte miteinander
-	 * vergleichen zu können. Dazu wird die toString()-Methode verwendet.
+	 * Diese Methode wird verwendet, um zwei Kunden-Objekte inhaltlich
+	 * miteinander vergleichen zu können. Dazu wird die toString()-Methode
+	 * verwendet.
+	 * 
+	 * @return true or false
 	 */
 	public boolean equals(Object object) {
 		Kunde kunde = (Kunde) object;

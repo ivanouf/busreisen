@@ -94,7 +94,7 @@ public class Reiseverwaltung {
 	 * bzw. angelegt, wenn er noch nicht im Kundenstamm vorhanden ist.
 	 * 
 	 * @return boolean true für erfolgreich <br>
-	 *        		   false für fehlgeschlagen
+	 *         false für fehlgeschlagen
 	 */
 	public void buchen() {
 		// Kunden anlegen oder suchen
@@ -111,11 +111,11 @@ public class Reiseverwaltung {
 
 		// Reiseziel und gewünschte Woche einlesen
 		Reiseziel ziel = KonsoleIO
-				.readGewuenschtesReiseziel("Wohin moechte der Kunde reisen?");
+				.readGewuenschtesReiseziel("Wohin möchte der Kunde reisen?");
 		int woche = 0;
 		while ((woche <= 0) || (woche > 3)) {
 			woche = KonsoleIO
-					.readIntegerFromConsole("In welcher Woche moechte der Kunde fahren? [1-3]");
+					.readIntegerFromConsole("In welcher Woche möchte der Kunde fahren? [1-3]");
 		}
 
 		// Gebuchte Plätze bestimmen
@@ -124,7 +124,6 @@ public class Reiseverwaltung {
 		// Buchung mit aktueller Nummer erstellen
 		Buchung buchung = new Buchung(aktuelleBuchungsNr, ziel, woche,
 				reisender, plaetze);
-		aktuelleBuchungsNr++;
 
 		// Ueberpruefen, ob die Buchung durchgeführt werden kann.
 		// Wenn ja, wird sie durchgefuehrt und in der Logdatei gespeichert.
@@ -135,6 +134,7 @@ public class Reiseverwaltung {
 				reise.aktualisiereNachBuchung(buchung);
 				DateiIO.saveBuchungToLogFile(buchung);
 				KonsoleIO.printErfolgsmeldung("Buchung erfolgreich angelegt.");
+				aktuelleBuchungsNr++;
 			} else {
 				KonsoleIO
 						.printFehlermeldung("Die Reise kann nicht ueberbucht werden!");
@@ -281,11 +281,10 @@ public class Reiseverwaltung {
 
 			// Der User soll mithilfe von Zahlen angegeben, was er aendern
 			// moechte.
-			// TODO: Tabulatoren raus
-			System.out.println("Nachnamen \t\t:= \t1");
-			System.out.println("Vornamen \t\t:= \t2");
-			System.out.println("Adresse \t\t:= \t3");
-			System.out.println("Telefonnummer \t:= \t4");
+			System.out.println("Nachname [1]");
+			System.out.println("Vornamen [2]");
+			System.out.println("Adresse [3]");
+			System.out.println("Telefonnummer [4]");
 			int eingabe = KonsoleIO
 					.readIntegerFromConsole("Was moechten Sie veraendern? (1-4; 0 = Abbruch)");
 			// while(eingabe != 0){
@@ -380,6 +379,8 @@ public class Reiseverwaltung {
 				Buchung neueBuchung = new Buchung(aktuelleBuchungsNr,
 						alteBuchung.getReiseZiel(), alteBuchung.getWoche(),
 						alteBuchung.getKunde(), alteBuchung.getPlaetze());
+				// Außerdem wird das Reise-Objekt geladen.
+				Reise reise = getReiseZuZiel(neueBuchung.getReiseZiel());
 
 				// Eine Nummercode-Abfrage, was geändert werden soll.
 				System.out.println("Ziel [1]");
@@ -387,26 +388,37 @@ public class Reiseverwaltung {
 				System.out.println("Anzahl der Plaetze [3]");
 
 				// Danach startet ein Eingabedialog, mit dessen Hilfe der Nutzer
-				// Angaben ändern kann.
+				// Angaben ändern kann. Dieser ist dem eigentlichen Buchvorgang
+				// sehr ähnlich.
 				int eingabe = KonsoleIO
 						.readIntegerFromConsole("Was möchten Sie ändern?(1-3; 0 = Abbruch)");
-				// while ( eingabe != 0 ){
 				switch (eingabe) {
 				case 1:
-					String ziel = KonsoleIO
-							.readStringFromConsole("Geben Sie das Ziel des Kunden ein!");
-					neueBuchung.setReiseZiel(Reiseziel.valueOf(ziel));
+					Reiseziel ziel = KonsoleIO
+							.readGewuenschtesReiseziel("Geben Sie das Ziel des Kunden ein!");
+					neueBuchung.setReiseZiel(ziel);
+					reise = getReiseZuZiel(neueBuchung.getReiseZiel());
 					break;
 				case 2:
-					int woche = KonsoleIO
-							.readIntegerFromConsole("Geben Sie die Woche ein, in der der Kunde fahren möchte!");
+					int woche = 0;
+					while ((woche <= 0) || (woche > 3)) {
+						woche = KonsoleIO
+								.readIntegerFromConsole("In welcher Woche möchte der Kunde fahren? [1-3]");
+					}
 					neueBuchung.setWoche(woche);
 					break;
 				case 3:
-					int anzahlPlaetze = KonsoleIO
-							.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die der Kunde buchen möchte!");
-					neueBuchung.setPlaetze(anzahlPlaetze);
-					// TODO: Überbuchung prüfen
+					do {
+						int anzahlPlaetze = KonsoleIO
+								.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die der Kunde buchen möchte!");
+						neueBuchung.setPlaetze(anzahlPlaetze);
+
+						if (!reise.buchungOK(neueBuchung)) {
+							KonsoleIO
+									.printFehlermeldung("Die Reise kann nicht ueberbucht werden!");
+						}
+
+					} while (!reise.buchungOK(neueBuchung));
 					break;
 				default:
 					break;
@@ -414,9 +426,9 @@ public class Reiseverwaltung {
 
 				// Die Busbelegung wird aktualisiert. Anschließend wird die
 				// Buchung in der Logdatei gespeichert.
-				Reise reise = getReiseZuZiel(neueBuchung.getReiseZiel());
 				reise.aktualisiereNachBuchung(neueBuchung);
 				DateiIO.saveBuchungToLogFile(neueBuchung);
+
 			} else {
 				KonsoleIO
 						.printFehlermeldung("Die gesuchte Buchung ist nicht vorhanden!");
