@@ -4,8 +4,8 @@ package model;
  * Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des
  * ReisebÃ¼ros in das Programm eingegeben wird.
  * 
- * @author Philipp
- * @version 12.03.2012
+ * @author Philipp+Thomas
+ * @version 14.03.2012
  */
 public class Buchung {
 
@@ -36,7 +36,7 @@ public class Buchung {
 	private int woche;
 
 	/**
-	 * Vom Kunden gebuchte Anzahl der Plätze
+	 * Vom Kunden gewünschte Anzahl an Plätzen
 	 */
 	private int plaetze;
 
@@ -83,7 +83,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert den Kunden, zu dem die Buchnung gehört.
+	 * Diese Methode setzt den Kunden, zu dem die Buchnung gehört.
 	 * 
 	 * @param kunde
 	 *            Instanz vom Typ {@link Kunde}
@@ -102,7 +102,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Buchungsnummer.
+	 * Diese Methode setzt die Buchungsnummer.
 	 * 
 	 * @param buchungsnr
 	 *            Buchungsnummer als ganze Zahl
@@ -121,7 +121,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode setzt die Stornierungsnummer zu dieser Buchung.
+	 * Diese Methode setzt die Stornierungsnummer zu einer Buchung.
 	 * 
 	 * @param stornonr
 	 *            Stornonummer als ganze Zahl
@@ -154,7 +154,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert das Reiseziel.
+	 * Diese Methode setzt das Reiseziel.
 	 * 
 	 * @param reiseZiel
 	 *            Reiseziel als String
@@ -173,7 +173,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Woche der Buchung.
+	 * Diese Methode setzt die Woche der Buchung.
 	 * 
 	 * @param woche
 	 *            Woche als ganze Zahl
@@ -192,7 +192,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Anzahl der gebuchten Plätze.
+	 * Diese Methode setzt die Anzahl der gebuchten Plätze.
 	 * 
 	 * @param plaetze
 	 *            Anzahl der Plätze als ganze Zahl
@@ -202,7 +202,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode prueft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel und
+	 * Diese Methode prüft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel und
 	 * Woche uebereinstimmen.
 	 * 
 	 * @param object

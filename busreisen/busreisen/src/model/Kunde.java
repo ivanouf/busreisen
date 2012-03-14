@@ -4,7 +4,7 @@ package model;
  * Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.
  * 
  * @author Philipp
- * @version 11.03.2012
+ * @version 12.03.2012
  */
 public class Kunde {
 

@@ -1,10 +1,10 @@
 package model;
 
 /**
- * Diese Enumeration verwaltet die Reiseziele des ReisebÃ¼ros.
+ * Diese Enumeration verwaltet die Reiseziele des Reisebüros.
  * 
  * @author Thomas
- * @version 09.03.2012
+ * @version 14.03.2012
  */
 public enum Reiseziel {
 
