@@ -7,6 +7,8 @@ public class Test {
 	public static void main(String[] args) {
 
 		Reiseverwaltung reiseverwaltung = new Reiseverwaltung();
-		reiseverwaltung.kundenDatenKorrektur();
+		reiseverwaltung.zeigeFreiePlaetzeEinesBusses();
+		reiseverwaltung.zeigeTeilnehmerEinerReise();
+		reiseverwaltung.speichereDatenDerSitzung();
 	}
 }
