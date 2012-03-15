@@ -10,7 +10,7 @@ import utils.KonsoleIO;
  * Diese Klasse ist fuer die Verwaltung der Busse zustaendig.
  * 
  * @author Thomas + Philipp
- * @version 14.03.2012
+ * @version 15.03.2012
  * 
  */
 public class Reiseverwaltung {
@@ -58,7 +58,7 @@ public class Reiseverwaltung {
 
 	/**
 	 * Der Konstruktor initialisiert die Attribute mit festgelegten Werten und
-	 * die Reisen, die gebucht werden koennen. Außerdem werden beim allerersten
+	 * die Reisen, die gebucht werden können. Außerdem werden beim allerersten
 	 * Programmstart die CSV-Dateien für die interne Verwaltung angelegt.
 	 */
 	public Reiseverwaltung() {
@@ -119,13 +119,21 @@ public class Reiseverwaltung {
 		}
 
 		// Gebuchte Plätze bestimmen
-		int plaetze = KonsoleIO
-				.readIntegerFromConsole("Wie viele Plaetze moechte der Kunde buchen?");
+		int plaetze = 0;
+		do {
+			plaetze = KonsoleIO
+					.readIntegerFromConsole("Wie viele Plätze möchte der Kunde buchen?");
+			if (plaetze <= 0) {
+				KonsoleIO
+						.printFehlermeldung("Bitte geben Sie eine positive ganze Zahl ein!");
+			}
+		} while (plaetze <= 0);
+
 		// Buchung mit aktueller Nummer erstellen
 		Buchung buchung = new Buchung(aktuelleBuchungsNr, ziel, woche,
 				reisender, plaetze);
 
-		// Ueberpruefen, ob die Buchung durchgeführt werden kann.
+		// Überprüfen, ob die Buchung durchgeführt werden kann.
 		// Wenn ja, wird sie durchgefuehrt und in der Logdatei gespeichert.
 		// Ansonsten erscheint eine Fehlermeldung.
 		try {
@@ -133,11 +141,13 @@ public class Reiseverwaltung {
 			if (reise.buchungOK(buchung)) {
 				reise.aktualisiereNachBuchung(buchung);
 				DateiIO.saveBuchungToLogFile(buchung);
-				KonsoleIO.printErfolgsmeldung("Buchung erfolgreich angelegt.");
+				KonsoleIO
+						.printErfolgsmeldung("Buchung erfolgreich unter der Buchungsnummer "
+								+ aktuelleBuchungsNr + " angelegt.");
 				aktuelleBuchungsNr++;
 			} else {
 				KonsoleIO
-						.printFehlermeldung("Die Reise kann nicht ueberbucht werden!");
+						.printFehlermeldung("Die Reise kann nicht überbucht werden!");
 			}
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
@@ -240,13 +250,13 @@ public class Reiseverwaltung {
 			while ((storniertePlaetze < 0)
 					|| (storniertePlaetze > aktuellePlaetze)) {
 				storniertePlaetze = KonsoleIO
-						.readIntegerFromConsole("Geben Sie die Anzahl der Plaetze ein, die storniert werden sollen!");
+						.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die storniert werden sollen!");
 				// Abfangen der Fehlereignisse "negative Anzahl von Plätzen"
 				// und "Unterdeckung"
 				if ((storniertePlaetze < 0)
 						|| (storniertePlaetze > aktuellePlaetze)) {
 					KonsoleIO
-							.printFehlermeldung("Fehlerhafte Eingabe! Wiederhohlen Sie die Eingabe!");
+							.printFehlermeldung("Fehlerhafte Eingabe! Wiederholen Sie die Eingabe!");
 				}
 			}
 			// Wenn alles in Ordnung ist, kann storniert werden.
@@ -279,15 +289,15 @@ public class Reiseverwaltung {
 			int pos = KonsoleIO.readGewuenschterKunde(kunden);
 			reisender = kunden[pos];
 
-			// Der User soll mithilfe von Zahlen angegeben, was er aendern
-			// moechte.
+			// Der User soll mithilfe von Zahlen angegeben, was er ändern
+			// möchte.
 			System.out.println("Nachname [1]");
 			System.out.println("Vornamen [2]");
-			System.out.println("Adresse [3]");
+			System.out.println("Adresse  [3]");
 			System.out.println("Telefonnummer [4]");
+
 			int eingabe = KonsoleIO
-					.readIntegerFromConsole("Was moechten Sie veraendern? (1-4; 0 = Abbruch)");
-			// while(eingabe != 0){
+					.readIntegerFromConsole("Was möchten Sie verändern? (1-4; 0 = Abbruch)");
 			switch (eingabe) {
 			case 1:
 				name = KonsoleIO
@@ -313,8 +323,8 @@ public class Reiseverwaltung {
 				break;
 			default:
 				break;
-			// }
 			}
+
 			// Zum Schluss werden die Änderungen im Kundenstamm gespeichert.
 			DateiIO.changeKundeInKundenstamm(reisender);
 			// Alle Buchungen zu diesem Kunden werden geupdated.
@@ -357,6 +367,9 @@ public class Reiseverwaltung {
 
 						Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());
 						reise.aktualisiereNachBuchung(alteBuchung);
+					} else {
+						KonsoleIO
+								.printErfolgsmeldung("Diese Buchung wurde bereits vollständig storniert, deshalb kann sie nicht geändert werden.");
 					}
 				}
 
@@ -384,8 +397,8 @@ public class Reiseverwaltung {
 
 				// Eine Nummercode-Abfrage, was geändert werden soll.
 				System.out.println("Ziel [1]");
-				System.out.println("Woche [2}");
-				System.out.println("Anzahl der Plaetze [3]");
+				System.out.println("Woche [2]");
+				System.out.println("Anzahl der Plätze [3]");
 
 				// Danach startet ein Eingabedialog, mit dessen Hilfe der Nutzer
 				// Angaben ändern kann. Dieser ist dem eigentlichen Buchvorgang
@@ -415,7 +428,7 @@ public class Reiseverwaltung {
 
 						if (!reise.buchungOK(neueBuchung)) {
 							KonsoleIO
-									.printFehlermeldung("Die Reise kann nicht ueberbucht werden!");
+									.printFehlermeldung("Die Reise kann nicht überbucht werden!");
 						}
 
 					} while (!reise.buchungOK(neueBuchung));
@@ -453,20 +466,19 @@ public class Reiseverwaltung {
 			// Wenn die Buchung vorhanden ist, werden ihre Attribute auf der
 			// Konsole ausgegeben.
 			if (buchung != null) {
-				System.out.println("Buchungsnummer:\t\t"
-						+ buchung.getBuchungsnr());
 				System.out
-						.println("Name:\t\t\t" + buchung.getKunde().getName());
-				System.out.println("Vorname:\t\t\t"
+						.println("Buchungsnummer: " + buchung.getBuchungsnr());
+				System.out.println("Name: " + buchung.getKunde().getName());
+				System.out.println("Vorname: "
 						+ buchung.getKunde().getVorname());
-				System.out.println("Adresse:\t\t\t"
+				System.out.println("Adresse: "
 						+ buchung.getKunde().getAdresse());
-				System.out.println("Telefonnummer:\t\t"
+				System.out.println("Telefonnummer: "
 						+ buchung.getKunde().getTelefonnr());
-				System.out.println("Reiseziel:\t\t\t"
+				System.out.println("Reiseziel: "
 						+ buchung.getReiseZiel().toString());
-				System.out.println("Woche:\t\t\t" + buchung.getWoche());
-				System.out.println("Plaetze:\t\t\t"
+				System.out.println("Woche: " + buchung.getWoche());
+				System.out.println("Plätze: "
 						+ String.valueOf(buchung.getPlaetze()));
 			} else {
 				KonsoleIO
@@ -486,10 +498,10 @@ public class Reiseverwaltung {
 		// Nacheinander werden die Attribute, die für einen Kunden wichtig
 		// sind, nacheinander von der Konsole eingelesen.
 		String name = KonsoleIO
-				.readStringFromConsole("Geben Sie einen Namen fuer den Kunden ein!");
+				.readStringFromConsole("Geben Sie einen Namen für den Kunden ein!");
 
 		String vorname = KonsoleIO
-				.readStringFromConsole("Geben Sie einen Vornamen fuer den Kunden ein!");
+				.readStringFromConsole("Geben Sie einen Vornamen für den Kunden ein!");
 
 		String telefonnr = KonsoleIO
 				.readStringFromConsole("Geben Sie die Telefonnummer des Kunden ein!");
@@ -504,7 +516,8 @@ public class Reiseverwaltung {
 		// Zum Schluss wird der Kunde im Kundenstamm abgelegt.
 		try {
 			DateiIO.saveKundeToKundenstamm(reisender);
-			KonsoleIO.printErfolgsmeldung("Kunde erfolgreich angelegt!");
+			KonsoleIO.printErfolgsmeldung("Kunde erfolgreich unter der Nummer "
+					+ aktuelleKundenNr + " angelegt!");
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
@@ -517,16 +530,16 @@ public class Reiseverwaltung {
 	 */
 	public void zeigeFreiePlaetzeEinesBusses() {
 		Reiseziel ziel = KonsoleIO
-				.readGewuenschtesReiseziel("Für welche Reise moechten Sie den Bus anzeigen lassen?");
+				.readGewuenschtesReiseziel("Für welche Reise möchten Sie den Bus anzeigen lassen?");
 		int woche = KonsoleIO
-				.readIntegerFromConsole("In welcher Woche faehrt der gesuchte Bus? [1], [2] oder [3]");
+				.readIntegerFromConsole("In welcher Woche fährt der gesuchte Bus? [1], [2] oder [3]");
 
 		Reise gesuchteReise = getReiseZuZiel(ziel);
 		Bus gesuchterBus = gesuchteReise.getBusZurReisewoche(woche);
 
 		KonsoleIO.printErfolgsmeldung("In dem Bus nach " + ziel.toString()
-				+ ", der in der " + woche + ". Woche faehrt, sind "
-				+ gesuchterBus.getAnzahlFreiePlaetze() + " Plaetze frei.");
+				+ ", der in der " + woche + ". Woche fährt, sind "
+				+ gesuchterBus.getAnzahlFreiePlaetze() + " Plätze frei.");
 	}
 
 	/**
@@ -535,7 +548,7 @@ public class Reiseverwaltung {
 	 */
 	public void zeigeTeilnehmerEinerReise() {
 		Reiseziel ziel = KonsoleIO
-				.readGewuenschtesReiseziel("Für welche Reise moechten Sie sich die Teilnehmer anzeigen lassen?");
+				.readGewuenschtesReiseziel("Für welche Reise möchten Sie sich die Teilnehmer anzeigen lassen?");
 		int woche = KonsoleIO
 				.readIntegerFromConsole("In welcher Woche findet die gesuchte Reise statt? [1], [2] oder [3]");
 
@@ -543,8 +556,7 @@ public class Reiseverwaltung {
 			Kunde[] teilnehmer = DateiIO.getTeilnehmerZuReise(ziel.toString(),
 					woche);
 			for (int i = 0; i < teilnehmer.length; i++) {
-				String s = teilnehmer[i].getNummer() + " \t "
-						+ teilnehmer[i].getName() + " \t "
+				String s = teilnehmer[i].getName() + " \t "
 						+ teilnehmer[i].getVorname();
 				KonsoleIO.printErfolgsmeldung(s);
 			}

@@ -19,17 +19,17 @@ public class KonsoleIO {
 	/**
 	 * Fehlermeldung, wenn das Einlesen von der Konsole nicht funktioniert hat
 	 */
-	private static String IO_ERROR = "Beim Einlesen ist ein Fehler aufgetreten!";
+	private static final String IO_ERROR = "Beim Einlesen ist ein Fehler aufgetreten!";
 
 	/**
 	 * Fehlermeldung, wenn die Eingabe nicht zum Integer konvertiert werden kann
 	 */
-	private static String INTEGER_ERROR = "Das eingegebene Zeichen ist keine ganze Zahl!";
+	private static final String INTEGER_ERROR = "Das eingegebene Zeichen ist keine ganze Zahl!";
 
 	/**
 	 * Fehlermeldung, wenn die Eingabe nicht zum Double konvertiert werden kann
 	 */
-	private static String DOUBLE_ERROR = "Das eingegebene Zeichen ist keine Gleitkommazahl!";
+	private static final String DOUBLE_ERROR = "Das eingegebene Zeichen ist keine Gleitkommazahl!";
 
 	/**
 	 * Diese Methode gibt eine einfache Meldung auf der Konsole aus.
