@@ -7,7 +7,7 @@ import utils.DateiIO;
 import utils.KonsoleIO;
 
 /**
- * Diese Klasse ist fuer die Verwaltung der Busse zustaendig.
+ * Diese Klasse ist für die Verwaltung der Busse zuständig.
  * 
  * @author Thomas + Philipp
  * @version 15.03.2012
@@ -16,14 +16,14 @@ import utils.KonsoleIO;
 public class Reiseverwaltung {
 
 	/**
-	 * Standardisierte Fehlermeldung fuer das Speichern der Dateien
+	 * Standardisierte Fehlermeldung für das Speichern der Dateien
 	 * 
 	 * @value "Fehler beim Speichern!"
 	 */
 	private static final String OUTPUT_FEHLERMELDUNG = "Fehler beim Speichern!";
 
 	/**
-	 * Standardisierte Fehlermeldung fuer das Laden der Dateien
+	 * Standardisierte Fehlermeldung für das Laden der Dateien
 	 * 
 	 * @value "Fehler beim Laden!"
 	 */

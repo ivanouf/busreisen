@@ -2,7 +2,7 @@ package model;
 
 /**
  * Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des
- * ReisebÃ¼ros in das Programm eingegeben wird.
+ * Reisebüros in das Programm eingegeben wird.
  * 
  * @author Philipp+Thomas
  * @version 14.03.2012
@@ -15,7 +15,7 @@ public class Buchung {
 	private Kunde kunde;
 
 	/**
-	 * Buchungsnummer fuer diesen Kunden
+	 * Buchungsnummer für diesen Kunden
 	 */
 	private int buchungsnr;
 
