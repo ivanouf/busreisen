@@ -73,12 +73,12 @@ public class Reiseverwaltung {
 			File file = new File(DateiIO.LOGFILE);
 			if (!(file.exists())) {
 				DateiIO.writeHeadersInLogFile();
+			} else {
+				int aktuelleNummern[] = DateiIO.readNummernVonLetzterSitzung();
+				aktuelleKundenNr = aktuelleNummern[0];
+				aktuelleBuchungsNr = aktuelleNummern[1];
+				aktuelleStornoNr = aktuelleNummern[2];
 			}
-
-			int aktuelleNummern[] = DateiIO.readNummernVonLetzterSitzung();
-			aktuelleKundenNr = aktuelleNummern[0];
-			aktuelleBuchungsNr = aktuelleNummern[1];
-			aktuelleStornoNr = aktuelleNummern[2];
 
 			file = new File(DateiIO.KUNDEN_FILE);
 			if (!(file.exists())) {
@@ -370,6 +370,7 @@ public class Reiseverwaltung {
 					} else {
 						KonsoleIO
 								.printErfolgsmeldung("Diese Buchung wurde bereits vollständig storniert, deshalb kann sie nicht geändert werden.");
+						return;
 					}
 				}
 
@@ -511,13 +512,13 @@ public class Reiseverwaltung {
 
 		reisender = new Kunde(aktuelleKundenNr, name, vorname, adresse,
 				telefonnr);
-		aktuelleKundenNr++;
 
 		// Zum Schluss wird der Kunde im Kundenstamm abgelegt.
 		try {
 			DateiIO.saveKundeToKundenstamm(reisender);
 			KonsoleIO.printErfolgsmeldung("Kunde erfolgreich unter der Nummer "
 					+ aktuelleKundenNr + " angelegt!");
+			aktuelleKundenNr++;
 		} catch (Exception e) {
 			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);
 		}
