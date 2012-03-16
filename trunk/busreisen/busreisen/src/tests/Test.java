@@ -14,8 +14,8 @@ public class Test {
 	public static void main(String[] args) {
 		Reiseverwaltung reiseverwaltung = new Reiseverwaltung();
 
-		// System.out.println("\n [Test] Anlegen eines Kunden");
-		// reiseverwaltung.kundeAnlegen();
+		System.out.println("\n [Test] Anlegen eines Kunden");
+		reiseverwaltung.kundeAnlegen();
 
 		System.out.println("\n [Test] Durchführung einer Buchung");
 		reiseverwaltung.buchen();
