@@ -12,3 +12,7 @@ Stornierung;1005;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Rom;2;3
 Buchung;105;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Madrid;1;1
 Stornierung;1006;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Madrid;1;1
 Buchung;106;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Madrid;1;1
+Buchung;106;2;Trinklein;Thomas;Herrmann-Str. 2;8976;Berlin;3;7
+Buchung;106;3;Strick;Munuel;Teststraﬂe 123;09876/54321;Wien;2;5;
+Stornierung;1007;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Madrid;1;0
+Buchung;107;1;Willms;Philipp;Teststrasse 1, 53804 Much;123456;Madrid;1;1
