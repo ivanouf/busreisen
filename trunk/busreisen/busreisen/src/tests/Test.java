@@ -3,8 +3,8 @@ package tests;
 import model.Reiseverwaltung;
 
 /**
- * Diese Klasse deint dazu, die verschiedenen Funktionen der Buchungssoftware
- * für das Busreise-Unternehmen zu testen.
+ * Diese Klasse dient dazu, die verschiedenen Funktionen der Buchungssoftware
+ * für das Busreise-Unternehmen in einer Abfolge zu testen.
  * 
  * @author Philipp
  * @version 14.03.2012

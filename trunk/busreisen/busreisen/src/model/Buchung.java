@@ -15,7 +15,7 @@ public class Buchung {
 	private Kunde kunde;
 
 	/**
-	 * Buchungsnummer für diesen Kunden
+	 * Dreistellige Nummer für diese Buchung
 	 */
 	private int buchungsnr;
 
@@ -74,7 +74,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode git den Kunden zurück, zu dem die Buchnung gehört hat.
+	 * Diese Methode git den Kunden zurück, zu dem die Buchung gehört hat.
 	 * 
 	 * @return Instanz vom Typ {@link Kunde}
 	 */
@@ -83,7 +83,7 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode setzt den Kunden, zu dem die Buchnung gehört.
+	 * Diese Methode setzt den Kunden, zu dem die Buchung gehört.
 	 * 
 	 * @param kunde
 	 *            Instanz vom Typ {@link Kunde}
@@ -131,8 +131,8 @@ public class Buchung {
 	}
 
 	/**
-	 * Diese Methode definiert die Stornonummer. Außerdem wird die Anzahl der
-	 * gebuchten Plaetze reduziert.
+	 * Diese Methode definiert die Stornonummer und reduziert die Anzahl der
+	 * gebuchten Plätze.
 	 * 
 	 * @param stornonr
 	 *            Stornonummer als ganze Zahl
@@ -203,7 +203,7 @@ public class Buchung {
 
 	/**
 	 * Diese Methode prüft, ob zwei Buchungen hinsichtlich Kunde, Reiseziel und
-	 * Woche uebereinstimmen.
+	 * Woche übereinstimmen.
 	 * 
 	 * @param object
 	 *            Buchung, mit der verglichen werden soll

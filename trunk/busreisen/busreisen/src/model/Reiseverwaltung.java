@@ -224,7 +224,7 @@ public class Reiseverwaltung {
 	}
 
 	/**
-	 * Diese Methode fuehrt eine Stornierung durch.
+	 * Diese Methode führt eine Stornierung durch.
 	 */
 	public void stornieren() {
 		Buchung buchung, stornierung;
@@ -275,7 +275,7 @@ public class Reiseverwaltung {
 	}
 
 	/**
-	 * Diese Methode veraendert Daten in einen Kunden und speichert diese.
+	 * Diese Methode verändert Daten in einen Kunden und speichert diese.
 	 */
 	public void kundenDatenKorrektur() {
 		// Der betreffende Kunde wird mithilfe Name und Vorname gesucht.

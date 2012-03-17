@@ -5,7 +5,7 @@ package model;
  * spezifizierten Reise zu verwalten.
  * 
  * @author Philipp
- * @version 14.03.2012
+ * @version 17.03.2012
  */
 public class TeilnehmerListe {
 
@@ -21,8 +21,9 @@ public class TeilnehmerListe {
 	private int menge;
 
 	/**
-	 * Der Konstruktor instanziiert den StringBuilder. Außerdem wird die Menge
-	 * an Teilnehmern mit 0 initialisiert.
+	 * Der Konstruktor instanziiert einen StringBuilder, der die Teilnehmer
+	 * einer Reise als Strings verkettet. Außerdem wird die Menge an Teilnehmern
+	 * mit 0 initialisiert.
 	 */
 	public TeilnehmerListe() {
 		teilnehmer = new StringBuilder();

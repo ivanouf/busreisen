@@ -4,7 +4,7 @@ package model;
  * Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.
  * 
  * @author Philipp
- * @version 12.03.2012
+ * @version 17.03.2012
  */
 public class Kunde {
 
@@ -34,8 +34,8 @@ public class Kunde {
 	private String telefonnr;
 
 	/**
-	 * Der Konstruktor initialisiert die Buchungsnummer und die Wochennummer mit
-	 * 0.
+	 * Der Konstruktor initialisiert die Attribute mit leeren Strings bzw. die
+	 * Kundennummer mit 0.
 	 */
 	public Kunde() {
 		this.kdNummer = 0;
@@ -46,9 +46,8 @@ public class Kunde {
 	}
 
 	/**
-	 * Der Konstruktor setzt Initalwerte für Name, Vorname, Adresse,
-	 * Telefonnummer. Außerdem werden die Buchungsnummer und die Wochennummer
-	 * mit 0 initialisiert.
+	 * Der Konstruktor setzt Initialwerte für Kundennummer, Name, Vorname,
+	 * Adresse und Telefonnummer.
 	 * 
 	 * @param nummer
 	 *            Kundennummer als ganze Zahl
@@ -168,10 +167,11 @@ public class Kunde {
 
 	/**
 	 * Diese Methode gibt das Kunden-Objekt mit seinen Attributen als String
-	 * aus.
+	 * aus. Es wurde der Doppelpunkt als Trennzeichen verwendet, damit die
+	 * Arbeit in der TeilnehmerListe funktioniert.
 	 * 
-	 * @return Kundennummer + " " + Kundenname + " " + Kundenvorname + " " +
-	 *         Kundenadresse + " " + Telefonnummer
+	 * @return Kundennummer + ":" + Kundenname + ":" + Kundenvorname + ":" +
+	 *         Kundenadresse + ":" + Telefonnummer
 	 */
 	public String toString() {
 		return (this.kdNummer + ":" + this.name + ":" + this.vorname + ":"
