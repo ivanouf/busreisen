@@ -247,13 +247,13 @@ public class Reiseverwaltung {
 				aktuellePlaetze = buchung.getPlaetze();
 			}
 
-			while ((storniertePlaetze < 0)
+			while ((storniertePlaetze <= 0)
 					|| (storniertePlaetze > aktuellePlaetze)) {
 				storniertePlaetze = KonsoleIO
 						.readIntegerFromConsole("Geben Sie die Anzahl der Plätze ein, die storniert werden sollen!");
 				// Abfangen der Fehlereignisse "negative Anzahl von Plätzen"
 				// und "Unterdeckung"
-				if ((storniertePlaetze < 0)
+				if ((storniertePlaetze <= 0)
 						|| (storniertePlaetze > aktuellePlaetze)) {
 					KonsoleIO
 							.printFehlermeldung("Fehlerhafte Eingabe! Wiederholen Sie die Eingabe!");
