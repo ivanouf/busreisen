@@ -48,7 +48,7 @@ public class DateiIO {
 	public static final String LOGFILE = "Bussoftware_Log.csv";
 
 	/**
-	 * Name der der Kundenstamm-Datei
+	 * Name der Kundenstamm-Datei
 	 * 
 	 * @value "Bussoftware_Kunden.csv"
 	 */
@@ -129,9 +129,9 @@ public class DateiIO {
 	 * @param kundenNr
 	 *            aktuelle Kundennummer der letzten Sitzung
 	 * @param buchungsNr
-	 *            aktuelle Kundennummer der letzten Sitzung
+	 *            aktuelle Buchungsnummer der letzten Sitzung
 	 * @param stornoNr
-	 *            aktuelle Kundennummer der letzten Sitzung
+	 *            aktuelle Stornonummer der letzten Sitzung
 	 * @throws IOException
 	 */
 	public static void saveNummernVonLetzterSitzung(int kundenNr,
@@ -253,11 +253,11 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode schreibt einen geaenderten Kundendatensatz in den
+	 * Diese Methode schreibt einen geänderten Kundendatensatz in den
 	 * Kundenstamm. Als Identifikationskriterium gilt dabei die Kundennummer.
 	 * 
 	 * @param kunde
-	 *            Instanz von [@Kunde}, die die neuen Werte für den Kunden
+	 *            Instanz von {@link Kunde}, die die neuen Werte für den Kunden
 	 *            besitzt.
 	 * @throws Exception
 	 */
@@ -309,7 +309,7 @@ public class DateiIO {
 	}
 
 	/**
-	 * Diese Methode speichert eine uebergebene Buchung in einer Log-Datei.
+	 * Diese Methode speichert eine übergebene Buchung in einer Log-Datei.
 	 * 
 	 * @param buchung
 	 *            Instanz der Klasse {@link Buchung}

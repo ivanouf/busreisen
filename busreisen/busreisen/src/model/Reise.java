@@ -52,7 +52,7 @@ public class Reise {
 	}
 
 	/**
-	 * Der Konstrukter setzt die Startvariablen der Reise.
+	 * Der Konstruktor setzt die Startvariablen der Reise.
 	 * 
 	 * @param ziel
 	 *            Ziel der Reise
@@ -69,7 +69,7 @@ public class Reise {
 	/**
 	 * Diese Methode gibt das Ziel der Reise zurück.
 	 * 
-	 * @return ziel
+	 * @return ziel Item der Enumeration {@link Reiseziel}
 	 */
 	public Reiseziel getReiseziel() {
 		return ziel;
@@ -78,7 +78,7 @@ public class Reise {
 	/**
 	 * Diese Methode gibt den Starttag zurück.
 	 * 
-	 * @return starttag
+	 * @return starttag Item der Enumeration {@link Wochentag}
 	 */
 	public Wochentag getStarttag() {
 		return starttag;
