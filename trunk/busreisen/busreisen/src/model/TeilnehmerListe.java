@@ -39,7 +39,7 @@ public class TeilnehmerListe {
 	 *            Anzahl der Plätze, die der Kunde aktuell gebucht hat
 	 */
 	public void appendTeilnehmer(Kunde kunde, int aktuellePlaetze) {
-		teilnehmer.append(kunde.toString() + " "
+		teilnehmer.append(kunde.toString() + ":"
 				+ String.valueOf(aktuellePlaetze) + ";");
 		menge++;
 	}
@@ -59,7 +59,7 @@ public class TeilnehmerListe {
 		if (!(teilnehmerListe.equals(""))) {
 			String[] entries = teilnehmerListe.split(";");
 			for (int i = 0; i < entries.length; i++) {
-				String[] aktKunde = entries[i].split(" ");
+				String[] aktKunde = entries[i].split(":");
 				int kdNummer = Integer.parseInt(aktKunde[0]);
 				if (kdNummer == kunde.getNummer()) {
 					return Integer.parseInt(aktKunde[5]);
@@ -79,10 +79,10 @@ public class TeilnehmerListe {
 	 *            Anzahl der Plätze, die der Teilnehmer gebucht hatte
 	 */
 	public void removeTeilnehmer(Kunde kunde, int plaetze) {
-		String aktTeilnehmer = kunde.toString() + " " + String.valueOf(plaetze)
+		String aktTeilnehmer = kunde.toString() + ":" + String.valueOf(plaetze)
 				+ ";";
 		int start = teilnehmer.indexOf(aktTeilnehmer);
-		if (start > 0) {
+		if (start >= 0) {
 			teilnehmer.delete(start, start + aktTeilnehmer.length());
 		}
 		menge--;
@@ -125,7 +125,7 @@ public class TeilnehmerListe {
 	 * @return Instanz der Klasse {@link Kunde}
 	 */
 	private Kunde erstelleKundeAusString(String s) {
-		String[] data = s.split(" ");
+		String[] data = s.split(":");
 		Kunde kunde = new Kunde();
 		kunde.setNummer(Integer.parseInt(data[0]));
 		kunde.setName(data[1]);

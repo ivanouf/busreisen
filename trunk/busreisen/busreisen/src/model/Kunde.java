@@ -174,8 +174,8 @@ public class Kunde {
 	 *         Kundenadresse + " " + Telefonnummer
 	 */
 	public String toString() {
-		return (this.kdNummer + " " + this.name + " " + this.vorname + " "
-				+ this.adresse + " " + this.telefonnr);
+		return (this.kdNummer + ":" + this.name + ":" + this.vorname + ":"
+				+ this.adresse + ":" + this.telefonnr);
 	}
 
 	/**
