@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/0.9.0" xmi:id="_Zr1uYLbXEeGxNLpsZ0hsPA">
+  <modelElement href="busreisen.uml#_OphQcLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gpUd4LbXEeGxNLpsZ0hsPA" sourceItem="_gpTPwLbXEeGxNLpsZ0hsPA" targetItem="_gpdn0LbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gpmxwLbXEeGxNLpsZ0hsPA" sourceItem="_gpfdALbXEeGxNLpsZ0hsPA" targetItem="_gp3QcLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqBBcLbXEeGxNLpsZ0hsPA" sourceItem="_gp7h4LbXEeGxNLpsZ0hsPA" targetItem="_gqoFcLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqSuQLbXEeGxNLpsZ0hsPA" sourceItem="_gqSHMLbXEeGxNLpsZ0hsPA" targetItem="_gqoFirbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqVxkLbXEeGxNLpsZ0hsPA" sourceItem="_gqUjcLbXEeGxNLpsZ0hsPA" targetItem="_gqoFjLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqaDALbXEeGxNLpsZ0hsPA" sourceItem="_gqZb8LbXEeGxNLpsZ0hsPA" targetItem="_gqoFjrbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqcfQLbXEeGxNLpsZ0hsPA" sourceItem="_gqbRILbXEeGxNLpsZ0hsPA" targetItem="_gqoFk7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqdtYbbXEeGxNLpsZ0hsPA" sourceItem="_gqdtYLbXEeGxNLpsZ0hsPA" targetItem="_gqoFm7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqe7gLbXEeGxNLpsZ0hsPA" sourceItem="_gqeUcLbXEeGxNLpsZ0hsPA" targetItem="_gqoFpLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqfikbbXEeGxNLpsZ0hsPA" sourceItem="_gqfikLbXEeGxNLpsZ0hsPA" targetItem="_gqoFrLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqgwsbbXEeGxNLpsZ0hsPA" sourceItem="_gqgwsLbXEeGxNLpsZ0hsPA" targetItem="_gqoFsrbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqhXwbbXEeGxNLpsZ0hsPA" sourceItem="_gqhXwLbXEeGxNLpsZ0hsPA" targetItem="_gqoFu7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqh-0bbXEeGxNLpsZ0hsPA" sourceItem="_gqh-0LbXEeGxNLpsZ0hsPA" targetItem="_gqoFwbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqil4bbXEeGxNLpsZ0hsPA" sourceItem="_gqil4LbXEeGxNLpsZ0hsPA" targetItem="_gqoFxbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqjM8bbXEeGxNLpsZ0hsPA" sourceItem="_gqjM8LbXEeGxNLpsZ0hsPA" targetItem="_gqoFybbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqj0AbbXEeGxNLpsZ0hsPA" sourceItem="_gqj0ALbXEeGxNLpsZ0hsPA" targetItem="_gqoFzbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gqlCILbXEeGxNLpsZ0hsPA" sourceItem="_gqkbELbXEeGxNLpsZ0hsPA" targetItem="_gqoF07bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gq6ZULbXEeGxNLpsZ0hsPA" sourceItem="_gqrIwLbXEeGxNLpsZ0hsPA" targetItem="_gq-DsLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_grIbwLbXEeGxNLpsZ0hsPA" sourceItem="_grAf8LbXEeGxNLpsZ0hsPA" targetItem="_guFCELbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gr5QwLbXEeGxNLpsZ0hsPA" sourceAnchor="0.0,154.0" targetAnchor="576.0,107.0" source="_guFCELbXEeGxNLpsZ0hsPA" target="_gpdn0LbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZhQPALbXEeGxNLpsZ0hsPA"/>
+    <nameVisual xmi:id="_gsa1MLbXEeGxNLpsZ0hsPA" text="">
+      <visualProperties xmi:id="_hItvoLbXEeGxNLpsZ0hsPA" position="-20.0,-7.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_gsbcQLbXEeGxNLpsZ0hsPA" name="kunde" navigable="true">
+      <modelElement href="busreisen.uml#_ZgYsULbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIshgLbXEeGxNLpsZ0hsPA" position="-52.5,8.5"/>
+      <visibility xmi:id="_gtcv8LbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gs-O0LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gsg70LbXEeGxNLpsZ0hsPA" name="">
+      <modelElement href="busreisen.uml#_ZhQPAbbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hItvobbXEeGxNLpsZ0hsPA" position="5.5,-43.5"/>
+      <visibility xmi:id="_guEbAbbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_guEbALbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsH6QLbXEeGxNLpsZ0hsPA" sourceItem="_gsDBwLbXEeGxNLpsZ0hsPA" targetItem="_guFCKLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsLkoLbXEeGxNLpsZ0hsPA" sourceItem="_gsJvcLbXEeGxNLpsZ0hsPA" targetItem="_guFCLbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsTgcbbXEeGxNLpsZ0hsPA" sourceItem="_gsTgcLbXEeGxNLpsZ0hsPA" targetItem="_guFCPLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsVVoLbXEeGxNLpsZ0hsPA" sourceItem="_gsUukLbXEeGxNLpsZ0hsPA" targetItem="_guFCQLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsV8sbbXEeGxNLpsZ0hsPA" sourceItem="_gsV8sLbXEeGxNLpsZ0hsPA" targetItem="_guFCRLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsWjwbbXEeGxNLpsZ0hsPA" sourceItem="_gsWjwLbXEeGxNLpsZ0hsPA" targetItem="_guFCSLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsXK0bbXEeGxNLpsZ0hsPA" sourceItem="_gsXK0LbXEeGxNLpsZ0hsPA" targetItem="_guFCTLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsXx4bbXEeGxNLpsZ0hsPA" sourceItem="_gsXx4LbXEeGxNLpsZ0hsPA" targetItem="_guFCULbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gsZAALbXEeGxNLpsZ0hsPA" sourceItem="_gsYY8LbXEeGxNLpsZ0hsPA" targetItem="_guFCVLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gupp0LbXEeGxNLpsZ0hsPA" sourceAnchor="162.0,0.0" targetAnchor="189.0,156.0" source="_gxSuILbXEeGxNLpsZ0hsPA" target="_gp3QcLbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_Zhm0ULbXEeGxNLpsZ0hsPA"/>
+    <nameVisual xmi:id="_gwVE0LbXEeGxNLpsZ0hsPA" text="">
+      <visualProperties xmi:id="_hIu9wLbXEeGxNLpsZ0hsPA" position="-40.0,-12.5"/>
+    </nameVisual>
+    <stereotypes xmi:id="_gwVr4bbXEeGxNLpsZ0hsPA" name="Reference">
+      <modelElement href="busreisen.uml#_ZhoCcLbXEeGxNLpsZ0hsPA"/>
+    </stereotypes>
+    <sourceRole xmi:id="_gwVE0bbXEeGxNLpsZ0hsPA" name="">
+      <modelElement href="busreisen.uml#_ZhnbYLbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIuWsLbXEeGxNLpsZ0hsPA" position="-20.5,-39.5"/>
+      <visibility xmi:id="_gxQ48bbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gxQ48LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_gwVr4LbXEeGxNLpsZ0hsPA" name="busse" navigable="true">
+      <modelElement href="busreisen.uml#_ZgjEYLbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIu9wbbXEeGxNLpsZ0hsPA" position="3.5,5.0"/>
+      <visibility xmi:id="_gxQ487bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gxQ48rbXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gwLT0LbXEeGxNLpsZ0hsPA" sourceItem="_gvmFALbXEeGxNLpsZ0hsPA" targetItem="_gxSuILbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gwZWQLbXEeGxNLpsZ0hsPA" sourceItem="_gwWS8LbXEeGxNLpsZ0hsPA" targetItem="_gxSuMbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gwfc4LbXEeGxNLpsZ0hsPA" sourceItem="_gwakYLbXEeGxNLpsZ0hsPA" targetItem="_gxSuM7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gxKyULbXEeGxNLpsZ0hsPA" sourceItem="_gwom0LbXEeGxNLpsZ0hsPA" targetItem="_gxSuN7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gxNOkLbXEeGxNLpsZ0hsPA" sourceItem="_gxMngLbXEeGxNLpsZ0hsPA" targetItem="_gxSuPbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gxN1obbXEeGxNLpsZ0hsPA" sourceItem="_gxN1oLbXEeGxNLpsZ0hsPA" targetItem="_gxSuP7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gxPDwLbXEeGxNLpsZ0hsPA" sourceItem="_gxOcsLbXEeGxNLpsZ0hsPA" targetItem="_gxSuSLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gxPq0bbXEeGxNLpsZ0hsPA" sourceItem="_gxPq0LbXEeGxNLpsZ0hsPA" targetItem="_gxSuTrbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gxXmoLbXEeGxNLpsZ0hsPA" sourceAnchor="192.0,384.0" targetAnchor="289.0,0.0" source="_g1ClsLbXEeGxNLpsZ0hsPA" target="_guFCELbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZhopgLbXEeGxNLpsZ0hsPA"/>
+    <nameVisual xmi:id="_g0ImwLbXEeGxNLpsZ0hsPA" text="">
+      <visualProperties xmi:id="_hIwy8LbXEeGxNLpsZ0hsPA" position="-40.0,-6.5"/>
+    </nameVisual>
+    <stereotypes xmi:id="_g0JN0rbXEeGxNLpsZ0hsPA" name="Reference">
+      <modelElement href="busreisen.uml#_Zhp3oLbXEeGxNLpsZ0hsPA"/>
+    </stereotypes>
+    <sourceRole xmi:id="_g0JN0LbXEeGxNLpsZ0hsPA" name="">
+      <modelElement href="busreisen.uml#_ZhopgbbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIwL4LbXEeGxNLpsZ0hsPA" position="5.5,5.0"/>
+      <visibility xmi:id="_g1AJcLbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_g0_iYLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_g0JN0bbXEeGxNLpsZ0hsPA" name="reisender" navigable="true">
+      <modelElement href="busreisen.uml#_ZgnV0bbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIxaALbXEeGxNLpsZ0hsPA" position="-70.5,-40.0"/>
+      <visibility xmi:id="_g1AJcrbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1AJcbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gyNUILbXEeGxNLpsZ0hsPA" sourceAnchor="0.0,192.0" targetAnchor="323.0,107.0" source="_g1ClsLbXEeGxNLpsZ0hsPA" target="_gxSuILbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_Zhp3obbXEeGxNLpsZ0hsPA"/>
+    <nameVisual xmi:id="_g0JN07bXEeGxNLpsZ0hsPA" text="">
+      <visualProperties xmi:id="_hIzPMLbXEeGxNLpsZ0hsPA" position="-24.0,-7.5"/>
+    </nameVisual>
+    <stereotypes xmi:id="_g0J04rbXEeGxNLpsZ0hsPA" name="Reference">
+      <modelElement href="busreisen.uml#_ZhrFwLbXEeGxNLpsZ0hsPA"/>
+    </stereotypes>
+    <sourceRole xmi:id="_g0J04LbXEeGxNLpsZ0hsPA" name="">
+      <modelElement href="busreisen.uml#_Zhp3orbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIyBELbXEeGxNLpsZ0hsPA" position="-20.0,8.5"/>
+      <visibility xmi:id="_g1AwgrbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_g1AwgbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_g0J04bbXEeGxNLpsZ0hsPA" name="reise" navigable="true">
+      <modelElement href="busreisen.uml#_Zgn84bbXEeGxNLpsZ0hsPA"/>
+      <visualProperties xmi:id="_hIzPMbbXEeGxNLpsZ0hsPA" position="5.5,-43.5"/>
+      <visibility xmi:id="_g1AwhLbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1Awg7bXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g0B5ELbXEeGxNLpsZ0hsPA" sourceItem="_gzV8kLbXEeGxNLpsZ0hsPA" targetItem="_g1ClsLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g0Tl4LbXEeGxNLpsZ0hsPA" sourceItem="_g0Kb8LbXEeGxNLpsZ0hsPA" targetItem="_g1Cl1LbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g0fMELbXEeGxNLpsZ0hsPA" sourceItem="_g0U0ALbXEeGxNLpsZ0hsPA" targetItem="_g1Cl2bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g0lSsbbXEeGxNLpsZ0hsPA" sourceItem="_g0lSsLbXEeGxNLpsZ0hsPA" targetItem="_g1Cl27bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g02YcLbXEeGxNLpsZ0hsPA" sourceItem="_g0sAYLbXEeGxNLpsZ0hsPA" targetItem="_g1Cl37bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g040sLbXEeGxNLpsZ0hsPA" sourceItem="_g04NoLbXEeGxNLpsZ0hsPA" targetItem="_g1Cl4bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g05bwbbXEeGxNLpsZ0hsPA" sourceItem="_g05bwLbXEeGxNLpsZ0hsPA" targetItem="_g1Cl47bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g06C0bbXEeGxNLpsZ0hsPA" sourceItem="_g06C0LbXEeGxNLpsZ0hsPA" targetItem="_g1Cl5bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g06p4LbXEeGxNLpsZ0hsPA" sourceItem="_g06C0rbXEeGxNLpsZ0hsPA" targetItem="_g1Cl57bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g06p4rbXEeGxNLpsZ0hsPA" sourceItem="_g06p4bbXEeGxNLpsZ0hsPA" targetItem="_g1Cl6bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g07Q8bbXEeGxNLpsZ0hsPA" sourceItem="_g07Q8LbXEeGxNLpsZ0hsPA" targetItem="_g1Cl67bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g074AbbXEeGxNLpsZ0hsPA" sourceItem="_g074ALbXEeGxNLpsZ0hsPA" targetItem="_g1Cl7bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g08fELbXEeGxNLpsZ0hsPA" sourceItem="_g074ArbXEeGxNLpsZ0hsPA" targetItem="_g1Cl77bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g09GIbbXEeGxNLpsZ0hsPA" sourceItem="_g09GILbXEeGxNLpsZ0hsPA" targetItem="_g1Cl8bbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g1PaALbXEeGxNLpsZ0hsPA" sourceItem="_g1Ea4LbXEeGxNLpsZ0hsPA" targetItem="_g2HjwLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g2TJ8LbXEeGxNLpsZ0hsPA" sourceItem="_g2PfkLbXEeGxNLpsZ0hsPA" targetItem="_g4W_cLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g3PlILbXEeGxNLpsZ0hsPA" sourceItem="_g3D-8LbXEeGxNLpsZ0hsPA" targetItem="_g4W_fLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g3dnkLbXEeGxNLpsZ0hsPA" sourceItem="_g3dAgLbXEeGxNLpsZ0hsPA" targetItem="_g4W_gbbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g3mxgLbXEeGxNLpsZ0hsPA" sourceItem="_g3hR8LbXEeGxNLpsZ0hsPA" targetItem="_g4W_h7bXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g3y-wLbXEeGxNLpsZ0hsPA" sourceItem="_g3wigLbXEeGxNLpsZ0hsPA" targetItem="_g4W_jLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g3994LbXEeGxNLpsZ0hsPA" sourceItem="_g30M4LbXEeGxNLpsZ0hsPA" targetItem="_g4W_krbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g4LZQLbXEeGxNLpsZ0hsPA" sourceItem="_g4KyMLbXEeGxNLpsZ0hsPA" targetItem="_g4W_mLbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g4T8ILbXEeGxNLpsZ0hsPA" sourceItem="_g4PqsLbXEeGxNLpsZ0hsPA" targetItem="_g4W_nrbXEeGxNLpsZ0hsPA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g4VKQLbXEeGxNLpsZ0hsPA" sourceItem="_g4UjMLbXEeGxNLpsZ0hsPA" targetItem="_g4W_pLbXEeGxNLpsZ0hsPA"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gpTPwLbXEeGxNLpsZ0hsPA" item="_gpdn0LbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gpUd4LbXEeGxNLpsZ0hsPA" text="Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des&#xD;&#xA;Reisebüros in das Programm eingegeben wird.&#xD;&#xA;&#xD;&#xA;@author Philipp+Thomas&#xD;&#xA;@version 14.03.2012">
+    <modelElement href="busreisen.uml#_ZhOZ0LbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gpfdALbXEeGxNLpsZ0hsPA" item="_gp3QcLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gpmxwLbXEeGxNLpsZ0hsPA" text="Diese Klasse beschreibt einen Bus des Reisebüros.&#xD;&#xA;&#xD;&#xA;@author Thomas&#xD;&#xA;@version 14.03.2012&#xD;&#xA; *">
+    <modelElement href="busreisen.uml#_ZhRdILbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gp7h4LbXEeGxNLpsZ0hsPA" item="_gqoFcLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqBBcLbXEeGxNLpsZ0hsPA" text="Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm&#xD;&#xA;wird in einer .csv-Datei abgelegt. Die Buchungen und Stornierungen werden in&#xD;&#xA;einer Log-Datei mitgeschrieben, die ebenfalls im CSV-Format vorliegt.&#xD;&#xA;Außerdem werden die Daten der letzten Sitzung (Kundennummer, Buchungsnummer,&#xD;&#xA;Stornonummer) gespeichert, damit sie bei der nächsten Sitzung zur Verfügung&#xD;&#xA;stehen.&#xD;&#xA;&#xD;&#xA;@author Philipp&#xD;&#xA;@version 14.03.2012&#xD;&#xA; *">
+    <modelElement href="busreisen.uml#_ZhccRbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqSHMLbXEeGxNLpsZ0hsPA" item="_gqoFirbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqSuQLbXEeGxNLpsZ0hsPA" text="Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der&#xD;&#xA;&#x9; * die Kunden gespeichert werden.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @throws IOException">
+    <modelElement href="busreisen.uml#_ZhccRrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqUjcLbXEeGxNLpsZ0hsPA" item="_gqoFjLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqVxkLbXEeGxNLpsZ0hsPA" text="Diese Methode schreibt die Tabellenüberschriften in die Logdatei.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @throws IOException">
+    <modelElement href="busreisen.uml#_ZhdqYLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqZb8LbXEeGxNLpsZ0hsPA" item="_gqoFjrbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqaDALbXEeGxNLpsZ0hsPA" text="Diese Methode liest die Nummern von der letzten Sitzung ein.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return Array von Integer-Werten mit den Nummern&#xD;&#xA;&#x9; * @throws IOException">
+    <modelElement href="busreisen.uml#_ZhdqYbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqbRILbXEeGxNLpsZ0hsPA" item="_gqoFk7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqcfQLbXEeGxNLpsZ0hsPA" text="Diese Methode speichert die aktuellen Nummern der letzten Sitzung ab.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kundenNr&#xD;&#xA;&#x9; *            aktuelle Kundennummer der letzten Sitzung&#xD;&#xA;&#x9; * @param buchungsNr&#xD;&#xA;&#x9; *            aktuelle Buchungsnummer der letzten Sitzung&#xD;&#xA;&#x9; * @param stornoNr&#xD;&#xA;&#x9; *            aktuelle Stornonummer der letzten Sitzung&#xD;&#xA;&#x9; * @throws IOException">
+    <modelElement href="busreisen.uml#_ZhdqYrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqdtYLbXEeGxNLpsZ0hsPA" item="_gqoFm7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqdtYbbXEeGxNLpsZ0hsPA" text="Diese Methode sucht einen Kunden in der Kundenstamm-Datei mithilfe seines&#xD;&#xA;&#x9; * Vor- und Nachnamens. Da Mehrfacheinträge möglich sind, wird ein Array von&#xD;&#xA;&#x9; * Kunden zurueckgegeben.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            Nachname des gesuchten Kunden&#xD;&#xA;&#x9; * @param vorname&#xD;&#xA;&#x9; *            Vorname des gesuchten Kunden&#xD;&#xA;&#x9; * @return Array von Kunden&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZhdqZLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqeUcLbXEeGxNLpsZ0hsPA" item="_gqoFpLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqe7gLbXEeGxNLpsZ0hsPA" text="Diese Methode erstellt eine Instanz der Klasse {@link Buchung} auf Basis&#xD;&#xA;&#x9; * der Daten aus einer Zeile im Logfile.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param nummer&#xD;&#xA;&#x9; *            Nummer der Buchung&#xD;&#xA;&#x9; * @param details&#xD;&#xA;&#x9; *            Elemente der Zeile (Semikolon als Trennungszeichen)&#xD;&#xA;&#x9; * @return Instanz der Klasse {@link Buchung}">
+    <modelElement href="busreisen.uml#_ZheRcrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqfikLbXEeGxNLpsZ0hsPA" item="_gqoFrLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqfikbbXEeGxNLpsZ0hsPA" text="Diese Methode sucht eine Buchung zur entsprechenden Buchungsnummer. Dabei&#xD;&#xA;&#x9; * wird die Logdatei linear nach einem Eintrag durchsucht, der zur gesuchten&#xD;&#xA;&#x9; * Buchungsnummer passt.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param buchungsnr&#xD;&#xA;&#x9; *            Nummer der gesuchten Buchung&#xD;&#xA;&#x9; * @return Instanz der Klasse {@link Buchung}&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZheRc7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqgwsLbXEeGxNLpsZ0hsPA" item="_gqoFsrbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqgwsbbXEeGxNLpsZ0hsPA" text="Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurück.&#xD;&#xA;&#x9; * Dabei wird die Logdatei linear durchsucht. Dabei wird der Kunde, der zur&#xD;&#xA;&#x9; * Reise gehört, zu einer {@link TeilnehmerListe} hinzugeügt. Sollte eine&#xD;&#xA;&#x9; * Buchung später wieder storniert werden, wird die Teilnehmerliste&#xD;&#xA;&#x9; * aktualisiert. Zum Schluss wird die Liste von Teilnehmern in ein Array vom&#xD;&#xA;&#x9; * Typ {@link Kunde} umgewandelt und dann alphabetisch aufsteigend sortiert.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param ziel&#xD;&#xA;&#x9; *            Reiseziel als String&#xD;&#xA;&#x9; * @param woche&#xD;&#xA;&#x9; *            Woche, in der die Reise stattfindet als Integer&#xD;&#xA;&#x9; * @return Array von Kunden, in dem sie ihren Namen nach lexikographisch&#xD;&#xA;&#x9; *         sortiert sind&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_Zhe4gLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqhXwLbXEeGxNLpsZ0hsPA" item="_gqoFu7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqhXwbbXEeGxNLpsZ0hsPA" text="Diese Methode sucht alle Buchungen zu einem gegebenen Reiseziel. Als&#xD;&#xA;&#x9; * Ergebnis werden die relevanten Informationen der Buchung (Nummer, Woche,&#xD;&#xA;&#x9; * Plaetze) als String mit Leerzeichen verkettet. Für Buchungen dient das&#xD;&#xA;&#x9; * Semilkolon als Trennzeichen.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param reiseziel&#xD;&#xA;&#x9; *            Reiseziel als String&#xD;&#xA;&#x9; * @return String der Form &quot;Nummer Woche Plätze;Nummer Woche Plätze;...&quot; &lt;br>&#xD;&#xA;&#x9; *         leerer String, wenn es keine Buchungen zum Reiseziel gibt&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_Zhe4gbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqh-0LbXEeGxNLpsZ0hsPA" item="_gqoFwbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqh-0bbXEeGxNLpsZ0hsPA" text="Diese Methode speichert einen übergebenen Kunden in der&#xD;&#xA;&#x9; * Kundenstamm-Datei.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz der Klasse {@link Kunde}&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZhdqY7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqil4LbXEeGxNLpsZ0hsPA" item="_gqoFxbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqil4bbXEeGxNLpsZ0hsPA" text="Diese Methode schreibt einen geänderten Kundendatensatz in den&#xD;&#xA;&#x9; * Kundenstamm. Als Identifikationskriterium gilt dabei die Kundennummer.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, die die neuen Werte für den Kunden&#xD;&#xA;&#x9; *            besitzt.&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZheRcLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqjM8LbXEeGxNLpsZ0hsPA" item="_gqoFybbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqjM8bbXEeGxNLpsZ0hsPA" text="Diese Methode speichert eine übergebene Buchung in einer Log-Datei.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param buchung&#xD;&#xA;&#x9; *            Instanz der Klasse {@link Buchung}&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZheRcbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqj0ALbXEeGxNLpsZ0hsPA" item="_gqoFzbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqj0AbbXEeGxNLpsZ0hsPA" text="Diese Methode sucht zu einer Buchung eine passende Stornierung.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param buchung&#xD;&#xA;&#x9; *            Instanz der Klasse {@link Buchung}&#xD;&#xA;&#x9; * @return Buchung mit Stornonummer oder null, wenn keine gefunden wurde&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_ZheRdLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqkbELbXEeGxNLpsZ0hsPA" item="_gqoF07bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gqlCILbXEeGxNLpsZ0hsPA" text="Diese Methode wird aufgerufen, um nach einer Änderung von Kundendaten im&#xD;&#xA;&#x9; * Kundenstamm alle Buchungen dieses Kunden auf den aktuellen Stand zu&#xD;&#xA;&#x9; * bringen.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz der Klasse {@link Kunde}&#xD;&#xA;&#x9; * @throws Exception">
+    <modelElement href="busreisen.uml#_Zhe4grbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gqrIwLbXEeGxNLpsZ0hsPA" item="_gq-DsLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gq6ZULbXEeGxNLpsZ0hsPA" text="Diese Klasse ist für die Ein- und die Ausgaben auf der Konsole zuständig.&#xD;&#xA;&#xD;&#xA;@author Philipp&#xD;&#xA;@version 12.03.2012&#xD;&#xA; *">
+    <modelElement href="busreisen.uml#_Zhe4g7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_grAf8LbXEeGxNLpsZ0hsPA" item="_guFCELbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_grIbwLbXEeGxNLpsZ0hsPA" text="Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.&#xD;&#xA;&#xD;&#xA;@author Philipp&#xD;&#xA;@version 17.03.2012">
+    <modelElement href="busreisen.uml#_ZhSrQLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsDBwLbXEeGxNLpsZ0hsPA" item="_guFCKLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsH6QLbXEeGxNLpsZ0hsPA" text="Der Konstruktor initialisiert die Attribute mit leeren Strings bzw. die&#xD;&#xA;&#x9; * Kundennummer mit 0.">
+    <modelElement href="busreisen.uml#_ZhSrQbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsJvcLbXEeGxNLpsZ0hsPA" item="_guFCLbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsLkoLbXEeGxNLpsZ0hsPA" text="Der Konstruktor setzt Initialwerte für Kundennummer, Name, Vorname,&#xD;&#xA;&#x9; * Adresse und Telefonnummer.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param nummer&#xD;&#xA;&#x9; *            Kundennummer als ganze Zahl&#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            Name des Kunden als String&#xD;&#xA;&#x9; * @param vorname&#xD;&#xA;&#x9; *            Vorname des Kunden als String&#xD;&#xA;&#x9; * @param adresse&#xD;&#xA;&#x9; *            Adresse des Kunden als String&#xD;&#xA;&#x9; * @param telefonnr&#xD;&#xA;&#x9; *            Telefonnummer des Kunden als String">
+    <modelElement href="busreisen.uml#_ZhSrQrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsTgcLbXEeGxNLpsZ0hsPA" item="_guFCPLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsTgcbbXEeGxNLpsZ0hsPA" text="Diese Methode gibt die Kundennummer zurück.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return Kundennummer als Integer">
+    <modelElement href="busreisen.uml#_ZhSrQ7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsUukLbXEeGxNLpsZ0hsPA" item="_guFCQLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsVVoLbXEeGxNLpsZ0hsPA" text="Diese Methode setzt die Kundennummer für diesen Kunden.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kdNummer&#xD;&#xA;&#x9; *            Kundennummer als Integer.">
+    <modelElement href="busreisen.uml#_ZhTSULbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsV8sLbXEeGxNLpsZ0hsPA" item="_guFCRLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsV8sbbXEeGxNLpsZ0hsPA" text="Diese Methode ändert den Namen des Kunden.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            Name als String">
+    <modelElement href="busreisen.uml#_ZhTSUbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsWjwLbXEeGxNLpsZ0hsPA" item="_guFCSLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsWjwbbXEeGxNLpsZ0hsPA" text="Diese Methode gibt die Adresse des Kunden zurück.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return adresse Adresse als String">
+    <modelElement href="busreisen.uml#_ZhTSUrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsXK0LbXEeGxNLpsZ0hsPA" item="_guFCTLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsXK0bbXEeGxNLpsZ0hsPA" text="Diese Methode ändert die Adresse des Kunden.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param adresse&#xD;&#xA;&#x9; *            Adresse als String">
+    <modelElement href="busreisen.uml#_ZhTSU7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsXx4LbXEeGxNLpsZ0hsPA" item="_guFCULbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsXx4bbXEeGxNLpsZ0hsPA" text="Diese Methode gibt das Kunden-Objekt mit seinen Attributen als String&#xD;&#xA;&#x9; * aus. Es wurde der Doppelpunkt als Trennzeichen verwendet, damit die&#xD;&#xA;&#x9; * Arbeit in der TeilnehmerListe funktioniert.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return Kundennummer + &quot;:&quot; + Kundenname + &quot;:&quot; + Kundenvorname + &quot;:&quot; +&#xD;&#xA;&#x9; *         Kundenadresse + &quot;:&quot; + Telefonnummer">
+    <modelElement href="busreisen.uml#_ZhTSVLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gsYY8LbXEeGxNLpsZ0hsPA" item="_guFCVLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gsZAALbXEeGxNLpsZ0hsPA" text="Diese Methode wird verwendet, um zwei Kunden-Objekte inhaltlich&#xD;&#xA;&#x9; * miteinander vergleichen zu können. Dazu wird die toString()-Methode&#xD;&#xA;&#x9; * verwendet.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return true or false">
+    <modelElement href="busreisen.uml#_ZhTSVbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gvmFALbXEeGxNLpsZ0hsPA" item="_gxSuILbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gwLT0LbXEeGxNLpsZ0hsPA" text="Diese Klasse verwaltet die Reisedaten.&#xD;&#xA;&#xD;&#xA;@author Thomas&#xD;&#xA;@version 12.03.2012">
+    <modelElement href="busreisen.uml#_ZhTSVrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gwWS8LbXEeGxNLpsZ0hsPA" item="_gxSuMbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gwZWQLbXEeGxNLpsZ0hsPA" text="Diese Methode richtet die Busse ein.">
+    <modelElement href="busreisen.uml#_ZhT5YLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gwakYLbXEeGxNLpsZ0hsPA" item="_gxSuM7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gwfc4LbXEeGxNLpsZ0hsPA" text="Diese Methode gibt das Ziel der Reise zurück.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return ziel Item der Enumeration {@link Reiseziel}">
+    <modelElement href="busreisen.uml#_ZhT5YrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gwom0LbXEeGxNLpsZ0hsPA" item="_gxSuN7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gxKyULbXEeGxNLpsZ0hsPA" text="Diese Methode liefert den Bus, der in der spezifizierten Woche fährt.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param woche&#xD;&#xA;&#x9; *            Gesuchte Woche als Integer&#xD;&#xA;&#x9; * @return Instanz der Klasse {@link Bus}">
+    <modelElement href="busreisen.uml#_ZhaAALbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gxMngLbXEeGxNLpsZ0hsPA" item="_gxSuPbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gxNOkLbXEeGxNLpsZ0hsPA" text="Diese Methode lädt die Busbelegung, die beim Beenden der letzten Sitzung&#xD;&#xA;&#x9; * vorlag.">
+    <modelElement href="busreisen.uml#_ZhaAAbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gxN1oLbXEeGxNLpsZ0hsPA" item="_gxSuP7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gxN1obbXEeGxNLpsZ0hsPA" text="Der Konstruktor setzt die Startvariablen der Reise.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param ziel&#xD;&#xA;&#x9; *            Ziel der Reise&#xD;&#xA;&#x9; * @param start&#xD;&#xA;&#x9; *            Starttag der Reise">
+    <modelElement href="busreisen.uml#_ZhT5YbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gxOcsLbXEeGxNLpsZ0hsPA" item="_gxSuSLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gxPDwLbXEeGxNLpsZ0hsPA" text="Diese Methode überprüft, ob die Buchung für diese Reise in Ordnung ist.&#xD;&#xA;&#x9; * Dazu wird die Anzahl der freien Plätze im jeweiligen Bus mit der Anzahl&#xD;&#xA;&#x9; * der gebuchten Plätze verglichen.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param buchung&#xD;&#xA;&#x9; *            Instanz der Klasse {@link Buchung}&#xD;&#xA;&#x9; * @return true or false&#xD;&#xA;&#x9; *">
+    <modelElement href="busreisen.uml#_ZhT5Y7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gxPq0LbXEeGxNLpsZ0hsPA" item="_gxSuTrbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_gxPq0bbXEeGxNLpsZ0hsPA" text="Diese Methode wird aufgerufen, um bei einer Buchung oder Stornierung die&#xD;&#xA;&#x9; * Busbelegung zu aktualisieren. Bei einer Buchung wird die Anzahl der&#xD;&#xA;&#x9; * freien Plätze im entsprechenden Bus vermindert. Bei einer Stornierung&#xD;&#xA;&#x9; * werden die belegten Plätze im entsprechenden Bus freigegeben.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param buchung&#xD;&#xA;&#x9; *            Instanz von {@link Buchung}">
+    <modelElement href="busreisen.uml#_ZhZY8LbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gzV8kLbXEeGxNLpsZ0hsPA" item="_g1ClsLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g0B5ELbXEeGxNLpsZ0hsPA" text="Diese Klasse ist für die Verwaltung der Busse zuständig.&#xD;&#xA;&#xD;&#xA;@author Thomas + Philipp&#xD;&#xA;@version 15.03.2012&#xD;&#xA; *">
+    <modelElement href="busreisen.uml#_ZhaAArbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g0Kb8LbXEeGxNLpsZ0hsPA" item="_g1Cl1LbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g0Tl4LbXEeGxNLpsZ0hsPA" text="Der Konstruktor initialisiert die Attribute mit festgelegten Werten und&#xD;&#xA;&#x9; * die Reisen, die gebucht werden können. Außerdem werden beim allerersten&#xD;&#xA;&#x9; * Programmstart die CSV-Dateien für die interne Verwaltung angelegt.">
+    <modelElement href="busreisen.uml#_ZhaAA7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g0U0ALbXEeGxNLpsZ0hsPA" item="_g1Cl2bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g0fMELbXEeGxNLpsZ0hsPA" text="Diese Methode führt eine Buchung durch. Zuerst wird der Kunde gesucht&#xD;&#xA;&#x9; * bzw. angelegt, wenn er noch nicht im Kundenstamm vorhanden ist.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return boolean true für erfolgreich &lt;br>&#xD;&#xA;&#x9; *         false für fehlgeschlagen">
+    <modelElement href="busreisen.uml#_ZhaABLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g0lSsLbXEeGxNLpsZ0hsPA" item="_g1Cl27bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g0lSsbbXEeGxNLpsZ0hsPA" text="Disese Methode sucht einen Kunden nach Name und Vorname. Dann werden&#xD;&#xA;&#x9; * seine Daten ausgegeben.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return Instanz von {@link Kunde}">
+    <modelElement href="busreisen.uml#_ZhanELbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g0sAYLbXEeGxNLpsZ0hsPA" item="_g1Cl37bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g02YcLbXEeGxNLpsZ0hsPA" text="Diese Methode legt die Reisen fest. Wenn dies nicht die erste Sitzung&#xD;&#xA;&#x9; * ist, wird die Busbelegung von der letzten Sitzung mithilfe der Logdatei&#xD;&#xA;&#x9; * geladen.">
+    <modelElement href="busreisen.uml#_ZhanEbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g04NoLbXEeGxNLpsZ0hsPA" item="_g1Cl4bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g040sLbXEeGxNLpsZ0hsPA" text="Diese Methode führt eine Stornierung durch.">
+    <modelElement href="busreisen.uml#_ZhanErbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g05bwLbXEeGxNLpsZ0hsPA" item="_g1Cl47bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g05bwbbXEeGxNLpsZ0hsPA" text="Diese Methode verändert Daten in einen Kunden und speichert diese.">
+    <modelElement href="busreisen.uml#_ZhanE7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g06C0LbXEeGxNLpsZ0hsPA" item="_g1Cl5bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g06C0bbXEeGxNLpsZ0hsPA" text="Diese Methode verändert Daten in einer Buchung und speichert diese ab.">
+    <modelElement href="busreisen.uml#_ZhanFLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g06C0rbXEeGxNLpsZ0hsPA" item="_g1Cl57bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g06p4LbXEeGxNLpsZ0hsPA" text="Diese Methode sucht eine Buchung und gibt diese auf der Konsole aus.">
+    <modelElement href="busreisen.uml#_ZhanFbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g06p4bbXEeGxNLpsZ0hsPA" item="_g1Cl6bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g06p4rbXEeGxNLpsZ0hsPA" text="Diese Methode legt einen neuen Kunden an.">
+    <modelElement href="busreisen.uml#_ZhanFrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g07Q8LbXEeGxNLpsZ0hsPA" item="_g1Cl67bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g07Q8bbXEeGxNLpsZ0hsPA" text="Diese Methode ermöglicht es dem Benutzer, zu einem Bus die Anzahl der&#xD;&#xA;&#x9; * freien Plätze angezeigt zu bekommen.">
+    <modelElement href="busreisen.uml#_ZhbOILbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g074ALbXEeGxNLpsZ0hsPA" item="_g1Cl7bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g074AbbXEeGxNLpsZ0hsPA" text="Diese Methode ermöglicht es dem Benutzer, die Teilnehmer einer Reise in&#xD;&#xA;&#x9; * alphabetischer Reihenfolge ausgeben zu lassen.">
+    <modelElement href="busreisen.uml#_ZhbOIbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g074ArbXEeGxNLpsZ0hsPA" item="_g1Cl77bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g08fELbXEeGxNLpsZ0hsPA" text="Diese Methode speichert aktuelle Kunden-, Buchungs- und Stornonummer in&#xD;&#xA;&#x9; * einer CSV-Datei.">
+    <modelElement href="busreisen.uml#_ZhbOIrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g09GILbXEeGxNLpsZ0hsPA" item="_g1Cl8bbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g09GIbbXEeGxNLpsZ0hsPA" text="Diese Methode gibt die {@link Reise} zum gewünschten {@link Reiseziel}&#xD;&#xA;&#x9; * zurück.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param ziel&#xD;&#xA;&#x9; *            Element von {@link Reiseziel}&#xD;&#xA;&#x9; * @return Instanz von {@link Reise}">
+    <modelElement href="busreisen.uml#_ZhaABbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g1Ea4LbXEeGxNLpsZ0hsPA" item="_g2HjwLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g1PaALbXEeGxNLpsZ0hsPA" text="Diese Klasse ist für die Sortierung der Daten zuständig.&#xD;&#xA;&#xD;&#xA;@author Thomas&#xD;&#xA;@version 09.03.2012&#xD;&#xA; *">
+    <modelElement href="busreisen.uml#_Zhe4hLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g2PfkLbXEeGxNLpsZ0hsPA" item="_g4W_cLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g2TJ8LbXEeGxNLpsZ0hsPA" text="Diese Klasse wird benutzt, um die Teilnehmer einer nach Woche und Ziel&#xD;&#xA;spezifizierten Reise zu verwalten.&#xD;&#xA;&#xD;&#xA;@author Philipp&#xD;&#xA;@version 17.03.2012">
+    <modelElement href="busreisen.uml#_ZhbOJLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g3D-8LbXEeGxNLpsZ0hsPA" item="_g4W_fLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g3PlILbXEeGxNLpsZ0hsPA" text="Der Konstruktor instanziiert einen StringBuilder, der die Teilnehmer&#xD;&#xA;&#x9; * einer Reise als Strings verkettet. Außerdem wird die Menge an Teilnehmern&#xD;&#xA;&#x9; * mit 0 initialisiert.">
+    <modelElement href="busreisen.uml#_Zhb1MLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g3dAgLbXEeGxNLpsZ0hsPA" item="_g4W_gbbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g3dnkLbXEeGxNLpsZ0hsPA" text="Diese Methode erstellt ein Objekt vom Typ {@link Kunde} und belegt es mit&#xD;&#xA;&#x9; * den Daten aus dem übergebenen String.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param s&#xD;&#xA;&#x9; *            String mit Kundendaten&#xD;&#xA;&#x9; * @return Instanz der Klasse {@link Kunde}">
+    <modelElement href="busreisen.uml#_ZhccQrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g3hR8LbXEeGxNLpsZ0hsPA" item="_g4W_h7bXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g3mxgLbXEeGxNLpsZ0hsPA" text="Diese Methode gibt alle Teilnehmer der Reise als Array aus.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return Array von Objekten vom Typ {@link Kunde}.">
+    <modelElement href="busreisen.uml#_ZhccQ7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g3wigLbXEeGxNLpsZ0hsPA" item="_g4W_jLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g3y-wLbXEeGxNLpsZ0hsPA" text="Diese Methode fügt einen Teilnehmer zur Liste hinzu.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;&#xA;&#x9; *            enthält&#xD;&#xA;&#x9; * @param aktuellePlaetze&#xD;&#xA;&#x9; *            Anzahl der Plätze, die der Kunde aktuell gebucht hat">
+    <modelElement href="busreisen.uml#_Zhb1MbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g30M4LbXEeGxNLpsZ0hsPA" item="_g4W_krbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g3994LbXEeGxNLpsZ0hsPA" text="Diese Methode gibt die aktuellen gebuchten Plätze zum Reiseteilnehmer&#xD;&#xA;&#x9; * zurück.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, zu dem die Plätze zurückgegeben&#xD;&#xA;&#x9; *            werden sollen&#xD;&#xA;&#x9; * @return Anzahl der Plätze als Integer &lt;br>&#xD;&#xA;&#x9; *         -1, wenn der Kunde nicht in der Liste steht">
+    <modelElement href="busreisen.uml#_Zhb1MrbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g4KyMLbXEeGxNLpsZ0hsPA" item="_g4W_mLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g4LZQLbXEeGxNLpsZ0hsPA" text="Diese Methode löscht einen Teilnehmer aus der Liste.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, die die Daten des zu löschenden&#xD;&#xA;&#x9; *            Teilnehmer enthält.&#xD;&#xA;&#x9; * @param plaetze&#xD;&#xA;&#x9; *            Anzahl der Plätze, die der Teilnehmer gebucht hatte">
+    <modelElement href="busreisen.uml#_Zhb1M7bXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g4PqsLbXEeGxNLpsZ0hsPA" item="_g4W_nrbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g4T8ILbXEeGxNLpsZ0hsPA" text="Diese Methode prüft, ob ein spezifizierter Teilnehmer in der Liste&#xD;&#xA;&#x9; * enthalten ist.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;&#xA;&#x9; *            enthält&#xD;&#xA;&#x9; * @return true or false">
+    <modelElement href="busreisen.uml#_ZhccQLbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_g4UjMLbXEeGxNLpsZ0hsPA" item="_g4W_pLbXEeGxNLpsZ0hsPA" sourceConnectionVisual="_g4VKQLbXEeGxNLpsZ0hsPA" text="Diese Methode aktualisiert die gebuchten Plätze des spezifizierten&#xD;&#xA;&#x9; * Teilnehmers.&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param kunde&#xD;&#xA;&#x9; *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;&#xA;&#x9; *            enthält&#xD;&#xA;&#x9; * @param neueAnzahlPlaetze&#xD;&#xA;&#x9; *            aktuelle Anzahl der gebuchten Plätze des Kunden">
+    <modelElement href="busreisen.uml#_ZhccQbbXEeGxNLpsZ0hsPA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gpdn0LbXEeGxNLpsZ0hsPA" comments="_gpTPwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gpUd4LbXEeGxNLpsZ0hsPA" name="Buchung" associationsIn="_gr5QwLbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gpe18LbXEeGxNLpsZ0hsPA" position="13.0,911.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gpdn0bbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_gpdn0rbXEeGxNLpsZ0hsPA" name="kunde">
+      <modelElement href="busreisen.uml#_ZgYsULbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn07bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn1LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn1bbXEeGxNLpsZ0hsPA" name="Kunde">
+        <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gpdn1rbXEeGxNLpsZ0hsPA" name="buchungsnr">
+      <modelElement href="busreisen.uml#_ZgZ6cLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn17bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn2LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn2bbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gpdn2rbXEeGxNLpsZ0hsPA" name="stornonr">
+      <modelElement href="busreisen.uml#_ZgahgLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn27bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn3LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn3bbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gpdn3rbXEeGxNLpsZ0hsPA" name="reiseZiel">
+      <modelElement href="busreisen.uml#_ZgbIkLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn37bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn4LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn4bbXEeGxNLpsZ0hsPA" name="Reiseziel">
+        <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gpdn4rbXEeGxNLpsZ0hsPA" name="woche">
+      <modelElement href="busreisen.uml#_ZgbvoLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn47bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn5LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn5bbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gpdn5rbXEeGxNLpsZ0hsPA" name="plaetze">
+      <modelElement href="busreisen.uml#_ZgbvobbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn57bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gpdn6LbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gpdn6bbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gpdn6rbXEeGxNLpsZ0hsPA" name="Buchung">
+      <modelElement href="busreisen.uml#_ZPphoLbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_gpdn67bXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_gpdn7LbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gpdn7bbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZPqIsLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn7rbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gpdn77bXEeGxNLpsZ0hsPA" name="storniere">
+      <modelElement href="busreisen.uml#_ZPr94LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdn8LbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gpdn8bbXEeGxNLpsZ0hsPA" name="stornonr">
+        <modelElement href="busreisen.uml#_ZPr94bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn8rbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gpdn87bXEeGxNLpsZ0hsPA" name="stornierte_plaetze">
+        <modelElement href="busreisen.uml#_ZPsk8LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn9LbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gpdn9bbXEeGxNLpsZ0hsPA" name="Buchung">
+      <modelElement href="busreisen.uml#_Ze_lMLbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_gpdn9rbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_gpdn97bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gpdn-LbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfAzU7bXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn-bbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gpdn-rbXEeGxNLpsZ0hsPA" name="buchungsnr">
+        <modelElement href="busreisen.uml#_ZfAMQLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn-7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gpdn_LbXEeGxNLpsZ0hsPA" name="reiseZiel">
+        <modelElement href="busreisen.uml#_ZfAMQbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn_bbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gpdn_rbXEeGxNLpsZ0hsPA" name="woche">
+        <modelElement href="busreisen.uml#_ZfAMQrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdn_7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gpdoALbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfAMQ7bXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdoAbbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gpdoArbXEeGxNLpsZ0hsPA" name="plaetze">
+        <modelElement href="busreisen.uml#_ZfAzULbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdoA7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gpdoBLbXEeGxNLpsZ0hsPA" name="equals">
+      <modelElement href="busreisen.uml#_ZgHmkbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gpdoBbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gpdoBrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZgINoLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdoB7bXEeGxNLpsZ0hsPA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gpdoCLbXEeGxNLpsZ0hsPA" name="object">
+        <modelElement href="busreisen.uml#_ZgHmkrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gpdoCbbXEeGxNLpsZ0hsPA" name="Object">
+          <modelElement href="busreisen.uml#_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gp3QcLbXEeGxNLpsZ0hsPA" comments="_gpfdALbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gpmxwLbXEeGxNLpsZ0hsPA" name="Bus" associationsIn="_gupp0LbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZPz5sLbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gp5FoLbXEeGxNLpsZ0hsPA" position="268.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gp3QcbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_gp3QcrbXEeGxNLpsZ0hsPA" name="anzahlPlaetze">
+      <modelElement href="busreisen.uml#_Zgc9wLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gp3Qc7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gp3QdLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gp3QdbbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gp3QdrbXEeGxNLpsZ0hsPA" name="anzahlFreiePlaetze">
+      <modelElement href="busreisen.uml#_Zgdk0LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gp3Qd7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gp3QeLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gp3QebbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gp3QerbXEeGxNLpsZ0hsPA" name="woche">
+      <modelElement href="busreisen.uml#_ZgeL4LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gp3Qe7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gp3QfLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gp3QfbbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gp3QfrbXEeGxNLpsZ0hsPA" name="reiseZiel">
+      <modelElement href="busreisen.uml#_ZgeL4bbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gp3Qf7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gp3QgLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gp3QgbbXEeGxNLpsZ0hsPA" name="Reiseziel">
+        <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gp3QgrbXEeGxNLpsZ0hsPA" name="Bus">
+      <modelElement href="busreisen.uml#_ZP1u4LbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_gp33gLbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_gp33gbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gp33grbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZP2V8rbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gp33g7bXEeGxNLpsZ0hsPA" name="Bus">
+          <modelElement href="busreisen.uml#_ZPz5sLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gp33hLbXEeGxNLpsZ0hsPA" name="Bus">
+      <modelElement href="busreisen.uml#_ZfD2oLbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_gp33hbbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_gp33hrbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gp33h7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfEds7bXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gp33iLbXEeGxNLpsZ0hsPA" name="Bus">
+          <modelElement href="busreisen.uml#_ZPz5sLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gp33ibbXEeGxNLpsZ0hsPA" name="anzahlPlaetze">
+        <modelElement href="busreisen.uml#_ZfD2obbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gp33irbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gp33i7bXEeGxNLpsZ0hsPA" name="woche">
+        <modelElement href="busreisen.uml#_ZfD2orbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gp33jLbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gp33jbbXEeGxNLpsZ0hsPA" name="reiseZiel">
+        <modelElement href="busreisen.uml#_ZfEdsLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gp33jrbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gqoFcLbXEeGxNLpsZ0hsPA" comments="_gp7h4LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqBBcLbXEeGxNLpsZ0hsPA" name="DateiIO">
+    <modelElement href="busreisen.uml#_ZQ6F4LbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gqpTkLbXEeGxNLpsZ0hsPA" position="11.0,1219.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gqoFcbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_gqoFcrbXEeGxNLpsZ0hsPA" defaultValue="{ &quot;Nummer&quot;, &quot;Name&quot;, &quot;Vorname&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Adresse&quot;, &quot;Telefonnummer&quot; }" name="kunden_headers" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZgrnQLbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gqoFc7bXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZgsOULbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gqoFdLbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgsOUrbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gqoFdbbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gqoFdrbXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_gqoFd7bXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gqoFeLbXEeGxNLpsZ0hsPA" defaultValue="{ &quot;Art der Buchung&quot;, &quot;Nummer&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Kundennummer&quot;, &quot;Name&quot;, &quot;Vorname&quot;, &quot;Adresse&quot;, &quot;Telefonnummer&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Ziel&quot;, &quot;Woche&quot;, &quot;Anzahl der Plaetze&quot; }" name="log_headers" staticAttribute="true">
+      <modelElement href="busreisen.uml#_Zgs1YLbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gqoFebbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_Zgs1YrbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gqoFerbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgtccbbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gqoFe7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gqoFfLbXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_gqoFfbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gqoFfrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Bussoftware_Log.csv&quot;" name="LOGFILE" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZgtccrbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFf7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gqoFgLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gqoFgbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gqoFgrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Bussoftware_Kunden.csv&quot;" name="KUNDEN_FILE" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZguDgbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFg7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gqoFhLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gqoFhbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gqoFhrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Bussoftware_LetzteSitzung.csv&quot;" name="LAST_SESSION_FILE" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZguqkbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFh7bXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gqoFiLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gqoFibbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gqoFirbXEeGxNLpsZ0hsPA" comments="_gqSHMLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqSuQLbXEeGxNLpsZ0hsPA" name="writeHeadersInKundenFile" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZQ8iILbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFi7bXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_gqoFjLbXEeGxNLpsZ0hsPA" comments="_gqUjcLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqVxkLbXEeGxNLpsZ0hsPA" name="writeHeadersInLogFile" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZQ9wQLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFjbbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_gqoFjrbXEeGxNLpsZ0hsPA" comments="_gqZb8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqaDALbXEeGxNLpsZ0hsPA" name="readNummernVonLetzterSitzung" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZQ-XULbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gqoFj7bXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZQ--YrbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gqoFkLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFkbbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQ--YLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFkrbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gqoFk7bXEeGxNLpsZ0hsPA" comments="_gqbRILbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqcfQLbXEeGxNLpsZ0hsPA" name="saveNummernVonLetzterSitzung" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRAzkLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFlLbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gqoFlbbXEeGxNLpsZ0hsPA" name="kundenNr">
+        <modelElement href="busreisen.uml#_ZRAzkbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFlrbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gqoFl7bXEeGxNLpsZ0hsPA" name="buchungsNr">
+        <modelElement href="busreisen.uml#_ZRAzkrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFmLbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gqoFmbbXEeGxNLpsZ0hsPA" name="stornoNr">
+        <modelElement href="busreisen.uml#_ZRBaoLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFmrbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFm7bXEeGxNLpsZ0hsPA" comments="_gqdtYLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqdtYbbXEeGxNLpsZ0hsPA" name="searchKundeInKundenstamm" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRDP0LbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gqoFnLbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZREd8rbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gqoFnbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFnrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZREd8LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFn7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoFoLbXEeGxNLpsZ0hsPA" name="name">
+        <modelElement href="busreisen.uml#_ZRD24LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFobbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gqoForbXEeGxNLpsZ0hsPA" name="vorname">
+        <modelElement href="busreisen.uml#_ZRD24bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFo7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFpLbXEeGxNLpsZ0hsPA" comments="_gqeUcLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqe7gLbXEeGxNLpsZ0hsPA" name="erstelleBuchungAusLogEintrag" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRHhQLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFpbbXEeGxNLpsZ0hsPA" label="-"/>
+      <outParameters xmi:id="_gqoFprbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZffUcLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFp7bXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoFqLbXEeGxNLpsZ0hsPA" name="nummer">
+        <modelElement href="busreisen.uml#_ZRHhQbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFqbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gqoFqrbXEeGxNLpsZ0hsPA" name="details">
+        <modelElement href="busreisen.uml#_ZRIIULbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFq7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFrLbXEeGxNLpsZ0hsPA" comments="_gqfikLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqfikbbXEeGxNLpsZ0hsPA" name="searchBuchungInLogFile" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRJWcLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFrbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFrrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZffUcbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFr7bXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoFsLbXEeGxNLpsZ0hsPA" name="buchungsnr">
+        <modelElement href="busreisen.uml#_ZRJ9gLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFsbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFsrbXEeGxNLpsZ0hsPA" comments="_gqgwsLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqgwsbbXEeGxNLpsZ0hsPA" name="getTeilnehmerZuReise" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRMZwLbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gqoFs7bXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZRNn4LbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gqoFtLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFtbbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRNA0bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFtrbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoFt7bXEeGxNLpsZ0hsPA" name="ziel">
+        <modelElement href="busreisen.uml#_ZRMZwbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFuLbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gqoFubbXEeGxNLpsZ0hsPA" name="woche">
+        <modelElement href="busreisen.uml#_ZRNA0LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFurbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFu7bXEeGxNLpsZ0hsPA" comments="_gqhXwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqhXwbbXEeGxNLpsZ0hsPA" name="searchAlleBuchungenZurReise" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRO2ALbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFvLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFvbbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRPdELbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFvrbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoFv7bXEeGxNLpsZ0hsPA" name="reiseziel">
+        <modelElement href="busreisen.uml#_ZRO2AbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFwLbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFwbbXEeGxNLpsZ0hsPA" comments="_gqh-0LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqh-0bbXEeGxNLpsZ0hsPA" name="saveKundeToKundenstamm" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZfbqELbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFwrbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gqoFw7bXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfcRILbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFxLbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFxbbXEeGxNLpsZ0hsPA" comments="_gqil4LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqil4bbXEeGxNLpsZ0hsPA" name="changeKundeInKundenstamm" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZfdfQLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFxrbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gqoFx7bXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfdfQbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFyLbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFybbXEeGxNLpsZ0hsPA" comments="_gqjM8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqjM8bbXEeGxNLpsZ0hsPA" name="saveBuchungToLogFile" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZfeGULbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFyrbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gqoFy7bXEeGxNLpsZ0hsPA" name="buchung">
+        <modelElement href="busreisen.uml#_ZfeGUbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoFzLbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoFzbbXEeGxNLpsZ0hsPA" comments="_gqj0ALbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqj0AbbXEeGxNLpsZ0hsPA" name="searchStornierungZurBuchung" staticOperation="true">
+      <modelElement href="busreisen.uml#_Zff7gLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoFzrbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gqoFz7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_Zff7grbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoF0LbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gqoF0bbXEeGxNLpsZ0hsPA" name="buchung">
+        <modelElement href="busreisen.uml#_Zff7gbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoF0rbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gqoF07bXEeGxNLpsZ0hsPA" comments="_gqkbELbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gqlCILbXEeGxNLpsZ0hsPA" name="updateBuchungenZuKunde" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZfhJoLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gqoF1LbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gqoF1bbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfhJobbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gqoF1rbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gq-DsLbXEeGxNLpsZ0hsPA" comments="_gqrIwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gq6ZULbXEeGxNLpsZ0hsPA" name="KonsoleIO">
+    <modelElement href="busreisen.uml#_ZRhJ4LbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gq_R0LbXEeGxNLpsZ0hsPA" position="571.0,1230.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gq-DsbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_gq-DsrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Beim Einlesen ist ein Fehler aufgetreten!&quot;" name="IO_ERROR" staticAttribute="true">
+      <modelElement href="busreisen.uml#_Zgv4sLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Ds7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gq-DtLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gq-DtbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gq-DtrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Das eingegebene Zeichen ist keine ganze Zahl!&quot;" name="INTEGER_ERROR" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZgwfwbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Dt7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gq-DuLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gq-DubbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gq-DurbXEeGxNLpsZ0hsPA" defaultValue="&quot;Das eingegebene Zeichen ist keine Gleitkommazahl!&quot;" name="DOUBLE_ERROR" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZgxG0LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Du7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gq-DvLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gq-DvbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gq-DvrbXEeGxNLpsZ0hsPA" name="printErfolgsmeldung" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRiYALbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Dv7bXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gq-DwLbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRi_ELbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-DwbbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-DwrbXEeGxNLpsZ0hsPA" name="printFehlermeldung" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRjmILbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Dw7bXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gq-DxLbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRjmIbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-DxbbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-DxrbXEeGxNLpsZ0hsPA" name="readIntegerFromConsole" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRkNMLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-Dx7bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-DyLbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRk0QLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-DybbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-DyrbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRkNMbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-Dy7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-DzLbXEeGxNLpsZ0hsPA" name="readDoubleFromConsole" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRlbULbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-DzbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-DzrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRlbUrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-Dz7bXEeGxNLpsZ0hsPA" name="double">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-D0LbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRlbUbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-D0bbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-D0rbXEeGxNLpsZ0hsPA" name="readCharFromConsole" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRmCYLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-D07bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-D1LbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRmpcbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-D1bbXEeGxNLpsZ0hsPA" name="char">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-D1rbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRmpcLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-D17bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-D2LbXEeGxNLpsZ0hsPA" name="readStringFromConsole" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRnQgLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-D2bbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-D2rbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZRn3kLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-D27bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-D3LbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRnQgbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-qwLbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-qwbbXEeGxNLpsZ0hsPA" name="readGewuenschtesReiseziel" staticOperation="true">
+      <modelElement href="busreisen.uml#_ZRpFsLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-qwrbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-qw7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_Zf9OgLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-qxLbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-qxbbXEeGxNLpsZ0hsPA" name="msg">
+        <modelElement href="busreisen.uml#_ZRpFsbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-qxrbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gq-qx7bXEeGxNLpsZ0hsPA" name="readGewuenschterKunde" staticOperation="true">
+      <modelElement href="busreisen.uml#_Zf8AYLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gq-qyLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gq-qybbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_Zf8ncLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-qyrbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gq-qy7bXEeGxNLpsZ0hsPA" name="kunden">
+        <modelElement href="busreisen.uml#_Zf8AYbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gq-qzLbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_guFCELbXEeGxNLpsZ0hsPA" comments="_grAf8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_grIbwLbXEeGxNLpsZ0hsPA" name="Kunde" associationsIn="_gxXmoLbXEeGxNLpsZ0hsPA" associationsOut="_gr5QwLbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gun0oLbXEeGxNLpsZ0hsPA" position="766.0,864.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_guFCEbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_guFCErbXEeGxNLpsZ0hsPA" name="kdNummer">
+      <modelElement href="busreisen.uml#_Zgey8LbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_guFCE7bXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgfaALbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_guFCFLbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_guFCFbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_guFCFrbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_guFCF7bXEeGxNLpsZ0hsPA" name="name">
+      <modelElement href="busreisen.uml#_ZgfaAbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCGLbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_guFCGbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_guFCGrbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_guFCG7bXEeGxNLpsZ0hsPA" name="vorname">
+      <modelElement href="busreisen.uml#_ZggBELbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCHLbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_guFCHbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_guFCHrbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_guFCH7bXEeGxNLpsZ0hsPA" name="adresse">
+      <modelElement href="busreisen.uml#_ZggBEbbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_guFCILbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZggoILbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_guFCIbbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_guFCIrbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_guFCI7bXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_guFCJLbXEeGxNLpsZ0hsPA" name="telefonnr">
+      <modelElement href="busreisen.uml#_ZggoIbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCJbbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_guFCJrbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_guFCJ7bXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_guFCKLbXEeGxNLpsZ0hsPA" comments="_gsDBwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsH6QLbXEeGxNLpsZ0hsPA" name="Kunde">
+      <modelElement href="busreisen.uml#_ZP9qsLbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_guFCKbbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_guFCKrbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCK7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZP-RwrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCLLbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_guFCLbbXEeGxNLpsZ0hsPA" comments="_gsJvcLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsLkoLbXEeGxNLpsZ0hsPA" name="Kunde">
+      <modelElement href="busreisen.uml#_ZP_f4LbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_guFCLrbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_guFCL7bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCMLbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQAuALbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCMbbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_guFCMrbXEeGxNLpsZ0hsPA" name="nummer">
+        <modelElement href="busreisen.uml#_ZP_f4bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCM7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_guFCNLbXEeGxNLpsZ0hsPA" name="name">
+        <modelElement href="busreisen.uml#_ZP_f4rbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCNbbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_guFCNrbXEeGxNLpsZ0hsPA" name="vorname">
+        <modelElement href="busreisen.uml#_ZQAG8LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCN7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_guFCOLbXEeGxNLpsZ0hsPA" name="adresse">
+        <modelElement href="busreisen.uml#_ZQAG8bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCObbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_guFCOrbXEeGxNLpsZ0hsPA" name="telefonnr">
+        <modelElement href="busreisen.uml#_ZQAG8rbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCO7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_guFCPLbXEeGxNLpsZ0hsPA" comments="_gsTgcLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsTgcbbXEeGxNLpsZ0hsPA" name="getNummer">
+      <modelElement href="busreisen.uml#_ZQAuAbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCPbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCPrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQBVELbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCP7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_guFCQLbXEeGxNLpsZ0hsPA" comments="_gsUukLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsVVoLbXEeGxNLpsZ0hsPA" name="setNummer">
+      <modelElement href="busreisen.uml#_ZQB8ILbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCQbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_guFCQrbXEeGxNLpsZ0hsPA" name="kdNummer">
+        <modelElement href="busreisen.uml#_ZQB8IbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCQ7bXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_guFCRLbXEeGxNLpsZ0hsPA" comments="_gsV8sLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsV8sbbXEeGxNLpsZ0hsPA" name="setName">
+      <modelElement href="busreisen.uml#_ZQCjMLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCRbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_guFCRrbXEeGxNLpsZ0hsPA" name="name">
+        <modelElement href="busreisen.uml#_ZQCjMbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCR7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_guFCSLbXEeGxNLpsZ0hsPA" comments="_gsWjwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsWjwbbXEeGxNLpsZ0hsPA" name="getAdresse">
+      <modelElement href="busreisen.uml#_ZQDKQLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCSbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCSrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQDKQbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCS7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_guFCTLbXEeGxNLpsZ0hsPA" comments="_gsXK0LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsXK0bbXEeGxNLpsZ0hsPA" name="setAdresse">
+      <modelElement href="busreisen.uml#_ZQDxULbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCTbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_guFCTrbXEeGxNLpsZ0hsPA" name="adresse">
+        <modelElement href="busreisen.uml#_ZQEYYLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCT7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_guFCULbXEeGxNLpsZ0hsPA" comments="_gsXx4LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsXx4bbXEeGxNLpsZ0hsPA" name="toString">
+      <modelElement href="busreisen.uml#_ZQEYYbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCUbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCUrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQE_cLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCU7bXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_guFCVLbXEeGxNLpsZ0hsPA" comments="_gsYY8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gsZAALbXEeGxNLpsZ0hsPA" name="equals">
+      <modelElement href="busreisen.uml#_ZgKp4LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_guFCVbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_guFCVrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZgLQ8LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCV7bXEeGxNLpsZ0hsPA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_guFCWLbXEeGxNLpsZ0hsPA" name="object">
+        <modelElement href="busreisen.uml#_ZgKp4bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_guFCWbbXEeGxNLpsZ0hsPA" name="Object">
+          <modelElement href="busreisen.uml#_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_gxSuILbXEeGxNLpsZ0hsPA" comments="_gvmFALbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gwLT0LbXEeGxNLpsZ0hsPA" name="Reise" associationsIn="_gyNUILbXEeGxNLpsZ0hsPA" associationsOut="_gupp0LbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZQJQ4LbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_gxVKYLbXEeGxNLpsZ0hsPA" position="295.0,378.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_gxSuIbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_gxSuIrbXEeGxNLpsZ0hsPA" name="ziel">
+      <modelElement href="busreisen.uml#_Zgh2QLbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gxSuI7bXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgidULbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gxSuJLbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gxSuJbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gxSuJrbXEeGxNLpsZ0hsPA" name="Reiseziel">
+        <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gxSuJ7bXEeGxNLpsZ0hsPA" name="starttag">
+      <modelElement href="busreisen.uml#_ZgidUbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuKLbXEeGxNLpsZ0hsPA" label="+"/>
+      <cardinality xmi:id="_gxSuKbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_gxSuKrbXEeGxNLpsZ0hsPA" name="Wochentag">
+        <modelElement href="busreisen.uml#_ZQ3poLbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_gxSuK7bXEeGxNLpsZ0hsPA" name="busse">
+      <modelElement href="busreisen.uml#_ZgjEYLbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_gxSuLLbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZgjrcLbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gxSuLbbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgjrcbbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gxRgALbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZgjrcLbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_gxRgAbbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgjrcbbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_gxSuLrbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_gxSuL7bXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_gxSuMLbXEeGxNLpsZ0hsPA" name="Bus">
+        <modelElement href="busreisen.uml#_ZPz5sLbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_gxSuMbbXEeGxNLpsZ0hsPA" comments="_gwWS8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gwZWQLbXEeGxNLpsZ0hsPA" name="richteBusseEin">
+      <modelElement href="busreisen.uml#_ZQLGELbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuMrbXEeGxNLpsZ0hsPA" label="-"/>
+    </operations>
+    <operations xmi:id="_gxSuM7bXEeGxNLpsZ0hsPA" comments="_gwakYLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gwfc4LbXEeGxNLpsZ0hsPA" name="getReiseziel">
+      <modelElement href="busreisen.uml#_ZQMUMLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuNLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gxSuNbbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfIIELbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuNrbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_gxSuN7bXEeGxNLpsZ0hsPA" comments="_gwom0LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gxKyULbXEeGxNLpsZ0hsPA" name="getBusZurReisewoche">
+      <modelElement href="busreisen.uml#_ZQOJYLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuOLbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gxSuObbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfJWMLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuOrbXEeGxNLpsZ0hsPA" name="Bus">
+          <modelElement href="busreisen.uml#_ZPz5sLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gxSuO7bXEeGxNLpsZ0hsPA" name="woche">
+        <modelElement href="busreisen.uml#_ZQOwcLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuPLbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gxSuPbbXEeGxNLpsZ0hsPA" comments="_gxMngLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gxNOkLbXEeGxNLpsZ0hsPA" name="ladeBusbelegung">
+      <modelElement href="busreisen.uml#_ZQPXgLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuPrbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_gxSuP7bXEeGxNLpsZ0hsPA" comments="_gxN1oLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gxN1obbXEeGxNLpsZ0hsPA" name="Reise">
+      <modelElement href="busreisen.uml#_ZfG58LbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_gxSuQLbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_gxSuQbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gxSuQrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfHhArbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuQ7bXEeGxNLpsZ0hsPA" name="Reise">
+          <modelElement href="busreisen.uml#_ZQJQ4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gxSuRLbXEeGxNLpsZ0hsPA" name="ziel">
+        <modelElement href="busreisen.uml#_ZfG58bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuRbbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_gxSuRrbXEeGxNLpsZ0hsPA" name="start">
+        <modelElement href="busreisen.uml#_ZfG58rbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuR7bXEeGxNLpsZ0hsPA" name="Wochentag">
+          <modelElement href="busreisen.uml#_ZQ3poLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gxSuSLbXEeGxNLpsZ0hsPA" comments="_gxOcsLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gxPDwLbXEeGxNLpsZ0hsPA" name="buchungOK">
+      <modelElement href="busreisen.uml#_ZfIIEbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuSbbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_gxSuSrbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfIvILbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuS7bXEeGxNLpsZ0hsPA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gxSuTLbXEeGxNLpsZ0hsPA" name="buchung">
+        <modelElement href="busreisen.uml#_ZfIIErbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuTbbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_gxSuTrbXEeGxNLpsZ0hsPA" comments="_gxPq0LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_gxPq0bbXEeGxNLpsZ0hsPA" name="aktualisiereNachBuchung">
+      <modelElement href="busreisen.uml#_ZfIvIbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_gxSuT7bXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_gxSuULbXEeGxNLpsZ0hsPA" name="buchung">
+        <modelElement href="busreisen.uml#_ZfIvIrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_gxSuUbbXEeGxNLpsZ0hsPA" name="Buchung">
+          <modelElement href="busreisen.uml#_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_g1ClsLbXEeGxNLpsZ0hsPA" comments="_gzV8kLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g0B5ELbXEeGxNLpsZ0hsPA" name="Reiseverwaltung" associationsOut="_gxXmoLbXEeGxNLpsZ0hsPA _gyNUILbXEeGxNLpsZ0hsPA">
+    <modelElement href="busreisen.uml#_ZQWsQLbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_g1Dz0LbXEeGxNLpsZ0hsPA" position="863.0,293.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_g1ClsbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_g1ClsrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Fehler beim Speichern!&quot;" name="OUTPUT_FEHLERMELDUNG" staticAttribute="true">
+      <modelElement href="busreisen.uml#_ZgkSgLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cls7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1CltLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1CltbbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1CltrbXEeGxNLpsZ0hsPA" defaultValue="&quot;Fehler beim Laden!&quot;" name="INPUT_FEHLERMELDUNG" staticAttribute="true">
+      <modelElement href="busreisen.uml#_Zgk5kbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Clt7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1CluLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1ClubbXEeGxNLpsZ0hsPA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1ClurbXEeGxNLpsZ0hsPA" name="aktuelleBuchungsNr">
+      <modelElement href="busreisen.uml#_ZglgobbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g1Clu7bXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgmHsLbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g1ClvLbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1ClvbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1ClvrbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1Clv7bXEeGxNLpsZ0hsPA" name="aktuelleStornoNr">
+      <modelElement href="busreisen.uml#_ZgmHsbbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g1ClwLbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgmuwLbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g1ClwbbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1ClwrbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1Clw7bXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1ClxLbXEeGxNLpsZ0hsPA" name="aktuelleKundenNr">
+      <modelElement href="busreisen.uml#_ZgmuwbbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g1ClxbbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgnV0LbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g1ClxrbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1Clx7bXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1ClyLbXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1ClybbXEeGxNLpsZ0hsPA" name="reisender">
+      <modelElement href="busreisen.uml#_ZgnV0bbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g1ClyrbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_Zgn84LbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_g1AwgLbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_Zgn84LbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g1Cly7bXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1ClzLbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g1ClzbbXEeGxNLpsZ0hsPA" name="Kunde">
+        <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g1ClzrbXEeGxNLpsZ0hsPA" name="reise">
+      <modelElement href="busreisen.uml#_Zgn84bbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g1Clz7bXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_Zgoj8bbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_g1Cl0LbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgpLALbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_g1BXkLbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_Zgoj8bbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_g1BXkbbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgpLALbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g1Cl0bbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g1Cl0rbXEeGxNLpsZ0hsPA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_g1Cl07bXEeGxNLpsZ0hsPA" name="Reise">
+        <modelElement href="busreisen.uml#_ZQJQ4LbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_g1Cl1LbXEeGxNLpsZ0hsPA" comments="_g0Kb8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g0Tl4LbXEeGxNLpsZ0hsPA" name="Reiseverwaltung">
+      <modelElement href="busreisen.uml#_ZQZIgLbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_g1Cl1bbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_g1Cl1rbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_g1Cl17bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQZvkbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g1Cl2LbXEeGxNLpsZ0hsPA" name="Reiseverwaltung">
+          <modelElement href="busreisen.uml#_ZQWsQLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_g1Cl2bbXEeGxNLpsZ0hsPA" comments="_g0U0ALbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g0fMELbXEeGxNLpsZ0hsPA" name="buchen">
+      <modelElement href="busreisen.uml#_ZQaWoLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl2rbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl27bXEeGxNLpsZ0hsPA" comments="_g0lSsLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g0lSsbbXEeGxNLpsZ0hsPA" name="sucheKunde">
+      <modelElement href="busreisen.uml#_ZQa9sLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl3LbXEeGxNLpsZ0hsPA" label="-"/>
+      <outParameters xmi:id="_g1Cl3bbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfOOsLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g1Cl3rbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_g1Cl37bXEeGxNLpsZ0hsPA" comments="_g0sAYLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g02YcLbXEeGxNLpsZ0hsPA" name="reisenAnlegen">
+      <modelElement href="busreisen.uml#_ZQcL0LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl4LbXEeGxNLpsZ0hsPA" label="-"/>
+    </operations>
+    <operations xmi:id="_g1Cl4bbXEeGxNLpsZ0hsPA" comments="_g04NoLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g040sLbXEeGxNLpsZ0hsPA" name="stornieren">
+      <modelElement href="busreisen.uml#_ZQcy4LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl4rbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl47bXEeGxNLpsZ0hsPA" comments="_g05bwLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g05bwbbXEeGxNLpsZ0hsPA" name="kundenDatenKorrektur">
+      <modelElement href="busreisen.uml#_ZQcy4bbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl5LbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl5bbXEeGxNLpsZ0hsPA" comments="_g06C0LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g06C0bbXEeGxNLpsZ0hsPA" name="buchungsDatenKorrektur">
+      <modelElement href="busreisen.uml#_ZQdZ8LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl5rbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl57bXEeGxNLpsZ0hsPA" comments="_g06C0rbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g06p4LbXEeGxNLpsZ0hsPA" name="sucheBuchung">
+      <modelElement href="busreisen.uml#_ZQdZ8bbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl6LbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl6bbXEeGxNLpsZ0hsPA" comments="_g06p4bbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g06p4rbXEeGxNLpsZ0hsPA" name="kundeAnlegen">
+      <modelElement href="busreisen.uml#_ZQeBALbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl6rbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl67bXEeGxNLpsZ0hsPA" comments="_g07Q8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g07Q8bbXEeGxNLpsZ0hsPA" name="zeigeFreiePlaetzeEinesBusses">
+      <modelElement href="busreisen.uml#_ZQeBAbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl7LbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl7bbXEeGxNLpsZ0hsPA" comments="_g074ALbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g074AbbXEeGxNLpsZ0hsPA" name="zeigeTeilnehmerEinerReise">
+      <modelElement href="busreisen.uml#_ZQeoELbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl7rbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl77bXEeGxNLpsZ0hsPA" comments="_g074ArbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g08fELbXEeGxNLpsZ0hsPA" name="speichereDatenDerSitzung">
+      <modelElement href="busreisen.uml#_ZQeoEbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl8LbXEeGxNLpsZ0hsPA" label="+"/>
+    </operations>
+    <operations xmi:id="_g1Cl8bbXEeGxNLpsZ0hsPA" comments="_g09GILbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g09GIbbXEeGxNLpsZ0hsPA" name="getReiseZuZiel">
+      <modelElement href="busreisen.uml#_ZfNnoLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g1Cl8rbXEeGxNLpsZ0hsPA" label="-"/>
+      <outParameters xmi:id="_g1Cl87bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfNnorbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g1Cl9LbXEeGxNLpsZ0hsPA" name="Reise">
+          <modelElement href="busreisen.uml#_ZQJQ4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_g1Cl9bbXEeGxNLpsZ0hsPA" name="ziel">
+        <modelElement href="busreisen.uml#_ZfNnobbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g1Cl9rbXEeGxNLpsZ0hsPA" name="Reiseziel">
+          <modelElement href="busreisen.uml#_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_g2HjwLbXEeGxNLpsZ0hsPA" comments="_g1Ea4LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g1PaALbXEeGxNLpsZ0hsPA" name="Sortierverfahren">
+    <modelElement href="busreisen.uml#_ZRswELbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_g2NqYLbXEeGxNLpsZ0hsPA" position="1469.0,1225.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_g2HjwbbXEeGxNLpsZ0hsPA" label="+"/>
+    <operations xmi:id="_g2HjwrbXEeGxNLpsZ0hsPA" name="bubbleSort" staticOperation="true">
+      <modelElement href="busreisen.uml#_Zf91kLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g2Hjw7bXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_g2HjxLbXEeGxNLpsZ0hsPA" name="kunden">
+        <modelElement href="busreisen.uml#_Zf-coLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g2HjxbbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_g4W_cLbXEeGxNLpsZ0hsPA" comments="_g2PfkLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g2TJ8LbXEeGxNLpsZ0hsPA" name="TeilnehmerListe">
+    <modelElement href="busreisen.uml#_ZQpAILbXEeGxNLpsZ0hsPA"/>
+    <visualProperties xmi:id="_g4XmgLbXEeGxNLpsZ0hsPA" position="986.0,1227.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_g4W_cbbXEeGxNLpsZ0hsPA" label="+"/>
+    <attributes xmi:id="_g4W_crbXEeGxNLpsZ0hsPA" name="teilnehmer">
+      <modelElement href="busreisen.uml#_ZgpyELbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g4W_c7bXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgpyEbbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g4W_dLbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g4W_dbbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g4W_drbXEeGxNLpsZ0hsPA" name="StringBuilder">
+        <modelElement href="busreisen.uml#_ZgNGILbXEeGxNLpsZ0hsPA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_g4W_d7bXEeGxNLpsZ0hsPA" name="menge">
+      <modelElement href="busreisen.uml#_ZgqZILbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g4W_eLbXEeGxNLpsZ0hsPA" name="LegacyStyledElement">
+        <modelElement href="busreisen.uml#_ZgrAMLbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g4W_ebbXEeGxNLpsZ0hsPA" label="-"/>
+      <cardinality xmi:id="_g4W_erbXEeGxNLpsZ0hsPA" label="1" max="1" min="1"/>
+      <type xmi:id="_g4W_e7bXEeGxNLpsZ0hsPA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_g4W_fLbXEeGxNLpsZ0hsPA" comments="_g3D-8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g3PlILbXEeGxNLpsZ0hsPA" name="TeilnehmerListe">
+      <modelElement href="busreisen.uml#_ZQq1ULbXEeGxNLpsZ0hsPA"/>
+      <keywords xmi:id="_g4W_fbbXEeGxNLpsZ0hsPA" keyword="create"/>
+      <visibility xmi:id="_g4W_frbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_g4W_f7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQrcYrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_gLbXEeGxNLpsZ0hsPA" name="TeilnehmerListe">
+          <modelElement href="busreisen.uml#_ZQpAILbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_g4W_gbbXEeGxNLpsZ0hsPA" comments="_g3dAgLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g3dnkLbXEeGxNLpsZ0hsPA" name="erstelleKundeAusString">
+      <modelElement href="busreisen.uml#_ZQufsLbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_grbXEeGxNLpsZ0hsPA" label="-"/>
+      <outParameters xmi:id="_g4W_g7bXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfTuQbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_hLbXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_g4W_hbbXEeGxNLpsZ0hsPA" name="s">
+        <modelElement href="busreisen.uml#_ZQufsbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_hrbXEeGxNLpsZ0hsPA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_g4W_h7bXEeGxNLpsZ0hsPA" comments="_g3hR8LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g3mxgLbXEeGxNLpsZ0hsPA" name="toArray">
+      <modelElement href="busreisen.uml#_ZQvt0LbXEeGxNLpsZ0hsPA"/>
+      <stereotypes xmi:id="_g4W_iLbXEeGxNLpsZ0hsPA" name="Array">
+        <modelElement href="busreisen.uml#_ZQw78LbXEeGxNLpsZ0hsPA"/>
+      </stereotypes>
+      <visibility xmi:id="_g4W_ibbXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_g4W_irbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZQvt0bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_i7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_g4W_jLbXEeGxNLpsZ0hsPA" comments="_g3wigLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g3y-wLbXEeGxNLpsZ0hsPA" name="appendTeilnehmer">
+      <modelElement href="busreisen.uml#_ZfQD4LbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_jbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_g4W_jrbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfQq8LbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_j7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_g4W_kLbXEeGxNLpsZ0hsPA" name="aktuellePlaetze">
+        <modelElement href="busreisen.uml#_ZfQq8bbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_kbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_g4W_krbXEeGxNLpsZ0hsPA" comments="_g30M4LbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g3994LbXEeGxNLpsZ0hsPA" name="getPlaetzeZumKunden">
+      <modelElement href="busreisen.uml#_ZfRSALbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_k7bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_g4W_lLbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfRSArbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_lbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_g4W_lrbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfRSAbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_l7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_g4W_mLbXEeGxNLpsZ0hsPA" comments="_g4KyMLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g4LZQLbXEeGxNLpsZ0hsPA" name="removeTeilnehmer">
+      <modelElement href="busreisen.uml#_ZfR5ELbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_mbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_g4W_mrbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfR5EbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_m7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_g4W_nLbXEeGxNLpsZ0hsPA" name="plaetze">
+        <modelElement href="busreisen.uml#_ZfR5ErbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_nbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_g4W_nrbXEeGxNLpsZ0hsPA" comments="_g4PqsLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g4T8ILbXEeGxNLpsZ0hsPA" name="containsTeilnehmer">
+      <modelElement href="busreisen.uml#_ZfSgILbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_n7bXEeGxNLpsZ0hsPA" label="+"/>
+      <outParameters xmi:id="_g4W_oLbXEeGxNLpsZ0hsPA">
+        <modelElement href="busreisen.uml#_ZfTHMLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_obbXEeGxNLpsZ0hsPA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_g4W_orbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfSgIbbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_o7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_g4W_pLbXEeGxNLpsZ0hsPA" comments="_g4UjMLbXEeGxNLpsZ0hsPA" targetConnectionVisual="_g4VKQLbXEeGxNLpsZ0hsPA" name="reduziereGebuchtePlaetze">
+      <modelElement href="busreisen.uml#_ZfTHMbbXEeGxNLpsZ0hsPA"/>
+      <visibility xmi:id="_g4W_pbbXEeGxNLpsZ0hsPA" label="+"/>
+      <parameters xmi:id="_g4W_prbXEeGxNLpsZ0hsPA" name="kunde">
+        <modelElement href="busreisen.uml#_ZfTHMrbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_p7bXEeGxNLpsZ0hsPA" name="Kunde">
+          <modelElement href="busreisen.uml#_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_g4W_qLbXEeGxNLpsZ0hsPA" name="neueAnzahlPlaetze">
+        <modelElement href="busreisen.uml#_ZfTuQLbXEeGxNLpsZ0hsPA"/>
+        <type xmi:id="_g4W_qbbXEeGxNLpsZ0hsPA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
