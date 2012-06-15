@@ -1,0 +1,2706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_OphQcLbXEeGxNLpsZ0hsPA" name="busreisen">
+    <eAnnotations xmi:id="_X_2tsLbXEeGxNLpsZ0hsPA" source="http://www.yatta-solutions.com/umllab/codegen/codegenDirectory">
+      <details xmi:id="_X_2tsbbXEeGxNLpsZ0hsPA" key="codegenDirectory" value="/busreisen/src"/>
+    </eAnnotations>
+    <eAnnotations xmi:id="_ZiDgQLbXEeGxNLpsZ0hsPA" source="com.yattasolutions.codegen.RoundTripInformation">
+      <details xmi:id="_ZiDgQbbXEeGxNLpsZ0hsPA" key="AssociatedSourceCode" value="/busreisen/src/model/Buchung.java;4044238992/1;/busreisen/src/model/Bus.java;3153308668/1;/busreisen/src/model/Kunde.java;3819267377/1;/busreisen/src/model/Reise.java;704541332/1;/busreisen/src/model/Reiseverwaltung.java;3782517789/1;/busreisen/src/model/Reiseziel.java;2010103710/1;/busreisen/src/model/TeilnehmerListe.java;1607016989/1;/busreisen/src/model/Wochentag.java;2207968331/1;/busreisen/src/utils/DateiIO.java;396612378/1;/busreisen/src/utils/KonsoleIO.java;1085386030/1;/busreisen/src/utils/Sortierverfahren.java;1656799506/1;"/>
+    </eAnnotations>
+    <elementImport xmi:id="_ZEEjwLbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEEjwbbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEEjwrbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEEjw7bXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEFK0LbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEFK0bbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEFK0rbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEFK07bXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_ZEFx4LbXEeGxNLpsZ0hsPA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZFtigLbXEeGxNLpsZ0hsPA" name="model">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZPmeULbXEeGxNLpsZ0hsPA" name="Buchung">
+        <ownedComment xmi:id="_ZhOZ0LbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse modelliert eine Buchung, die von einem Mitarbeiter des&#xD;
+Reisebüros in das Programm eingegeben wird.&#xD;
+&#xD;
+@author Philipp+Thomas&#xD;
+@version 14.03.2012</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_ZgYsULbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA" association="_ZhQPALbXEeGxNLpsZ0hsPA"/>
+        <ownedAttribute xmi:id="_ZgZ6cLbXEeGxNLpsZ0hsPA" name="buchungsnr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgahgLbXEeGxNLpsZ0hsPA" name="stornonr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgbIkLbXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA" association="_ZhQ2ELbXEeGxNLpsZ0hsPA"/>
+        <ownedAttribute xmi:id="_ZgbvoLbXEeGxNLpsZ0hsPA" name="woche">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgbvobbXEeGxNLpsZ0hsPA" name="plaetze">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zgy8ALbXEeGxNLpsZ0hsPA" name="Buchung" specification="_ZPphoLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zgy8AbbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.buchungsnr = 0;&#xD;
+		this.reiseZiel = null;&#xD;
+		this.woche = 0;&#xD;
+		this.kunde = null;&#xD;
+		this.stornonr = 0;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZgzjELbXEeGxNLpsZ0hsPA" name="Buchung" specification="_Ze_lMLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZgzjEbbXEeGxNLpsZ0hsPA" name="buchungsnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZgzjErbXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZgzjE7bXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZgzjFLbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZgzjFbbXEeGxNLpsZ0hsPA" name="plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZgzjFrbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.buchungsnr = buchungsnr;&#xD;
+		this.reiseZiel = reiseZiel;&#xD;
+		this.woche = woche;&#xD;
+		this.kunde = kunde;&#xD;
+		this.plaetze = plaetze;&#xD;
+		this.stornonr = 0;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg0KILbXEeGxNLpsZ0hsPA" name="storniere" specification="_ZPr94LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg0KIbbXEeGxNLpsZ0hsPA" name="stornonr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg0KIrbXEeGxNLpsZ0hsPA" name="stornierte_plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.stornonr = stornonr;&#xD;
+		this.plaetze = stornierte_plaetze;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg0xMLbXEeGxNLpsZ0hsPA" name="equals" specification="_ZgHmkbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg0xMbbXEeGxNLpsZ0hsPA" name="object" type="_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg0xMrbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Buchung b = (Buchung) object;&#xD;
+		if ((this.kunde.equals(b.getKunde())) &amp;&amp; (this.woche == b.getWoche())&#xD;
+				&amp;&amp; (this.reiseZiel.equals(b.getReiseZiel()))) {&#xD;
+			return true;&#xD;
+		} else {&#xD;
+			return false;&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZPphoLbXEeGxNLpsZ0hsPA" name="Buchung" method="_Zgy8ALbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZPphobbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZPphorbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_ZPqIsLbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZPr94LbXEeGxNLpsZ0hsPA" name="storniere" method="_Zg0KILbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZPr94bbXEeGxNLpsZ0hsPA" name="stornonr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZPsk8LbXEeGxNLpsZ0hsPA" name="stornierte_plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Ze_lMLbXEeGxNLpsZ0hsPA" name="Buchung" method="_ZgzjELbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZfAzUbbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZfAzUrbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_ZfAMQLbXEeGxNLpsZ0hsPA" name="buchungsnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfAMQbbXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfAMQrbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfAMQ7bXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfAzULbXEeGxNLpsZ0hsPA" name="plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfAzU7bXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZgHmkbbXEeGxNLpsZ0hsPA" name="equals" method="_Zg0xMLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZgHmkrbXEeGxNLpsZ0hsPA" name="object" type="_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZgINoLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZPz5sLbXEeGxNLpsZ0hsPA" name="Bus">
+        <ownedComment xmi:id="_ZhRdILbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse beschreibt einen Bus des Reisebüros.&#xD;
+&#xD;
+@author Thomas&#xD;
+@version 14.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_Zgc9wLbXEeGxNLpsZ0hsPA" name="anzahlPlaetze">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Zgdk0LbXEeGxNLpsZ0hsPA" name="anzahlFreiePlaetze">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgeL4LbXEeGxNLpsZ0hsPA" name="woche">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgeL4bbXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA" association="_ZhSEMLbXEeGxNLpsZ0hsPA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg1YQLbXEeGxNLpsZ0hsPA" name="Bus" specification="_ZP1u4LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg1YQbbXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.anzahlPlaetze = 0;&#xD;
+		this.anzahlFreiePlaetze = 0;&#xD;
+		this.woche = 0;&#xD;
+		this.reiseZiel = null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg1_ULbXEeGxNLpsZ0hsPA" name="Bus" specification="_ZfD2oLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg1_UbbXEeGxNLpsZ0hsPA" name="anzahlPlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg1_UrbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg1_U7bXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg1_VLbXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.anzahlPlaetze = anzahlPlaetze;&#xD;
+		this.woche = woche;&#xD;
+		this.reiseZiel = reiseZiel;&#xD;
+		this.anzahlFreiePlaetze = anzahlPlaetze;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZP1u4LbXEeGxNLpsZ0hsPA" name="Bus" method="_Zg1YQLbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZP2V8LbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZP2V8bbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_ZP2V8rbXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfD2oLbXEeGxNLpsZ0hsPA" name="Bus" method="_Zg1_ULbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZfEdsbbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZfEdsrbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_ZfD2obbXEeGxNLpsZ0hsPA" name="anzahlPlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfD2orbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfEdsLbXEeGxNLpsZ0hsPA" name="reiseZiel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfEds7bXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZP7OcLbXEeGxNLpsZ0hsPA" name="Kunde">
+        <ownedComment xmi:id="_ZhSrQLbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse beschreibt einen Kunden, der bei dem Reisebüro eine Reise bucht.&#xD;
+&#xD;
+@author Philipp&#xD;
+@version 17.03.2012</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_Zgey8LbXEeGxNLpsZ0hsPA" name="kdNummer" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgfaAbbXEeGxNLpsZ0hsPA" name="name" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZggBELbXEeGxNLpsZ0hsPA" name="vorname">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZggBEbbXEeGxNLpsZ0hsPA" name="adresse" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZggoIbbXEeGxNLpsZ0hsPA" name="telefonnr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg1_VbbXEeGxNLpsZ0hsPA" name="Kunde" specification="_ZP9qsLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg1_VrbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.kdNummer = 0;&#xD;
+		this.name = &quot;&quot;;&#xD;
+		this.vorname = &quot;&quot;;&#xD;
+		this.adresse = &quot;&quot;;&#xD;
+		this.telefonnr = &quot;&quot;;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg2mYLbXEeGxNLpsZ0hsPA" name="Kunde" specification="_ZP_f4LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg2mYbbXEeGxNLpsZ0hsPA" name="nummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg2mYrbXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg2mY7bXEeGxNLpsZ0hsPA" name="vorname">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg2mZLbXEeGxNLpsZ0hsPA" name="adresse">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg2mZbbXEeGxNLpsZ0hsPA" name="telefonnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg2mZrbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.kdNummer = nummer;&#xD;
+		this.name = name;&#xD;
+		this.vorname = vorname;&#xD;
+		this.adresse = adresse;&#xD;
+		this.telefonnr = telefonnr;&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg3NcLbXEeGxNLpsZ0hsPA" name="getNummer" specification="_ZQAuAbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg3NcbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return kdNummer;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg3NcrbXEeGxNLpsZ0hsPA" name="setNummer" specification="_ZQB8ILbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg3Nc7bXEeGxNLpsZ0hsPA" name="kdNummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.kdNummer = kdNummer;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg30gLbXEeGxNLpsZ0hsPA" name="setName" specification="_ZQCjMLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg30gbbXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.name = name;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg4bkLbXEeGxNLpsZ0hsPA" name="getAdresse" specification="_ZQDKQLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg4bkbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return adresse;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg4bkrbXEeGxNLpsZ0hsPA" name="setAdresse" specification="_ZQDxULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg4bk7bXEeGxNLpsZ0hsPA" name="adresse">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.adresse = adresse;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg5CoLbXEeGxNLpsZ0hsPA" name="toString" specification="_ZQEYYbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg5CobbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return (this.kdNummer + &quot;:&quot; + this.name + &quot;:&quot; + this.vorname + &quot;:&quot;&#xD;
+				+ this.adresse + &quot;:&quot; + this.telefonnr);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg5CorbXEeGxNLpsZ0hsPA" name="equals" specification="_ZgKp4LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg5Co7bXEeGxNLpsZ0hsPA" name="object" type="_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg5CpLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Kunde kunde = (Kunde) object;&#xD;
+		return (this.toString().equals(kunde.toString()));&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZP9qsLbXEeGxNLpsZ0hsPA" name="Kunde" method="_Zg1_VbbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZP-RwLbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZP-RwbbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_ZhSrQbbXEeGxNLpsZ0hsPA">
+            <body>Der Konstruktor initialisiert die Attribute mit leeren Strings bzw. die&#xD;
+	 * Kundennummer mit 0.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZP-RwrbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZP_f4LbXEeGxNLpsZ0hsPA" name="Kunde" method="_Zg2mYLbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZQAG87bXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZQAG9LbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_ZhSrQrbXEeGxNLpsZ0hsPA">
+            <body>Der Konstruktor setzt Initialwerte für Kundennummer, Name, Vorname,&#xD;
+	 * Adresse und Telefonnummer.&#xD;
+	 * &#xD;
+	 * @param nummer&#xD;
+	 *            Kundennummer als ganze Zahl&#xD;
+	 * @param name&#xD;
+	 *            Name des Kunden als String&#xD;
+	 * @param vorname&#xD;
+	 *            Vorname des Kunden als String&#xD;
+	 * @param adresse&#xD;
+	 *            Adresse des Kunden als String&#xD;
+	 * @param telefonnr&#xD;
+	 *            Telefonnummer des Kunden als String</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZP_f4bbXEeGxNLpsZ0hsPA" name="nummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZP_f4rbXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZQAG8LbXEeGxNLpsZ0hsPA" name="vorname">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZQAG8bbXEeGxNLpsZ0hsPA" name="adresse">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZQAG8rbXEeGxNLpsZ0hsPA" name="telefonnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZQAuALbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQAuAbbXEeGxNLpsZ0hsPA" name="getNummer" method="_Zg3NcLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhSrQ7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt die Kundennummer zurück.&#xD;
+	 * &#xD;
+	 * @return Kundennummer als Integer</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQBVELbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQB8ILbXEeGxNLpsZ0hsPA" name="setNummer" method="_Zg3NcrbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSULbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode setzt die Kundennummer für diesen Kunden.&#xD;
+	 * &#xD;
+	 * @param kdNummer&#xD;
+	 *            Kundennummer als Integer.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQB8IbbXEeGxNLpsZ0hsPA" name="kdNummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQCjMLbXEeGxNLpsZ0hsPA" name="setName" method="_Zg30gLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSUbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode ändert den Namen des Kunden.&#xD;
+	 * &#xD;
+	 * @param name&#xD;
+	 *            Name als String</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQCjMbbXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQDKQLbXEeGxNLpsZ0hsPA" name="getAdresse" method="_Zg4bkLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSUrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt die Adresse des Kunden zurück.&#xD;
+	 * &#xD;
+	 * @return adresse Adresse als String</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQDKQbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQDxULbXEeGxNLpsZ0hsPA" name="setAdresse" method="_Zg4bkrbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSU7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode ändert die Adresse des Kunden.&#xD;
+	 * &#xD;
+	 * @param adresse&#xD;
+	 *            Adresse als String</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQEYYLbXEeGxNLpsZ0hsPA" name="adresse">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQEYYbbXEeGxNLpsZ0hsPA" name="toString" method="_Zg5CoLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSVLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt das Kunden-Objekt mit seinen Attributen als String&#xD;
+	 * aus. Es wurde der Doppelpunkt als Trennzeichen verwendet, damit die&#xD;
+	 * Arbeit in der TeilnehmerListe funktioniert.&#xD;
+	 * &#xD;
+	 * @return Kundennummer + &quot;:&quot; + Kundenname + &quot;:&quot; + Kundenvorname + &quot;:&quot; +&#xD;
+	 *         Kundenadresse + &quot;:&quot; + Telefonnummer</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQE_cLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZgKp4LbXEeGxNLpsZ0hsPA" name="equals" method="_Zg5CorbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhTSVbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode wird verwendet, um zwei Kunden-Objekte inhaltlich&#xD;
+	 * miteinander vergleichen zu können. Dazu wird die toString()-Methode&#xD;
+	 * verwendet.&#xD;
+	 * &#xD;
+	 * @return true or false</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZgKp4bbXEeGxNLpsZ0hsPA" name="object" type="_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZgLQ8LbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZQJQ4LbXEeGxNLpsZ0hsPA" name="Reise">
+        <ownedComment xmi:id="_ZhTSVrbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse verwaltet die Reisedaten.&#xD;
+&#xD;
+@author Thomas&#xD;
+@version 12.03.2012</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_Zgh2QLbXEeGxNLpsZ0hsPA" name="ziel" visibility="private" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+        <ownedAttribute xmi:id="_ZgidUbbXEeGxNLpsZ0hsPA" name="starttag" type="_ZQ3poLbXEeGxNLpsZ0hsPA" isReadOnly="true"/>
+        <ownedAttribute xmi:id="_ZgjEYLbXEeGxNLpsZ0hsPA" name="busse" visibility="private" type="_ZPz5sLbXEeGxNLpsZ0hsPA" association="_Zhm0ULbXEeGxNLpsZ0hsPA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZgjEYbbXEeGxNLpsZ0hsPA" value="*"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg6QwLbXEeGxNLpsZ0hsPA" name="richteBusseEin" specification="_ZQLGELbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>switch (ziel) {&#xD;
+		case MADRID:&#xD;
+			busse[0] = new Bus(30, 1, Reiseziel.MADRID);&#xD;
+			busse[1] = new Bus(30, 2, Reiseziel.MADRID);&#xD;
+			busse[2] = new Bus(30, 3, Reiseziel.MADRID);&#xD;
+			break;&#xD;
+		case WIEN:&#xD;
+			busse[0] = new Bus(40, 1, Reiseziel.WIEN);&#xD;
+			busse[1] = new Bus(40, 2, Reiseziel.WIEN);&#xD;
+			busse[2] = new Bus(40, 3, Reiseziel.WIEN);&#xD;
+			break;&#xD;
+		case ROM:&#xD;
+			busse[0] = new Bus(50, 1, Reiseziel.ROM);&#xD;
+			busse[1] = new Bus(50, 2, Reiseziel.ROM);&#xD;
+			busse[2] = new Bus(50, 3, Reiseziel.ROM);&#xD;
+			break;&#xD;
+		case BERLIN:&#xD;
+			busse[0] = new Bus(60, 1, Reiseziel.BERLIN);&#xD;
+			busse[1] = new Bus(60, 2, Reiseziel.BERLIN);&#xD;
+			busse[2] = new Bus(60, 3, Reiseziel.BERLIN);&#xD;
+			break;&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg630LbXEeGxNLpsZ0hsPA" name="Reise" specification="_ZfG58LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg630bbXEeGxNLpsZ0hsPA" name="ziel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg630rbXEeGxNLpsZ0hsPA" name="start" type="_ZQ3poLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg6307bXEeGxNLpsZ0hsPA" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>busse = new Bus[3];&#xD;
+		this.ziel = ziel;&#xD;
+		this.starttag = start;&#xD;
+		richteBusseEin();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg631LbXEeGxNLpsZ0hsPA" name="getReiseziel" specification="_ZQMUMLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg631bbXEeGxNLpsZ0hsPA" type="_ZQmj4LbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>return ziel;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg7e4LbXEeGxNLpsZ0hsPA" name="buchungOK" specification="_ZfIIEbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg7e4bbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg7e4rbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Bus gebuchter_bus = busse[buchung.getWoche() - 1];&#xD;
+		if (gebuchter_bus.getAnzahlFreiePlaetze() >= buchung.getPlaetze()) {&#xD;
+			return true;&#xD;
+		} else&#xD;
+			return false;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg7e47bXEeGxNLpsZ0hsPA" name="aktualisiereNachBuchung" specification="_ZfIvIbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg7e5LbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <language>java</language>
+          <body>int plaetze;&#xD;
+		Bus bus = busse[buchung.getWoche() - 1];&#xD;
+&#xD;
+		// Wenn eine Stornierung vorliegt, ist die Stornonummer > 0.&#xD;
+		if (buchung.getStornonr() > 0) {&#xD;
+			plaetze = bus.getAnzahlFreiePlaetze() + buchung.getPlaetze();&#xD;
+		} else {&#xD;
+			plaetze = bus.getAnzahlFreiePlaetze() - buchung.getPlaetze();&#xD;
+		}&#xD;
+&#xD;
+		bus.setAnzahlFreiePlaetze(plaetze);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg8F8LbXEeGxNLpsZ0hsPA" name="getBusZurReisewoche" specification="_ZQOJYLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg8F8bbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zg8F8rbXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>if ((woche >= 1) &amp;&amp; (woche &lt;= 3))&#xD;
+			return busse[woche - 1];&#xD;
+		else&#xD;
+			return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg8F87bXEeGxNLpsZ0hsPA" name="ladeBusbelegung" specification="_ZQPXgLbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>try {&#xD;
+			// Zuerst werden alle Buchungen, die mit dieser Reise zu tun haben,&#xD;
+			// in einen String geladen.&#xD;
+			String buchungsKette = DateiIO&#xD;
+					.searchAlleBuchungenZurReise(this.ziel.toString());&#xD;
+&#xD;
+			if (buchungsKette != &quot;&quot;) {&#xD;
+				// Dieser wird den Buchungen gemäss aufgetrennt.&#xD;
+				String buchungen[] = buchungsKette.split(&quot;;&quot;);&#xD;
+&#xD;
+				for (int i = 0; i &lt; buchungen.length; i++) {&#xD;
+					// Fuer jeden Buchungsstring wird nun ein Buchungsobjekt&#xD;
+					// erstellt und mit den gefundenen Informationen belegt.&#xD;
+					String items[] = buchungen[i].split(&quot; &quot;);&#xD;
+&#xD;
+					Buchung b = new Buchung();&#xD;
+					b.setWoche(Integer.parseInt(items[1]));&#xD;
+					b.setPlaetze(Integer.parseInt(items[2]));&#xD;
+&#xD;
+					int nummer = Integer.parseInt(items[0]);&#xD;
+					if (nummer >= 1000) {&#xD;
+						b.setStornonr(nummer); // Stornonummern sind&#xD;
+												// vierstellig!&#xD;
+					} else {&#xD;
+						b.setBuchungsnr(nummer);&#xD;
+					}&#xD;
+&#xD;
+					// Wenn die Buchung also geladen wurde, kann die Busbelegung&#xD;
+					// aktualisiert werden.&#xD;
+					aktualisiereNachBuchung(b);&#xD;
+				}&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(&quot;Fehler beim Laden der Busbelegung: &quot;&#xD;
+					+ e.getMessage());&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZQLGELbXEeGxNLpsZ0hsPA" name="richteBusseEin" visibility="private" method="_Zg6QwLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhT5YLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode richtet die Busse ein.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQMUMLbXEeGxNLpsZ0hsPA" name="getReiseziel" method="_Zg631LbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhT5YrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt das Ziel der Reise zurück.&#xD;
+	 * &#xD;
+	 * @return ziel Item der Enumeration {@link Reiseziel}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfIIELbXEeGxNLpsZ0hsPA" type="_ZQmj4LbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQOJYLbXEeGxNLpsZ0hsPA" name="getBusZurReisewoche" method="_Zg8F8LbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhaAALbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode liefert den Bus, der in der spezifizierten Woche fährt.&#xD;
+	 * &#xD;
+	 * @param woche&#xD;
+	 *            Gesuchte Woche als Integer&#xD;
+	 * @return Instanz der Klasse {@link Bus}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQOwcLbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfJWMLbXEeGxNLpsZ0hsPA" type="_ZPz5sLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQPXgLbXEeGxNLpsZ0hsPA" name="ladeBusbelegung" method="_Zg8F87bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhaAAbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode lädt die Busbelegung, die beim Beenden der letzten Sitzung&#xD;
+	 * vorlag.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfG58LbXEeGxNLpsZ0hsPA" name="Reise" method="_Zg630LbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZfHhALbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZfHhAbbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_ZhT5YbbXEeGxNLpsZ0hsPA">
+            <body>Der Konstruktor setzt die Startvariablen der Reise.&#xD;
+	 * &#xD;
+	 * @param ziel&#xD;
+	 *            Ziel der Reise&#xD;
+	 * @param start&#xD;
+	 *            Starttag der Reise</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfG58bbXEeGxNLpsZ0hsPA" name="ziel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfG58rbXEeGxNLpsZ0hsPA" name="start" type="_ZQ3poLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfHhArbXEeGxNLpsZ0hsPA" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfIIEbbXEeGxNLpsZ0hsPA" name="buchungOK" method="_Zg7e4LbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhT5Y7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode überprüft, ob die Buchung für diese Reise in Ordnung ist.&#xD;
+	 * Dazu wird die Anzahl der freien Plätze im jeweiligen Bus mit der Anzahl&#xD;
+	 * der gebuchten Plätze verglichen.&#xD;
+	 * &#xD;
+	 * @param buchung&#xD;
+	 *            Instanz der Klasse {@link Buchung}&#xD;
+	 * @return true or false&#xD;
+	 *</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfIIErbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfIvILbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfIvIbbXEeGxNLpsZ0hsPA" name="aktualisiereNachBuchung" method="_Zg7e47bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhZY8LbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode wird aufgerufen, um bei einer Buchung oder Stornierung die&#xD;
+	 * Busbelegung zu aktualisieren. Bei einer Buchung wird die Anzahl der&#xD;
+	 * freien Plätze im entsprechenden Bus vermindert. Bei einer Stornierung&#xD;
+	 * werden die belegten Plätze im entsprechenden Bus freigegeben.&#xD;
+	 * &#xD;
+	 * @param buchung&#xD;
+	 *            Instanz von {@link Buchung}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfIvIrbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZQWsQLbXEeGxNLpsZ0hsPA" name="Reiseverwaltung">
+        <ownedComment xmi:id="_ZhaAArbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse ist für die Verwaltung der Busse zuständig.&#xD;
+&#xD;
+@author Thomas + Philipp&#xD;
+@version 15.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_ZgkSgLbXEeGxNLpsZ0hsPA" name="OUTPUT_FEHLERMELDUNG" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Zgk5kLbXEeGxNLpsZ0hsPA" value="&quot;Fehler beim Speichern!&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Zgk5kbbXEeGxNLpsZ0hsPA" name="INPUT_FEHLERMELDUNG" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZglgoLbXEeGxNLpsZ0hsPA" value="&quot;Fehler beim Laden!&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZglgobbXEeGxNLpsZ0hsPA" name="aktuelleBuchungsNr" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgmHsbbXEeGxNLpsZ0hsPA" name="aktuelleStornoNr" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgmuwbbXEeGxNLpsZ0hsPA" name="aktuelleKundenNr" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgnV0bbXEeGxNLpsZ0hsPA" name="reisender" visibility="private" type="_ZP7OcLbXEeGxNLpsZ0hsPA" association="_ZhopgLbXEeGxNLpsZ0hsPA"/>
+        <ownedAttribute xmi:id="_Zgn84bbXEeGxNLpsZ0hsPA" name="reise" visibility="private" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" association="_Zhp3obbXEeGxNLpsZ0hsPA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zgoj8LbXEeGxNLpsZ0hsPA" value="*"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg8tALbXEeGxNLpsZ0hsPA" name="Reiseverwaltung" specification="_ZQZIgLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg8tAbbXEeGxNLpsZ0hsPA" type="_ZQWsQLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>this.aktuelleKundenNr = 1;&#xD;
+		this.aktuelleBuchungsNr = 100;&#xD;
+		this.aktuelleStornoNr = 1000;&#xD;
+		this.reisender = null;&#xD;
+		reisenAnlegen();&#xD;
+&#xD;
+		// Bei der ersten Sitzung müssen die CSV-Dateien angelegt werden.&#xD;
+		try {&#xD;
+			File file = new File(DateiIO.LOGFILE);&#xD;
+			if (!(file.exists())) {&#xD;
+				DateiIO.writeHeadersInLogFile();&#xD;
+			} else {&#xD;
+				int aktuelleNummern[] = DateiIO.readNummernVonLetzterSitzung();&#xD;
+				aktuelleKundenNr = aktuelleNummern[0];&#xD;
+				aktuelleBuchungsNr = aktuelleNummern[1];&#xD;
+				aktuelleStornoNr = aktuelleNummern[2];&#xD;
+			}&#xD;
+&#xD;
+			file = new File(DateiIO.KUNDEN_FILE);&#xD;
+			if (!(file.exists())) {&#xD;
+				DateiIO.writeHeadersInKundenFile();&#xD;
+			}&#xD;
+		} catch (IOException e) {&#xD;
+			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg8tArbXEeGxNLpsZ0hsPA" name="buchen" specification="_ZQaWoLbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>// Kunden anlegen oder suchen&#xD;
+		reisender = null;&#xD;
+		while (reisender == null) {&#xD;
+			int antwort = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;Wollen Sie zu einem bestehenden Kunden eine Reise buchen? (1 = Ja ; 2 = Nein)&quot;);&#xD;
+			if (antwort == 2) {&#xD;
+				kundeAnlegen();&#xD;
+			} else {&#xD;
+				reisender = sucheKunde();&#xD;
+			}&#xD;
+		}&#xD;
+&#xD;
+		// Reiseziel und gewünschte Woche einlesen&#xD;
+		Reiseziel ziel = KonsoleIO&#xD;
+				.readGewuenschtesReiseziel(&quot;Wohin möchte der Kunde reisen?&quot;);&#xD;
+		int woche = 0;&#xD;
+		while ((woche &lt;= 0) || (woche > 3)) {&#xD;
+			woche = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;In welcher Woche möchte der Kunde fahren? [1-3]&quot;);&#xD;
+		}&#xD;
+&#xD;
+		// Gebuchte Plätze bestimmen&#xD;
+		int plaetze = 0;&#xD;
+		do {&#xD;
+			plaetze = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;Wie viele Plätze möchte der Kunde buchen?&quot;);&#xD;
+			if (plaetze &lt;= 0) {&#xD;
+				KonsoleIO&#xD;
+						.printFehlermeldung(&quot;Bitte geben Sie eine positive ganze Zahl ein!&quot;);&#xD;
+			}&#xD;
+		} while (plaetze &lt;= 0);&#xD;
+&#xD;
+		// Buchung mit aktueller Nummer erstellen&#xD;
+		Buchung buchung = new Buchung(aktuelleBuchungsNr, ziel, woche,&#xD;
+				reisender, plaetze);&#xD;
+&#xD;
+		// Überprüfen, ob die Buchung durchgeführt werden kann.&#xD;
+		// Wenn ja, wird sie durchgefuehrt und in der Logdatei gespeichert.&#xD;
+		// Ansonsten erscheint eine Fehlermeldung.&#xD;
+		try {&#xD;
+			Reise reise = getReiseZuZiel(ziel);&#xD;
+			if (reise.buchungOK(buchung)) {&#xD;
+				reise.aktualisiereNachBuchung(buchung);&#xD;
+				DateiIO.saveBuchungToLogFile(buchung);&#xD;
+				KonsoleIO&#xD;
+						.printErfolgsmeldung(&quot;Buchung erfolgreich unter der Buchungsnummer &quot;&#xD;
+								+ aktuelleBuchungsNr + &quot; angelegt.&quot;);&#xD;
+				aktuelleBuchungsNr++;&#xD;
+			} else {&#xD;
+				KonsoleIO&#xD;
+						.printFehlermeldung(&quot;Die Reise kann nicht überbucht werden!&quot;);&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg9UELbXEeGxNLpsZ0hsPA" name="getReiseZuZiel" specification="_ZfNnoLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg9UEbbXEeGxNLpsZ0hsPA" name="ziel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zg9UErbXEeGxNLpsZ0hsPA" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>for (int i = 0; i &lt; reise.length; i++) {&#xD;
+			if (reise[i].getReiseziel().equals(ziel)) {&#xD;
+				return reise[i];&#xD;
+			}&#xD;
+		}&#xD;
+		return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg9UE7bXEeGxNLpsZ0hsPA" name="sucheKunde" specification="_ZQa9sLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zg9UFLbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>// Name und Vorname des Kunden werden eingelesen.&#xD;
+		String name = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie den Namen des Kunden ein!&quot;);&#xD;
+		String vorname = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie den Vornamen des Kunden ein!&quot;);&#xD;
+&#xD;
+		// Es wird eine Suchanfrage an den Kundenstamm gesendet.&#xD;
+		try {&#xD;
+			Kunde kunde[] = DateiIO.searchKundeInKundenstamm(name, vorname);&#xD;
+			// Wenn es genau einen passenden Eintrag gibt, wird dieser&#xD;
+			// zurückgegeben.&#xD;
+			// Ansonsten wird gefragt, welcher Kunde gemeint ist.&#xD;
+			if (kunde.length == 1) {&#xD;
+				return kunde[0];&#xD;
+			} else {&#xD;
+				int antwort = KonsoleIO.readGewuenschterKunde(kunde);&#xD;
+				return kunde[antwort];&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+		return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg97ILbXEeGxNLpsZ0hsPA" name="reisenAnlegen" specification="_ZQcL0LbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>reise = new Reise[4];&#xD;
+		reise[0] = new Reise(Reiseziel.BERLIN, Wochentag.FREITAG);&#xD;
+		reise[1] = new Reise(Reiseziel.MADRID, Wochentag.MONTAG);&#xD;
+		reise[2] = new Reise(Reiseziel.ROM, Wochentag.SAMSTAG);&#xD;
+		reise[3] = new Reise(Reiseziel.WIEN, Wochentag.SONNTAG);&#xD;
+&#xD;
+		File file = new File(DateiIO.LOGFILE);&#xD;
+		if (file.exists()) {&#xD;
+			reise[0].ladeBusbelegung();&#xD;
+			reise[1].ladeBusbelegung();&#xD;
+			reise[2].ladeBusbelegung();&#xD;
+			reise[3].ladeBusbelegung();&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg97IbbXEeGxNLpsZ0hsPA" name="stornieren" specification="_ZQcy4LbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>Buchung buchung, stornierung;&#xD;
+		int storniertePlaetze = -1;&#xD;
+		int aktuellePlaetze = 0;&#xD;
+&#xD;
+		// Die Buchung, die storniert werden soll, muss gefunden werden.&#xD;
+		int antwort = KonsoleIO&#xD;
+				.readIntegerFromConsole(&quot;Geben Sie die Nummer zu der Buchung ein, die Sie stornieren wollen!&quot;);&#xD;
+		try {&#xD;
+			buchung = DateiIO.searchBuchungInLogFile(antwort);&#xD;
+			stornierung = DateiIO.searchStornierungZurBuchung(buchung);&#xD;
+&#xD;
+			// Wenn die Buchung schon einmal storniert wurde, müssen die&#xD;
+			// aktuellen Plätze, die gebucht sind, ermittelt werden.&#xD;
+			if (stornierung != null) {&#xD;
+				aktuellePlaetze = buchung.getPlaetze()&#xD;
+						- stornierung.getPlaetze();&#xD;
+			} else {&#xD;
+				aktuellePlaetze = buchung.getPlaetze();&#xD;
+			}&#xD;
+&#xD;
+			while ((storniertePlaetze &lt;= 0)&#xD;
+					|| (storniertePlaetze > aktuellePlaetze)) {&#xD;
+				storniertePlaetze = KonsoleIO&#xD;
+						.readIntegerFromConsole(&quot;Geben Sie die Anzahl der Plätze ein, die storniert werden sollen!&quot;);&#xD;
+				// Abfangen der Fehlereignisse &quot;negative Anzahl von Plätzen&quot;&#xD;
+				// und &quot;Unterdeckung&quot;&#xD;
+				if ((storniertePlaetze &lt;= 0)&#xD;
+						|| (storniertePlaetze > aktuellePlaetze)) {&#xD;
+					KonsoleIO&#xD;
+							.printFehlermeldung(&quot;Fehlerhafte Eingabe! Wiederholen Sie die Eingabe!&quot;);&#xD;
+				}&#xD;
+			}&#xD;
+			// Wenn alles in Ordnung ist, kann storniert werden.&#xD;
+			buchung.storniere(aktuelleStornoNr, storniertePlaetze);&#xD;
+			aktuelleStornoNr++;&#xD;
+&#xD;
+			// Synchronisierung mit der entsprechenden Reise&#xD;
+			Reise reise = getReiseZuZiel(buchung.getReiseZiel());&#xD;
+			reise.aktualisiereNachBuchung(buchung);&#xD;
+			DateiIO.saveBuchungToLogFile(buchung);&#xD;
+&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg97IrbXEeGxNLpsZ0hsPA" name="kundenDatenKorrektur" specification="_ZQcy4bbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>// Der betreffende Kunde wird mithilfe Name und Vorname gesucht.&#xD;
+		String name = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie den Nachnamen des Kunden ein.&quot;);&#xD;
+		String vorname = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie den Vornamen des Kunden ein.&quot;);&#xD;
+		Kunde kunden[];&#xD;
+		try {&#xD;
+			kunden = DateiIO.searchKundeInKundenstamm(name, vorname);&#xD;
+			int pos = KonsoleIO.readGewuenschterKunde(kunden);&#xD;
+			reisender = kunden[pos];&#xD;
+&#xD;
+			// Der User soll mithilfe von Zahlen angegeben, was er ändern&#xD;
+			// möchte.&#xD;
+			System.out.println(&quot;Nachname [1]&quot;);&#xD;
+			System.out.println(&quot;Vornamen [2]&quot;);&#xD;
+			System.out.println(&quot;Adresse  [3]&quot;);&#xD;
+			System.out.println(&quot;Telefonnummer [4]&quot;);&#xD;
+&#xD;
+			int eingabe = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;Was möchten Sie verändern? (1-4; 0 = Abbruch)&quot;);&#xD;
+			switch (eingabe) {&#xD;
+			case 1:&#xD;
+				name = KonsoleIO&#xD;
+						.readStringFromConsole(&quot;Geben Sie den Namen des Kunden ein!&quot;);&#xD;
+				reisender.setName(name);&#xD;
+				break;&#xD;
+			case 2:&#xD;
+				vorname = KonsoleIO&#xD;
+						.readStringFromConsole(&quot;Geben Sie den Vornamen des Kunden ein!&quot;);&#xD;
+				reisender.setVorname(vorname);&#xD;
+				break;&#xD;
+			case 3:&#xD;
+				String adresse = KonsoleIO&#xD;
+						.readStringFromConsole(&quot;Geben Sie die Adresse des Kunden ein!&quot;);&#xD;
+				reisender.setAdresse(adresse);&#xD;
+				break;&#xD;
+			case 4:&#xD;
+				String telefonnummer = KonsoleIO&#xD;
+						.readStringFromConsole(&quot;Geben Sie die Telefonnummer des Kunden ein!&quot;);&#xD;
+				reisender.setTelefonnr(telefonnummer);&#xD;
+				break;&#xD;
+			case 0:&#xD;
+				break;&#xD;
+			default:&#xD;
+				break;&#xD;
+			}&#xD;
+&#xD;
+			// Zum Schluss werden die Änderungen im Kundenstamm gespeichert.&#xD;
+			DateiIO.changeKundeInKundenstamm(reisender);&#xD;
+			// Alle Buchungen zu diesem Kunden werden geupdated.&#xD;
+			DateiIO.updateBuchungenZuKunde(reisender);&#xD;
+			KonsoleIO.printErfolgsmeldung(&quot;Kundendaten erfolgreich geändert!&quot;);&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg-iMLbXEeGxNLpsZ0hsPA" name="buchungsDatenKorrektur" specification="_ZQdZ8LbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>try {&#xD;
+			int gesuchteBuchungsNr = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;Geben Sie die Buchungsnummer ein.&quot;);&#xD;
+			Buchung alteBuchung = DateiIO&#xD;
+					.searchBuchungInLogFile(gesuchteBuchungsNr);&#xD;
+&#xD;
+			// Wenn eine Buchung mit der gesuchten Buchungsnummer existiert&#xD;
+			if (alteBuchung != null) {&#xD;
+&#xD;
+				// Prüfe, ob es zu dieser Buchung bereits eine Stornierung gibt&#xD;
+				Buchung stornierungVonAlterBuchung = DateiIO&#xD;
+						.searchStornierungZurBuchung(alteBuchung);&#xD;
+&#xD;
+				if (stornierungVonAlterBuchung != null) {&#xD;
+					// Wenn es eine Stornierung gibt, prüfe, wie viele Plätze&#xD;
+					// noch tatsächlich gebucht sind.&#xD;
+					int restliche_plaetze = alteBuchung.getPlaetze()&#xD;
+							- stornierungVonAlterBuchung.getPlaetze();&#xD;
+&#xD;
+					if (restliche_plaetze > 0) {&#xD;
+						// Wenn noch Plätze gebucht sind, storniere diese&#xD;
+						// zusätzlich.&#xD;
+						alteBuchung.storniere(aktuelleStornoNr,&#xD;
+								restliche_plaetze);&#xD;
+						aktuelleStornoNr++;&#xD;
+&#xD;
+						Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());&#xD;
+						reise.aktualisiereNachBuchung(alteBuchung);&#xD;
+					} else {&#xD;
+						KonsoleIO&#xD;
+								.printErfolgsmeldung(&quot;Diese Buchung wurde bereits vollständig storniert, deshalb kann sie nicht geändert werden.&quot;);&#xD;
+						return;&#xD;
+					}&#xD;
+				}&#xD;
+&#xD;
+				else {&#xD;
+					// Wenn es noch keine Stornierung gibt, storniere die&#xD;
+					// Buchung vollständig.&#xD;
+					alteBuchung.storniere(aktuelleStornoNr,&#xD;
+							alteBuchung.getPlaetze());&#xD;
+					aktuelleStornoNr++;&#xD;
+&#xD;
+					Reise reise = getReiseZuZiel(alteBuchung.getReiseZiel());&#xD;
+					reise.aktualisiereNachBuchung(alteBuchung);&#xD;
+&#xD;
+					DateiIO.saveBuchungToLogFile(alteBuchung);&#xD;
+				}&#xD;
+&#xD;
+				// Nachdem die alte Buchung komplett storniert wurde, kann nun&#xD;
+				// eine neue Buchung auf Basis der Daten der alten Buchung&#xD;
+				// angelegt werden.&#xD;
+				Buchung neueBuchung = new Buchung(aktuelleBuchungsNr,&#xD;
+						alteBuchung.getReiseZiel(), alteBuchung.getWoche(),&#xD;
+						alteBuchung.getKunde(), alteBuchung.getPlaetze());&#xD;
+				// Außerdem wird das Reise-Objekt geladen.&#xD;
+				Reise reise = getReiseZuZiel(neueBuchung.getReiseZiel());&#xD;
+&#xD;
+				// Eine Nummercode-Abfrage, was geändert werden soll.&#xD;
+				System.out.println(&quot;Ziel [1]&quot;);&#xD;
+				System.out.println(&quot;Woche [2]&quot;);&#xD;
+				System.out.println(&quot;Anzahl der Plätze [3]&quot;);&#xD;
+&#xD;
+				// Danach startet ein Eingabedialog, mit dessen Hilfe der Nutzer&#xD;
+				// Angaben ändern kann. Dieser ist dem eigentlichen Buchvorgang&#xD;
+				// sehr ähnlich.&#xD;
+				int eingabe = KonsoleIO&#xD;
+						.readIntegerFromConsole(&quot;Was möchten Sie ändern?(1-3; 0 = Abbruch)&quot;);&#xD;
+				switch (eingabe) {&#xD;
+				case 1:&#xD;
+					Reiseziel ziel = KonsoleIO&#xD;
+							.readGewuenschtesReiseziel(&quot;Geben Sie das Ziel des Kunden ein!&quot;);&#xD;
+					neueBuchung.setReiseZiel(ziel);&#xD;
+					reise = getReiseZuZiel(neueBuchung.getReiseZiel());&#xD;
+					break;&#xD;
+				case 2:&#xD;
+					int woche = 0;&#xD;
+					while ((woche &lt;= 0) || (woche > 3)) {&#xD;
+						woche = KonsoleIO&#xD;
+								.readIntegerFromConsole(&quot;In welcher Woche möchte der Kunde fahren? [1-3]&quot;);&#xD;
+					}&#xD;
+					neueBuchung.setWoche(woche);&#xD;
+					break;&#xD;
+				case 3:&#xD;
+					do {&#xD;
+						int anzahlPlaetze = KonsoleIO&#xD;
+								.readIntegerFromConsole(&quot;Geben Sie die Anzahl der Plätze ein, die der Kunde buchen möchte!&quot;);&#xD;
+						neueBuchung.setPlaetze(anzahlPlaetze);&#xD;
+&#xD;
+						if (!reise.buchungOK(neueBuchung)) {&#xD;
+							KonsoleIO&#xD;
+									.printFehlermeldung(&quot;Die Reise kann nicht überbucht werden!&quot;);&#xD;
+						}&#xD;
+&#xD;
+					} while (!reise.buchungOK(neueBuchung));&#xD;
+					break;&#xD;
+				default:&#xD;
+					break;&#xD;
+				}&#xD;
+&#xD;
+				// Die Busbelegung wird aktualisiert. Anschließend wird die&#xD;
+				// Buchung in der Logdatei gespeichert.&#xD;
+				reise.aktualisiereNachBuchung(neueBuchung);&#xD;
+				DateiIO.saveBuchungToLogFile(neueBuchung);&#xD;
+&#xD;
+			} else {&#xD;
+				KonsoleIO&#xD;
+						.printFehlermeldung(&quot;Die gesuchte Buchung ist nicht vorhanden!&quot;);&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg-iMbbXEeGxNLpsZ0hsPA" name="sucheBuchung" specification="_ZQdZ8bbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>Buchung buchung;&#xD;
+		try {&#xD;
+			// Die gesuchte Buchungsnummer wird von der Konsole eingelesen.&#xD;
+			int gesuchteBuchungsNr = KonsoleIO&#xD;
+					.readIntegerFromConsole(&quot;Geben Sie die Buchungsnummer ein.&quot;);&#xD;
+			buchung = DateiIO.searchBuchungInLogFile(gesuchteBuchungsNr);&#xD;
+&#xD;
+			// Wenn die Buchung vorhanden ist, werden ihre Attribute auf der&#xD;
+			// Konsole ausgegeben.&#xD;
+			if (buchung != null) {&#xD;
+				System.out&#xD;
+						.println(&quot;Buchungsnummer: &quot; + buchung.getBuchungsnr());&#xD;
+				System.out.println(&quot;Name: &quot; + buchung.getKunde().getName());&#xD;
+				System.out.println(&quot;Vorname: &quot;&#xD;
+						+ buchung.getKunde().getVorname());&#xD;
+				System.out.println(&quot;Adresse: &quot;&#xD;
+						+ buchung.getKunde().getAdresse());&#xD;
+				System.out.println(&quot;Telefonnummer: &quot;&#xD;
+						+ buchung.getKunde().getTelefonnr());&#xD;
+				System.out.println(&quot;Reiseziel: &quot;&#xD;
+						+ buchung.getReiseZiel().toString());&#xD;
+				System.out.println(&quot;Woche: &quot; + buchung.getWoche());&#xD;
+				System.out.println(&quot;Plätze: &quot;&#xD;
+						+ String.valueOf(buchung.getPlaetze()));&#xD;
+			} else {&#xD;
+				KonsoleIO&#xD;
+						.printFehlermeldung(&quot;Die gesuchte Buchung ist nicht vorhanden!&quot;);&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg-iMrbXEeGxNLpsZ0hsPA" name="kundeAnlegen" specification="_ZQeBALbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>// Nacheinander werden die Attribute, die für einen Kunden wichtig&#xD;
+		// sind, nacheinander von der Konsole eingelesen.&#xD;
+		String name = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie einen Namen für den Kunden ein!&quot;);&#xD;
+&#xD;
+		String vorname = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie einen Vornamen für den Kunden ein!&quot;);&#xD;
+&#xD;
+		String telefonnr = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie die Telefonnummer des Kunden ein!&quot;);&#xD;
+&#xD;
+		String adresse = KonsoleIO&#xD;
+				.readStringFromConsole(&quot;Geben Sie die Adresse des Kunden ein!&quot;);&#xD;
+&#xD;
+		reisender = new Kunde(aktuelleKundenNr, name, vorname, adresse,&#xD;
+				telefonnr);&#xD;
+&#xD;
+		// Zum Schluss wird der Kunde im Kundenstamm abgelegt.&#xD;
+		try {&#xD;
+			DateiIO.saveKundeToKundenstamm(reisender);&#xD;
+			KonsoleIO.printErfolgsmeldung(&quot;Kunde erfolgreich unter der Nummer &quot;&#xD;
+					+ aktuelleKundenNr + &quot; angelegt!&quot;);&#xD;
+			aktuelleKundenNr++;&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg_JQLbXEeGxNLpsZ0hsPA" name="zeigeFreiePlaetzeEinesBusses" specification="_ZQeBAbbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>Reiseziel ziel = KonsoleIO&#xD;
+				.readGewuenschtesReiseziel(&quot;Für welche Reise möchten Sie den Bus anzeigen lassen?&quot;);&#xD;
+		int woche = KonsoleIO&#xD;
+				.readIntegerFromConsole(&quot;In welcher Woche fährt der gesuchte Bus? [1], [2] oder [3]&quot;);&#xD;
+&#xD;
+		Reise gesuchteReise = getReiseZuZiel(ziel);&#xD;
+		Bus gesuchterBus = gesuchteReise.getBusZurReisewoche(woche);&#xD;
+&#xD;
+		KonsoleIO.printErfolgsmeldung(&quot;In dem Bus nach &quot; + ziel.toString()&#xD;
+				+ &quot;, der in der &quot; + woche + &quot;. Woche fährt, sind &quot;&#xD;
+				+ gesuchterBus.getAnzahlFreiePlaetze() + &quot; Plätze frei.&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg_JQbbXEeGxNLpsZ0hsPA" name="zeigeTeilnehmerEinerReise" specification="_ZQeoELbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>Reiseziel ziel = KonsoleIO&#xD;
+				.readGewuenschtesReiseziel(&quot;Für welche Reise möchten Sie sich die Teilnehmer anzeigen lassen?&quot;);&#xD;
+		int woche = KonsoleIO&#xD;
+				.readIntegerFromConsole(&quot;In welcher Woche findet die gesuchte Reise statt? [1], [2] oder [3]&quot;);&#xD;
+&#xD;
+		try {&#xD;
+			Kunde[] teilnehmer = DateiIO.getTeilnehmerZuReise(ziel.toString(),&#xD;
+					woche);&#xD;
+			for (int i = 0; i &lt; teilnehmer.length; i++) {&#xD;
+				String s = teilnehmer[i].getName() + &quot; \t &quot;&#xD;
+						+ teilnehmer[i].getVorname();&#xD;
+				KonsoleIO.printErfolgsmeldung(s);&#xD;
+			}&#xD;
+		} catch (Exception e) {&#xD;
+			KonsoleIO.printFehlermeldung(INPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg_JQrbXEeGxNLpsZ0hsPA" name="speichereDatenDerSitzung" specification="_ZQeoEbbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>try {&#xD;
+			DateiIO.saveNummernVonLetzterSitzung(aktuelleKundenNr,&#xD;
+					aktuelleBuchungsNr, aktuelleStornoNr);&#xD;
+		} catch (IOException e) {&#xD;
+			KonsoleIO.printFehlermeldung(OUTPUT_FEHLERMELDUNG);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZQZIgLbXEeGxNLpsZ0hsPA" name="Reiseverwaltung" method="_Zg8tALbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZQZIgbbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZQZvkLbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_ZhaAA7bXEeGxNLpsZ0hsPA">
+            <body>Der Konstruktor initialisiert die Attribute mit festgelegten Werten und&#xD;
+	 * die Reisen, die gebucht werden können. Außerdem werden beim allerersten&#xD;
+	 * Programmstart die CSV-Dateien für die interne Verwaltung angelegt.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQZvkbbXEeGxNLpsZ0hsPA" type="_ZQWsQLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQaWoLbXEeGxNLpsZ0hsPA" name="buchen" method="_Zg8tArbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhaABLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode führt eine Buchung durch. Zuerst wird der Kunde gesucht&#xD;
+	 * bzw. angelegt, wenn er noch nicht im Kundenstamm vorhanden ist.&#xD;
+	 * &#xD;
+	 * @return boolean true für erfolgreich &lt;br>&#xD;
+	 *         false für fehlgeschlagen</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQa9sLbXEeGxNLpsZ0hsPA" name="sucheKunde" visibility="private" method="_Zg9UE7bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanELbXEeGxNLpsZ0hsPA">
+            <body>Disese Methode sucht einen Kunden nach Name und Vorname. Dann werden&#xD;
+	 * seine Daten ausgegeben.&#xD;
+	 * &#xD;
+	 * @return Instanz von {@link Kunde}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfOOsLbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQcL0LbXEeGxNLpsZ0hsPA" name="reisenAnlegen" visibility="private" method="_Zg97ILbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanEbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode legt die Reisen fest. Wenn dies nicht die erste Sitzung&#xD;
+	 * ist, wird die Busbelegung von der letzten Sitzung mithilfe der Logdatei&#xD;
+	 * geladen.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQcy4LbXEeGxNLpsZ0hsPA" name="stornieren" method="_Zg97IbbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanErbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode führt eine Stornierung durch.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQcy4bbXEeGxNLpsZ0hsPA" name="kundenDatenKorrektur" method="_Zg97IrbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanE7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode verändert Daten in einen Kunden und speichert diese.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQdZ8LbXEeGxNLpsZ0hsPA" name="buchungsDatenKorrektur" method="_Zg-iMLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanFLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode verändert Daten in einer Buchung und speichert diese ab.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQdZ8bbXEeGxNLpsZ0hsPA" name="sucheBuchung" method="_Zg-iMbbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanFbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode sucht eine Buchung und gibt diese auf der Konsole aus.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQeBALbXEeGxNLpsZ0hsPA" name="kundeAnlegen" method="_Zg-iMrbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhanFrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode legt einen neuen Kunden an.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQeBAbbXEeGxNLpsZ0hsPA" name="zeigeFreiePlaetzeEinesBusses" method="_Zg_JQLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhbOILbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode ermöglicht es dem Benutzer, zu einem Bus die Anzahl der&#xD;
+	 * freien Plätze angezeigt zu bekommen.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQeoELbXEeGxNLpsZ0hsPA" name="zeigeTeilnehmerEinerReise" method="_Zg_JQbbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhbOIbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode ermöglicht es dem Benutzer, die Teilnehmer einer Reise in&#xD;
+	 * alphabetischer Reihenfolge ausgeben zu lassen.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQeoEbbXEeGxNLpsZ0hsPA" name="speichereDatenDerSitzung" method="_Zg_JQrbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhbOIrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode speichert aktuelle Kunden-, Buchungs- und Stornonummer in&#xD;
+	 * einer CSV-Datei.</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfNnoLbXEeGxNLpsZ0hsPA" name="getReiseZuZiel" visibility="private" method="_Zg9UELbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhaABbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt die {@link Reise} zum gewünschten {@link Reiseziel}&#xD;
+	 * zurück.&#xD;
+	 * &#xD;
+	 * @param ziel&#xD;
+	 *            Element von {@link Reiseziel}&#xD;
+	 * @return Instanz von {@link Reise}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfNnobbXEeGxNLpsZ0hsPA" name="ziel" type="_ZQmj4LbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfNnorbXEeGxNLpsZ0hsPA" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZQmj4LbXEeGxNLpsZ0hsPA" name="Reiseziel">
+        <ownedComment xmi:id="_ZhbOI7bXEeGxNLpsZ0hsPA">
+          <body>Diese Enumeration verwaltet die Reiseziele des Reisebüros.&#xD;
+&#xD;
+@author Thomas&#xD;
+@version 14.03.2012</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_ZQoZEbbXEeGxNLpsZ0hsPA" name="toString" method="_Zg_wULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZQoZErbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedLiteral xmi:id="_ZQnK8LbXEeGxNLpsZ0hsPA" name="MADRID"/>
+        <ownedLiteral xmi:id="_ZQnyALbXEeGxNLpsZ0hsPA" name="WIEN"/>
+        <ownedLiteral xmi:id="_ZQnyAbbXEeGxNLpsZ0hsPA" name="ROM"/>
+        <ownedLiteral xmi:id="_ZQoZELbXEeGxNLpsZ0hsPA" name="BERLIN"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZQpAILbXEeGxNLpsZ0hsPA" name="TeilnehmerListe">
+        <ownedComment xmi:id="_ZhbOJLbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse wird benutzt, um die Teilnehmer einer nach Woche und Ziel&#xD;
+spezifizierten Reise zu verwalten.&#xD;
+&#xD;
+@author Philipp&#xD;
+@version 17.03.2012</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_ZgpyELbXEeGxNLpsZ0hsPA" name="teilnehmer" visibility="private" type="_ZgNGILbXEeGxNLpsZ0hsPA" association="_Zhrs0LbXEeGxNLpsZ0hsPA"/>
+        <ownedAttribute xmi:id="_ZgqZILbXEeGxNLpsZ0hsPA" name="menge" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhAXYbbXEeGxNLpsZ0hsPA" name="TeilnehmerListe" specification="_ZQq1ULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhAXYrbXEeGxNLpsZ0hsPA" type="_ZQpAILbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>teilnehmer = new StringBuilder();&#xD;
+		this.menge = 0;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhA-cLbXEeGxNLpsZ0hsPA" name="appendTeilnehmer" specification="_ZfQD4LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhA-cbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhA-crbXEeGxNLpsZ0hsPA" name="aktuellePlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>teilnehmer.append(kunde.toString() + &quot;:&quot;&#xD;
+				+ String.valueOf(aktuellePlaetze) + &quot;;&quot;);&#xD;
+		menge++;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhA-c7bXEeGxNLpsZ0hsPA" name="getPlaetzeZumKunden" specification="_ZfRSALbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhA-dLbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhA-dbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>String teilnehmerListe = teilnehmer.toString();&#xD;
+		if (!(teilnehmerListe.equals(&quot;&quot;))) {&#xD;
+			String[] entries = teilnehmerListe.split(&quot;;&quot;);&#xD;
+			for (int i = 0; i &lt; entries.length; i++) {&#xD;
+				String[] aktKunde = entries[i].split(&quot;:&quot;);&#xD;
+				int kdNummer = Integer.parseInt(aktKunde[0]);&#xD;
+				if (kdNummer == kunde.getNummer()) {&#xD;
+					return Integer.parseInt(aktKunde[5]);&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+		return -1;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhBlgLbXEeGxNLpsZ0hsPA" name="removeTeilnehmer" specification="_ZfR5ELbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhBlgbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhBlgrbXEeGxNLpsZ0hsPA" name="plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>String aktTeilnehmer = kunde.toString() + &quot;:&quot; + String.valueOf(plaetze)&#xD;
+				+ &quot;;&quot;;&#xD;
+		int start = teilnehmer.indexOf(aktTeilnehmer);&#xD;
+		if (start >= 0) {&#xD;
+			teilnehmer.delete(start, start + aktTeilnehmer.length());&#xD;
+		}&#xD;
+		menge--;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhBlg7bXEeGxNLpsZ0hsPA" name="containsTeilnehmer" specification="_ZfSgILbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhBlhLbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhBlhbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return (getPlaetzeZumKunden(kunde) != -1);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhCMkLbXEeGxNLpsZ0hsPA" name="reduziereGebuchtePlaetze" specification="_ZfTHMbbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhCMkbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhCMkrbXEeGxNLpsZ0hsPA" name="neueAnzahlPlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>removeTeilnehmer(kunde, getPlaetzeZumKunden(kunde));&#xD;
+		appendTeilnehmer(kunde, neueAnzahlPlaetze);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhCzoLbXEeGxNLpsZ0hsPA" name="erstelleKundeAusString" specification="_ZQufsLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhCzobbXEeGxNLpsZ0hsPA" name="s">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhCzorbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>String[] data = s.split(&quot;:&quot;);&#xD;
+		Kunde kunde = new Kunde();&#xD;
+		kunde.setNummer(Integer.parseInt(data[0]));&#xD;
+		kunde.setName(data[1]);&#xD;
+		kunde.setVorname(data[2]);&#xD;
+		kunde.setAdresse(data[3]);&#xD;
+		kunde.setTelefonnr(data[4]);&#xD;
+		return kunde;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhCzo7bXEeGxNLpsZ0hsPA" name="toArray" specification="_ZQvt0LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhCzpLbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhCzpbbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Kunde[] kunden = new Kunde[menge];&#xD;
+		String[] kundenStrings = teilnehmer.toString().split(&quot;;&quot;);&#xD;
+		for (int i = 0; i &lt; menge; i++) {&#xD;
+			kunden[i] = erstelleKundeAusString(kundenStrings[i]);&#xD;
+		}&#xD;
+		return kunden;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZQq1ULbXEeGxNLpsZ0hsPA" name="TeilnehmerListe" method="_ZhAXYbbXEeGxNLpsZ0hsPA">
+          <eAnnotations xmi:id="_ZQrcYLbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ZQrcYbbXEeGxNLpsZ0hsPA" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_Zhb1MLbXEeGxNLpsZ0hsPA">
+            <body>Der Konstruktor instanziiert einen StringBuilder, der die Teilnehmer&#xD;
+	 * einer Reise als Strings verkettet. Außerdem wird die Menge an Teilnehmern&#xD;
+	 * mit 0 initialisiert.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQrcYrbXEeGxNLpsZ0hsPA" type="_ZQpAILbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQufsLbXEeGxNLpsZ0hsPA" name="erstelleKundeAusString" visibility="private" method="_ZhCzoLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhccQrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode erstellt ein Objekt vom Typ {@link Kunde} und belegt es mit&#xD;
+	 * den Daten aus dem übergebenen String.&#xD;
+	 * &#xD;
+	 * @param s&#xD;
+	 *            String mit Kundendaten&#xD;
+	 * @return Instanz der Klasse {@link Kunde}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQufsbbXEeGxNLpsZ0hsPA" name="s">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZfTuQbbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQvt0LbXEeGxNLpsZ0hsPA" name="toArray" method="_ZhCzo7bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhccQ7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt alle Teilnehmer der Reise als Array aus.&#xD;
+	 * &#xD;
+	 * @return Array von Objekten vom Typ {@link Kunde}.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQvt0bbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZQwU4LbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfQD4LbXEeGxNLpsZ0hsPA" name="appendTeilnehmer" method="_ZhA-cLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhb1MbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode fügt einen Teilnehmer zur Liste hinzu.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;
+	 *            enthält&#xD;
+	 * @param aktuellePlaetze&#xD;
+	 *            Anzahl der Plätze, die der Kunde aktuell gebucht hat</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfQq8LbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfQq8bbXEeGxNLpsZ0hsPA" name="aktuellePlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfRSALbXEeGxNLpsZ0hsPA" name="getPlaetzeZumKunden" method="_ZhA-c7bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhb1MrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt die aktuellen gebuchten Plätze zum Reiseteilnehmer&#xD;
+	 * zurück.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, zu dem die Plätze zurückgegeben&#xD;
+	 *            werden sollen&#xD;
+	 * @return Anzahl der Plätze als Integer &lt;br>&#xD;
+	 *         -1, wenn der Kunde nicht in der Liste steht</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfRSAbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfRSArbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfR5ELbXEeGxNLpsZ0hsPA" name="removeTeilnehmer" method="_ZhBlgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhb1M7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode löscht einen Teilnehmer aus der Liste.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, die die Daten des zu löschenden&#xD;
+	 *            Teilnehmer enthält.&#xD;
+	 * @param plaetze&#xD;
+	 *            Anzahl der Plätze, die der Teilnehmer gebucht hatte</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfR5EbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfR5ErbXEeGxNLpsZ0hsPA" name="plaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfSgILbXEeGxNLpsZ0hsPA" name="containsTeilnehmer" method="_ZhBlg7bXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhccQLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode prüft, ob ein spezifizierter Teilnehmer in der Liste&#xD;
+	 * enthalten ist.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;
+	 *            enthält&#xD;
+	 * @return true or false</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfSgIbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfTHMLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfTHMbbXEeGxNLpsZ0hsPA" name="reduziereGebuchtePlaetze" method="_ZhCMkLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhccQbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode aktualisiert die gebuchten Plätze des spezifizierten&#xD;
+	 * Teilnehmers.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, die die Daten des Teilnehmers&#xD;
+	 *            enthält&#xD;
+	 * @param neueAnzahlPlaetze&#xD;
+	 *            aktuelle Anzahl der gebuchten Plätze des Kunden</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfTHMrbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZfTuQLbXEeGxNLpsZ0hsPA" name="neueAnzahlPlaetze">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZQ3poLbXEeGxNLpsZ0hsPA" name="Wochentag">
+        <ownedComment xmi:id="_ZhccRLbXEeGxNLpsZ0hsPA">
+          <body>Diese Enumeration verwaltet alle Starttage der Reisen.&#xD;
+&#xD;
+@author Thomas&#xD;
+@version 02.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_ZQ5e0LbXEeGxNLpsZ0hsPA" name="toString" method="_ZhDasLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZQ5e0bbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedLiteral xmi:id="_ZQ4QsLbXEeGxNLpsZ0hsPA" name="MONTAG"/>
+        <ownedLiteral xmi:id="_ZQ43wLbXEeGxNLpsZ0hsPA" name="FREITAG"/>
+        <ownedLiteral xmi:id="_ZQ43wbbXEeGxNLpsZ0hsPA" name="SAMSTAG"/>
+        <ownedLiteral xmi:id="_ZQ43wrbXEeGxNLpsZ0hsPA" name="SONNTAG"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ZhQPALbXEeGxNLpsZ0hsPA" name="" memberEnd="_ZgYsULbXEeGxNLpsZ0hsPA _ZhQPAbbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_ZhQPAbbXEeGxNLpsZ0hsPA" name="" type="_ZPmeULbXEeGxNLpsZ0hsPA" association="_ZhQPALbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ZhQ2ELbXEeGxNLpsZ0hsPA" name="" memberEnd="_ZgbIkLbXEeGxNLpsZ0hsPA _ZhQ2EbbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_ZhQ2EbbXEeGxNLpsZ0hsPA" name="" type="_ZPmeULbXEeGxNLpsZ0hsPA" association="_ZhQ2ELbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ZhSEMLbXEeGxNLpsZ0hsPA" name="" memberEnd="_ZgeL4bbXEeGxNLpsZ0hsPA _ZhSEMbbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_ZhSEMbbXEeGxNLpsZ0hsPA" name="" type="_ZPz5sLbXEeGxNLpsZ0hsPA" association="_ZhSEMLbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Zhm0ULbXEeGxNLpsZ0hsPA" name="" memberEnd="_ZhnbYLbXEeGxNLpsZ0hsPA _ZgjEYLbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_ZhnbYLbXEeGxNLpsZ0hsPA" name="" type="_ZQJQ4LbXEeGxNLpsZ0hsPA" association="_Zhm0ULbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ZhopgLbXEeGxNLpsZ0hsPA" name="" memberEnd="_ZhopgbbXEeGxNLpsZ0hsPA _ZgnV0bbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_ZhopgbbXEeGxNLpsZ0hsPA" name="" type="_ZQWsQLbXEeGxNLpsZ0hsPA" association="_ZhopgLbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Zhp3obbXEeGxNLpsZ0hsPA" name="" memberEnd="_Zhp3orbXEeGxNLpsZ0hsPA _Zgn84bbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_Zhp3orbXEeGxNLpsZ0hsPA" name="" type="_ZQWsQLbXEeGxNLpsZ0hsPA" association="_Zhp3obbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Zhrs0LbXEeGxNLpsZ0hsPA" name="" memberEnd="_Zhrs0bbXEeGxNLpsZ0hsPA _ZgpyELbXEeGxNLpsZ0hsPA">
+        <ownedEnd xmi:id="_Zhrs0bbXEeGxNLpsZ0hsPA" name="" type="_ZQpAILbXEeGxNLpsZ0hsPA" association="_Zhrs0LbXEeGxNLpsZ0hsPA"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZLI1ELbXEeGxNLpsZ0hsPA" name="utils">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZQ6F4LbXEeGxNLpsZ0hsPA" name="DateiIO">
+        <ownedComment xmi:id="_ZhccRbbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse lädt und speichert die Daten der Bussoftware. Der Kundenstamm&#xD;
+wird in einer .csv-Datei abgelegt. Die Buchungen und Stornierungen werden in&#xD;
+einer Log-Datei mitgeschrieben, die ebenfalls im CSV-Format vorliegt.&#xD;
+Außerdem werden die Daten der letzten Sitzung (Kundennummer, Buchungsnummer,&#xD;
+Stornonummer) gespeichert, damit sie bei der nächsten Sitzung zur Verfügung&#xD;
+stehen.&#xD;
+&#xD;
+@author Philipp&#xD;
+@version 14.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_ZgrnQLbXEeGxNLpsZ0hsPA" name="kunden_headers" visibility="private" isStatic="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZgrnQbbXEeGxNLpsZ0hsPA" value="*"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZgsOUbbXEeGxNLpsZ0hsPA" value="{ &quot;Nummer&quot;, &quot;Name&quot;, &quot;Vorname&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Adresse&quot;, &quot;Telefonnummer&quot; }"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Zgs1YLbXEeGxNLpsZ0hsPA" name="log_headers" visibility="private" isStatic="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zgs1YbbXEeGxNLpsZ0hsPA" value="*"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZgtccLbXEeGxNLpsZ0hsPA" value="{ &quot;Art der Buchung&quot;, &quot;Nummer&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Kundennummer&quot;, &quot;Name&quot;, &quot;Vorname&quot;, &quot;Adresse&quot;, &quot;Telefonnummer&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;Ziel&quot;, &quot;Woche&quot;, &quot;Anzahl der Plaetze&quot; }"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgtccrbXEeGxNLpsZ0hsPA" name="LOGFILE" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZguDgLbXEeGxNLpsZ0hsPA" value="&quot;Bussoftware_Log.csv&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZguDgbbXEeGxNLpsZ0hsPA" name="KUNDEN_FILE" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZguqkLbXEeGxNLpsZ0hsPA" value="&quot;Bussoftware_Kunden.csv&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZguqkbbXEeGxNLpsZ0hsPA" name="LAST_SESSION_FILE" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZguqkrbXEeGxNLpsZ0hsPA" value="&quot;Bussoftware_LetzteSitzung.csv&quot;"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhEBwLbXEeGxNLpsZ0hsPA" name="writeHeadersInKundenFile" specification="_ZQ8iILbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>// Datei oeffnen und zum Schreiben vorbereiten&#xD;
+		File kunden_file = new File(KUNDEN_FILE);&#xD;
+		BufferedWriter bw = new BufferedWriter(new FileWriter(kunden_file));&#xD;
+&#xD;
+		for (int i = 0; i &lt; kunden_headers.length; i++) {&#xD;
+			bw.write(kunden_headers[i] + &quot;;&quot;);&#xD;
+		}&#xD;
+		bw.write(&quot;\n&quot;);&#xD;
+		bw.close();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhEBwbbXEeGxNLpsZ0hsPA" name="writeHeadersInLogFile" specification="_ZQ9wQLbXEeGxNLpsZ0hsPA">
+          <language>java</language>
+          <body>// Datei oeffnen und zum Schreiben vorbereiten&#xD;
+		File logfile = new File(LOGFILE);&#xD;
+		BufferedWriter bw = new BufferedWriter(new FileWriter(logfile));&#xD;
+&#xD;
+		for (int i = 0; i &lt; log_headers.length; i++) {&#xD;
+			bw.write(log_headers[i] + &quot;;&quot;);&#xD;
+		}&#xD;
+		bw.write(&quot;\n&quot;);&#xD;
+		bw.close();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhEo0LbXEeGxNLpsZ0hsPA" name="readNummernVonLetzterSitzung" specification="_ZQ-XULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhEo0bbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhEo0rbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>// Speicher für das Ergebnis-Array reservieren&#xD;
+		int[] nummern = new int[3];&#xD;
+&#xD;
+		// Datei öffnen und zum Lesen vorbereiten&#xD;
+		File file = new File(LAST_SESSION_FILE);&#xD;
+		BufferedReader br = new BufferedReader(new FileReader(file));&#xD;
+		String line = null;&#xD;
+&#xD;
+		int counter = 0;&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			nummern[counter] = Integer.parseInt(line);&#xD;
+			counter++;&#xD;
+		} while (counter &lt; 3);&#xD;
+		br.close();&#xD;
+&#xD;
+		return nummern;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhFP4LbXEeGxNLpsZ0hsPA" name="saveNummernVonLetzterSitzung" specification="_ZRAzkLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhFP4bbXEeGxNLpsZ0hsPA" name="kundenNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhFP4rbXEeGxNLpsZ0hsPA" name="buchungsNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhFP47bXEeGxNLpsZ0hsPA" name="stornoNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>// Datei öffnen und zum Schreiben vorbereiten&#xD;
+		File file = new File(LAST_SESSION_FILE);&#xD;
+		PrintWriter pw = new PrintWriter(file);&#xD;
+&#xD;
+		pw.println(kundenNr);&#xD;
+		pw.println(buchungsNr);&#xD;
+		pw.println(stornoNr);&#xD;
+&#xD;
+		pw.close();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhF28LbXEeGxNLpsZ0hsPA" name="saveKundeToKundenstamm" specification="_ZfbqELbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhF28bbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <language>java</language>
+          <body>File inFile = new File(KUNDEN_FILE);&#xD;
+&#xD;
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird&#xD;
+		File tempFile = new File(inFile.getAbsolutePath() + &quot;.tmp&quot;);&#xD;
+&#xD;
+		// Datei öffnen und zum Schreiben vorbereiten&#xD;
+		BufferedReader br = new BufferedReader(new FileReader(KUNDEN_FILE));&#xD;
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));&#xD;
+&#xD;
+		String line = null;&#xD;
+&#xD;
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei&#xD;
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				pw.println(line);&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		br.close();&#xD;
+&#xD;
+		// Die Kundendaten werden angehängt.&#xD;
+		pw.append(kunde.getNummer() + &quot;;&quot;);&#xD;
+		pw.append(kunde.getName() + &quot;;&quot;);&#xD;
+		pw.append(kunde.getVorname() + &quot;;&quot;);&#xD;
+		pw.append(kunde.getAdresse() + &quot;;&quot;);&#xD;
+		pw.append(kunde.getTelefonnr() + &quot;;&quot;);&#xD;
+		pw.print(&quot;\n&quot;);&#xD;
+		pw.close();&#xD;
+&#xD;
+		// Die Originaldatei löschen&#xD;
+		inFile.delete();&#xD;
+&#xD;
+		// Die *.tmp Datei in den Originalnamen umbenennen&#xD;
+		if (!tempFile.renameTo(inFile))&#xD;
+			throw new Exception(&quot;Datei konnte nicht umbenannt werden&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhF28rbXEeGxNLpsZ0hsPA" name="searchKundeInKundenstamm" specification="_ZRDP0LbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhF287bXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhF29LbXEeGxNLpsZ0hsPA" name="vorname">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhF29bbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhF29rbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>// Datei öffnen und zum Lesen vorbereiten&#xD;
+		FileReader fr = new FileReader(KUNDEN_FILE);&#xD;
+		BufferedReader br = new BufferedReader(fr);&#xD;
+		String line = br.readLine();&#xD;
+		// Der erste Durchlauf dient dazu, herauszufinden, wie viele Kunden es&#xD;
+		// zu dem übergebenen Namen gibt.&#xD;
+		int menge = 0;&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				if ((items[1].equals(name)) &amp;&amp; (items[2].equals(vorname))) {&#xD;
+					menge++;&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		br.close();&#xD;
+		fr.close();&#xD;
+&#xD;
+		// Der zweite Durchlauf dient dazu, das zurückgegebene Array zu&#xD;
+		// füllen.&#xD;
+		Kunde[] results = new Kunde[menge];&#xD;
+&#xD;
+		fr = new FileReader(KUNDEN_FILE);&#xD;
+		br = new BufferedReader(fr);&#xD;
+		line = br.readLine();&#xD;
+		int counter = 0;&#xD;
+		while (counter &lt; menge) {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				if ((items[1].equals(name)) &amp;&amp; (items[2].equals(vorname))) {&#xD;
+					// Kunde wird mit den gefundenen Daten erzeugt.&#xD;
+					int nummer = Integer.parseInt(items[0]);&#xD;
+					results[counter] = new Kunde(nummer, items[1], items[2],&#xD;
+							items[3], items[4]);&#xD;
+					counter++;&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+		br.close();&#xD;
+		return results;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhGeALbXEeGxNLpsZ0hsPA" name="changeKundeInKundenstamm" specification="_ZfdfQLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhGeAbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <language>java</language>
+          <body>File inFile = new File(KUNDEN_FILE);&#xD;
+&#xD;
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird&#xD;
+		File tempFile = new File(inFile.getAbsolutePath() + &quot;.tmp&quot;);&#xD;
+&#xD;
+		BufferedReader br = new BufferedReader(new FileReader(KUNDEN_FILE));&#xD;
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));&#xD;
+&#xD;
+		String line = br.readLine();&#xD;
+		pw.println(line);&#xD;
+&#xD;
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei&#xD;
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+&#xD;
+				// Wenn der zu ändernde Kunde gefunden wurde, eine Zeile mit den&#xD;
+				// neuen Daten schreiben.&#xD;
+				int nummer = Integer.parseInt(items[0]);&#xD;
+				if (nummer == kunde.getNummer()) {&#xD;
+					pw.append(kunde.getNummer() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getName() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getVorname() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getAdresse() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getTelefonnr() + &quot;;&quot;);&#xD;
+					pw.append(&quot;\n&quot;);&#xD;
+				} else {&#xD;
+					// Ansonsten schreibe den Inhalt der alten Zeile&#xD;
+					pw.println(line);&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+&#xD;
+		pw.close();&#xD;
+		br.close();&#xD;
+&#xD;
+		// Die Originaldatei löschen&#xD;
+		inFile.delete();&#xD;
+&#xD;
+		// Die *.tmp Datei in den Originalnamen umbenennen&#xD;
+		if (!tempFile.renameTo(inFile))&#xD;
+			throw new Exception(&quot;Datei konnte nicht umbenannt werden&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhGeArbXEeGxNLpsZ0hsPA" name="saveBuchungToLogFile" specification="_ZfeGULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhGeA7bXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <language>java</language>
+          <body>File inFile = new File(LOGFILE);&#xD;
+&#xD;
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird&#xD;
+		File tempFile = new File(inFile.getAbsolutePath() + &quot;.tmp&quot;);&#xD;
+&#xD;
+		// Datei öffnen und zum Schreiben vorbereiten&#xD;
+		BufferedReader br = new BufferedReader(new FileReader(LOGFILE));&#xD;
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));&#xD;
+&#xD;
+		String line = null;&#xD;
+&#xD;
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei&#xD;
+		// wieder einfügen. Die zu aendernde Zeile wird neu geschrieben.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				pw.println(line);&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		br.close();&#xD;
+&#xD;
+		// Wenn die Buchung storniert ist, wird &quot;Stornierung&quot; + Stornonummer&#xD;
+		// ausgegeben. Ansonsten wird &quot;Buchung&quot; + Buchungsnummer ausgegeben.&#xD;
+		if (buchung.getStornonr() > 0) {&#xD;
+			pw.append(&quot;Stornierung&quot; + &quot;;&quot;);&#xD;
+			pw.append(buchung.getStornonr() + &quot;;&quot;);&#xD;
+		} else {&#xD;
+			pw.append(&quot;Buchung&quot; + &quot;;&quot;);&#xD;
+			pw.append(buchung.getBuchungsnr() + &quot;;&quot;);&#xD;
+		}&#xD;
+&#xD;
+		// Die Attribute der Buchung werden einzeln in den FileWriter&#xD;
+		// geschrieben.&#xD;
+		pw.append(buchung.getKunde().getNummer() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getKunde().getName() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getKunde().getVorname() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getKunde().getAdresse() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getKunde().getTelefonnr() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getReiseZiel().toString() + &quot;;&quot;);&#xD;
+		pw.append(buchung.getWoche() + &quot;;&quot;);&#xD;
+		pw.append(String.valueOf(buchung.getPlaetze()));&#xD;
+		pw.print(&quot;\n&quot;);&#xD;
+		pw.close();&#xD;
+&#xD;
+		// Die Originaldatei löschen&#xD;
+		inFile.delete();&#xD;
+&#xD;
+		// Die *.tmp Datei in den Originalnamen umbenennen&#xD;
+		if (!tempFile.renameTo(inFile))&#xD;
+			throw new Exception(&quot;Datei konnte nicht umbenannt werden&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhHFELbXEeGxNLpsZ0hsPA" name="erstelleBuchungAusLogEintrag" specification="_ZRHhQLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhHFEbbXEeGxNLpsZ0hsPA" name="nummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhHFErbXEeGxNLpsZ0hsPA" name="details">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhHFE7bXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhHFFLbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>Buchung b = new Buchung();&#xD;
+		b.setBuchungsnr(nummer);&#xD;
+&#xD;
+		Kunde kunde = new Kunde();&#xD;
+		kunde.setNummer(Integer.parseInt(details[2]));&#xD;
+		kunde.setName(details[3]);&#xD;
+		kunde.setVorname(details[4]);&#xD;
+		kunde.setAdresse(details[5]);&#xD;
+		kunde.setTelefonnr(details[6]);&#xD;
+		b.setKunde(kunde);&#xD;
+&#xD;
+		String ziel = details[7].toUpperCase();&#xD;
+		b.setReiseZiel(Reiseziel.valueOf(ziel));&#xD;
+&#xD;
+		int woche = Integer.parseInt(details[8]);&#xD;
+		b.setWoche(woche);&#xD;
+&#xD;
+		int plaetze = Integer.parseInt(details[9]);&#xD;
+		b.setPlaetze(plaetze);&#xD;
+&#xD;
+		return b;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhHsILbXEeGxNLpsZ0hsPA" name="searchBuchungInLogFile" specification="_ZRJWcLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhHsIbbXEeGxNLpsZ0hsPA" name="buchungsnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhHsIrbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>// Datei öffnen und zum Lesen vorbereiten&#xD;
+		FileReader fr = new FileReader(LOGFILE);&#xD;
+		BufferedReader br = new BufferedReader(fr);&#xD;
+		String line = br.readLine();&#xD;
+		// Mithilfer einer linearen Suche werden alle Einträge mit der&#xD;
+		// gesuchten Buchungsnummer abgeglichen.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				int nummer = Integer.parseInt(items[1]);&#xD;
+				// Wenn die Nummer des Eintrags mit der gesuchten Nummer&#xD;
+				// übereinstimmmt, wird&#xD;
+				// auf Basis der gefundenen Daten ein Buchungsobjekt erstellt.&#xD;
+				if (nummer == buchungsnr) {&#xD;
+					br.close();&#xD;
+					return erstelleBuchungAusLogEintrag(buchungsnr, items);&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+&#xD;
+		br.close();&#xD;
+		return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhHsI7bXEeGxNLpsZ0hsPA" name="searchStornierungZurBuchung" specification="_Zff7gLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhHsJLbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_ZhHsJbbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>// Datei öffnen und zum Lesen vorbereiten&#xD;
+		FileReader fr = new FileReader(LOGFILE);&#xD;
+		BufferedReader br = new BufferedReader(fr);&#xD;
+		String line = br.readLine();&#xD;
+		// Mithilfer einer linearen Suche wird nach Stornierungen gesucht. Diese&#xD;
+		// werden dann inhaltlich (siehe Javadoc für equals()) mit der Buchung&#xD;
+		// abgeglichen.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				if (items[0].contains(&quot;Stornierung&quot;)) {&#xD;
+					Buchung stornierung = erstelleBuchungAusLogEintrag(0, items);&#xD;
+					stornierung.setStornonr(Integer.parseInt(items[1]));&#xD;
+					if (stornierung.equals(buchung)) {&#xD;
+						br.close();&#xD;
+						return stornierung;&#xD;
+					}&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+&#xD;
+		br.close();&#xD;
+		return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhITMLbXEeGxNLpsZ0hsPA" name="getTeilnehmerZuReise" specification="_ZRMZwLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhITMbbXEeGxNLpsZ0hsPA" name="ziel">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhITMrbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhITM7bXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhITNLbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>// Teilnehmerliste erstellen&#xD;
+		TeilnehmerListe teilnehmerListe = new TeilnehmerListe();&#xD;
+		// Datei oeffnen und zum Lesen vorbereiten&#xD;
+		FileReader fr = new FileReader(LOGFILE);&#xD;
+		BufferedReader br = new BufferedReader(fr);&#xD;
+		String line = br.readLine();&#xD;
+&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				// Wenn die aktuelle Buchung / Stornierung zur gesuchten Reise&#xD;
+				// gehört&#xD;
+				if ((ziel.equals(items[7]))&#xD;
+						&amp;&amp; (woche == Integer.parseInt(items[8]))) {&#xD;
+					// Erstelle eine Kundeninstanz aus den Daten in der Buchung&#xD;
+					Kunde aktKunde = new Kunde();&#xD;
+					aktKunde.setNummer(Integer.parseInt(items[2]));&#xD;
+					aktKunde.setName(items[3]);&#xD;
+					aktKunde.setVorname(items[4]);&#xD;
+					aktKunde.setAdresse(items[5]);&#xD;
+					aktKunde.setTelefonnr(items[6]);&#xD;
+&#xD;
+					// Wenn eine Buchung vorliegt&#xD;
+					if (items[0].contains(&quot;Buchung&quot;)) {&#xD;
+						// Wenn der aktuelle Kunde nocht nicht als Teilnehmer&#xD;
+						// vermerkt worden ist, füge ihn der Liste hinzu.&#xD;
+						if (!(teilnehmerListe.containsTeilnehmer(aktKunde))) {&#xD;
+							int aktPlaetze = Integer.parseInt(items[9]);&#xD;
+							teilnehmerListe.appendTeilnehmer(aktKunde,&#xD;
+									aktPlaetze);&#xD;
+						}&#xD;
+					}&#xD;
+&#xD;
+					// Wenn eine Stornierung vorliegt&#xD;
+					else {&#xD;
+						int storniertePlaetze = Integer.parseInt(items[9]);&#xD;
+						int gebuchtePlaetze = teilnehmerListe&#xD;
+								.getPlaetzeZumKunden(aktKunde);&#xD;
+						int differenz = gebuchtePlaetze - storniertePlaetze;&#xD;
+						// Wenn alle Plätze, die aktuell gebucht waren,&#xD;
+						// storniert&#xD;
+						// wurden, entferne den Teilnehmer aus der Liste&#xD;
+						if (differenz == 0) {&#xD;
+							teilnehmerListe.removeTeilnehmer(aktKunde,&#xD;
+									gebuchtePlaetze);&#xD;
+						} else {&#xD;
+							// Ansonsten reduziere die gebuchten Plätze in der&#xD;
+							// Liste.&#xD;
+							teilnehmerListe.reduziereGebuchtePlaetze(aktKunde,&#xD;
+									differenz);&#xD;
+						}&#xD;
+					}&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		br.close();&#xD;
+&#xD;
+		// Erzeuge ein Kundenarray aus der Teilnahmeliste und sortiere es.&#xD;
+		Kunde[] alleTeilnehmer = teilnehmerListe.toArray();&#xD;
+		Sortierverfahren.bubbleSort(alleTeilnehmer);&#xD;
+		return alleTeilnehmer;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhI6QLbXEeGxNLpsZ0hsPA" name="searchAlleBuchungenZurReise" specification="_ZRO2ALbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhI6QbbXEeGxNLpsZ0hsPA" name="reiseziel">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhI6QrbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>// Datei öffnen und zum Lesen vorbereiten&#xD;
+		FileReader fr = new FileReader(LOGFILE);&#xD;
+		BufferedReader br = new BufferedReader(fr);&#xD;
+		String line = br.readLine();&#xD;
+		String result = &quot;&quot;;&#xD;
+		// Mithilfer einer linearen Suche werden alle Einträge zu dem&#xD;
+		// übergebenen Reiseziel gesucht.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+				if (items[7].equals(reiseziel)) {&#xD;
+					// Es wird ein String der Form &quot;Nummer Woche Plätze:&quot;&#xD;
+					// erzeugt&#xD;
+					// und mit dem Ergebnisstring verkettet.&#xD;
+					String eintrag = items[1] + &quot; &quot; + items[8] + &quot; &quot; + items[9]&#xD;
+							+ &quot;;&quot;;&#xD;
+					result += eintrag;&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		br.close();&#xD;
+		return result;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhI6Q7bXEeGxNLpsZ0hsPA" name="updateBuchungenZuKunde" specification="_ZfhJoLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhI6RLbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+          <language>java</language>
+          <body>File inFile = new File(LOGFILE);&#xD;
+&#xD;
+		// Eine *.tmp Datei erstellen, die später wieder umbenannt wird&#xD;
+		File tempFile = new File(inFile.getAbsolutePath() + &quot;.tmp&quot;);&#xD;
+&#xD;
+		BufferedReader br = new BufferedReader(new FileReader(LOGFILE));&#xD;
+		PrintWriter pw = new PrintWriter(new FileWriter(tempFile));&#xD;
+&#xD;
+		String line = br.readLine();&#xD;
+		pw.println(line);&#xD;
+&#xD;
+		// Die Inhalte von der Originaldatei auslesen und in der *.tmp Datei&#xD;
+		// wieder einfügen. Die zu ändernde Zeile wird neu geschrieben.&#xD;
+		do {&#xD;
+			line = br.readLine();&#xD;
+			if (line != null) {&#xD;
+				String[] items = line.split(&quot;;&quot;);&#xD;
+&#xD;
+				int aktuelleKundennummer = Integer.parseInt(items[2]);&#xD;
+				// Pruefe, ob die vorliegende Buchung zum geänderten Kunden&#xD;
+				// gehört&#xD;
+				if (aktuelleKundennummer == kunde.getNummer()) {&#xD;
+					// Wenn ja, schreibe die Zeile neu&#xD;
+					pw.append(items[0] + &quot;;&quot;); // Buchungsart bleibt gleich&#xD;
+					pw.append(items[1] + &quot;;&quot;); // Nummer der Buchung/Stornierung&#xD;
+												// bleibt&#xD;
+												// gleich&#xD;
+					pw.append(items[2] + &quot;;&quot;); // Kundennummer bleibt gleich&#xD;
+					pw.append(kunde.getName() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getVorname() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getAdresse() + &quot;;&quot;);&#xD;
+					pw.append(kunde.getTelefonnr() + &quot;;&quot;);&#xD;
+					pw.append(items[7] + &quot;;&quot;); // Reiseziel bleibt gleich&#xD;
+					pw.append(items[8] + &quot;;&quot;); // Gebuchte Woche bleibt gleich&#xD;
+					pw.append(items[9] + &quot;;&quot;); // Gebuchte Plätze bleiben gleich&#xD;
+					pw.append(&quot;\n&quot;);&#xD;
+				} else {&#xD;
+					// Ansonsten übernehme die alte Zeile.&#xD;
+					pw.println(line);&#xD;
+				}&#xD;
+			}&#xD;
+		} while (line != null);&#xD;
+		pw.close();&#xD;
+		br.close();&#xD;
+&#xD;
+		// Die Originaldatei löschen&#xD;
+		inFile.delete();&#xD;
+&#xD;
+		// Die *.tmp Datei in den Originalnamen umbenennen&#xD;
+		if (!tempFile.renameTo(inFile))&#xD;
+			throw new Exception(&quot;Datei konnte nicht umbenannt werden&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZQ8iILbXEeGxNLpsZ0hsPA" name="writeHeadersInKundenFile" isStatic="true" method="_ZhEBwLbXEeGxNLpsZ0hsPA" raisedException="_ZfLycLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhccRrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode schreibt die Tabellenüberschriften in die CSV-Datei, in der&#xD;
+	 * die Kunden gespeichert werden.&#xD;
+	 * &#xD;
+	 * @throws IOException</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQ9wQLbXEeGxNLpsZ0hsPA" name="writeHeadersInLogFile" isStatic="true" method="_ZhEBwbbXEeGxNLpsZ0hsPA" raisedException="_ZfLycLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhdqYLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode schreibt die Tabellenüberschriften in die Logdatei.&#xD;
+	 * &#xD;
+	 * @throws IOException</body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZQ-XULbXEeGxNLpsZ0hsPA" name="readNummernVonLetzterSitzung" isStatic="true" method="_ZhEo0LbXEeGxNLpsZ0hsPA" raisedException="_ZfLycLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhdqYbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode liest die Nummern von der letzten Sitzung ein.&#xD;
+	 * &#xD;
+	 * @return Array von Integer-Werten mit den Nummern&#xD;
+	 * @throws IOException</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZQ--YLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZQ--YbbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRAzkLbXEeGxNLpsZ0hsPA" name="saveNummernVonLetzterSitzung" isStatic="true" method="_ZhFP4LbXEeGxNLpsZ0hsPA" raisedException="_ZfLycLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhdqYrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode speichert die aktuellen Nummern der letzten Sitzung ab.&#xD;
+	 * &#xD;
+	 * @param kundenNr&#xD;
+	 *            aktuelle Kundennummer der letzten Sitzung&#xD;
+	 * @param buchungsNr&#xD;
+	 *            aktuelle Buchungsnummer der letzten Sitzung&#xD;
+	 * @param stornoNr&#xD;
+	 *            aktuelle Stornonummer der letzten Sitzung&#xD;
+	 * @throws IOException</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRAzkbbXEeGxNLpsZ0hsPA" name="kundenNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRAzkrbXEeGxNLpsZ0hsPA" name="buchungsNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRBaoLbXEeGxNLpsZ0hsPA" name="stornoNr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRDP0LbXEeGxNLpsZ0hsPA" name="searchKundeInKundenstamm" isStatic="true" method="_ZhF28rbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhdqZLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode sucht einen Kunden in der Kundenstamm-Datei mithilfe seines&#xD;
+	 * Vor- und Nachnamens. Da Mehrfacheinträge möglich sind, wird ein Array von&#xD;
+	 * Kunden zurueckgegeben.&#xD;
+	 * &#xD;
+	 * @param name&#xD;
+	 *            Nachname des gesuchten Kunden&#xD;
+	 * @param vorname&#xD;
+	 *            Vorname des gesuchten Kunden&#xD;
+	 * @return Array von Kunden&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRD24LbXEeGxNLpsZ0hsPA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRD24bbXEeGxNLpsZ0hsPA" name="vorname">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZREd8LbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZREd8bbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRHhQLbXEeGxNLpsZ0hsPA" name="erstelleBuchungAusLogEintrag" visibility="private" isStatic="true" method="_ZhHFELbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZheRcrbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode erstellt eine Instanz der Klasse {@link Buchung} auf Basis&#xD;
+	 * der Daten aus einer Zeile im Logfile.&#xD;
+	 * &#xD;
+	 * @param nummer&#xD;
+	 *            Nummer der Buchung&#xD;
+	 * @param details&#xD;
+	 *            Elemente der Zeile (Semikolon als Trennungszeichen)&#xD;
+	 * @return Instanz der Klasse {@link Buchung}</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRHhQbbXEeGxNLpsZ0hsPA" name="nummer">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRIIULbXEeGxNLpsZ0hsPA" name="details">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZRIIUbbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZffUcLbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRJWcLbXEeGxNLpsZ0hsPA" name="searchBuchungInLogFile" isStatic="true" method="_ZhHsILbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZheRc7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode sucht eine Buchung zur entsprechenden Buchungsnummer. Dabei&#xD;
+	 * wird die Logdatei linear nach einem Eintrag durchsucht, der zur gesuchten&#xD;
+	 * Buchungsnummer passt.&#xD;
+	 * &#xD;
+	 * @param buchungsnr&#xD;
+	 *            Nummer der gesuchten Buchung&#xD;
+	 * @return Instanz der Klasse {@link Buchung}&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRJ9gLbXEeGxNLpsZ0hsPA" name="buchungsnr">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZffUcbbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRMZwLbXEeGxNLpsZ0hsPA" name="getTeilnehmerZuReise" isStatic="true" method="_ZhITMLbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhe4gLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode gibt die Teilnehmer zu einer spezifizierten Reise zurück.&#xD;
+	 * Dabei wird die Logdatei linear durchsucht. Dabei wird der Kunde, der zur&#xD;
+	 * Reise gehört, zu einer {@link TeilnehmerListe} hinzugeügt. Sollte eine&#xD;
+	 * Buchung später wieder storniert werden, wird die Teilnehmerliste&#xD;
+	 * aktualisiert. Zum Schluss wird die Liste von Teilnehmern in ein Array vom&#xD;
+	 * Typ {@link Kunde} umgewandelt und dann alphabetisch aufsteigend sortiert.&#xD;
+	 * &#xD;
+	 * @param ziel&#xD;
+	 *            Reiseziel als String&#xD;
+	 * @param woche&#xD;
+	 *            Woche, in der die Reise stattfindet als Integer&#xD;
+	 * @return Array von Kunden, in dem sie ihren Namen nach lexikographisch&#xD;
+	 *         sortiert sind&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRMZwbbXEeGxNLpsZ0hsPA" name="ziel">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRNA0LbXEeGxNLpsZ0hsPA" name="woche">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRNA0bbXEeGxNLpsZ0hsPA" type="_ZP7OcLbXEeGxNLpsZ0hsPA" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZRNA0rbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRO2ALbXEeGxNLpsZ0hsPA" name="searchAlleBuchungenZurReise" isStatic="true" method="_ZhI6QLbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhe4gbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode sucht alle Buchungen zu einem gegebenen Reiseziel. Als&#xD;
+	 * Ergebnis werden die relevanten Informationen der Buchung (Nummer, Woche,&#xD;
+	 * Plaetze) als String mit Leerzeichen verkettet. Für Buchungen dient das&#xD;
+	 * Semilkolon als Trennzeichen.&#xD;
+	 * &#xD;
+	 * @param reiseziel&#xD;
+	 *            Reiseziel als String&#xD;
+	 * @return String der Form &quot;Nummer Woche Plätze;Nummer Woche Plätze;...&quot; &lt;br>&#xD;
+	 *         leerer String, wenn es keine Buchungen zum Reiseziel gibt&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZRO2AbbXEeGxNLpsZ0hsPA" name="reiseziel">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRPdELbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfbqELbXEeGxNLpsZ0hsPA" name="saveKundeToKundenstamm" isStatic="true" method="_ZhF28LbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZhdqY7bXEeGxNLpsZ0hsPA">
+            <body>Diese Methode speichert einen übergebenen Kunden in der&#xD;
+	 * Kundenstamm-Datei.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz der Klasse {@link Kunde}&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfcRILbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfdfQLbXEeGxNLpsZ0hsPA" name="changeKundeInKundenstamm" isStatic="true" method="_ZhGeALbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZheRcLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode schreibt einen geänderten Kundendatensatz in den&#xD;
+	 * Kundenstamm. Als Identifikationskriterium gilt dabei die Kundennummer.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz von {@link Kunde}, die die neuen Werte für den Kunden&#xD;
+	 *            besitzt.&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfdfQbbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfeGULbXEeGxNLpsZ0hsPA" name="saveBuchungToLogFile" isStatic="true" method="_ZhGeArbXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZheRcbbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode speichert eine übergebene Buchung in einer Log-Datei.&#xD;
+	 * &#xD;
+	 * @param buchung&#xD;
+	 *            Instanz der Klasse {@link Buchung}&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfeGUbbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Zff7gLbXEeGxNLpsZ0hsPA" name="searchStornierungZurBuchung" isStatic="true" method="_ZhHsI7bXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_ZheRdLbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode sucht zu einer Buchung eine passende Stornierung.&#xD;
+	 * &#xD;
+	 * @param buchung&#xD;
+	 *            Instanz der Klasse {@link Buchung}&#xD;
+	 * @return Buchung mit Stornonummer oder null, wenn keine gefunden wurde&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_Zff7gbbXEeGxNLpsZ0hsPA" name="buchung" type="_ZPmeULbXEeGxNLpsZ0hsPA"/>
+          <ownedParameter xmi:id="_Zff7grbXEeGxNLpsZ0hsPA" type="_ZPmeULbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZfhJoLbXEeGxNLpsZ0hsPA" name="updateBuchungenZuKunde" isStatic="true" method="_ZhI6Q7bXEeGxNLpsZ0hsPA" raisedException="_ZgQwgLbXEeGxNLpsZ0hsPA">
+          <ownedComment xmi:id="_Zhe4grbXEeGxNLpsZ0hsPA">
+            <body>Diese Methode wird aufgerufen, um nach einer Änderung von Kundendaten im&#xD;
+	 * Kundenstamm alle Buchungen dieses Kunden auf den aktuellen Stand zu&#xD;
+	 * bringen.&#xD;
+	 * &#xD;
+	 * @param kunde&#xD;
+	 *            Instanz der Klasse {@link Kunde}&#xD;
+	 * @throws Exception</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ZfhJobbXEeGxNLpsZ0hsPA" name="kunde" type="_ZP7OcLbXEeGxNLpsZ0hsPA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZRhJ4LbXEeGxNLpsZ0hsPA" name="KonsoleIO">
+        <ownedComment xmi:id="_Zhe4g7bXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse ist für die Ein- und die Ausgaben auf der Konsole zuständig.&#xD;
+&#xD;
+@author Philipp&#xD;
+@version 12.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_Zgv4sLbXEeGxNLpsZ0hsPA" name="IO_ERROR" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZgwfwLbXEeGxNLpsZ0hsPA" value="&quot;Beim Einlesen ist ein Fehler aufgetreten!&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgwfwbbXEeGxNLpsZ0hsPA" name="INTEGER_ERROR" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZgwfwrbXEeGxNLpsZ0hsPA" value="&quot;Das eingegebene Zeichen ist keine ganze Zahl!&quot;"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZgxG0LbXEeGxNLpsZ0hsPA" name="DOUBLE_ERROR" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ZgxG0bbXEeGxNLpsZ0hsPA" value="&quot;Das eingegebene Zeichen ist keine Gleitkommazahl!&quot;"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhJhULbXEeGxNLpsZ0hsPA" name="printErfolgsmeldung" specification="_ZRiYALbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhJhUbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.out.println(&quot;[System] &quot; + msg);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhKIYLbXEeGxNLpsZ0hsPA" name="printFehlermeldung" specification="_ZRjmILbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhKIYbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.err.println(&quot;\nFehler: &quot; + msg);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhKIYrbXEeGxNLpsZ0hsPA" name="readIntegerFromConsole" specification="_ZRkNMLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhKIY7bXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhKIZLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.out.print(msg);&#xD;
+		try {&#xD;
+			BufferedReader input = new BufferedReader(new InputStreamReader(&#xD;
+					System.in));&#xD;
+			String s = input.readLine();&#xD;
+			return Integer.parseInt(s);&#xD;
+		} catch (NumberFormatException nfe) {&#xD;
+			KonsoleIO.printFehlermeldung(INTEGER_ERROR);&#xD;
+			return 0;&#xD;
+		} catch (IOException ioe) {&#xD;
+			KonsoleIO.printFehlermeldung(IO_ERROR);&#xD;
+			return 0;&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhKvcLbXEeGxNLpsZ0hsPA" name="readDoubleFromConsole" specification="_ZRlbULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhKvcbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhKvcrbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.out.print(msg);&#xD;
+		try {&#xD;
+			BufferedReader input = new BufferedReader(new InputStreamReader(&#xD;
+					System.in));&#xD;
+			String s = input.readLine();&#xD;
+			return Double.parseDouble(s);&#xD;
+		} catch (NumberFormatException nfe) {&#xD;
+			KonsoleIO.printFehlermeldung(DOUBLE_ERROR);&#xD;
+			return 0;&#xD;
+		} catch (IOException ioe) {&#xD;
+			KonsoleIO.printFehlermeldung(IO_ERROR);&#xD;
+			return 0;&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhKvc7bXEeGxNLpsZ0hsPA" name="readCharFromConsole" specification="_ZRmCYLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhKvdLbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhKvdbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.out.print(msg);&#xD;
+		try {&#xD;
+			BufferedReader input = new BufferedReader(new InputStreamReader(&#xD;
+					System.in));&#xD;
+			String s = input.readLine();&#xD;
+			return s.charAt(0);&#xD;
+		} catch (IOException ioe) {&#xD;
+			KonsoleIO.printFehlermeldung(IO_ERROR);&#xD;
+			return ' ';&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhLWgLbXEeGxNLpsZ0hsPA" name="readStringFromConsole" specification="_ZRnQgLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhLWgbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhLWgrbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>System.out.print(msg);&#xD;
+		try {&#xD;
+			BufferedReader input = new BufferedReader(new InputStreamReader(&#xD;
+					System.in));&#xD;
+			return input.readLine();&#xD;
+		} catch (IOException ioe) {&#xD;
+			KonsoleIO.printFehlermeldung(IO_ERROR);&#xD;
+			return &quot; &quot;;&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhL9kLbXEeGxNLpsZ0hsPA" name="readGewuenschterKunde" specification="_Zf8AYLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhL9kbbXEeGxNLpsZ0hsPA" name="kunden" type="_ZP7OcLbXEeGxNLpsZ0hsPA">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhL9krbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhL9k7bXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>int menge = kunden.length;&#xD;
+		System.out.println(&quot;Spezifizieren Sie Ihre Auswahl:&quot;);&#xD;
+		for (int i = 0; i &lt; menge; i++) {&#xD;
+			System.out.println(kunden[i].getVorname() + &quot; &quot;&#xD;
+					+ kunden[i].getName() + &quot;, &quot; + kunden[i].getAdresse()&#xD;
+					+ &quot;, &quot; + kunden[i].getTelefonnr() + &quot; [&quot; + (i + 1) + &quot;]&quot;);&#xD;
+		}&#xD;
+		return readIntegerFromConsole(&quot;Geben Sie die entsprechende Nummer hinter dem Datensatz ein: &quot;) - 1;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhL9lLbXEeGxNLpsZ0hsPA" name="readGewuenschtesReiseziel" specification="_ZRpFsLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhL9lbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZhL9lrbXEeGxNLpsZ0hsPA" type="_ZQmj4LbXEeGxNLpsZ0hsPA" direction="return"/>
+          <language>java</language>
+          <body>System.out.println(msg);&#xD;
+		System.out.println(&quot;Madrid: [1]&quot;);&#xD;
+		System.out.println(&quot;Berlin: [2]&quot;);&#xD;
+		System.out.println(&quot;Wien:   [3]&quot;);&#xD;
+		System.out.println(&quot;Rom:    [4]&quot;);&#xD;
+		int antwort = 0;&#xD;
+		do {&#xD;
+			antwort = readIntegerFromConsole(&quot;Geben Sie die entsprechende Nummer an:&quot;);&#xD;
+			switch (antwort) {&#xD;
+			case 1:&#xD;
+				return Reiseziel.MADRID;&#xD;
+			case 2:&#xD;
+				return Reiseziel.BERLIN;&#xD;
+			case 3:&#xD;
+				return Reiseziel.WIEN;&#xD;
+			case 4:&#xD;
+				return Reiseziel.ROM;&#xD;
+			default:&#xD;
+				printFehlermeldung(&quot;Diese Zahl ist ungültig!&quot;);&#xD;
+			}&#xD;
+		} while ((antwort &lt; 1) || (antwort > 4));&#xD;
+		return null;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZRiYALbXEeGxNLpsZ0hsPA" name="printErfolgsmeldung" isStatic="true" method="_ZhJhULbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRi_ELbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRjmILbXEeGxNLpsZ0hsPA" name="printFehlermeldung" isStatic="true" method="_ZhKIYLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRjmIbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRkNMLbXEeGxNLpsZ0hsPA" name="readIntegerFromConsole" isStatic="true" method="_ZhKIYrbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRkNMbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRk0QLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRlbULbXEeGxNLpsZ0hsPA" name="readDoubleFromConsole" isStatic="true" method="_ZhKvcLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRlbUbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRlbUrbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRmCYLbXEeGxNLpsZ0hsPA" name="readCharFromConsole" isStatic="true" method="_ZhKvc7bXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRmpcLbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRmpcbbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRnQgLbXEeGxNLpsZ0hsPA" name="readStringFromConsole" isStatic="true" method="_ZhLWgLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRnQgbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ZRn3kLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ZRpFsLbXEeGxNLpsZ0hsPA" name="readGewuenschtesReiseziel" isStatic="true" method="_ZhL9lLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZRpFsbbXEeGxNLpsZ0hsPA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zf9OgLbXEeGxNLpsZ0hsPA" type="_ZQmj4LbXEeGxNLpsZ0hsPA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Zf8AYLbXEeGxNLpsZ0hsPA" name="readGewuenschterKunde" isStatic="true" method="_ZhL9kLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zf8AYbbXEeGxNLpsZ0hsPA" name="kunden" type="_ZP7OcLbXEeGxNLpsZ0hsPA">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zf8ncbbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Zf8ncLbXEeGxNLpsZ0hsPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZRswELbXEeGxNLpsZ0hsPA" name="Sortierverfahren">
+        <ownedComment xmi:id="_Zhe4hLbXEeGxNLpsZ0hsPA">
+          <body>Diese Klasse ist für die Sortierung der Daten zuständig.&#xD;
+&#xD;
+@author Thomas&#xD;
+@version 09.03.2012&#xD;
+ *</body>
+        </ownedComment>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZhMkoLbXEeGxNLpsZ0hsPA" name="bubbleSort" specification="_Zf91kLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_ZhMkobbXEeGxNLpsZ0hsPA" name="kunden" type="_ZP7OcLbXEeGxNLpsZ0hsPA">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZhMkorbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>boolean tausch = false;&#xD;
+		do {&#xD;
+			tausch = false;&#xD;
+			for (int j = 0; j &lt; kunden.length - 1; j++) {&#xD;
+				for (int i = 0; i &lt; kunden.length - 1; i++) {&#xD;
+					if (kunden[i].getName().compareToIgnoreCase(&#xD;
+							kunden[i + 1].getName()) > 0) {&#xD;
+						Kunde hilfsVar = kunden[i];&#xD;
+						kunden[i] = kunden[i + 1];&#xD;
+						kunden[i + 1] = hilfsVar;&#xD;
+						tausch = true;&#xD;
+					}&#xD;
+				}&#xD;
+			}&#xD;
+		} while (tausch);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_Zf91kLbXEeGxNLpsZ0hsPA" name="bubbleSort" isStatic="true" method="_ZhMkoLbXEeGxNLpsZ0hsPA">
+          <ownedParameter xmi:id="_Zf-coLbXEeGxNLpsZ0hsPA" name="kunden" type="_ZP7OcLbXEeGxNLpsZ0hsPA">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zf-cobbXEeGxNLpsZ0hsPA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZOUE4LbXEeGxNLpsZ0hsPA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ZOUr8LbXEeGxNLpsZ0hsPA" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfKkULbXEeGxNLpsZ0hsPA" name="File"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfLycLbXEeGxNLpsZ0hsPA" name="IOException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfU8YLbXEeGxNLpsZ0hsPA" name="BufferedReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfWKgbbXEeGxNLpsZ0hsPA" name="BufferedWriter"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfXYobbXEeGxNLpsZ0hsPA" name="FileReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfYmwbbXEeGxNLpsZ0hsPA" name="FileWriter"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZfZ04LbXEeGxNLpsZ0hsPA" name="PrintWriter"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Zf6LMLbXEeGxNLpsZ0hsPA" name="InputStreamReader"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_ZgFKULbXEeGxNLpsZ0hsPA" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZgFKUbbXEeGxNLpsZ0hsPA" name="Object"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZgNGILbXEeGxNLpsZ0hsPA" name="StringBuilder"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZgQwgLbXEeGxNLpsZ0hsPA" name="Exception"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_X_3UwLbXEeGxNLpsZ0hsPA">
+      <eAnnotations xmi:id="_X_370LbXEeGxNLpsZ0hsPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_X_370bbXEeGxNLpsZ0hsPA" base_Package="_OphQcLbXEeGxNLpsZ0hsPA">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Array xmi:id="_ZQw78LbXEeGxNLpsZ0hsPA" base_Element="_ZQvt0LbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_ZQ--YrbXEeGxNLpsZ0hsPA" base_Element="_ZQ-XULbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_ZREd8rbXEeGxNLpsZ0hsPA" base_Element="_ZRDP0LbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_ZRNn4LbXEeGxNLpsZ0hsPA" base_Element="_ZRMZwLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfLLYLbXEeGxNLpsZ0hsPA" base_Element="_ZfKkULbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfMZgLbXEeGxNLpsZ0hsPA" base_Element="_ZfLycLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfWKgLbXEeGxNLpsZ0hsPA" base_Element="_ZfU8YLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfXYoLbXEeGxNLpsZ0hsPA" base_Element="_ZfWKgbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfYmwLbXEeGxNLpsZ0hsPA" base_Element="_ZfXYobbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZfZN0LbXEeGxNLpsZ0hsPA" base_Element="_ZfYmwbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_Zfab8LbXEeGxNLpsZ0hsPA" base_Element="_ZfZ04LbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_Zf7ZULbXEeGxNLpsZ0hsPA" base_Element="_Zf6LMLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZgHmkLbXEeGxNLpsZ0hsPA" base_Element="_ZgFKUbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZgOUQLbXEeGxNLpsZ0hsPA" base_Element="_ZgNGILbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZgRXkLbXEeGxNLpsZ0hsPA" base_Element="_ZgQwgLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgfaALbXEeGxNLpsZ0hsPA" base_Element="_Zgey8LbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZggoILbXEeGxNLpsZ0hsPA" base_Element="_ZggBEbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgidULbXEeGxNLpsZ0hsPA" base_Element="_Zgh2QLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_ZgjrcLbXEeGxNLpsZ0hsPA" dimensions="1" base_Element="_ZgjEYLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgjrcbbXEeGxNLpsZ0hsPA" base_Element="_ZgjEYLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgmHsLbXEeGxNLpsZ0hsPA" base_Element="_ZglgobbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgmuwLbXEeGxNLpsZ0hsPA" base_Element="_ZgmHsbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgnV0LbXEeGxNLpsZ0hsPA" base_Element="_ZgmuwbbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Zgn84LbXEeGxNLpsZ0hsPA" base_Element="_ZgnV0bbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_Zgoj8bbXEeGxNLpsZ0hsPA" base_Element="_Zgn84bbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgpLALbXEeGxNLpsZ0hsPA" base_Element="_Zgn84bbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgpyEbbXEeGxNLpsZ0hsPA" base_Element="_ZgpyELbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgrAMLbXEeGxNLpsZ0hsPA" base_Element="_ZgqZILbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_ZgsOULbXEeGxNLpsZ0hsPA" dimensions="1" base_Element="_ZgrnQLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgsOUrbXEeGxNLpsZ0hsPA" base_Element="_ZgrnQLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Array xmi:id="_Zgs1YrbXEeGxNLpsZ0hsPA" base_Element="_Zgs1YLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ZgtccbbXEeGxNLpsZ0hsPA" base_Element="_Zgs1YLbXEeGxNLpsZ0hsPA"/>
+  <uml:OpaqueBehavior xmi:id="_Zg_wULbXEeGxNLpsZ0hsPA" name="toString" specification="_ZQoZEbbXEeGxNLpsZ0hsPA">
+    <ownedParameter xmi:id="_ZhAXYLbXEeGxNLpsZ0hsPA" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>switch (this) {&#xD;
+		case MADRID:&#xD;
+			return &quot;Madrid&quot;;&#xD;
+		case WIEN:&#xD;
+			return &quot;Wien&quot;;&#xD;
+		case ROM:&#xD;
+			return &quot;Rom&quot;;&#xD;
+		case BERLIN:&#xD;
+			return &quot;Berlin&quot;;&#xD;
+		default:&#xD;
+			return &quot;&quot;;&#xD;
+		}&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_ZhDasLbXEeGxNLpsZ0hsPA" name="toString" specification="_ZQ5e0LbXEeGxNLpsZ0hsPA">
+    <ownedParameter xmi:id="_ZhDasbbXEeGxNLpsZ0hsPA" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>switch (this) {&#xD;
+		case MONTAG:&#xD;
+			return &quot;Montag&quot;;&#xD;
+		case FREITAG:&#xD;
+			return &quot;Freitag&quot;;&#xD;
+		case SAMSTAG:&#xD;
+			return &quot;Samstag&quot;;&#xD;
+		case SONNTAG:&#xD;
+			return &quot;Sonntag&quot;;&#xD;
+		default:&#xD;
+			return &quot;&quot;;&#xD;
+		}&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <UMLLabProfile:Reference xmi:id="_ZhoCcLbXEeGxNLpsZ0hsPA" base_Element="_Zhm0ULbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_Zhp3oLbXEeGxNLpsZ0hsPA" base_Element="_ZhopgLbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_ZhrFwLbXEeGxNLpsZ0hsPA" base_Element="_Zhp3obbXEeGxNLpsZ0hsPA"/>
+  <UMLLabProfile:Reference xmi:id="_Zhs68LbXEeGxNLpsZ0hsPA" base_Element="_Zhrs0LbXEeGxNLpsZ0hsPA"/>
+</xmi:XMI>
